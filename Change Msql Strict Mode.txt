@@ -1,0 +1,19 @@
+Use keyboard shortcut (WinKey + R). 
+
+ Enter “services.msc” and click “Ok”. 
+
+Search for “MySQL57”, right click and stop service (Keep window open).
+
+Enable hidden files in Explorer and navigate to “C:\ProgramData\MySQL\MySQL Server 5.7”.
+
+Right click “my.ini” and select “Edit with Notepad++” .
+
+Scroll down to and change the following text:  FROM  # Set the SQL mode to strict  sql-mode=
+
+"STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"    
+
+TO  sql_mode="NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"
+
+Save and overwrite  “my.ini”.
+
+Go back to “services.msc”. Right click “MySQL” and Start service. 
