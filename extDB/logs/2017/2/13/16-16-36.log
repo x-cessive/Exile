@@ -1,0 +1,39 @@
+extDB2: Version: 70
+extDB2: https://github.com/Torndeco/extDB2
+extDB2: Windows Version
+Message: All development for extDB2 is done on a Linux Dedicated Server
+Message: If you would like to Donate to extDB2 Development
+Message: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2SUEFTGABTAM2
+Message: Also leave a message if there is any particular feature you would like to see added.
+Message: Thanks for all the people that have donated.
+Message: Torndeco: 20/02/15
+
+
+extDB2: Found extdb-conf.ini
+extDB2: Detected 24 Cores, Setting up 6 Worker Threads
+
+
+[11:16:36:027833 --4:00] [Thread 1560] extDB2: Database Type: MySQL
+[11:16:36:035513 --4:00] [Thread 1560] extDB2: Database Session Pool Started
+[11:16:36:038417 --4:00] [Thread 1560] extDB2: SQL_CUSTOM_V2: Loading Template Filename: C:\Exile Server\extDB\sql_custom_v2\exile.ini
+[11:16:36:038690 --4:00] [Thread 1560] extDB2: SQL_CUSTOM_V2: Version 12 Detected, Latest Version 12 Available
+[11:16:37:945760 --4:00] [Thread 3188] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:CONNECTLOG:infiSTAR_PlayerConnected_id  1
+[11:16:37:945801 --4:00] [Thread 3188] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[11:16:37:945864 --4:00] [Thread 3188] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:CONNECTLOG:infiSTAR_PlayerDisconnected_id  0
+[11:16:37:945892 --4:00] [Thread 3188] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[11:16:37:947146 --4:00] [Thread 3188] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:SERVER_INFO:[SERVER START] TIME  0 || EMAIL  justinbowers@live.com || VERSION  09-Jan-2017 02-25-58 - v0070 || Local Server Time  [2017,2,13,11,16]
+[11:16:37:947177 --4:00] [Thread 3188] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[11:16:38:122201 --4:00] [Thread 3188] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:CONNECTLOG:#0 Connected  __SERVER__( - 2)
+[11:16:38:122311 --4:00] [Thread 3188] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[11:20:27:045431 --4:00] [Thread 4336] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:CONNECTLOG:#0 Connected  Mr. Sage(76561198108041726 - 3)
+[11:20:27:045484 --4:00] [Thread 4336] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[11:20:27:045904 --4:00] [Thread 4336] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:TOKENLOG:TOKEN [hf49gvc0vqdp2d] FOR Mr. Sage(76561198108041726) OWNER ID  3
+[11:20:27:045937 --4:00] [Thread 4336] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[11:20:27:795347 --4:00] [Thread 7152] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:CONNECTLOG:#1 Connected  Mr. Sage(76561198108041726 - 3) SteamName  Mr. Sage   [UpTime  0h 3min 12s - ServerFPS  46.2428]
+[11:20:27:795390 --4:00] [Thread 7152] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[11:20:37:833671 --4:00] [Thread 1560] extDB2: SQL_CUSTOM_V2: Error StatementException: MySQL: [MySQL]: [Comment]: mysql_stmt_execute error	[mysql_stmt_error]: Field 'assigned_items' doesn't have a default value	[mysql_stmt_errno]: 1364	[mysql_stmt_sqlstate]: HY000	[statemnt]: INSERT INTO player SET account_uid = ?, name = ?
+[11:20:37:833779 --4:00] [Thread 1560] extDB2: SQL_CUSTOM_V2: Wiping Statements + Session
+[11:20:37:833808 --4:00] [Thread 1560] extDB2: SQL_CUSTOM_V2: Error: UniqueID: 1 Input String: createPlayer:76561198108041726:Mr. Sage
+[11:21:04:802256 --4:00] [Thread 7152] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:netids:Mr. Sage(76561198108041726) - R Alpha 1-1 1 (Mr. Sage) REMOTE, Exile_Unit_GhostPlayer - 2 4647 - 3
+[11:21:04:802428 --4:00] [Thread 7152] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[11:21:28:311284 --4:00] [Thread 1560] extDB2: Stopping ...
