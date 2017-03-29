@@ -1,0 +1,42 @@
+extDB2: Version: 70
+extDB2: https://github.com/Torndeco/extDB2
+extDB2: Windows Version
+Message: All development for extDB2 is done on a Linux Dedicated Server
+Message: If you would like to Donate to extDB2 Development
+Message: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2SUEFTGABTAM2
+Message: Also leave a message if there is any particular feature you would like to see added.
+Message: Thanks for all the people that have donated.
+Message: Torndeco: 20/02/15
+
+
+extDB2: Found extdb-conf.ini
+extDB2: Detected 24 Cores, Setting up 6 Worker Threads
+
+
+[21:24:32:807149 --4:00] [Thread 12504] extDB2: Database Type: MySQL
+[21:24:32:822069 --4:00] [Thread 12504] extDB2: Database Session Pool Started
+[21:24:32:824172 --4:00] [Thread 12504] extDB2: SQL_CUSTOM_V2: Loading Template Filename: C:\Arma 3 Servers\EXILE SERVER\steamapps\common\Arma 3\extDB\sql_custom_v2\exile.ini
+[21:24:32:824311 --4:00] [Thread 12504] extDB2: SQL_CUSTOM_V2: Version 12 Detected, Latest Version 12 Available
+[21:24:32:881149 --4:00] [Thread 17496] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:CONNECTLOG:infiSTAR_PlayerConnected_id  0
+[21:24:32:881194 --4:00] [Thread 17496] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[21:24:32:881295 --4:00] [Thread 17496] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:CONNECTLOG:infiSTAR_PlayerDisconnected_id  0
+[21:24:32:881325 --4:00] [Thread 17496] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[21:24:32:881978 --4:00] [Thread 17496] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:SERVER_INFO:[SERVER START] TIME  0 || EMAIL  justinbowers@live.com || VERSION  09-Jan-2017 02-25-58 - v0070 || Local Server Time  [2017,3,22,21,24]
+[21:24:32:882007 --4:00] [Thread 17496] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[21:24:33:244808 --4:00] [Thread 17496] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:CONNECTLOG:#0 Connected  __SERVER__( - 2)
+[21:24:33:244863 --4:00] [Thread 17496] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[21:25:28:026115 --4:00] [Thread 17652] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:CONNECTLOG:#0 Connected  Mr. Sage(76561198108041726 - 3)
+[21:25:28:026154 --4:00] [Thread 17652] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[21:25:28:026537 --4:00] [Thread 17652] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:TOKENLOG:TOKEN [xmkfk3snx1wmr5v] FOR Mr. Sage(76561198108041726) OWNER ID  3
+[21:25:28:026565 --4:00] [Thread 17652] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[21:26:06:906679 --4:00] [Thread 17496] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:netids:Mr. Sage(76561198108041726) - R Alpha 1-2 1 (Mr. Sage) REMOTE, Exile_Unit_Player - 2 1104 - 3
+[21:26:06:906726 --4:00] [Thread 17496] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[21:26:52:054461 --4:00] [Thread 17496] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:SURVEILLANCELOG:Mr. Sage(76561198108041726) | Player Clientside AntiHack not loaded or stopped! Exile_Unit_Player  @071124 [7199.53,12430.3,4.1014] | 0h 2min 17s
+[21:26:52:054525 --4:00] [Thread 17496] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[21:27:37:217824 --4:00] [Thread 17496] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:SURVEILLANCELOG:Mr. Sage(76561198108041726) | Player Clientside AntiHack not loaded or stopped! Exile_Unit_Player  @071124 [7177.51,12442.3,0.00157928] | 0h 3min 2s
+[21:27:37:217880 --4:00] [Thread 17496] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[21:28:22:368287 --4:00] [Thread 17496] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:SURVEILLANCELOG:Mr. Sage(76561198108041726) | Player Clientside AntiHack not loaded or stopped! Exile_Unit_Player  @071124 [7173.95,12441.6,0.00144577] | 0h 3min 47s
+[21:28:22:368357 --4:00] [Thread 17496] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[21:29:35:884480 --4:00] [Thread 17496] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:CONNECTLOG:#2 Disconnected  Mr. Sage(76561198108041726 - 3) SteamName  
+[21:29:35:884527 --4:00] [Thread 17496] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[21:30:28:286093 --4:00] [Thread 12504] extDB2: Stopping ...

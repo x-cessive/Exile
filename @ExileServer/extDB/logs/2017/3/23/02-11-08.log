@@ -1,0 +1,42 @@
+extDB2: Version: 70
+extDB2: https://github.com/Torndeco/extDB2
+extDB2: Windows Version
+Message: All development for extDB2 is done on a Linux Dedicated Server
+Message: If you would like to Donate to extDB2 Development
+Message: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2SUEFTGABTAM2
+Message: Also leave a message if there is any particular feature you would like to see added.
+Message: Thanks for all the people that have donated.
+Message: Torndeco: 20/02/15
+
+
+extDB2: Found extdb-conf.ini
+extDB2: Detected 24 Cores, Setting up 6 Worker Threads
+
+
+[22:11:08:417886 --4:00] [Thread 20756] extDB2: Database Type: MySQL
+[22:11:08:421764 --4:00] [Thread 20756] extDB2: Database Session Pool Started
+[22:11:08:423287 --4:00] [Thread 20756] extDB2: SQL_CUSTOM_V2: Loading Template Filename: C:\Arma 3 Servers\EXILE SERVER\steamapps\common\Arma 3\extDB\sql_custom_v2\exile.ini
+[22:11:08:423523 --4:00] [Thread 20756] extDB2: SQL_CUSTOM_V2: Version 12 Detected, Latest Version 12 Available
+[22:11:08:705480 --4:00] [Thread 14352] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:CONNECTLOG:infiSTAR_PlayerConnected_id  1
+[22:11:08:705530 --4:00] [Thread 14352] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[22:11:08:705801 --4:00] [Thread 14352] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:CONNECTLOG:infiSTAR_PlayerDisconnected_id  0
+[22:11:08:705834 --4:00] [Thread 14352] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[22:11:08:706437 --4:00] [Thread 14352] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:SERVER_INFO:[SERVER START] TIME  0 || EMAIL  justinbowers@live.com || VERSION  09-Jan-2017 02-25-58 - v0070 || Local Server Time  [2017,3,22,22,11]
+[22:11:08:706468 --4:00] [Thread 14352] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[22:11:09:291989 --4:00] [Thread 14352] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:CONNECTLOG:#0 Connected  __SERVER__( - 2)
+[22:11:09:292035 --4:00] [Thread 14352] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[22:11:29:185655 --4:00] [Thread 14352] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) =============================================================================================================
+[22:11:29:185718 --4:00] [Thread 14352] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[22:11:29:185998 --4:00] [Thread 14352] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION MOD]  Occupation V65 (30-08-2016) Initialised at 18.827
+[22:11:29:186025 --4:00] [Thread 14352] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[22:11:29:186225 --4:00] [Thread 14352] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) =============================================================================================================
+[22:11:29:186251 --4:00] [Thread 14352] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[22:11:29:229824 --4:00] [Thread 14352] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION Traders] starting @ 18.869
+[22:11:29:229863 --4:00] [Thread 14352] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[22:11:29:230176 --4:00] [Thread 14352] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [processReporter]  Initialised at 18.869
+[22:11:29:230191 --4:00] [Thread 14352] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[22:11:29:230942 --4:00] [Thread 14352] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION]  Detected DMS version September 5, 2016
+[22:11:29:230962 --4:00] [Thread 14352] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[22:11:29:231193 --4:00] [Thread 14352] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION]  Occupation V65 (30-08-2016) Adding modules to Exile system thread manager at 18.869
+[22:11:29:231208 --4:00] [Thread 14352] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[22:11:46:404109 --4:00] [Thread 20756] extDB2: Stopping ...

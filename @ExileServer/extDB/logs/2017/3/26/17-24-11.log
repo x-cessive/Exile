@@ -1,0 +1,27 @@
+extDB2: Version: 70
+extDB2: https://github.com/Torndeco/extDB2
+extDB2: Windows Version
+Message: All development for extDB2 is done on a Linux Dedicated Server
+Message: If you would like to Donate to extDB2 Development
+Message: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2SUEFTGABTAM2
+Message: Also leave a message if there is any particular feature you would like to see added.
+Message: Thanks for all the people that have donated.
+Message: Torndeco: 20/02/15
+
+
+extDB2: Found extdb-conf.ini
+extDB2: Detected 24 Cores, Setting up 6 Worker Threads
+
+
+[13:24:11:579812 --4:00] [Thread 15404] extDB2: Database Type: MySQL
+[13:24:11:583701 --4:00] [Thread 15404] extDB2: Database Session Pool Started
+[13:24:11:585310 --4:00] [Thread 15404] extDB2: SQL_CUSTOM_V2: Loading Template Filename: C:\Arma 3 Servers\exileserver1\@ExileServer\extDB\sql_custom_v2\exile.ini
+[13:24:11:585550 --4:00] [Thread 15404] extDB2: SQL_CUSTOM_V2: Version 12 Detected, Latest Version 12 Available
+[13:24:12:334569 --4:00] [Thread 37724] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Input String insert_infiSTARLog:CONNECTLOG:infiSTAR_PlayerConnected_id  1
+[13:24:12:334620 --4:00] [Thread 37724] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Expected: 3 Got: 2
+[13:24:12:334665 --4:00] [Thread 34200] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Input String insert_infiSTARLog:CONNECTLOG:infiSTAR_PlayerDisconnected_id  0
+[13:24:12:334688 --4:00] [Thread 34200] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Expected: 3 Got: 2
+[13:24:12:335664 --4:00] [Thread 34200] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Input String insert_infiSTARLog:SERVER_INFO:[SERVER START] TIME  0 || EMAIL  justinbowers@live.com || VERSION  09-Jan-2017 02-25-58 - v0070 || Local Server Time  [2017,3,26,13,24]
+[13:24:12:335679 --4:00] [Thread 34200] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Expected: 3 Got: 2
+[13:24:12:477692 --4:00] [Thread 19540] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Input String insert_infiSTARLog:CONNECTLOG:#0 Connected  __SERVER__( - 2)
+[13:24:12:477739 --4:00] [Thread 19540] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Expected: 3 Got: 2

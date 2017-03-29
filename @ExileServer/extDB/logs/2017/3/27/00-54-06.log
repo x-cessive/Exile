@@ -1,0 +1,32 @@
+extDB2: Version: 70
+extDB2: https://github.com/Torndeco/extDB2
+extDB2: Windows Version
+Message: All development for extDB2 is done on a Linux Dedicated Server
+Message: If you would like to Donate to extDB2 Development
+Message: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2SUEFTGABTAM2
+Message: Also leave a message if there is any particular feature you would like to see added.
+Message: Thanks for all the people that have donated.
+Message: Torndeco: 20/02/15
+
+
+extDB2: Found extdb-conf.ini
+extDB2: Detected 24 Cores, Setting up 6 Worker Threads
+
+
+[20:54:06:398889 --4:00] [Thread 16300] extDB2: Database Type: MySQL
+[20:54:06:424131 --4:00] [Thread 16300] extDB2: Database Session Pool Started
+[20:54:06:426189 --4:00] [Thread 16300] extDB2: SQL_CUSTOM_V2: Loading Template Filename: C:\Arma 3 Servers\exileserver1\@ExileServer\extDB\sql_custom_v2\exile.ini
+[20:54:06:426345 --4:00] [Thread 16300] extDB2: SQL_CUSTOM_V2: Version 12 Detected, Latest Version 12 Available
+[20:54:07:133717 --4:00] [Thread 14744] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Input String insert_infiSTARLog:CONNECTLOG:infiSTAR_PlayerConnected_id  1
+[20:54:07:133746 --4:00] [Thread 14744] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Expected: 3 Got: 2
+[20:54:07:133819 --4:00] [Thread 2556] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Input String insert_infiSTARLog:CONNECTLOG:infiSTAR_PlayerDisconnected_id  0
+[20:54:07:133838 --4:00] [Thread 2556] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Expected: 3 Got: 2
+[20:54:07:134464 --4:00] [Thread 2556] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Input String insert_infiSTARLog:SERVER_INFO:[SERVER START] TIME  0 || EMAIL  justinbowers@live.com || VERSION  09-Jan-2017 02-25-58 - v0070 || Local Server Time  [2017,3,26,20,54]
+[20:54:07:134480 --4:00] [Thread 2556] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Expected: 3 Got: 2
+[20:54:07:248849 --4:00] [Thread 14744] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Input String insert_infiSTARLog:CONNECTLOG:#0 Connected  __SERVER__( - 2)
+[20:54:07:248876 --4:00] [Thread 14744] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Expected: 3 Got: 2
+[20:54:07:258792 --4:00] [Thread 16300] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String loadTerritoryVehicles:1
+[20:54:07:258813 --4:00] [Thread 16300] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname loadTerritoryVehicles
+[20:54:07:261200 --4:00] [Thread 16300] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String loadTerritoryVehicles:2
+[20:54:07:261215 --4:00] [Thread 16300] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname loadTerritoryVehicles
+[20:54:36:625267 --4:00] [Thread 16300] extDB2: Stopping ...
