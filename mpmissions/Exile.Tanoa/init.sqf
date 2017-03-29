@@ -14,6 +14,3 @@ if (hasInterface || isServer) then {
 //[] call compileFinal preprocessFileLineNumbers "addons\welcome\welcome.sqf";
 [] execVM "custom\service\service_point.sqf";
 };
-
-
-

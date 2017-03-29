@@ -1,6 +1,11 @@
 /*
 Antihack & AdminTools - Christian Lorenzen - www.infiSTAR.de
-#2364
+
+infiSTAR (for) EXILE #2364
+Date: 25-Mar-2017 15-55-47
+Version: v0074
+Owner: justinbowers@live.com
+OwnerUID: 76561198108041726
 */
 class RscListBox_infiSTAR {
 access=0;

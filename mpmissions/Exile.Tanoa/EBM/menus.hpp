@@ -36,6 +36,12 @@
 		
 		class Actions 
 		{
+			class ScanLock: ExileAbstractAction
+			{
+				title = "Scan Lock";
+				condition = "('Exile_Item_ThermalScannerPro' in (magazines player)) && !((ExileClientInteractionObject getvariable ['ExileIsLocked',1]) isEqualTo 1) && !ExilePlayerInSafezone";
+				action = "_this call ExileClient_object_lock_scan";
+			};
 			// Locks a vehicle
 			class Lock : ExileAbstractAction
 			{
@@ -56,6 +62,12 @@
 				title = "Set PIN";
 				condition = "((ExileClientInteractionObject getvariable ['ExileIsLocked',1]) isEqualTo 0)";
 				action = "_this spawn ExileClient_object_lock_setPin";
+			};
+			class Hotwire: ExileAbstractAction
+			{
+				title = "Hotwire";
+				condition = "((locked ExileClientInteractionObject) isEqualTo 2) && ((locked ExileClientInteractionObject) != 1)";
+				action = "['HotwireVehicle', _this select 0] call ExileClient_action_execute";
 			};
 		};
 	};
@@ -67,6 +79,12 @@
 		
 		class Actions 
 		{
+			class ScanLock: ExileAbstractAction
+			{
+				title = "Scan Lock";
+				condition = "('Exile_Item_ThermalScannerPro' in (magazines player)) && !((ExileClientInteractionObject getvariable ['ExileIsLocked',1]) isEqualTo 1) && !ExilePlayerInSafezone";
+				action = "_this call ExileClient_object_lock_scan";
+			};
 			// Locks a vehicle
 			class Lock : ExileAbstractAction
 			{
@@ -88,6 +106,12 @@
 				condition = "((ExileClientInteractionObject getvariable ['ExileIsLocked',1]) isEqualTo 0)";
 				action = "_this spawn ExileClient_object_lock_setPin";
 			};
+			class Hotwire: ExileAbstractAction
+			{
+				title = "Hotwire";
+				condition = "((locked ExileClientInteractionObject) isEqualTo 2) && ((locked ExileClientInteractionObject) != 1)";
+				action = "['HotwireVehicle', _this select 0] call ExileClient_action_execute";
+			};
 		};
 	};
 	class Cargo40
@@ -97,6 +121,12 @@
 
 		class Actions 
 		{
+			class ScanLock: ExileAbstractAction
+			{
+				title = "Scan Lock";
+				condition = "('Exile_Item_ThermalScannerPro' in (magazines player)) && !((ExileClientInteractionObject getvariable ['ExileIsLocked',1]) isEqualTo 1) && !ExilePlayerInSafezone";
+				action = "_this call ExileClient_object_lock_scan";
+			};
 			// Locks a vehicle
 			class Lock : ExileAbstractAction
 			{
@@ -118,6 +148,12 @@
 				condition = "((ExileClientInteractionObject getvariable ['ExileIsLocked',1]) isEqualTo 0)";
 				action = "_this spawn ExileClient_object_lock_setPin";
 			};
+			class Hotwire: ExileAbstractAction
+			{
+				title = "Hotwire";
+				condition = "((locked ExileClientInteractionObject) isEqualTo 2) && ((locked ExileClientInteractionObject) != 1)";
+				action = "['HotwireVehicle', _this select 0] call ExileClient_action_execute";
+			};
 		};
 	};
 	class Cargo20
@@ -127,6 +163,12 @@
 
 		class Actions 
 		{
+			class ScanLock: ExileAbstractAction
+			{
+				title = "Scan Lock";
+				condition = "('Exile_Item_ThermalScannerPro' in (magazines player)) && !((ExileClientInteractionObject getvariable ['ExileIsLocked',1]) isEqualTo 1) && !ExilePlayerInSafezone";
+				action = "_this call ExileClient_object_lock_scan";
+			};
 			// Locks a vehicle
 			class Lock : ExileAbstractAction
 			{
@@ -147,6 +189,12 @@
 				title = "Set PIN";
 				condition = "((ExileClientInteractionObject getvariable ['ExileIsLocked',1]) isEqualTo 0)";
 				action = "_this spawn ExileClient_object_lock_setPin";
+			};
+			class Hotwire: ExileAbstractAction
+			{
+				title = "Hotwire";
+				condition = "((locked ExileClientInteractionObject) isEqualTo 2) && ((locked ExileClientInteractionObject) != 1)";
+				action = "['HotwireVehicle', _this select 0] call ExileClient_action_execute";
 			};
 		};
 	};
@@ -158,6 +206,12 @@
 
 		class Actions 
 		{
+			class ScanLock: ExileAbstractAction
+			{
+				title = "Scan Lock";
+				condition = "('Exile_Item_ThermalScannerPro' in (magazines player)) && !((ExileClientInteractionObject getvariable ['ExileIsLocked',1]) isEqualTo 1) && !ExilePlayerInSafezone";
+				action = "_this call ExileClient_object_lock_scan";
+			};
 			// Locks a vehicle
 			class Lock : ExileAbstractAction
 			{
@@ -178,6 +232,12 @@
 				title = "Set PIN";
 				condition = "((ExileClientInteractionObject getvariable ['ExileIsLocked',1]) isEqualTo 0)";
 				action = "_this spawn ExileClient_object_lock_setPin";
+			};
+			class Hotwire: ExileAbstractAction
+			{
+				title = "Hotwire";
+				condition = "((locked ExileClientInteractionObject) isEqualTo 2) && ((locked ExileClientInteractionObject) != 1)";
+				action = "['HotwireVehicle', _this select 0] call ExileClient_action_execute";
 			};
 		};
 	};

@@ -1,60 +1,60 @@
 /*Turn the following line on by removing the "//" at the beginning of the line.
 But be careful! People who don't have the APEX DLC can not see the Buildings! They can walk through them!!!!*/
 
-#define USE_APEX_Buildings 1
+//#define USE_APEX_Buildings 1
 
 ///////////////////////////////////////////////////////////////////////////////
 // Extended Base Mod
 //////////////////////////////////////////////////////////////////////////////
-class Land_HBarrier_1_F_Kit				{ quality = 1; price = 5500;sellPrice = 50; };
-class Land_HBarrier_3_F_Kit				{ quality = 1; price = 19000;sellPrice = 50;  };
-class Land_HBarrier_5_F_Kit				{ quality = 1; price = 40000;sellPrice = 50;  };
-class Land_BagBunker_Tower_F_Kit		{ quality = 1; price = 100000;sellPrice = 50;  };
-class CamoNet_OPFOR_open_F_Kit			{ quality = 1; price = 1000; sellPrice = 50; };
-class CamoNet_INDP_open_F_Kit			{ quality = 1; price = 1000;sellPrice = 50;  };
-class CamoNet_BLUFOR_open_F_Kit			{ quality = 1; price = 1000;sellPrice = 50;  };
+class Land_HBarrier_1_F_Kit									{ quality = 1; price = 5500;sellPrice = 50; };
+class Land_HBarrier_3_F_Kit									{ quality = 1; price = 19000;sellPrice = 50;  };
+class Land_HBarrier_5_F_Kit									{ quality = 1; price = 40000;sellPrice = 50;  };
+class Land_BagBunker_Tower_F_Kit							{ quality = 1; price = 100000;sellPrice = 50;  };
+class CamoNet_OPFOR_open_F_Kit								{ quality = 1; price = 1000; sellPrice = 50; };
+class CamoNet_INDP_open_F_Kit								{ quality = 1; price = 1000;sellPrice = 50;  };
+class CamoNet_BLUFOR_open_F_Kit								{ quality = 1; price = 1000;sellPrice = 50;  };
 ///////////////////////// V0.0.2
-class Land_CncBarrier_F_Kit				{ quality = 1; price = 7500;sellPrice = 50;  };
-class Land_Stone_4m_F_Kit				{ quality = 1; price = 15000;sellPrice = 50;  };
-class Land_Stone_Gate_F_Kit				{ quality = 1; price = 15000;sellPrice = 50;  };
-class PierLadder_F_Kit					{ quality = 1; price = 75000;sellPrice = 50;  };
-class Land_WaterCooler_01_new_F_Kit		{ quality = 1; price = 180000;sellPrice = 50;  };
+class Land_CncBarrier_F_Kit									{ quality = 1; price = 7500;sellPrice = 50;  };
+class Land_Stone_4m_F_Kit									{ quality = 1; price = 15000;sellPrice = 50;  };
+class Land_Stone_Gate_F_Kit									{ quality = 1; price = 15000;sellPrice = 50;  };
+class PierLadder_F_Kit										{ quality = 1; price = 75000;sellPrice = 50;  };
+class Land_WaterCooler_01_new_F_Kit							{ quality = 1; price = 180000;sellPrice = 50;  };
 ///////////////////////// V0.0.3
-class Land_Pallet_MilBoxes_F_Kit		{ quality = 1; price = 39990;sellPrice = 50;  };
-class Land_Cargo20_military_green_F_Kit	{ quality = 1; price = 50000;sellPrice = 50;  };
-class Land_BagFence_Corner_F_Kit		{ quality = 1; price = 10000;sellPrice = 50;  };
-class Land_BagFence_Long_F_Kit			{ quality = 1; price = 10000;sellPrice = 50; };
-class Land_HBarrierTower_F_Kit			{ quality = 1; price = 75000;sellPrice = 50;  };
-class Land_Metal_wooden_rack_F_Kit		{ quality = 1; price = 38000;sellPrice = 50;  };
-class Land_BagBunker_Small_F_Kit		{ quality = 1; price = 65000;sellPrice = 50;  };
-class Land_Bunker_F_Kit					{ quality = 1; price = 750000;sellPrice = 50;  };
-class Land_HBarrierWall_corner_F_Kit	{ quality = 1; price = 50000;sellPrice = 50;  };
-class Land_HBarrierWall6_F_Kit			{ quality = 1; price = 60000;sellPrice = 50;  };
-class Land_HBarrierWall4_F_Kit			{ quality = 1; price = 35000;sellPrice = 50;  };
-class Land_RampConcrete_F_Kit			{ quality = 1; price = 55000;sellPrice = 50;  };
+class Land_Pallet_MilBoxes_F_Kit							{ quality = 1; price = 39990;sellPrice = 50;  };
+class Land_Cargo20_military_green_F_Kit						{ quality = 1; price = 50000;sellPrice = 50;  };
+class Land_BagFence_Corner_F_Kit							{ quality = 1; price = 10000;sellPrice = 50;  };
+class Land_BagFence_Long_F_Kit								{ quality = 1; price = 10000;sellPrice = 50; };
+class Land_HBarrierTower_F_Kit								{ quality = 1; price = 75000;sellPrice = 50;  };
+class Land_Metal_wooden_rack_F_Kit							{ quality = 1; price = 38000;sellPrice = 50;  };
+class Land_BagBunker_Small_F_Kit							{ quality = 1; price = 65000;sellPrice = 50;  };
+class Land_Bunker_F_Kit										{ quality = 1; price = 750000;sellPrice = 50;  };
+class Land_HBarrierWall_corner_F_Kit						{ quality = 1; price = 50000;sellPrice = 50;  };
+class Land_HBarrierWall6_F_Kit								{ quality = 1; price = 60000;sellPrice = 50;  };
+class Land_HBarrierWall4_F_Kit								{ quality = 1; price = 35000;sellPrice = 50;  };
+class Land_RampConcrete_F_Kit								{ quality = 1; price = 55000;sellPrice = 50;  };
 ///////////////////////// V0.0.4
-class Land_Wall_IndCnc_4_F_Kit			{ quality = 1; price = 50000;sellPrice = 50;  };
-class Land_City2_4m_F_Kit				{ quality = 1; price = 60000;sellPrice = 50;  };
-class Land_City2_8m_F_Kit				{ quality = 1; price = 60000;sellPrice = 50;  };
-class Land_HelipadCivil_F_Kit			{ quality = 1; price = 100000;sellPrice = 50;  };
-class Land_Rack_F_Kit					{ quality = 1; price = 35000;sellPrice = 50;  };
+class Land_Wall_IndCnc_4_F_Kit								{ quality = 1; price = 50000;sellPrice = 50;  };
+class Land_City2_4m_F_Kit									{ quality = 1; price = 60000;sellPrice = 50;  };
+class Land_City2_8m_F_Kit									{ quality = 1; price = 60000;sellPrice = 50;  };
+class Land_HelipadCivil_F_Kit								{ quality = 1; price = 100000;sellPrice = 50;  };
+class Land_Rack_F_Kit										{ quality = 1; price = 35000;sellPrice = 50;  };
 ///////////////////////// V0.1.0
-class Land_City_Gate_F_Kit							{ quality = 1; price = 20000;sellPrice = 50;  };
-class Land_BarGate_F_Kit							{ quality = 1; price = 20000;sellPrice = 50;  };
-class Land_Icebox_F_Kit								{ quality = 1; price = 45000;sellPrice = 50;  };
-class Land_Sign_WarningMilitaryArea_F_Kit			{ quality = 1; price = 1000;sellPrice = 50;  };
-class Land_Mil_WallBig_4m_F_Kit						{ quality = 1; price = 60000;sellPrice = 50;  };
-class Land_Cargo_Patrol_V2_F_Kit					{ quality = 1; price = 185000;sellPrice = 50;  };
+class Land_City_Gate_F_Kit									{ quality = 1; price = 20000;sellPrice = 50;  };
+class Land_BarGate_F_Kit									{ quality = 1; price = 20000;sellPrice = 50;  };
+class Land_Icebox_F_Kit										{ quality = 1; price = 45000;sellPrice = 50;  };
+class Land_Sign_WarningMilitaryArea_F_Kit					{ quality = 1; price = 1000;sellPrice = 50;  };
+class Land_Mil_WallBig_4m_F_Kit								{ quality = 1; price = 60000;sellPrice = 50;  };
+class Land_Cargo_Patrol_V2_F_Kit							{ quality = 1; price = 185000;sellPrice = 50;  };
 ///////////////////////// V0.1.1
-class Land_Pier_small_F_Kit							{ quality = 1; price = 75000;sellPrice = 50;  };
-class Land_Wall_Tin_4_Kit							{ quality = 1; price = 50000;sellPrice = 50;  };
+class Land_Pier_small_F_Kit									{ quality = 1; price = 75000;sellPrice = 50;  };
+class Land_Wall_Tin_4_Kit									{ quality = 1; price = 50000;sellPrice = 50;  };
 ///////////////////////// V0.1.2
-class Land_Tank_rust_F_Kit							{ quality = 1; price = 50000;sellPrice = 50;  };
-class Land_ShelvesMetal_F_Kit						{ quality = 1; price = 50000;sellPrice = 50;  };
-class Land_Cargo_Tower_V2_F_Kit						{ quality = 1; price = 750000;sellPrice = 50;  };
-class Land_FuelStation_Feed_F_Kit					{ quality = 1; price = 220000;sellPrice = 50;  };
-class Land_BagBunker_Large_F_Kit					{ quality = 1; price = 100000;sellPrice = 50;  };
-class ShootingPos_F_Kit								{ quality = 1; price = 1000;sellPrice = 50;  };
+class Land_Tank_rust_F_Kit									{ quality = 1; price = 50000;sellPrice = 50;  };
+class Land_ShelvesMetal_F_Kit								{ quality = 1; price = 50000;sellPrice = 50;  };
+class Land_Cargo_Tower_V2_F_Kit								{ quality = 1; price = 750000;sellPrice = 50;  };
+class Land_FuelStation_Feed_F_Kit							{ quality = 1; price = 220000;sellPrice = 50;  };
+class Land_BagBunker_Large_F_Kit							{ quality = 1; price = 100000;sellPrice = 50;  };
+class ShootingPos_F_Kit										{ quality = 1; price = 1000;sellPrice = 50;  };
 ///////////////////////// V0.1.3
 class Land_cargo_house_slum_F_Kit							{ quality = 1; price = 25000;sellPrice = 50;  };
 class Land_Cargo40_light_green_F_Kit						{ quality = 1; price = 130000;sellPrice = 50;  };
@@ -149,23 +149,42 @@ class Land_Sink_F_Kit										{ quality = 2; price = 27000;sellPrice = 50;  };
 class Land_Atm_02_F_Kit										{ quality = 6; price = 100000;sellPrice = 50;  };
 ///////////////////////// V0.2.6
 #ifdef USE_APEX_Buildings
-class Land_PillboxBunker_01_big_F_Kit						{ quality = 6; price = 150000;sellPrice = 50;  };
+//class Land_PillboxBunker_01_big_F_Kit						{ quality = 6; price = 150000;sellPrice = 50;  };
 class Land_BagBunker_01_small_green_F_Kit					{ quality = 3; price = 75000;sellPrice = 50;  };
-class Land_PillboxBunker_01_rectangle_F_Kit					{ quality = 6; price = 120000;sellPrice = 50;  };
-class Land_PillboxBunker_01_hex_F_Kit						{ quality = 6; price = 110000;sellPrice = 50;  };
-class Land_PillboxWall_01_3m_F_Kit							{ quality = 4; price = 6000;sellPrice = 50;  };
-class Land_PillboxWall_01_6m_F_Kit							{ quality = 4; price = 10000;sellPrice = 50;  };
-class Land_Airport_01_controlTower_F_Kit					{ quality = 5; price = 60000;sellPrice = 50;  };
+//class Land_PillboxBunker_01_rectangle_F_Kit					{ quality = 6; price = 120000;sellPrice = 50;  };
+//class Land_PillboxBunker_01_hex_F_Kit						{ quality = 6; price = 110000;sellPrice = 50;  };
+//class Land_PillboxWall_01_3m_F_Kit							{ quality = 4; price = 6000;sellPrice = 50;  };
+//class Land_PillboxWall_01_6m_F_Kit							{ quality = 4; price = 10000;sellPrice = 50;  };
+//class Land_Airport_01_controlTower_F_Kit					{ quality = 5; price = 60000;sellPrice = 50;  };
 class Land_HBarrier_01_line_3_green_F_Kit					{ quality = 2; price = 6000;sellPrice = 50;  };
 class Land_HBarrier_01_line_5_green_F_Kit					{ quality = 2; price = 8000;sellPrice = 50;  };
-class Land_HBarrier_01_big_tower_green_F_Kit				{ quality = 4; price = 50000;sellPrice = 50;  };
-class Land_trench_01_forest_F_Kit							{ quality = 3; price = 9500;sellPrice = 50;  };
-class Land_trench_01_grass_F_Kit							{ quality = 3; price = 9500;sellPrice = 50;  };
-class Land_GarageShelter_01_F_Kit							{ quality = 2; price = 20000;sellPrice = 50;  }; //V0.2.7
+class Land_HBarrier_01_tower_green_F_Kit					{ quality = 4; price = 50000;sellPrice = 50;  }; //changed
+//class Land_trench_01_forest_F_Kit							{ quality = 3; price = 9500;sellPrice = 50;  };
+//class Land_trench_01_grass_F_Kit							{ quality = 3; price = 9500;sellPrice = 50;  };
+//class Land_GarageShelter_01_F_Kit							{ quality = 2; price = 20000;sellPrice = 50;  }; //V0.2.7
+class Land_HBarrier_01_big_tower_green_F_Kit				{ quality = 2; price = 20000;sellPrice = 50;  }; //V0.2.8
+class Land_Bagbunker_01_large_green_F_Kit					{ quality = 2; price = 20000;sellPrice = 50;  }; //V0.2.8
+class Land_Bagfence_01_short_green_F_Kit					{ quality = 1; price = 2000;sellPrice = 50;  }; //V0.2.8
+class Land_Bagfence_01_long_green_F_Kit						{ quality = 1; price = 2000;sellPrice = 50;  }; //V0.2.8
+//class Land_PetroglyphWall_02_F_Kit							{ quality = 1; price = 8500;sellPrice = 50;  }; //V0.2.8
+//class Land_PetroglyphWall_01_F_Kit							{ quality = 1; price = 8500;sellPrice = 50;  }; //V0.2.8
+class Land_IRMaskingCover_02_F_Kit							{ quality = 1; price = 15000;sellPrice = 50;  }; //V0.2.8
+class Land_IRMaskingCover_01_F_Kit							{ quality = 1; price = 10000;sellPrice = 50;  }; //V0.2.8
+//class Land_Breakwater_02_F_Kit								{ quality = 3; price = 35000;sellPrice = 50;  }; //V0.2.8
+//class Land_Breakwater_01_F_Kit								{ quality = 3; price = 35000;sellPrice = 50;  }; //V0.2.8
+//class Land_BasaltWall_01_gate_F_Kit							{ quality = 3; price = 150000;sellPrice = 50;  }; //V0.2.8
+//class Land_BasaltWall_01_8m_F_Kit							{ quality = 3; price = 15000;sellPrice = 50;  }; //V0.2.8
+//class Land_BasaltWall_01_4m_F_Kit							{ quality = 3; price = 15000;sellPrice = 50;  }; //V0.2.8
+class Land_Ammobox_rounds_F_Kit								{ quality = 1; price = 2000;sellPrice = 50;  }; //V0.2.8
+class Land_Airport_01_hangar_F_Kit							{ quality = 2; price = 50000;sellPrice = 50;  }; //V0.2.8
 #endif
 ///////////////////////// V0.2.7
-class Land_i_House_Small_03_V1_F_Kit							{ quality = 2; price = 25000;sellPrice = 50;  };
+class Land_i_House_Small_03_V1_F_Kit						{ quality = 2; price = 25000;sellPrice = 50;  };
 class Land_i_House_Big_01_V2_F_Kit							{ quality = 2; price = 50000;sellPrice = 50;  };
-class Land_PlasticCase_01_medium_F_Kit							{ quality = 1; price = 8000;sellPrice = 50;  };
-class Land_Research_HQ_F_Kit							{ quality = 4; price = 50000;sellPrice = 50;  };
+class Land_PlasticCase_01_medium_F_Kit						{ quality = 1; price = 8000;sellPrice = 50;  };
+class Land_Research_HQ_F_Kit								{ quality = 4; price = 50000;sellPrice = 50;  };
 class Land_Research_house_V1_F_Kit							{ quality = 4; price = 40000;sellPrice = 50;  };
+///////////////////////// V0.2.8
+class Land_Suitcase_F_Kit									{ quality = 2; price = 40000;sellPrice = 50;  };
+class B_Slingload_01_fuel_F_Kit								{ quality = 6; price = 70000;sellPrice = 50;  };
+class B_Slingload_01_Ammo_F_Kit								{ quality = 6; price = 70000;sellPrice = 50;  };
