@@ -1,22 +1,11 @@
-version=2;
-blood=1;
 singleVoice=0;
-class Identity
-{
-	face="RyanZombieFace1_Glowing";
-	glasses="None";
-	speaker="Male01_F";
-	unitType=1;
-	squad="http://armasquads.com/user/squads/xml/nyLRfJ19RtOi4j9IQuYIsT9k38PbbLxi/squad.xml";
-	unitId=-1;
-	pitch=1;
-};
-tripleHead=0;
+maxSamplesPlayed=96;
 bootCampWarning=1;
+version=2;
 browsingSource="History";
 class Filter
 {
-	serverName="";
+	serverName="XCSV";
 	missionType="";
 	missionName="";
 	maxPing=0;
@@ -28,80 +17,37 @@ class Filter
 	battleyeRequired=0;
 	expansions=1;
 };
-battleyeLicense=1;
-lastMPMission="Exile";
-class MainMap
-{
-	class Compass
-	{
-		inBack=0;
-		position[]={-0.057799995,-0.054187488,0.2};
-		positionBack[]={0.0085000023,2.2351743e-009,0.1};
-	};
-};
 FavoriteServers[]=
 {
 	
 	{
 		"192.168.0.5:2302",
 		2
+	},
+	
+	{
+		"91.121.133.101:2302",
+		2
 	}
 };
-maxSamplesPlayed=96;
 anisoFilter=12;
-textureQuality=0;
-shadowQuality=0;
-class DifficultyPresets
+textureQuality=3;
+shadowQuality=4;
+tripleHead=0;
+class Identity
 {
-	class CustomDifficulty
-	{
-		class Options
-		{
-			groupIndicators=0;
-			friendlyTags=0;
-			enemyTags=0;
-			detectedMines=0;
-			commands=0;
-			waypoints=0;
-			weaponInfo=1;
-			stanceIndicator=0;
-			reducedDamage=0;
-			staminaBar=0;
-			weaponCrosshair=0;
-			visionAid=0;
-			thirdPersonView=0;
-			cameraShake=0;
-			scoreTable=0;
-			deathMessages=0;
-			vonID=0;
-			mapContent=0;
-			autoReport=0;
-			multipleSaves=0;
-			tacticalPing=0;
-		};
-		aiLevelPreset=1;
-	};
-	class CustomAILevel
-	{
-		skillAI=0.5;
-		precisionAI=0.5;
-	};
+	face="Default";
+	glasses="None";
+	speaker="Male01_F";
+	unitType=1;
+	squad="http://armasquads.com/user/squads/xml/nyLRfJ19RtOi4j9IQuYIsT9k38PbbLxi/squad.xml";
+	unitId=-1;
+	pitch=1;
 };
-adaptiveCrosshair=1;
-RTDEnabled=0;
-RTDFullHUD=1;
-RTDRoughLanding=1;
-RTDWindDynamic=0;
-RTDAutoTrim=1;
-RTDStressDamage=0;
-showTitles=1;
-useImperialSystem=0;
-vehicleFreelook=0;
-useIncapacitatedState=1;
-tutorialHints=1;
-streamFriendlyUI=0;
-instructorFigure=1;
-showRadio=1;
+remoteIPAddress="97.104.59.165";
+remotePort=2302;
+battleyeLicense=1;
+lastMPMission="Exile";
 customScheme=1;
 controller="Default";
 sensitivity="Medium";
@@ -158,8 +104,8 @@ keyCycleThrownItems[]={487784482};
 keyReloadMagazine[]={19};
 keyLockTargets[]={};
 keyLockEmptyTargets[]={};
-keyLockTarget[]={20};
-keyRevealTarget[]={20};
+keyLockTarget[]={57};
+keyRevealTarget[]={57};
 keyTacticalPing[]={705888276};
 keyZoomTemp[]={65537};
 keyTempRaiseWeapon[]={};
@@ -199,8 +145,8 @@ keyZoomOut[]={74,65539,22};
 keyZoomOutToggle[]={330};
 keyZoomContIn[]={524299};
 keyZoomContOut[]={524293};
-keyZeroingUp[]={201,487587845};
-keyZeroingDown[]={209,487587844};
+keyZeroingUp[]={201};
+keyZeroingDown[]={209};
 keyGunElevUp[]={201};
 keyGunElevDown[]={209};
 keyGunElevSlow[]={42,54};
@@ -539,7 +485,7 @@ keyDiary[]={292};
 keyTasks[]={36};
 keyTasksToggle[]={};
 keyUser1[]={};
-keyUser2[]={};
+keyUser2[]={20};
 keyUser3[]={};
 keyUser4[]={};
 keyUser5[]={};
@@ -561,25 +507,98 @@ keyUser20[]={};
 revMouse=0;
 mouseSmoothing=5;
 mouseAcceleration=0;
+class MainMap
+{
+	class Compass
+	{
+		inBack=0;
+		position[]={-0.037400004,-0.035062499,0.2};
+		positionBack[]={0.005499999,2.2351743e-009,0.1};
+	};
+};
+activeKeys[]=
+{
+	"BIS_Arsenal.VR_done"
+};
+class DifficultyPresets
+{
+	class CustomDifficulty
+	{
+		class Options
+		{
+			groupIndicators=0;
+			friendlyTags=0;
+			enemyTags=0;
+			detectedMines=0;
+			commands=0;
+			waypoints=0;
+			weaponInfo=1;
+			stanceIndicator=0;
+			reducedDamage=0;
+			staminaBar=0;
+			weaponCrosshair=0;
+			visionAid=0;
+			thirdPersonView=0;
+			cameraShake=0;
+			scoreTable=0;
+			deathMessages=0;
+			vonID=0;
+			mapContent=0;
+			autoReport=0;
+			multipleSaves=0;
+			tacticalPing=0;
+		};
+		aiLevelPreset=1;
+	};
+	class CustomAILevel
+	{
+		skillAI=0.5;
+		precisionAI=0.5;
+	};
+};
+blood=1;
+adaptiveCrosshair=1;
+RTDEnabled=0;
+RTDFullHUD=1;
+RTDRoughLanding=1;
+RTDWindDynamic=0;
+RTDAutoTrim=1;
+RTDStressDamage=0;
+showTitles=1;
+useImperialSystem=0;
+vehicleFreelook=0;
+useIncapacitatedState=1;
+tutorialHints=1;
+streamFriendlyUI=0;
+instructorFigure=1;
+showRadio=1;
+keyListLeftVehicleDisplay[]={};
+keyListRightVehicleDisplay[]={};
+keyListPrevLeftVehicleDisplay[]={};
+keyListPrevRightVehicleDisplay[]={};
+keyCloseLeftVehicleDisplay[]={};
+keyCloseRightVehicleDisplay[]={};
+keyNextModeLeftVehicleDisplay[]={};
+keyNextModeRightVehicleDisplay[]={};
 headBob=1;
 mouseSensitivityX=1;
 mouseSensitivityY=1;
 floatingZoneArea=0;
-sceneComplexity=400000;
-shadowZDistance=100;
-viewDistance=1000.0001;
-preferredObjectViewDistance=1000.0001;
+sceneComplexity=600000;
+shadowZDistance=50;
+viewDistance=2219.1208;
+preferredObjectViewDistance=1600;
 terrainGrid=25;
 volumeCD=0;
 volumeFX=10;
 volumeSpeech=10;
-volumeVoN=10;
+volumeVoN=0;
 vonRecThreshold=0.029999999;
-gamma=1;
+gamma=1.0061793;
 ppBrightness=1;
 ppContrast=1;
 ppSaturation=1;
-brightness=1;
+brightness=1.1732022;
 fovTop=0.75;
 fovLeft=1.7777778;
 uiTopLeftX=0.34531251;
