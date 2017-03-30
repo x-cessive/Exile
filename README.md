@@ -6,7 +6,7 @@ Intro section
 
 1. [Implementation](#implementation)
 1. [Contributing](#contributing)
-1. [License](#license)
+1. [License](#license
 
 
 ## Implementation
