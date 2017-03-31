@@ -3207,13 +3207,21 @@ class CfgInteractionMenus
                 condition = "true";
                 action = "call ExileClient_ClaimVehicles_network_claimRequestSend";
             };
+
+            // Save Paint
+			class ExileSavePaint: ExileAbstractAction
+			{
+				title = "Save Paint";
+				condition = "((locked ExileClientInteractionObject) isEqualTo 0) && ((locked ExileClientInteractionObject) != 1)  && ExilePlayerInSafezone";
+				action = "_this call NR_fnc_exileSavePaint";
+			};
             
-			// Repairs a vehicle to 100%. Requires Duckttape
+			//Bones Custom Vehicle Repairs
 			class Repair: ExileAbstractAction
 			{
-				title = "Repair";
-				condition = "true";
-				action = "['RepairVehicle', _this select 0] call ExileClient_action_execute";
+				title = "Repair/Salvage";
+	            condition = "true";
+	            action = "_this call Bones_fnc_salvageAndRepairMenuCar";
 			};
 
 			// Hot-wires a vehicle
@@ -3248,6 +3256,8 @@ class CfgInteractionMenus
 				condition = "call ExileClient_object_vehicle_interaction_show";
 				action = "_this call ExileClient_object_vehicle_drain";
 			};
+
+
 		};
 	};
 
@@ -3288,6 +3298,15 @@ class CfgInteractionMenus
                 action = "call ExileClient_ClaimVehicles_network_claimRequestSend";
             };
 
+            // Save Paint
+			class ExileSavePaint: ExileAbstractAction
+			{
+				title = "Save Paint";
+				condition = "((locked ExileClientInteractionObject) isEqualTo 0) && ((locked ExileClientInteractionObject) != 1)  && ExilePlayerInSafezone"; 
+				//"((locked ExileClientInteractionObject) != 1) && ExilePlayerInSafezone"; // "true"
+				action = "_this call NR_fnc_exileSavePaint";
+			};
+
 			// Hot-wires a vehicle
 			class Hotwire: ExileAbstractAction
 			{
@@ -3299,9 +3318,9 @@ class CfgInteractionMenus
 			// Repairs a vehicle to 100%. Requires Duckttape
 			class Repair: ExileAbstractAction
 			{
-				title = "Repair";
-				condition = "true";
-				action = "['RepairVehicle', _this select 0] call ExileClient_action_execute";
+				title = "Repair/Salvage";
+	            condition = "true";
+	            action = "_this call Bones_fnc_salvageAndRepairMenuHelo";
 			};
 
 			// Flips a vehicle so the player doesnt have to call an admin
@@ -3341,6 +3360,23 @@ class CfgInteractionMenus
 				title = "Rotate Right";
 				condition = "call ExileClient_object_vehicle_interaction_show";
 				action = "[ExileClientInteractionObject,15] call ExileClient_object_vehicle_rotate";
+			};
+		};
+	};
+
+	class Tank 
+	{
+		targetType = 2;
+		target = "Tank";
+
+		class Actions 
+		{
+			// Save Paint
+			class ExileSavePaint: ExileAbstractAction
+			{
+				title = "Save Paint";
+				condition = "((locked ExileClientInteractionObject) isEqualTo 0) && ((locked ExileClientInteractionObject) != 1)  && ExilePlayerInSafezone";
+				action = "_this call NR_fnc_exileSavePaint";
 			};
 		};
 	};

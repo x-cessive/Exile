@@ -6,7 +6,12 @@
 // Georgetown Trader City, add to the top or bottom of this file. -Untriel
 #include "custom\untTraderCityGeorgetown_player.sqf";
 
+[] execVM "addons\paintshop\paintshop.sqf";		// Halv's Painthop ported by NRZ7.
+
 if (!hasInterface || isServer) exitWith {};
+//Advanced repair
+Bones_fnc_salvageAndRepairMenuHelo = compileFinal preprocessFileLineNumbers "Custom\advancedRepair\Bones_fnc_salvageAndRepairMenuHelo.sqf";
+Bones_fnc_salvageAndRepairMenuCar = compileFinal preprocessFileLineNumbers "Custom\advancedRepair\Bones_fnc_salvageAndRepairMenuCar.sqf";
 
 // 76 NPCs
 private _npcs = [
