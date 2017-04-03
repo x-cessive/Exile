@@ -2835,6 +2835,7 @@ class CfgExileCustomCode
     ExileClient_gui_selectSpawnLocation_show = "XG_Spawn_Override\ExileClient_gui_selectSpawnLocation_show.sqf";
     exileclient_system_lootmanager_thread_spawn = "EBM\exileclient_system_lootmanager_thread_spawn.sqf";
     ExileServer_system_rcon_thread_check = "restart\ExileServer_system_rcon_thread_check.sqf";
+    ExileServer_object_player_event_onMpKilled = "overwrites\KillMessages\ExileServer_object_player_event_onMpKilled.sqf";
 };
 class CfgExileEnvironment
 {
