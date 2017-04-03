@@ -11,7 +11,7 @@
 
  class CfgXM8
 {
-	extraApps[] = {"ExAd_VG","ExAd_APOC_Airdrop","ExAd_Info","ExAd_CHVD","BRAmaRecipes","ExAd_Journal","ExAd_Bike","ExAd_Quad","ExAd_SB"};
+	extraApps[] = {"ExAd_VG","ExAd_APOC_Airdrop","ExAd_Info","ExAd_CHVD","BRAmaRecipes","ExAd_Journal","ExAd_Bike","ExAd_Quad","ExAd_SB","BaseMarker"};
 
 	class ExAd_VG
 	{
@@ -96,6 +96,13 @@
 		controlID = 50400;					//IDC:50400 -> 50475 || These need to be unique and out of range from each other
 		logo = "ExadClient\XM8\Apps\SB_Settings\Icon_SB.paa";
 		onLoad = "ExAdClient\XM8\Apps\SB_Settings\onLoad.sqf";
+	};
+	class BaseMarker 
+	{
+		controlID = 50500;
+		title = "Base Marker";		
+		logo = "ExAdClient\XM8\Apps\BaseMarker\BaseMarker.paa";
+		onLoad = "ExAdClient\XM8\Apps\BaseMarker\onLoad.sqf";
 	};
 };
 
