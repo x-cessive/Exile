@@ -1,0 +1,56 @@
+extDB2: Version: 70
+extDB2: https://github.com/Torndeco/extDB2
+extDB2: Windows Version
+Message: All development for extDB2 is done on a Linux Dedicated Server
+Message: If you would like to Donate to extDB2 Development
+Message: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2SUEFTGABTAM2
+Message: Also leave a message if there is any particular feature you would like to see added.
+Message: Thanks for all the people that have donated.
+Message: Torndeco: 20/02/15
+
+
+extDB2: Found extdb-conf.ini
+extDB2: Detected 24 Cores, Setting up 6 Worker Threads
+
+
+[20:04:57:775486 --4:00] [Thread 21360] extDB2: Database Type: MySQL
+[20:04:57:779093 --4:00] [Thread 21360] extDB2: Database Session Pool Started
+[20:04:57:780735 --4:00] [Thread 21360] extDB2: SQL_CUSTOM_V2: Loading Template Filename: C:\servers\exileserver1\@exileserver\extDB\sql_custom_v2\exile.ini
+[20:04:57:780876 --4:00] [Thread 21360] extDB2: SQL_CUSTOM_V2: Version 12 Detected, Latest Version 12 Available
+[20:04:58:447079 --4:00] [Thread 23272] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Input String insert_infiSTARLog:CONNECTLOG:infiSTAR_PlayerConnected_id  1
+[20:04:58:447118 --4:00] [Thread 23272] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Expected: 3 Got: 2
+[20:04:58:447183 --4:00] [Thread 28200] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Input String insert_infiSTARLog:CONNECTLOG:infiSTAR_PlayerDisconnected_id  0
+[20:04:58:447205 --4:00] [Thread 28200] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Expected: 3 Got: 2
+[20:04:58:447801 --4:00] [Thread 28200] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Input String insert_infiSTARLog:SERVER_INFO:[SERVER START] TIME  0 || EMAIL  justinbowers@live.com || VERSION  09-Jan-2017 02-25-58 - v0070 || Local Server Time  [2017,4,2,20,4]
+[20:04:58:447818 --4:00] [Thread 28200] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Expected: 3 Got: 2
+[20:04:58:630131 --4:00] [Thread 15444] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Input String insert_infiSTARLog:CONNECTLOG:#0 Connected  __SERVER__( - 2)
+[20:04:58:630166 --4:00] [Thread 15444] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Expected: 3 Got: 2
+[20:04:58:868073 --4:00] [Thread 21360] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Input String loadTerritoryVehicles:3
+[20:04:58:868101 --4:00] [Thread 21360] extDB2: SQL_CUSTOM_V2: Error No Custom Call Not Found: Callname loadTerritoryVehicles
+[20:07:29:108062 --4:00] [Thread 24664] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Input String insert_infiSTARLog:CONNECTLOG:#0 Connected  Mr. Sage(76561198108041726 - 3)
+[20:07:29:108121 --4:00] [Thread 24664] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Expected: 3 Got: 2
+[20:07:29:108416 --4:00] [Thread 24664] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Input String insert_infiSTARLog:TOKENLOG:TOKEN [n1bv4zcimoydphzx] FOR Mr. Sage(76561198108041726) OWNER ID  3
+[20:07:29:108450 --4:00] [Thread 24664] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Expected: 3 Got: 2
+[20:07:31:914923 --4:00] [Thread 15444] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Input String insert_infiSTARLog:CONNECTLOG:#1 Connected  Mr. Sage(76561198108041726 - 3) SteamName  Mr. Sage   [UpTime  0h 2min 14s - ServerFPS  46.6472]
+[20:07:31:914976 --4:00] [Thread 15444] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Expected: 3 Got: 2
+[20:07:33:152456 --4:00] [Thread 15444] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Input String insert_infiSTARLog:netids:Mr. Sage(76561198108041726) - R Alpha 1-1 1 (Mr. Sage) REMOTE, Exile_Unit_GhostPlayer - 2 6608 - 3
+[20:07:33:152494 --4:00] [Thread 15444] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Expected: 3 Got: 2
+[20:08:18:298852 --4:00] [Thread 15444] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Input String insert_infiSTARLog:netids:Mr. Sage(76561198108041726) - R XCSV 1 (Mr. Sage) REMOTE, Exile_Unit_Player - 2 6618 - 3
+[20:08:18:298929 --4:00] [Thread 15444] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Expected: 3 Got: 2
+[20:08:35:627466 --4:00] [Thread 15444] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) =============================================================================================================
+[20:08:35:627526 --4:00] [Thread 15444] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Expected: 3 Got: 2
+[20:08:35:627581 --4:00] [Thread 24664] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION MOD]  Occupation V65 (30-08-2016) Initialised at 198.213
+[20:08:35:627605 --4:00] [Thread 24664] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Expected: 3 Got: 2
+[20:08:35:627675 --4:00] [Thread 15444] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) =============================================================================================================
+[20:08:35:627694 --4:00] [Thread 15444] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Expected: 3 Got: 2
+[20:08:35:669674 --4:00] [Thread 15444] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION Traders] starting @ 198.256
+[20:08:35:669731 --4:00] [Thread 15444] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Expected: 3 Got: 2
+[20:08:35:669831 --4:00] [Thread 15444] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [processReporter]  Initialised at 198.256
+[20:08:35:669850 --4:00] [Thread 15444] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Expected: 3 Got: 2
+[20:08:35:670463 --4:00] [Thread 15444] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION]  Detected DMS version September 5, 2016
+[20:08:35:670490 --4:00] [Thread 15444] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Expected: 3 Got: 2
+[20:08:35:670558 --4:00] [Thread 15444] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION]  Occupation V65 (30-08-2016) Adding modules to Exile system thread manager at 198.256
+[20:08:35:670585 --4:00] [Thread 15444] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Expected: 3 Got: 2
+[20:08:38:976555 --4:00] [Thread 15444] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Input String insert_infiSTARLog:CONNECTLOG:#2 Disconnected  Mr. Sage(76561198108041726 - 3) SteamName  Mr. Sage
+[20:08:38:976614 --4:00] [Thread 15444] extDB2: SQL_CUSTOM_V2: Incorrect Number of Inputs: Expected: 3 Got: 2
+[20:09:00:359585 --4:00] [Thread 21360] extDB2: Stopping ...
