@@ -1,0 +1,683 @@
+
+extDB3: https://bitbucket.org/torndeco/extdb3/wiki/Home
+extDB3: Version: 1.028
+extDB3: Windows Version
+Message: All development for extDB3 is done on a Linux Dedicated Server
+Message: If you would like to Donate to extDB3 Development
+Message: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2SUEFTGABTAM2
+Message: Also leave a message if there is any particular feature you would like to see added.
+Message: Thanks for all the people that have donated.
+Message: Torndeco: 18/05/15
+
+
+extDB3: Found extdb3-conf.ini
+extDB3: Detected 24 Cores, Setting up 6 Worker Threads
+extDB3: ...
+extDB3: ...
+extDB3: ...
+extDB3: ...
+extDB3: ...
+extDB3: ...
+
+
+[16:13:26:947606 -04:00] [Thread 55556] extDB3: Locked
+[16:13:27:257680 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:CONNECTLOG:infiSTAR_PlayerConnected_id  1
+[16:13:27:257707 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:13:27:257950 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:CONNECTLOG:infiSTAR_PlayerDisconnected_id  0
+[16:13:27:257972 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:13:27:258935 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:SERVER_INFO:[SERVER START] TIME  0 || EMAIL  justinbowers@live.com || VERSION  09-Jan-2017 02-25-58 - v0070 || Local Server Time  any
+[16:13:27:258950 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:13:27:866906 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:CONNECTLOG:#0 Connected  __SERVER__( - 2)
+[16:13:27:866934 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:13:28:162263 -04:00] [Thread 55556] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String loadTerritoryVehicles:3
+[16:13:28:162287 -04:00] [Thread 55556] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname loadTerritoryVehicles
+[16:16:42:134133 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) =============================================================================================================
+[16:16:42:134177 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:16:42:134656 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION MOD]  Occupation V65 (30-08-2016) Initialised at 180.42
+[16:16:42:134669 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:16:42:134903 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) =============================================================================================================
+[16:16:42:134916 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:16:42:177060 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION Traders] starting @ 180.463
+[16:16:42:177088 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:16:42:177492 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [processReporter]  Initialised at 180.463
+[16:16:42:177503 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:16:42:196410 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION]  Detected DMS version September 5, 2016
+[16:16:42:196506 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:16:42:196753 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION]  Occupation V65 (30-08-2016) Adding modules to Exile system thread manager at 180.484
+[16:16:42:196761 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:16:43:983694 -04:00] [Thread 62220] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:CONNECTLOG:#0 Connected  Mr. Sage(76561198108041726 - 3)
+[16:16:43:983719 -04:00] [Thread 62220] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:16:43:984189 -04:00] [Thread 62220] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:TOKENLOG:TOKEN [azmllq3boqp5hhxoss] FOR Mr. Sage(76561198108041726) OWNER ID  3
+[16:16:43:984197 -04:00] [Thread 62220] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:16:45:189154 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:netids:Mr. Sage(76561198108041726) - R Alpha 1-1 1 (Mr. Sage) REMOTE, Exile_Unit_GhostPlayer - 2 7287 - 3
+[16:16:45:189185 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:16:46:629761 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:CONNECTLOG:#1 Connected  Mr. Sage(76561198108041726 - 3) SteamName  Mr. Sage   [UpTime  0h 3min 5s - ServerFPS  45.4545]
+[16:16:46:629795 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:28:686489 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION LootCrates]  Starting Occupation Loot Crates
+[16:17:28:686525 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:28:686914 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION LootCrates]  worldname  Tanoa crates to spawn  6
+[16:17:28:686936 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:32:136927 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION LootCrates]   Creating crate 1 at drop zone [12481.4,2276.81,0] with 1 guards
+[16:17:32:136958 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:33:834616 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION LootCrates]   Creating crate 2 at drop zone [9147.36,7126.76,0] with 1 guards
+[16:17:33:834653 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:34:809561 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:netids:Mr. Sage(76561198108041726) - R XCSV 1 (Mr. Sage) REMOTE, Exile_Unit_Player - 2 7294 - 3
+[16:17:34:809592 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:37:258418 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION LootCrates]   Creating crate 3 at drop zone [7016.48,12818.4,0] with 1 guards
+[16:17:37:258450 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:38:637350 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION LootCrates]   Creating crate 4 at drop zone [2125.08,8120.21,0] with 1 guards
+[16:17:38:637382 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:39:987720 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION LootCrates]   Creating crate 5 at drop zone [6757.2,10263.1,0] with 1 guards
+[16:17:39:987759 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:42:468041 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION LootCrates]   Creating crate 6 at drop zone [7896.95,8351.46,0] with 2 guards
+[16:17:42:468073 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:48:823405 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) =======================================================================================================
+[16:17:48:823440 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:48:823832 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Started @ 245.314   [FPS  45.977|PLAYERS  1|THREADS  16]
+[16:17:48:823845 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:48:824100 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) =======================================================================================================
+[16:17:48:824113 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:48:824400 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Process Counts  spawn-ed  10 execVM-ed  6 exec-ed  0 execFSM-ed  2
+[16:17:48:824412 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:48:824719 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","",true,5124] @ 245.314
+[16:17:48:824732 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:48:824976 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\ground_fog.sqf","mpmissions\__cur_mp.Tanoa\ground_fog.sqf",true,4] @ 245.314
+[16:17:48:824988 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:48:825219 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadInit.sqf","mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadInit.sqf",true,35] @ 245.314
+[16:17:48:825232 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:48:844130 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\ToastIntro.sqf","mpmissions\__cur_mp.Tanoa\ToastIntro.sqf",true,6] @ 245.335
+[16:17:48:844163 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:48:844478 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\custom\service\service_point.sqf","mpmissions\__cur_mp.Tanoa\custom\service\service_point.sqf",true,217] @ 245.335
+[16:17:48:844590 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:48:844731 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,1253] @ 245.335
+[16:17:48:844744 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:48:844978 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2394] @ 245.335
+[16:17:48:844990 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:48:845224 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2407] @ 245.335
+[16:17:48:845236 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:48:845476 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2422] @ 245.335
+[16:17:48:845488 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:48:845738 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["DMS_fnc_HeliParatroopers_Monitor","x\addons\a3_exile_occupation\scripts\extras\processReporter.sqf",true,25] @ 245.335
+[16:17:48:845751 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:48:845985 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\JohnO_fnc_storm.sqf","mpmissions\__cur_mp.Tanoa\JohnO_fnc_storm.sqf",true,103] @ 245.335
+[16:17:48:845997 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:48:846264 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","ExAdClient\HaloParachute\postInit.sqf [ExAd_fnc_postInitHP]",true,32] @ 245.335
+[16:17:48:846277 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:48:846475 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","mpmissions\__cur_mp.Tanoa\ExadClient\XM8\Apps\CHVD\config.sqf",true,47] @ 245.335
+[16:17:48:846537 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:48:846760 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","ExAdClient\StatsBar\postInit.sqf [ExAd_fnc_postInitSB]",true,144] @ 245.335
+[16:17:48:846773 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:48:865114 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["BIS_fnc_sortNum","x\addons\a3_exile_occupation\scripts\startOccupation.sqf",true,85] @ 245.335
+[16:17:48:865151 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:48:865526 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadTaru.sqf",true,467] @ 245.356
+[16:17:48:865545 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:48:865858 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active FSM  ["main.fsm","Wait",-245.356] @ 245.356
+[16:17:48:865882 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:48:866118 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active FSM  ["missions","Waiting",-245.356] @ 245.356
+[16:17:48:866130 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:48:866396 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Ended @ 245.356
+[16:17:48:866418 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:57:509909 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION HeliCrashes]  Initialised at 253.996
+[16:17:57:509948 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:57:510274 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION HeliCrashes]   worldname  Tanoa crashes to spawn  5
+[16:17:57:510300 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:17:59:770463 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION HeliCrashes] Crash 1   Location [8364.73,7920.91,0]
+[16:17:59:770495 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:02:101872 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION HeliCrashes] Crash 2   Location [4065.32,12133.4,0]
+[16:18:02:101915 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:03:899160 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION FastNights]   Current in game time is 15 34 multipler is 4
+[16:18:03:899193 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:04:445965 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION HeliCrashes] Crash 3   Location [7587.88,10565,0]
+[16:18:04:445997 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:05:772982 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION HeliCrashes] Crash 4   Location [9589.24,6568.47,0]
+[16:18:05:773013 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:07:055456 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION HeliCrashes] Crash 5   Location [8838.97,10681.9,0]
+[16:18:07:055494 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:18:969348 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION RandomSpawn]  Starting Occupation Monitor @ 275.456
+[16:18:18:969381 -04:00] [Thread 63736] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:49:049985 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) =======================================================================================================
+[16:18:49:050026 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:49:050344 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Started @ 305.532   [FPS  45.8453|PLAYERS  1|THREADS  16]
+[16:18:49:050357 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:49:050559 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) =======================================================================================================
+[16:18:49:050573 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:49:050851 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Process Counts  spawn-ed  10 execVM-ed  6 exec-ed  0 execFSM-ed  2
+[16:18:49:050864 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:49:051131 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","",true,5124] @ 305.532
+[16:18:49:051144 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:49:051378 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\ground_fog.sqf","mpmissions\__cur_mp.Tanoa\ground_fog.sqf",true,4] @ 305.532
+[16:18:49:051392 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:49:051640 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadInit.sqf","mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadInit.sqf",true,35] @ 305.532
+[16:18:49:051654 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:49:051882 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\ToastIntro.sqf","mpmissions\__cur_mp.Tanoa\ToastIntro.sqf",true,6] @ 305.532
+[16:18:49:051898 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:49:052140 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\custom\service\service_point.sqf","mpmissions\__cur_mp.Tanoa\custom\service\service_point.sqf",true,217] @ 305.532
+[16:18:49:052154 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:49:052394 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,1253] @ 305.532
+[16:18:49:052407 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:49:070117 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2394] @ 305.532
+[16:18:49:070154 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:49:070562 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2407] @ 305.553
+[16:18:49:070579 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:49:070875 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2422] @ 305.553
+[16:18:49:070897 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:49:071161 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["DMS_fnc_HeliParatroopers_Monitor","x\addons\a3_exile_occupation\scripts\extras\processReporter.sqf",true,25] @ 305.553
+[16:18:49:071177 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:49:071403 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\JohnO_fnc_storm.sqf","mpmissions\__cur_mp.Tanoa\JohnO_fnc_storm.sqf",true,103] @ 305.553
+[16:18:49:071416 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:49:071824 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","ExAdClient\HaloParachute\postInit.sqf [ExAd_fnc_postInitHP]",true,32] @ 305.553
+[16:18:49:071838 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:49:072035 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","mpmissions\__cur_mp.Tanoa\ExadClient\XM8\Apps\CHVD\config.sqf",true,47] @ 305.553
+[16:18:49:072048 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:49:072305 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","ExAdClient\StatsBar\postInit.sqf [ExAd_fnc_postInitSB]",true,144] @ 305.553
+[16:18:49:072329 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:49:072815 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["BIS_fnc_sortNum","x\addons\a3_exile_occupation\scripts\startOccupation.sqf",true,119] @ 305.553
+[16:18:49:072827 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:49:073055 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadTaru.sqf",true,467] @ 305.553
+[16:18:49:073062 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:49:112299 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active FSM  ["main.fsm","Wait",-305.574] @ 305.574
+[16:18:49:112336 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:49:112712 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active FSM  ["missions","Waiting",-305.574] @ 305.595
+[16:18:49:112724 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:18:49:112955 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Ended @ 305.595
+[16:18:49:112968 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:04:144701 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION FastNights]   Current in game time is 15 38 multipler is 4
+[16:19:04:144737 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:07:155565 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION transport]  Starting @ 323.635
+[16:19:07:155596 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:07:414595 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION transport] Vehicle Exile_Chopper_Orca_BlackCustom spawned @ [7680,7680,200]
+[16:19:07:414622 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:07:414886 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION transport]  Found 16 markers to use as pickup points @ 323.89
+[16:19:07:414893 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:07:434841 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION transport]  textures for vehicle are  ["a3\air_f_heli\heli_light_02\data\heli_light_02_ext_opfor_v2_co.paa"]
+[16:19:07:434945 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:19:189485 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION RandomSpawn]  Starting Occupation Monitor @ 335.667
+[16:19:19:189579 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:22:144528 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION]  threads added at 338.62
+[16:19:22:144556 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:54:400256 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) =======================================================================================================
+[16:19:54:400290 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:54:420031 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Started @ 370.562   [FPS  46.7836|PLAYERS  1|THREADS  17]
+[16:19:54:420071 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:54:420372 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) =======================================================================================================
+[16:19:54:420379 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:54:420719 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Process Counts  spawn-ed  11 execVM-ed  6 exec-ed  0 execFSM-ed  2
+[16:19:54:420727 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:54:421012 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","",true,5124] @ 370.583
+[16:19:54:421019 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:54:421260 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\ground_fog.sqf","mpmissions\__cur_mp.Tanoa\ground_fog.sqf",true,4] @ 370.583
+[16:19:54:421267 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:54:421585 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadInit.sqf","mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadInit.sqf",true,35] @ 370.583
+[16:19:54:421593 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:54:421879 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\ToastIntro.sqf","mpmissions\__cur_mp.Tanoa\ToastIntro.sqf",true,6] @ 370.583
+[16:19:54:421894 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:54:422119 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\custom\service\service_point.sqf","mpmissions\__cur_mp.Tanoa\custom\service\service_point.sqf",true,217] @ 370.583
+[16:19:54:422133 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:54:422368 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,1253] @ 370.583
+[16:19:54:422376 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:54:422693 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2394] @ 370.583
+[16:19:54:422704 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:54:422942 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2407] @ 370.583
+[16:19:54:422951 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:54:440459 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2422] @ 370.604
+[16:19:54:440495 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:54:440820 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["DMS_fnc_HeliParatroopers_Monitor","x\addons\a3_exile_occupation\scripts\extras\processReporter.sqf",true,25] @ 370.604
+[16:19:54:440837 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:54:441072 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\JohnO_fnc_storm.sqf","mpmissions\__cur_mp.Tanoa\JohnO_fnc_storm.sqf",true,103] @ 370.604
+[16:19:54:441085 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:54:441320 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","ExAdClient\HaloParachute\postInit.sqf [ExAd_fnc_postInitHP]",true,32] @ 370.604
+[16:19:54:441333 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:54:441592 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","mpmissions\__cur_mp.Tanoa\ExadClient\XM8\Apps\CHVD\config.sqf",true,47] @ 370.604
+[16:19:54:441605 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:54:441859 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","ExAdClient\StatsBar\postInit.sqf [ExAd_fnc_postInitSB]",true,144] @ 370.604
+[16:19:54:441877 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:54:442123 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadTaru.sqf",true,467] @ 370.604
+[16:19:54:442138 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:54:442321 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["BIS_fnc_selectRandom","x\addons\a3_exile_occupation\scripts\occupationTransport.sqf",true,306] @ 370.604
+[16:19:54:442334 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:54:442580 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","A3\functions_f\Effects\fn_effectKilledAirDestruction.sqf [BIS_fnc_effectKilledAirDestruction]",true,70] @ 370.604
+[16:19:54:442592 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:54:442844 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active FSM  ["main.fsm","Wait",-370.604] @ 370.604
+[16:19:54:442858 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:54:443086 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active FSM  ["missions","Waiting",-370.604] @ 370.604
+[16:19:54:443099 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:19:54:461927 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Ended @ 370.604
+[16:19:54:461966 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:20:04:483880 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION FastNights]   Current in game time is 15 42 multipler is 4
+[16:20:04:483921 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:20:19:547135 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION RandomSpawn]  Starting Occupation Monitor @ 395.706
+[16:20:19:547170 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:20:54:592644 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) =======================================================================================================
+[16:20:54:592677 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:20:54:593005 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Started @ 430.746   [FPS  45.7143|PLAYERS  1|THREADS  16]
+[16:20:54:593012 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:20:54:593238 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) =======================================================================================================
+[16:20:54:593249 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:20:54:593620 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Process Counts  spawn-ed  10 execVM-ed  6 exec-ed  0 execFSM-ed  2
+[16:20:54:593628 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:20:54:593945 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","",true,5124] @ 430.746
+[16:20:54:593963 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:20:54:594170 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\ground_fog.sqf","mpmissions\__cur_mp.Tanoa\ground_fog.sqf",true,4] @ 430.746
+[16:20:54:594183 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:20:54:594432 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadInit.sqf","mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadInit.sqf",true,35] @ 430.746
+[16:20:54:594445 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:20:54:594760 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\ToastIntro.sqf","mpmissions\__cur_mp.Tanoa\ToastIntro.sqf",true,6] @ 430.746
+[16:20:54:594773 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:20:54:595019 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\custom\service\service_point.sqf","mpmissions\__cur_mp.Tanoa\custom\service\service_point.sqf",true,217] @ 430.746
+[16:20:54:595032 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:20:54:595273 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,1253] @ 430.746
+[16:20:54:595286 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:20:54:612181 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2394] @ 430.746
+[16:20:54:612210 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:20:54:612529 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2407] @ 430.767
+[16:20:54:612540 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:20:54:612799 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2422] @ 430.767
+[16:20:54:612816 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:20:54:613017 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["DMS_fnc_HeliParatroopers_Monitor","x\addons\a3_exile_occupation\scripts\extras\processReporter.sqf",true,25] @ 430.767
+[16:20:54:613030 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:20:54:613296 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\JohnO_fnc_storm.sqf","mpmissions\__cur_mp.Tanoa\JohnO_fnc_storm.sqf",true,103] @ 430.767
+[16:20:54:613310 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:20:54:613595 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","ExAdClient\HaloParachute\postInit.sqf [ExAd_fnc_postInitHP]",true,32] @ 430.767
+[16:20:54:613612 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:20:54:613865 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","mpmissions\__cur_mp.Tanoa\ExadClient\XM8\Apps\CHVD\config.sqf",true,47] @ 430.767
+[16:20:54:613878 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:20:54:614079 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","ExAdClient\StatsBar\postInit.sqf [ExAd_fnc_postInitSB]",true,144] @ 430.767
+[16:20:54:614093 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:20:54:614384 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadTaru.sqf",true,467] @ 430.767
+[16:20:54:614397 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:20:54:614596 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["BIS_fnc_selectRandom","x\addons\a3_exile_occupation\scripts\occupationTransport.sqf",true,302] @ 430.767
+[16:20:54:614609 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:20:54:614925 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active FSM  ["main.fsm","Wait",-430.767] @ 430.767
+[16:20:54:614936 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:20:54:654535 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active FSM  ["missions","Waiting",-430.767] @ 430.788
+[16:20:54:654578 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:20:54:654945 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Ended @ 430.809
+[16:20:54:654967 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:21:04:684127 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION FastNights]   Current in game time is 15 46 multipler is 4
+[16:21:04:684163 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:21:19:727515 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION RandomSpawn]  Starting Occupation Monitor @ 455.878
+[16:21:19:727571 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:21:54:785249 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) =======================================================================================================
+[16:21:54:785282 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:21:54:785628 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Started @ 490.932   [FPS  45.584|PLAYERS  1|THREADS  16]
+[16:21:54:785636 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:21:54:785860 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) =======================================================================================================
+[16:21:54:785867 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:21:54:786128 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Process Counts  spawn-ed  10 execVM-ed  6 exec-ed  0 execFSM-ed  2
+[16:21:54:786135 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:21:54:786389 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","",true,5124] @ 490.932
+[16:21:54:786395 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:21:54:786649 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\ground_fog.sqf","mpmissions\__cur_mp.Tanoa\ground_fog.sqf",true,4] @ 490.932
+[16:21:54:786661 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:21:54:786897 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadInit.sqf","mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadInit.sqf",true,35] @ 490.932
+[16:21:54:786904 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:21:54:787143 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\ToastIntro.sqf","mpmissions\__cur_mp.Tanoa\ToastIntro.sqf",true,6] @ 490.932
+[16:21:54:787153 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:21:54:787471 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\custom\service\service_point.sqf","mpmissions\__cur_mp.Tanoa\custom\service\service_point.sqf",true,217] @ 490.932
+[16:21:54:787491 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:21:54:787832 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,1253] @ 490.932
+[16:21:54:787855 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:21:54:806062 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2394] @ 490.932
+[16:21:54:806090 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:21:54:806418 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2407] @ 490.953
+[16:21:54:806425 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:21:54:806822 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2422] @ 490.953
+[16:21:54:806845 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:21:54:807133 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["DMS_fnc_HeliParatroopers_Monitor","x\addons\a3_exile_occupation\scripts\extras\processReporter.sqf",true,25] @ 490.953
+[16:21:54:807155 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:21:54:807509 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\JohnO_fnc_storm.sqf","mpmissions\__cur_mp.Tanoa\JohnO_fnc_storm.sqf",true,103] @ 490.953
+[16:21:54:807520 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:21:54:807758 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","ExAdClient\HaloParachute\postInit.sqf [ExAd_fnc_postInitHP]",true,32] @ 490.953
+[16:21:54:807780 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:21:54:808059 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","mpmissions\__cur_mp.Tanoa\ExadClient\XM8\Apps\CHVD\config.sqf",true,47] @ 490.953
+[16:21:54:808084 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:21:54:827474 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","ExAdClient\StatsBar\postInit.sqf [ExAd_fnc_postInitSB]",true,144] @ 490.953
+[16:21:54:827518 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:21:54:827972 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadTaru.sqf",true,467] @ 490.974
+[16:21:54:827999 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:21:54:828283 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["BIS_fnc_selectRandom","x\addons\a3_exile_occupation\scripts\occupationTransport.sqf",true,306] @ 490.974
+[16:21:54:828306 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:21:54:828709 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active FSM  ["main.fsm","Wait",-490.974] @ 490.974
+[16:21:54:828732 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:21:54:829119 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active FSM  ["missions","Waiting",-490.974] @ 490.974
+[16:21:54:829135 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:21:54:829363 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Ended @ 490.974
+[16:21:54:829387 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:22:04:842349 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION FastNights]   Current in game time is 15 50 multipler is 4
+[16:22:04:842387 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:22:19:855436 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION RandomSpawn]  Starting Occupation Monitor @ 515.891
+[16:22:19:855487 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:22:59:938321 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) =======================================================================================================
+[16:22:59:938353 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:22:59:938655 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Started @ 555.969   [FPS  45.584|PLAYERS  1|THREADS  16]
+[16:22:59:938663 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:22:59:938884 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) =======================================================================================================
+[16:22:59:938946 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:22:59:939156 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Process Counts  spawn-ed  10 execVM-ed  6 exec-ed  0 execFSM-ed  2
+[16:22:59:939163 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:22:59:939416 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","",true,5124] @ 555.969
+[16:22:59:939423 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:22:59:939720 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\ground_fog.sqf","mpmissions\__cur_mp.Tanoa\ground_fog.sqf",true,4] @ 555.969
+[16:22:59:939729 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:22:59:939975 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadInit.sqf","mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadInit.sqf",true,35] @ 555.969
+[16:22:59:939988 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:22:59:940220 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\ToastIntro.sqf","mpmissions\__cur_mp.Tanoa\ToastIntro.sqf",true,6] @ 555.969
+[16:22:59:940227 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:22:59:940482 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\custom\service\service_point.sqf","mpmissions\__cur_mp.Tanoa\custom\service\service_point.sqf",true,217] @ 555.969
+[16:22:59:940529 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:22:59:940740 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,1253] @ 555.969
+[16:22:59:940754 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:22:59:940986 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2394] @ 555.969
+[16:22:59:940996 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:22:59:959636 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2407] @ 555.99
+[16:22:59:959666 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:22:59:959975 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2422] @ 555.99
+[16:22:59:959986 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:22:59:981246 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["DMS_fnc_HeliParatroopers_Monitor","x\addons\a3_exile_occupation\scripts\extras\processReporter.sqf",true,25] @ 556.011
+[16:22:59:981275 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:22:59:981635 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\JohnO_fnc_storm.sqf","mpmissions\__cur_mp.Tanoa\JohnO_fnc_storm.sqf",true,103] @ 556.011
+[16:22:59:981647 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:22:59:981837 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","ExAdClient\HaloParachute\postInit.sqf [ExAd_fnc_postInitHP]",true,32] @ 556.011
+[16:22:59:981844 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:22:59:982221 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","mpmissions\__cur_mp.Tanoa\ExadClient\XM8\Apps\CHVD\config.sqf",true,47] @ 556.011
+[16:22:59:982235 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:22:59:982502 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","ExAdClient\StatsBar\postInit.sqf [ExAd_fnc_postInitSB]",true,144] @ 556.011
+[16:22:59:982510 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:22:59:982740 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadTaru.sqf",true,467] @ 556.011
+[16:22:59:982746 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:22:59:982983 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["BIS_fnc_selectRandom","x\addons\a3_exile_occupation\scripts\occupationTransport.sqf",true,306] @ 556.011
+[16:22:59:982991 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:22:59:983243 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active FSM  ["main.fsm","Wait",-556.011] @ 556.011
+[16:22:59:983250 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:22:59:983518 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active FSM  ["missions","Waiting",-556.011] @ 556.011
+[16:22:59:983525 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:22:59:983746 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Ended @ 556.011
+[16:22:59:983754 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:23:04:987263 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION FastNights]   Current in game time is 15 54 multipler is 4
+[16:23:04:987298 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:23:20:028218 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION RandomSpawn]  Starting Occupation Monitor @ 576.057
+[16:23:20:028252 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:23:25:050886 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION Vehicle] Started
+[16:23:25:050921 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:25:18:210934 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION Vehicle] bandit vehicle I_C_Offroad_02_unarmed_F spawned @ [3577.49,11668.9,-3.8147e-006]
+[16:25:18:211039 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:25:38:785815 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION Vehicle] bandit vehicle C_Offroad_02_unarmed_F spawned @ [7138.92,11201.4,0]
+[16:25:38:785851 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:37:389413 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION Vehicle] bandit vehicle O_T_LSV_02_unarmed_black_F spawned @ [6402.19,4348.73,0]
+[16:27:37:389449 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:49:687975 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION Vehicle] End check 3 currently active (max 3) @ 845.536
+[16:27:49:688010 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:209464 -04:00] [Thread 15888] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) =======================================================================================================
+[16:27:50:209492 -04:00] [Thread 15888] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:209825 -04:00] [Thread 15888] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Started @ 846.056   [FPS  46.6472|PLAYERS  1|THREADS  17]
+[16:27:50:209836 -04:00] [Thread 15888] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:210054 -04:00] [Thread 15888] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) =======================================================================================================
+[16:27:50:210061 -04:00] [Thread 15888] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:210327 -04:00] [Thread 15888] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Process Counts  spawn-ed  11 execVM-ed  6 exec-ed  0 execFSM-ed  2
+[16:27:50:210338 -04:00] [Thread 15888] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:210587 -04:00] [Thread 15888] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","",true,5124] @ 846.056
+[16:27:50:210594 -04:00] [Thread 15888] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:228979 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\ground_fog.sqf","mpmissions\__cur_mp.Tanoa\ground_fog.sqf",true,4] @ 846.077
+[16:27:50:229011 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:229296 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadInit.sqf","mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadInit.sqf",true,35] @ 846.077
+[16:27:50:229313 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:229572 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\ToastIntro.sqf","mpmissions\__cur_mp.Tanoa\ToastIntro.sqf",true,6] @ 846.077
+[16:27:50:229585 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:229825 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\custom\service\service_point.sqf","mpmissions\__cur_mp.Tanoa\custom\service\service_point.sqf",true,217] @ 846.077
+[16:27:50:229837 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:230076 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,1253] @ 846.077
+[16:27:50:230093 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:230318 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2394] @ 846.077
+[16:27:50:230332 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:249664 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2407] @ 846.098
+[16:27:50:249694 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:250038 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2422] @ 846.098
+[16:27:50:250064 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:250336 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["DMS_fnc_HeliParatroopers_Monitor","x\addons\a3_exile_occupation\scripts\extras\processReporter.sqf",true,25] @ 846.098
+[16:27:50:250356 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:250648 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\JohnO_fnc_storm.sqf","mpmissions\__cur_mp.Tanoa\JohnO_fnc_storm.sqf",true,103] @ 846.098
+[16:27:50:250671 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:250956 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","ExAdClient\HaloParachute\postInit.sqf [ExAd_fnc_postInitHP]",true,32] @ 846.098
+[16:27:50:250979 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:251254 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","mpmissions\__cur_mp.Tanoa\ExadClient\XM8\Apps\CHVD\config.sqf",true,47] @ 846.098
+[16:27:50:251271 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:251600 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","ExAdClient\StatsBar\postInit.sqf [ExAd_fnc_postInitSB]",true,144] @ 846.098
+[16:27:50:251624 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:251898 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadTaru.sqf",true,467] @ 846.098
+[16:27:50:251921 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:252210 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["BIS_fnc_selectRandom","x\addons\a3_exile_occupation\scripts\occupationTransport.sqf",true,302] @ 846.098
+[16:27:50:252241 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:252526 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","",true,1] @ 846.098
+[16:27:50:252547 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:272004 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active FSM  ["main.fsm","Wait",-846.119] @ 846.119
+[16:27:50:272035 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:272308 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active FSM  ["missions","Waiting",-846.119] @ 846.119
+[16:27:50:272321 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:272545 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Ended @ 846.119
+[16:27:50:272563 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:273086 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION FastNights]   Current in game time is 16 13 multipler is 4
+[16:27:50:273094 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:273372 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION RandomSpawn]  Starting Occupation Monitor @ 846.119
+[16:27:50:273380 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:273920 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION Sky] Started
+[16:27:50:273932 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:984436 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION Sky] Running
+[16:27:50:984464 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:27:50:984810 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION Places]  Starting Occupation Monitor @ 846.832
+[16:27:50:984823 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:10:921975 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION Unstick]  Initialised at 866.767
+[16:28:10:922014 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:10:946933 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION Unstick]  Air  O Alpha 3-2 1 is active
+[16:28:10:946968 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:13:008216 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION Unstick]  Air  O Alpha 3-2 1 is too close to a map marker, redirecting destination
+[16:28:13:008243 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:13:008552 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION Unstick]  Land  O Alpha 2-5 1 is active
+[16:28:13:008559 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:15:026078 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION Unstick]  Land  O Alpha 2-6 1 REMOTE is active
+[16:28:15:026106 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:17:032506 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION Unstick]  Land  O Alpha 3-1 1 is active
+[16:28:17:032543 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:19:038786 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION Unstick]  Finished at 874.883
+[16:28:19:038821 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:52:003324 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) =======================================================================================================
+[16:28:52:003358 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:52:003702 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Started @ 907.421   [FPS  47.0588|PLAYERS  1|THREADS  16]
+[16:28:52:003710 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:52:003947 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) =======================================================================================================
+[16:28:52:003961 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:52:004214 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Process Counts  spawn-ed  10 execVM-ed  6 exec-ed  0 execFSM-ed  2
+[16:28:52:004221 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:52:004480 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","",true,5124] @ 907.421
+[16:28:52:004486 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:52:004744 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\ground_fog.sqf","mpmissions\__cur_mp.Tanoa\ground_fog.sqf",true,4] @ 907.421
+[16:28:52:004751 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:52:004995 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadInit.sqf","mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadInit.sqf",true,35] @ 907.421
+[16:28:52:005001 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:52:005242 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\ToastIntro.sqf","mpmissions\__cur_mp.Tanoa\ToastIntro.sqf",true,6] @ 907.421
+[16:28:52:005249 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:52:005492 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\custom\service\service_point.sqf","mpmissions\__cur_mp.Tanoa\custom\service\service_point.sqf",true,217] @ 907.421
+[16:28:52:005499 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:52:005851 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,1253] @ 907.421
+[16:28:52:005862 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:52:006106 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2394] @ 907.421
+[16:28:52:006113 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:52:024273 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2407] @ 907.442
+[16:28:52:024299 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:52:024626 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2422] @ 907.442
+[16:28:52:024640 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:52:024945 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["DMS_fnc_HeliParatroopers_Monitor","x\addons\a3_exile_occupation\scripts\extras\processReporter.sqf",true,25] @ 907.442
+[16:28:52:024957 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:52:025193 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\JohnO_fnc_storm.sqf","mpmissions\__cur_mp.Tanoa\JohnO_fnc_storm.sqf",true,103] @ 907.442
+[16:28:52:025205 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:52:025469 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","ExAdClient\HaloParachute\postInit.sqf [ExAd_fnc_postInitHP]",true,32] @ 907.442
+[16:28:52:025485 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:52:025739 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","mpmissions\__cur_mp.Tanoa\ExadClient\XM8\Apps\CHVD\config.sqf",true,47] @ 907.442
+[16:28:52:025754 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:52:026014 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","ExAdClient\StatsBar\postInit.sqf [ExAd_fnc_postInitSB]",true,144] @ 907.442
+[16:28:52:026027 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:52:026261 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadTaru.sqf",true,467] @ 907.442
+[16:28:52:026274 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:52:026512 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["BIS_fnc_selectRandom","x\addons\a3_exile_occupation\scripts\occupationTransport.sqf",true,306] @ 907.442
+[16:28:52:026534 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:52:026858 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active FSM  ["main.fsm","Wait",-907.442] @ 907.442
+[16:28:52:026871 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:52:045915 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active FSM  ["missions","Waiting",-907.442] @ 907.442
+[16:28:52:045950 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:52:046236 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Ended @ 907.463
+[16:28:52:046252 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:52:046883 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION FastNights]   Current in game time is 16 17 multipler is 4
+[16:28:52:046896 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:28:52:047174 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION RandomSpawn]  Starting Occupation Monitor @ 907.463
+[16:28:52:047188 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:29:52:202485 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) =======================================================================================================
+[16:29:52:202524 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:29:52:202863 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Started @ 967.611   [FPS  48.048|PLAYERS  1|THREADS  16]
+[16:29:52:202876 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:29:52:203154 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) =======================================================================================================
+[16:29:52:203171 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:29:52:203397 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Process Counts  spawn-ed  10 execVM-ed  6 exec-ed  0 execFSM-ed  2
+[16:29:52:203411 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:29:52:203664 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","",true,5124] @ 967.611
+[16:29:52:203678 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:29:52:203955 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\ground_fog.sqf","mpmissions\__cur_mp.Tanoa\ground_fog.sqf",true,4] @ 967.611
+[16:29:52:203982 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:29:52:204226 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadInit.sqf","mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadInit.sqf",true,35] @ 967.611
+[16:29:52:204241 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:29:52:204530 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\ToastIntro.sqf","mpmissions\__cur_mp.Tanoa\ToastIntro.sqf",true,6] @ 967.611
+[16:29:52:204548 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:29:52:204831 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\custom\service\service_point.sqf","mpmissions\__cur_mp.Tanoa\custom\service\service_point.sqf",true,217] @ 967.611
+[16:29:52:204853 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:29:52:223296 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,1253] @ 967.611
+[16:29:52:223327 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:29:52:223699 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2394] @ 967.632
+[16:29:52:223722 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:29:52:224017 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2407] @ 967.632
+[16:29:52:224039 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:29:52:224321 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2422] @ 967.632
+[16:29:52:224344 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:29:52:224638 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["DMS_fnc_HeliParatroopers_Monitor","x\addons\a3_exile_occupation\scripts\extras\processReporter.sqf",true,25] @ 967.632
+[16:29:52:224664 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:29:52:224951 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\JohnO_fnc_storm.sqf","mpmissions\__cur_mp.Tanoa\JohnO_fnc_storm.sqf",true,103] @ 967.632
+[16:29:52:224976 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:29:52:225267 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","ExAdClient\HaloParachute\postInit.sqf [ExAd_fnc_postInitHP]",true,32] @ 967.632
+[16:29:52:225289 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:29:52:225580 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","mpmissions\__cur_mp.Tanoa\ExadClient\XM8\Apps\CHVD\config.sqf",true,47] @ 967.632
+[16:29:52:225603 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:29:52:225904 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","ExAdClient\StatsBar\postInit.sqf [ExAd_fnc_postInitSB]",true,144] @ 967.632
+[16:29:52:225927 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:29:52:243877 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadTaru.sqf",true,467] @ 967.632
+[16:29:52:243915 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:29:52:244250 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["BIS_fnc_selectRandom","x\addons\a3_exile_occupation\scripts\occupationTransport.sqf",true,302] @ 967.653
+[16:29:52:244266 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:29:52:265170 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active FSM  ["main.fsm","Wait",-967.653] @ 967.653
+[16:29:52:265217 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:29:52:265605 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active FSM  ["missions","Waiting",-967.653] @ 967.674
+[16:29:52:265625 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:29:52:265942 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Ended @ 967.674
+[16:29:52:265955 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:29:52:266461 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION FastNights]   Current in game time is 16 21 multipler is 4
+[16:29:52:266474 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:29:52:266929 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION RandomSpawn]  Starting Occupation Monitor @ 967.674
+[16:29:52:266946 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:30:52:424628 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) =======================================================================================================
+[16:30:52:424666 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:30:52:425001 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Started @ 1027.82   [FPS  46.3768|PLAYERS  1|THREADS  16]
+[16:30:52:425015 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:30:52:425230 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) =======================================================================================================
+[16:30:52:425238 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:30:52:425600 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Process Counts  spawn-ed  10 execVM-ed  6 exec-ed  0 execFSM-ed  2
+[16:30:52:425608 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:30:52:425823 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","",true,5124] @ 1027.82
+[16:30:52:425830 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:30:52:426067 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\ground_fog.sqf","mpmissions\__cur_mp.Tanoa\ground_fog.sqf",true,4] @ 1027.82
+[16:30:52:426074 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:30:52:426346 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadInit.sqf","mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadInit.sqf",true,35] @ 1027.82
+[16:30:52:426352 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:30:52:426616 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\ToastIntro.sqf","mpmissions\__cur_mp.Tanoa\ToastIntro.sqf",true,6] @ 1027.82
+[16:30:52:426624 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:30:52:426884 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\custom\service\service_point.sqf","mpmissions\__cur_mp.Tanoa\custom\service\service_point.sqf",true,217] @ 1027.82
+[16:30:52:426897 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:30:52:427135 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,1253] @ 1027.82
+[16:30:52:427147 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:30:52:444871 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2394] @ 1027.85
+[16:30:52:444906 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:30:52:445211 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2407] @ 1027.85
+[16:30:52:445224 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:30:52:445479 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2422] @ 1027.85
+[16:30:52:445502 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:30:52:445768 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["DMS_fnc_HeliParatroopers_Monitor","x\addons\a3_exile_occupation\scripts\extras\processReporter.sqf",true,25] @ 1027.85
+[16:30:52:445792 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:30:52:446076 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\JohnO_fnc_storm.sqf","mpmissions\__cur_mp.Tanoa\JohnO_fnc_storm.sqf",true,103] @ 1027.85
+[16:30:52:446099 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:30:52:446381 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","ExAdClient\HaloParachute\postInit.sqf [ExAd_fnc_postInitHP]",true,32] @ 1027.85
+[16:30:52:446403 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:30:52:468402 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","mpmissions\__cur_mp.Tanoa\ExadClient\XM8\Apps\CHVD\config.sqf",true,47] @ 1027.87
+[16:30:52:468434 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:30:52:469037 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","ExAdClient\StatsBar\postInit.sqf [ExAd_fnc_postInitSB]",true,144] @ 1027.87
+[16:30:52:469061 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:30:52:469487 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadTaru.sqf",true,467] @ 1027.87
+[16:30:52:469506 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:30:52:470000 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["BIS_fnc_selectRandom","x\addons\a3_exile_occupation\scripts\occupationTransport.sqf",true,306] @ 1027.87
+[16:30:52:470026 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:30:52:470401 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active FSM  ["main.fsm","Wait",-1027.87] @ 1027.87
+[16:30:52:470412 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:30:52:470914 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active FSM  ["missions","Waiting",-1027.87] @ 1027.87
+[16:30:52:470927 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:30:52:487823 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Ended @ 1027.87
+[16:30:52:487854 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:30:52:488424 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION FastNights]   Current in game time is 16 25 multipler is 4
+[16:30:52:488438 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:30:52:488701 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION RandomSpawn]  Starting Occupation Monitor @ 1027.89
+[16:30:52:488711 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:31:52:630678 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) =======================================================================================================
+[16:31:52:630712 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:31:52:630997 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Started @ 1088.02   [FPS  47.0588|PLAYERS  1|THREADS  16]
+[16:31:52:631011 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:31:52:631262 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) =======================================================================================================
+[16:31:52:631278 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:31:52:631531 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Process Counts  spawn-ed  10 execVM-ed  6 exec-ed  0 execFSM-ed  2
+[16:31:52:631547 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:31:52:631804 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","",true,5124] @ 1088.02
+[16:31:52:631817 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:31:52:632044 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\ground_fog.sqf","mpmissions\__cur_mp.Tanoa\ground_fog.sqf",true,4] @ 1088.02
+[16:31:52:632059 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:31:52:632260 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadInit.sqf","mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadInit.sqf",true,35] @ 1088.02
+[16:31:52:632274 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:31:52:632542 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\ToastIntro.sqf","mpmissions\__cur_mp.Tanoa\ToastIntro.sqf",true,6] @ 1088.02
+[16:31:52:632551 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:31:52:632758 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\custom\service\service_point.sqf","mpmissions\__cur_mp.Tanoa\custom\service\service_point.sqf",true,217] @ 1088.02
+[16:31:52:632765 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:31:52:633039 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,1253] @ 1088.02
+[16:31:52:633055 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:31:52:651560 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2394] @ 1088.02
+[16:31:52:651590 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:31:52:651914 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2407] @ 1088.04
+[16:31:52:651927 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:31:52:673637 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","\ATS_AdvancedTrainSimulator\functions\fn_advancedTrainSimulatorInit.sqf [SA_fnc_advancedTrainSimulatorInit]",true,2422] @ 1088.06
+[16:31:52:673666 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:31:52:673977 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["DMS_fnc_HeliParatroopers_Monitor","x\addons\a3_exile_occupation\scripts\extras\processReporter.sqf",true,25] @ 1088.06
+[16:31:52:673990 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:31:52:674227 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["mpmissions\__cur_mp.Tanoa\JohnO_fnc_storm.sqf","mpmissions\__cur_mp.Tanoa\JohnO_fnc_storm.sqf",true,103] @ 1088.06
+[16:31:52:674241 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:31:52:674568 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","ExAdClient\HaloParachute\postInit.sqf [ExAd_fnc_postInitHP]",true,32] @ 1088.06
+[16:31:52:674583 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:31:52:674764 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","mpmissions\__cur_mp.Tanoa\ExadClient\XM8\Apps\CHVD\config.sqf",true,47] @ 1088.06
+[16:31:52:674777 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:31:52:675024 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","ExAdClient\StatsBar\postInit.sqf [ExAd_fnc_postInitSB]",true,144] @ 1088.06
+[16:31:52:675037 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:31:52:675351 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["<spawn>","mpmissions\__cur_mp.Tanoa\IgiLoad\IgiLoadTaru.sqf",true,467] @ 1088.06
+[16:31:52:675362 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:31:52:675564 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active SQF  ["BIS_fnc_selectRandom","x\addons\a3_exile_occupation\scripts\occupationTransport.sqf",true,302] @ 1088.06
+[16:31:52:675579 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:31:52:675788 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active FSM  ["main.fsm","Wait",-1088.06] @ 1088.06
+[16:31:52:675801 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:31:52:676009 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Active FSM  ["missions","Waiting",-1088.06] @ 1088.06
+[16:31:52:676016 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:31:52:676250 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_PROCESSREPORTER:V65 (30-08-2016) [processReporter] Ended @ 1088.06
+[16:31:52:676261 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:31:52:693699 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION FastNights]   Current in game time is 16 29 multipler is 4
+[16:31:52:693725 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:31:52:694117 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION RandomSpawn]  Starting Occupation Monitor @ 1088.08
+[16:31:52:694132 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
+[16:31:53:845067 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Input String insert_infiSTARLog:A3_EXILE_OCCUPATION:V65 (30-08-2016) [OCCUPATION RandomSpawn]  Spawning a group of AI @ [9947.59,13146.4] to hunt player R XCSV 1 (Mr. Sage) REMOTE
+[16:31:53:845156 -04:00] [Thread 73768] extDB3: SQL_CUSTOM: Error No Custom Call Not Found: Callname insert_infiSTARLog
