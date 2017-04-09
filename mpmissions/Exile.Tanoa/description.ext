@@ -66,7 +66,7 @@ showHUD[] =
 
 #include "config.cpp"
 #include "CfgRemoteExec.hpp"
-#include "CfgExileCustomCodes.hpp"
+#include "CfgExileCustomCode.hpp"
 #include "CfgSounds.hpp"
 #include "ExAdClient\ExAd.cpp"
 #include "addons\paintshop\Halv_defines.hpp"
@@ -92,6 +92,3 @@ class CfgNetworkMessages
 {
 	#include "ExAdClient\CfgNetworkMessages.cpp"
 };
-
-
-
