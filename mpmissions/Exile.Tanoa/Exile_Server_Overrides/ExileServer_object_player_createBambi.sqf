@@ -101,6 +101,60 @@ if (_devFriendlyMode isEqualTo 1) then
 	forEach _devs;
 };
 _parachuteNetID = "";
+_bambiuniforms = [
+			"U_C_Journalist",
+			"U_C_Poloshirt_blue",
+			"U_C_Poloshirt_burgundy",
+			"U_C_Poloshirt_salmon",
+			"U_C_Poloshirt_stripped",
+			"U_C_Poloshirt_tricolour",
+			"U_C_Poor_1",
+			"U_C_Poor_2",
+			"U_C_Poor_shorts_1",
+			"U_C_Scientist",
+			"U_OrestesBody",
+			"U_Rangemaster",
+			"U_NikosAgedBody",
+			"U_NikosBody",
+			"U_Competitor",
+			"U_B_CombatUniform_mcam",
+			"U_B_CombatUniform_mcam_tshirt",
+			"U_B_CombatUniform_mcam_vest",
+			"U_B_CombatUniform_mcam_worn",
+			"U_B_CTRG_1",
+			"U_B_CTRG_2",
+			"U_B_CTRG_3",
+			"U_I_CombatUniform",
+			"U_I_CombatUniform_shortsleeve",
+			"U_I_CombatUniform_tshirt",
+			"U_I_OfficerUniform",
+			"U_O_CombatUniform_ocamo",
+			"U_O_CombatUniform_oucamo",
+			"U_O_OfficerUniform_ocamo",
+			"U_B_SpecopsUniform_sgg",
+			"U_O_SpecopsUniform_blk",
+			"U_O_SpecopsUniform_ocamo",
+			"U_I_G_Story_Protagonist_F",
+			"Exile_Uniform_Woodland",
+			"U_C_HunterBody_grn",
+			"U_IG_Guerilla1_1",
+			"U_IG_Guerilla2_1",
+			"U_IG_Guerilla2_2",
+			"U_IG_Guerilla2_3",
+			"U_IG_Guerilla3_1",
+			"U_BG_Guerilla2_1",
+			"U_IG_Guerilla3_2",
+			"U_BG_Guerrilla_6_1",
+			"U_BG_Guerilla1_1",
+			"U_BG_Guerilla2_2",
+			"U_BG_Guerilla2_3",
+			"U_BG_Guerilla3_1",
+			"U_BG_leader",
+			"U_IG_leader",
+			"U_I_G_resistanceLeader_F"
+] call BIS_fnc_selectRandom;
+_bambifood = ["Exile_Item_EMRE","Exile_Item_GloriousKnakworst","Exile_Item_Surstromming","Exile_Item_SausageGravy","Exile_Item_Catfood","Exile_Item_ChristmasTinner","Exile_Item_BBQSandwich","Exile_Item_Dogfood","Exile_Item_BeefParts","Exile_Item_Cheathas","Exile_Item_Noodles","Exile_Item_SeedAstics","Exile_Item_Raisins","Exile_Item_Moobar"] call BIS_fnc_selectRandom;
+_bambidrink = ["Exile_Item_PlasticBottleCoffee","Exile_Item_PowerDrink","Exile_Item_PlasticBottleFreshWater","Exile_Item_Beer","Exile_Item_EnergyDrink","Exile_Item_MountainDupe"] call BIS_fnc_selectRandom;
 if ((getNumber(configFile >> "CfgSettings" >> "BambiSettings" >> "parachuteSpawning")) isEqualTo 1) then
 {
 	_position set [2, getNumber(configFile >> "CfgSettings" >> "BambiSettings" >> "parachuteDropHeight")]; 
@@ -128,6 +182,9 @@ if((canTriggerDynamicSimulation _bambiPlayer) isEqualTo false) then
 {
 	_bambiPlayer triggerDynamicSimulation true; 
 };
+_bambiplayer forceadduniform _bambiuniforms;
+_bambiplayer addItem _bambifood;
+_bambiplayer addItem _bambidrink;	
 _bambiPlayer addMPEventHandler ["MPKilled", {_this call ExileServer_object_player_event_onMpKilled}];
 _bambiPlayer call ExileServer_object_player_database_insert;
 _bambiPlayer call ExileServer_object_player_database_update;

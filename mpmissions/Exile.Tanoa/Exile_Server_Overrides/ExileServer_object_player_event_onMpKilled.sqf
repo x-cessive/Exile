@@ -40,10 +40,30 @@ switch (_killType) do
 	};
 	case 1:
 	{
+		private["_zombieKill"];
+		_victimPosition = position _victim;
+		_bystanders = _victimPosition nearEntities ['Man',5]; // 5m from Zombie
+		_zombieKill = false;
+		{
+			_zombieKill = getText(configFile >> 'CfgVehicles' >> typeOf _x >> 'author') isEqualTo 'Ryan';
+		} forEach _bystanders;
+		
+		if(_zombieKill) then
+		{
+		_countDeath = true;
+		_modifyVictimRespect = true;
+		_zombieDeath = selectRandom ["got fucked up", "had their face eaten", "got wrecked", "was killed", "was mauled to death", "got nommed on", "was eaten", "was turned into dinner", "was hugged to death"]; //Add more messages here to change the killed text
+		_systemChat = format ["%1 %2 by a zombie!", name _victim, _zombieDeath];
+		_newVictimRespect = _oldVictimRespect - round ((abs _oldVictimRespect) / 100 * (getNumber (configFile >> "CfgSettings" >> "Respect" >> "Percentages" >> "suicide")));
+		}
+		else
+		{
+		
 		_countDeath = true;
 		_modifyVictimRespect = true;
 		_systemChat = format ["%1 commited suicide!", name _victim];
 		_newVictimRespect = _oldVictimRespect - round ((abs _oldVictimRespect) / 100 * (getNumber (configFile >> "CfgSettings" >> "Respect" >> "Percentages" >> "suicide")));
+	};
 	};
 	case 2:
 	{
@@ -57,14 +77,15 @@ switch (_killType) do
 	{
 		_countDeath = true;
 		_countKill = false;
-		_systemChat = format ["%1 crashed to death!", name _victim];
+		_systemChat = format ["%1 crashed and died!", name _victim];
 		_newVictimRespect = _oldVictimRespect - round ((abs _oldVictimRespect) / 100 * (getNumber (configFile >> "CfgSettings" >> "Respect" >> "Percentages" >> "crash")));
 	};
 	case 4:
 	{
 		_countDeath = true;
 		_countKill = false;
-		_systemChat = format ["%1 was killed by an NPC!", name _victim];
+		_npcDeath = selectRandom ["got fucked up", "got wrecked", "was killed", "was shot dead", "was used as a pin cushion", "was terminated", "was shot full of holes", "was shot in the face", "was executed", "was murdered"]; //Add more messages here to change the killed text
+		_systemChat = format ["%1 %2 by an NPC!", name _victim, _npcDeath];
 		_newVictimRespect = _oldVictimRespect - round ((abs _oldVictimRespect) / 100 * (getNumber (configFile >> "CfgSettings" >> "Respect" >> "Percentages" >> "npc")));
 	};
 	case 5:
@@ -87,11 +108,35 @@ switch (_killType) do
 	};
 	case 7:
 	{
+		private["_weapon","_weaponDisplayName","_weaponScope","_weaponScopeDisplayName","_locationNames","_victimNear","_vehicle"];
 		_countDeath = true;
 		_countKill = true;
 		_perks = [_victim, _killer, _killingPlayer] call ExileServer_util_getFragPerks;
 		_minRespectTransfer = getNumber (configFile >> "CfgSettings" >> "Respect" >> "minRespectTransfer");
 		_respectTransfer = round ((abs _oldVictimRespect) / 100 * (getNumber (configFile >> "CfgSettings" >> "Respect" >> "Percentages" >> "frag")));
+		_locationNames = nearestLocations [getPos _victim, ["NameVillage","NameCity","NameCityCapital"], 2000];   
+		_victimNear = text (_locationNames select 0);
+		
+		_weapon = currentWeapon _killer;
+		_weaponDisplayName = getText (configfile >> "CfgWeapons" >> _weapon >> "displayName");
+				
+		if !((vehicle _killer) isEqualTo _killer) then
+		{ 
+			_weapon = vehicle _killer weaponsTurret (assignedVehicleRole _killer select 1);
+			_weaponDisplayName = getText (configfile >> "CfgWeapons" >> _weapon select 0 >> "displayName");
+		};
+				
+        _weaponScope = ""; 
+		_weaponScopeDisplayName = "Iron Sights";
+		if ((vehicle _killer) isEqualTo _killer) then
+		{
+			_weaponScope = (_killer weaponAccessories (currentWeapon _killer)) select 2;
+			if !(_weaponScope isEqualTo "") then
+			{
+				_weaponScopeDisplayName = getText (configfile >> "CfgWeapons" >> _weaponScope >> "displayName"); 
+			};
+		};
+		
 		if (_respectTransfer < _minRespectTransfer) then
 		{
 			_respectTransfer = _minRespectTransfer;
@@ -101,10 +146,20 @@ switch (_killType) do
 		_killSummary pushBack ["ENEMY FRAGGED", _respectTransfer];
 		if (_perks isEqualTo []) then 
 		{
-			_systemChat = format ["%1 was killed by %2!", name _victim, name _killingPlayer];
+			if !((vehicle _killer) isEqualTo _killer) then
+			{
+			_systemChat = format ["%1 was killed by %2", name _victim, name _killingPlayer];
 		}
 		else 
 		{
+			_systemChat = format ["%1 was killed by %2 with a %3 (%4) near %5!", name _victim, name _killingPlayer, _weaponDisplayName, _weaponScopeDisplayName, _victimNear];
+			};
+			
+		}
+		else 
+		{
+			if !((vehicle _killer) isEqualTo _killer) then
+			{
 			_perkNames = [];
 			{
 				_perkNames pushBack (_x select 0);
@@ -113,6 +168,19 @@ switch (_killType) do
 			} 
 			forEach _perks;
 			_systemChat = format ["%1 was killed by %2! (%3)", name _victim, name _killingPlayer, _perkNames joinString ", "];
+			}			
+			else
+			{
+			_perkNames = [];
+			{
+				_perkNames pushBack (_x select 0);
+				_killSummary pushBack _x;
+				_newKillerRespect = _newKillerRespect + (_x select 1);
+			} 
+			forEach _perks;
+			_systemChat = format ["%1 was killed by %2 with a %3 (%4) near %5! (%6)", name _victim, name _killingPlayer, _weaponDisplayName, _weaponScopeDisplayName, _victimNear, _perkNames joinString ", "];
+			};
+			
 		};
 	};
 };
