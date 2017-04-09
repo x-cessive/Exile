@@ -63,9 +63,11 @@ showHUD[] =
     true,   // HUD Weapon Cursors
     false   // Squad Radar
 };
-//#include "CfgRemoteExec.hpp"
+
 #include "config.cpp"
-#include "infiSTAR_AdminMenu.hpp"
+#include "CfgRemoteExec.hpp"
+#include "CfgExileCustomCodes.hpp"
+#include "CfgSounds.hpp"
 #include "ExAdClient\ExAd.cpp"
 #include "addons\paintshop\Halv_defines.hpp"
 #include "addons\paintshop\paintshop.hpp"
@@ -89,34 +91,6 @@ class CfgHints
 class CfgNetworkMessages
 {
 	#include "ExAdClient\CfgNetworkMessages.cpp"
-};
-
-class CfgRemoteExec
-{
-	class Functions
-	{
-		mode = 1;
-		jip = 0;
-		
-		class fnc_AdminReq { allowedTargets=2; };
-		class ExileServer_system_network_dispatchIncomingMessage { allowedTargets=2; };
-		class ExAdServer_fnc_clientRequest { allowedTargets=2; };
-	};
-	class Commands 
-	{
-		mode=0; 
-		jip=0; 
-	};
-};
-class CfgSounds
-{
-	sounds[] = {0};
-	class safeTrap
-	{
-		name = "Xbrm_safeTrapped";
-		sound[] = {"addons\HEG_Xbrm_client\sFx\bomb.ogg", 1, 1};
-		titles[] = {0,""};
-	};
 };
 
 
