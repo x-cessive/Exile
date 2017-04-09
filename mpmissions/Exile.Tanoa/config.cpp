@@ -1304,6 +1304,29 @@ class CfgExileArsenal
 	#include "TRADERS\Exile\ItemListExile.hpp"
 };
 
+
+
+class CfgExileCustomCode
+{
+	ExileServer_object_player_createBambi = "custom\loadout\ExileServer_object_player_createBambi.sqf";
+    ExileServer_object_player_network_createPlayerRequest = "custom\loadout\ExileServer_object_player_network_createPlayerRequest.sqf";
+	ExileClient_object_player_event_onEnterSafezon = "Igiload\ExileClient_object_player_event_onEnterSafezon.sqf";
+	ExileServer_system_territory_database_load = "ExAdClient\VirtualGarage\CustomCode\ExileServer_system_territory_database_load.sqf";
+	ExileClient_gui_xm8_slide = "ExAdClient\XM8\CustomCode\ExileClient_gui_xm8_slide.sqf";
+	ExileClient_gui_xm8_show = "ExAdClient\XM8\CustomCode\ExileClient_gui_xm8_show.sqf";
+	ExileClient_system_trading_network_purchaseVehicleResponse = "overwrites\ExileClient_system_trading_network_purchaseVehicleResponse.sqf";
+	ExileClient_gui_hud_renderStatsPanel = "ExileClient_gui_hud_renderStatsPanel.sqf";
+	ExileClient_gui_hud_renderVehiclePanel = "ExileClient_gui_hud_renderVehiclePanel.sqf";
+	ExileClient_object_player_death_startBleedingOut = "custom\EnigmaRevive\ExileClient_object_player_death_startBleedingOut.sqf"; //Happys Revive
+    ExileClient_object_player_event_onInventoryOpened = "custom\EnigmaRevive\ExileClient_object_player_event_onInventoryOpened.sqf"; //Happys Revive AntiDupe ---NEW with v0.65
+    ExileClient_gui_selectSpawnLocation_event_onSpawnButtonClick = "XG_Spawn_Override\ExileClient_gui_selectSpawnLocation_event_onSpawnButtonClick.sqf";
+    ExileClient_gui_selectSpawnLocation_show = "XG_Spawn_Override\ExileClient_gui_selectSpawnLocation_show.sqf";
+    exileclient_system_lootmanager_thread_spawn = "EBM\exileclient_system_lootmanager_thread_spawn.sqf";
+    ExileServer_system_rcon_thread_check = "restart\ExileServer_system_rcon_thread_check.sqf";
+    ExileServer_object_player_event_onMpKilled = "overwrites\KillMessages\ExileServer_object_player_event_onMpKilled.sqf";
+    ExileServer_system_trading_network_purchaseVehicleRequest = "overwrites\ExileServer_system_trading_network_purchaseVehicleRequest.sqf";  
+    #include "CfgExileCustomCode.cpp"
+};
 class CfgExileEnvironment
 {
 	class Altis
