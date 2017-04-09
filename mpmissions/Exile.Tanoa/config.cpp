@@ -2836,6 +2836,8 @@ class CfgExileCustomCode
     exileclient_system_lootmanager_thread_spawn = "EBM\exileclient_system_lootmanager_thread_spawn.sqf";
     ExileServer_system_rcon_thread_check = "restart\ExileServer_system_rcon_thread_check.sqf";
     ExileServer_object_player_event_onMpKilled = "overwrites\KillMessages\ExileServer_object_player_event_onMpKilled.sqf";
+    ExileServer_system_trading_network_purchaseVehicleRequest = "overwrites\ExileServer_system_trading_network_purchaseVehicleRequest.sqf";  
+    #include "CfgExileCustomCode.cpp"
 };
 class CfgExileEnvironment
 {

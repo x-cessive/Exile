@@ -9,6 +9,18 @@
 ExileRouletteChairs = [];
 ExileRouletteChairPositions = [];
 
+// Fix Trader Spawns
+private _objects = [
+	["Land_HelipadSquare_F",[9922.91,11799,415.438],[[-0.99817,0.0604675,0],[0,0,1]],[true,false]]
+];
+{
+	private _object = (_x select 0) createVehicle [0,0,0];
+	_object setPosASL (_x select 1);
+	_object setVectorDirAndUp (_x select 2);
+	_object enableSimulationGlobal ((_x select 3) select 0);
+	_object allowDamage ((_x select 3) select 1);
+} forEach _objects;
+
 // 314 Vehicles
 private _vehicles = [
 ["Exile_Sign_TraderCity", [6769.63, 7531.51, 7.06577], [0.925812, -0.377985, 0], [0, 0, 1], false],
@@ -2610,6 +2622,67 @@ private _simpleObjects = [
    
     {
         if ((toLower _x) in _invisibleSelections) then
+        {
+            _simpleObject hideSelection [_x, true];
+        };
+    }
+    forEach (selectionNames _simpleObject);
+}
+forEach _simpleObjects;
+
+//HELI PAD VALCANO
+
+// 19 Vehicles
+private _vehicles = [
+["Land_nav_pier_m_F", [9911.26, 11800.8, 386.012], [0.0366375, 0.999329, 0], [0, 0, 1], true],
+["Land_nav_pier_m_F", [9871.46, 11802.3, 386.019], [0.0366375, 0.999329, 0], [0, 0, 1], true],
+["Land_nav_pier_m_F", [9831.53, 11803.8, 386.028], [0.0366375, 0.999329, 0], [0, 0, 1], true],
+["Land_nav_pier_m_F", [9791.73, 11805.3, 386.034], [0.0366375, 0.999329, 0], [0, 0, 1], true],
+["Land_BluntStone_02", [9780.44, 11822.9, 360.247], [0, 0.950941, 0.309373], [-0.474238, -0.272371, 0.837205], true],
+["CUP_str_briza", [9807.86, 11784.4, 359.336], [0, 0.881377, 0.472413], [-0.418901, -0.428966, 0.800319], true],
+["CUP_str_briza", [9836.13, 11774.2, 367.883], [0, 0.881377, 0.472413], [-0.418901, -0.428966, 0.800319], true],
+["CUP_str_briza", [9861.17, 11791.7, 387.889], [0, 0.881377, 0.472413], [-0.418901, -0.428966, 0.800319], true],
+["CUP_str_briza", [9752.67, 11855.9, 362.872], [0, 0.881377, 0.472413], [-0.418901, -0.428966, 0.800319], true],
+["CUP_str_briza", [9766.49, 11884.9, 374.059], [0, 0.881377, 0.472413], [-0.418901, -0.428966, 0.800319], true],
+["CUP_t_fraxinus2s", [9743.39, 11836.9, 354.106], [0, 0.966875, 0.255252], [-0.492133, -0.222202, 0.841684], true],
+["CUP_t_fraxinus2s", [9717.45, 11936.1, 367.583], [0, 0.977458, 0.21113], [-0.325293, -0.199647, 0.924297], true],
+["CUP_t_fraxinus2s", [9762.75, 11876.2, 373.951], [0, 0.977994, 0.208635], [-0.30247, -0.198862, 0.932183], true],
+["CUP_t_fraxinus2s", [9820.98, 11868.3, 392.104], [0, 0.991228, -0.132164], [-0.116534, 0.131263, 0.984474], true],
+["Land_Cliff_peak_F", [9786.71, 11804.3, 360.409], [0, 0.884303, 0.466914], [-0.379883, -0.431912, 0.81801], true],
+["Land_Cliff_peak_F", [9781.93, 11812.9, 360.949], [0, 0.936023, 0.351938], [-0.48147, -0.30846, 0.82039], true],
+["Land_Cliff_peak_F", [9771.41, 11809.3, 354.673], [0, 0.884303, 0.466914], [-0.379883, -0.431912, 0.81801], true],
+["Land_Cliff_peak_F", [9778.92, 11808.2, 362.559], [0, 0.992774, 0.119997], [0.238816, -0.116525, 0.964048], true],
+["Land_Cliff_peak_F", [9798.34, 11802.9, 365.274], [0, 0.884303, 0.466914], [-0.379883, -0.431912, 0.81801], true]
+];
+
+{
+    private _vehicle = (_x select 0) createVehicle (_x select 1);
+    _vehicle allowDamage false;
+    _vehicle setPosWorld (_x select 1);
+    _vehicle setVectorDirAndUp [_x select 2, _x select 3];
+    _vehicle enableSimulationGlobal (_x select 4);
+    _vehicle setVariable ["ExileIsLocked", -1, true];
+    
+    if (_vehicle isKindOf "Exile_RussianRouletteChair") then
+    {
+        ExileRouletteChairs pushBack _vehicle;
+        ExileRouletteChairPositions pushBack [_x select 1, getDir _vehicle];
+    };
+}
+forEach _vehicles;
+
+// 0 Simple Objects
+private _invisibleSelections = ["zasleh", "zasleh2", "box_nato_grenades_sign_f", "box_nato_ammoord_sign_f", "box_nato_support_sign_f"];
+private _simpleObjects = [
+
+];
+
+{
+    private _simpleObject = createSimpleObject [_x select 0, _x select 1];
+    _simpleObject setVectorDirAndUp [_x select 2, _x select 3];
+    
+    {
+        if ((toLower _x) in _invisibleSelections) then 
         {
             _simpleObject hideSelection [_x, true];
         };
