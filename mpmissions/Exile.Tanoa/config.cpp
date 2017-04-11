@@ -1299,11 +1299,34 @@ class CfgExileArsenal
 	//#include "TRADERS\RHSV\ItemListRHSV.hpp"
 	//#include "TRADERS\RHSW\ItemListRHSW.hpp"
 	//#include "TRADERS\TRYK\ItemListTRYK.hpp"
-	//#include "TRADERS\PODS\ItemListPODS.hpp"
+	#include "TRADERS\PODS\ItemListPODS.hpp"
 	//#include "TRADERS\CUSTOM\ItemListCUSTOM.hpp"
 	#include "TRADERS\Exile\ItemListExile.hpp"
 };
 
+
+
+class CfgExileCustomCode
+{
+	ExileServer_object_player_createBambi = "custom\loadout\ExileServer_object_player_createBambi.sqf";
+    ExileServer_object_player_network_createPlayerRequest = "custom\loadout\ExileServer_object_player_network_createPlayerRequest.sqf";
+	ExileClient_object_player_event_onEnterSafezon = "Igiload\ExileClient_object_player_event_onEnterSafezon.sqf";
+	ExileServer_system_territory_database_load = "ExAdClient\VirtualGarage\CustomCode\ExileServer_system_territory_database_load.sqf";
+	ExileClient_gui_xm8_slide = "ExAdClient\XM8\CustomCode\ExileClient_gui_xm8_slide.sqf";
+	ExileClient_gui_xm8_show = "ExAdClient\XM8\CustomCode\ExileClient_gui_xm8_show.sqf";
+	ExileClient_system_trading_network_purchaseVehicleResponse = "overwrites\ExileClient_system_trading_network_purchaseVehicleResponse.sqf";
+	ExileClient_gui_hud_renderStatsPanel = "ExileClient_gui_hud_renderStatsPanel.sqf";
+	ExileClient_gui_hud_renderVehiclePanel = "ExileClient_gui_hud_renderVehiclePanel.sqf";
+	ExileClient_object_player_death_startBleedingOut = "custom\EnigmaRevive\ExileClient_object_player_death_startBleedingOut.sqf"; //Happys Revive
+    ExileClient_object_player_event_onInventoryOpened = "custom\EnigmaRevive\ExileClient_object_player_event_onInventoryOpened.sqf"; //Happys Revive AntiDupe ---NEW with v0.65
+    ExileClient_gui_selectSpawnLocation_event_onSpawnButtonClick = "XG_Spawn_Override\ExileClient_gui_selectSpawnLocation_event_onSpawnButtonClick.sqf";
+    ExileClient_gui_selectSpawnLocation_show = "XG_Spawn_Override\ExileClient_gui_selectSpawnLocation_show.sqf";
+    exileclient_system_lootmanager_thread_spawn = "EBM\exileclient_system_lootmanager_thread_spawn.sqf";
+    ExileServer_system_rcon_thread_check = "restart\ExileServer_system_rcon_thread_check.sqf";
+    ExileServer_object_player_event_onMpKilled = "overwrites\KillMessages\ExileServer_object_player_event_onMpKilled.sqf";
+    ExileServer_system_trading_network_purchaseVehicleRequest = "overwrites\ExileServer_system_trading_network_purchaseVehicleRequest.sqf";  
+    #include "CfgExileCustomCode.cpp"
+};
 class CfgExileEnvironment
 {
 	class Altis
@@ -2548,7 +2571,7 @@ class CfgTraderCategories
 	//#include "TRADERS\RHSV\TraderCategoriesRHSV.hpp"
 	//#include "TRADERS\RHSW\TraderCategoriesRHSW.hpp"
 	//#include "TRADERS\TRYK\TraderCategoriesTRYK.hpp"
-	//#include "TRADERS\PODS\TraderCategoriesPODS.hpp"	
+	#include "TRADERS\PODS\TraderCategoriesPODS.hpp"	
 	//#include "TRADERS\CUSTOM\TraderCategoriesCUSTOM.hpp"
 	#include "TRADERS\Exile\TraderCategoriesExile.hpp"
 };
@@ -2556,225 +2579,6 @@ class CfgTraderCategories
 class CfgTraders
 {
 	#include "TRADERS\CfgTraders.hpp"
-};
-
-	/**
-	 * Satchels, nades, UAVs, static MGs
-	 */
-	class Exile_Trader_SpecialOperations
-	{
-		name = "SPECIAL OPERATIONS";
-		showWeaponFilter = 1; // for noob tubes
-		categories[] = 
-		{
-			"Flares",
-			"Smokes",
-			"UAVs",
-			"StaticMGs",
-			"Explosives",
-			"Navigation"
-		};
-	};
-
-	/**
-	 * Uniforms, vests, helmets, backpacks
-	 */
-	class Exile_Trader_Equipment
-	{	
-		name = "EQUIPMENT";
-		showWeaponFilter = 0;
-		categories[] = 
-		{
-			"Headgear",
-			"Glasses",
-			"Uniforms",
-			"Vests",
-			"Backpacks",
-			"FirstAid"
-		};
-	};
-
-	/**
-	 * Cans, cans, cans
-	 */
-	class Exile_Trader_Food
-	{
-		name = "FAST FOOD";
-		showWeaponFilter = 0;
-		categories[] = 
-		{
-			"Food",
-			"Drinks"
-		};
-	};
-
-	/**
-	 * Light bulbs, metal, etc.
-	 */
-	class Exile_Trader_Hardware
-	{
-		name = "HARDWARE";
-		showWeaponFilter = 0;
-		categories[] = 
-		{
-			"Hardware",
-			"Tools"
-		};
-	};
-
-	/**
-	 * Sells cars and general vehicles
-	 */
-	class Exile_Trader_Vehicle
-	{
-		name = "VEHICLE";
-		showWeaponFilter = 0;
-		categories[] = 
-		{
-			"Cars",
-			"Trucks"
-		};
-	};
-
-	/**
-	 * Sells choppers and planes
-	 */
-	class Exile_Trader_Aircraft
-	{
-		name = "AIRCRAFT";
-		showWeaponFilter = 0;
-		categories[] = 
-		{
-			"Choppers", 
-			"Planes"
-		};
-	};
-
-	/**
-	 * Sells ships and boats
-	 */ 
-	class Exile_Trader_Boat
-	{
-		name = "BOAT";
-		showWeaponFilter = 0;
-		categories[] = 
-		{
-			"Boats"
-		};
-	};
-
-	class Exile_Trader_Diving
-	{
-		name = "DIVERS";
-		showWeaponFilter = 0;
-		categories[] = 
-		{
-			"Diving"
-		};
-	};
-
-	/**
-	 * Sells Community Items
-	 */ 
-	class Exile_Trader_CommunityCustoms
-	{
-		name = "COMMUNITY";
-		showWeaponFilter = 0;
-		categories[] = 
-		{
-			"Community"
-		};
-	};
-
-	class Exile_Trader_CommunityCustoms2
-	{
-		name = "COMMUNITY";
-		showWeaponFilter = 0;
-		categories[] = 
-		{
-			"Community2"
-		};
-	};
-
-	class Exile_Trader_CommunityCustoms3
-	{
-		name = "COMMUNITY";
-		showWeaponFilter = 0;
-		categories[] = 
-		{
-			"Community3"
-		};
-	};
-
-	class Exile_Trader_CommunityCustoms4
-	{
-		name = "COMMUNITY";
-		showWeaponFilter = 0;
-		categories[] = 
-		{
-			"Community4"
-		};
-	};
-
-	class Exile_Trader_CommunityCustoms5
-	{
-		name = "COMMUNITY";
-		showWeaponFilter = 0;
-		categories[] = 
-		{
-			"Community5"
-		};
-	};
-
-	class Exile_Trader_CommunityCustoms6
-	{
-		name = "COMMUNITY";
-		showWeaponFilter = 0;
-		categories[] = 
-		{
-			"Community6"
-		};
-	};
-
-	class Exile_Trader_CommunityCustoms7
-	{
-		name = "COMMUNITY";
-		showWeaponFilter = 0;
-		categories[] = 
-		{
-			"Community7"
-		};
-	};
-
-	class Exile_Trader_CommunityCustoms8
-	{
-		name = "COMMUNITY";
-		showWeaponFilter = 0;
-		categories[] = 
-		{
-			"Community8"
-		};
-	};
-
-	class Exile_Trader_CommunityCustoms9
-	{
-		name = "COMMUNITY";
-		showWeaponFilter = 0;
-		categories[] = 
-		{
-			"Community9"
-		};
-	};
-
-	class Exile_Trader_CommunityCustoms10
-	{
-		name = "COMMUNITY";
-		showWeaponFilter = 0;
-		categories[] = 
-		{
-			"Community10"
-		};
-	};
 };
 class CfgTrading 
 {

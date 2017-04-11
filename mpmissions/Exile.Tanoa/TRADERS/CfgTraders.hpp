@@ -237,9 +237,9 @@
 			"A3Trucks",
 			"CUGVs",
 			"FMPCars",
-			"FMPTrucks"
+			"FMPTrucks",
 			//"MASTanks"
-			//"A3Tanks"	
+			"A3Tanks"	
 			//"UGV"	
 			//"A3UGVs"	
 			//"ApexUAVs"

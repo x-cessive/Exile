@@ -372,7 +372,6 @@ class Hardware
 		"Exile_Item_MetalScrews",
 		"Exile_Item_MetalWire",
 		"Exile_Item_Laptop",
-		"Exile_Item_BaseCameraKit",
 		"Exile_Item_MetalHedgehogKit",
 		"Exile_Item_PortableGeneratorKit",
 		"Exile_Item_CarWheel"
@@ -845,7 +844,7 @@ class Cars
 	items[] =
 	{
 		"Exile_Car_Kart_Black",
-		"Exile_Bike_QuadBike_Blue",
+		//"Exile_Bike_QuadBike_Blue",
 		"Exile_Car_OldTractor_Red",
 		"Exile_Car_TowTractor_White",
 		"Exile_Car_Tractor_Red",

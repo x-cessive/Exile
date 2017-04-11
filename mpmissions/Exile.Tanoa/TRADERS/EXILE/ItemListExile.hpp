@@ -797,27 +797,27 @@ class Exile_Bike_MountainBike 					{ quality = 1; price = 50; };
 ///////////////////////////////////////////////////////////////////////////////
 // QUAD BIKES
 ///////////////////////////////////////////////////////////////////////////////
-class Exile_Bike_QuadBike_Black					{ quality = 1; price = 2500; sellPrice = 10; };
-class Exile_Bike_QuadBike_Blue					{ quality = 1; price = 2500; };
-class Exile_Bike_QuadBike_Red					{ quality = 1; price = 2500; };
-class Exile_Bike_QuadBike_White					{ quality = 1; price = 2500; };
-class Exile_Bike_QuadBike_Nato					{ quality = 1; price = 2500; };
-class Exile_Bike_QuadBike_Csat					{ quality = 1; price = 2500; };
-class Exile_Bike_QuadBike_Fia					{ quality = 1; price = 2500; };
-class Exile_Bike_QuadBike_Guerilla01			{ quality = 1; price = 2500; };
-class Exile_Bike_QuadBike_Guerilla02			{ quality = 1; price = 2500; };
+//class Exile_Bike_QuadBike_Black					{ quality = 1; price = 2500; sellPrice = 10; };
+//class Exile_Bike_QuadBike_Blue					{ quality = 1; price = 2500; };
+//class Exile_Bike_QuadBike_Red					{ quality = 1; price = 2500; };
+//class Exile_Bike_QuadBike_White					{ quality = 1; price = 2500; };
+//class Exile_Bike_QuadBike_Nato					{ quality = 1; price = 2500; };
+//class Exile_Bike_QuadBike_Csat					{ quality = 1; price = 2500; };
+//class Exile_Bike_QuadBike_Fia					{ quality = 1; price = 2500; };
+//class Exile_Bike_QuadBike_Guerilla01			{ quality = 1; price = 2500; };
+//class Exile_Bike_QuadBike_Guerilla02			{ quality = 1; price = 2500; };
 
 ///////////////////////////////////////////////////////////////////////////////
 // KARTS
 ///////////////////////////////////////////////////////////////////////////////
-class Exile_Car_Kart_BluKing					{ quality = 1; price = 1100; };
-class Exile_Car_Kart_RedStone					{ quality = 1; price = 1100; };
-class Exile_Car_Kart_Vrana						{ quality = 1; price = 1100; };
-class Exile_Car_Kart_Green						{ quality = 1; price = 1100; };
-class Exile_Car_Kart_Blue						{ quality = 1; price = 1100; };
-class Exile_Car_Kart_Orange						{ quality = 1; price = 1100; };
-class Exile_Car_Kart_White						{ quality = 1; price = 1100; };
-class Exile_Car_Kart_Yellow						{ quality = 1; price = 1100; };
+//class Exile_Car_Kart_BluKing					{ quality = 1; price = 1100; };
+//class Exile_Car_Kart_RedStone					{ quality = 1; price = 1100; };
+//class Exile_Car_Kart_Vrana						{ quality = 1; price = 1100; };
+//class Exile_Car_Kart_Green						{ quality = 1; price = 1100; };
+//class Exile_Car_Kart_Blue						{ quality = 1; price = 1100; };
+//class Exile_Car_Kart_Orange						{ quality = 1; price = 1100; };
+//class Exile_Car_Kart_White						{ quality = 1; price = 1100; };
+//class Exile_Car_Kart_Yellow						{ quality = 1; price = 1100; };
 class Exile_Car_Kart_Black						{ quality = 1; price = 1100; };
 
 ///////////////////////////////////////////////////////////////////////////////
