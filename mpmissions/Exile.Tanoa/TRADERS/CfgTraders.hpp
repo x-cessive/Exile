@@ -238,11 +238,10 @@
 			"CUGVs",
 			"FMPCars",
 			"FMPTrucks",
-			//"MASTanks"
-			"A3Tanks"	
-			//"UGV"	
-			//"A3UGVs"	
-			//"ApexUAVs"
+			"A3Tanks",	
+			"UGV",	
+			"A3UGVs",	
+			"ApexUAVs"
 		};
 	};
 
