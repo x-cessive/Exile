@@ -68,6 +68,7 @@
  class   TRYK_G_bala_wh_NV                               { quality = 1; price = 1000; };
  class   TRYK_ESS_wh_NV                                  { quality = 1; price = 100; };
  class   TRYK_Kio_Balaclava                              { quality = 1; price = 100; };
+ class   TRYK_H_Helmet_JSDF                              { quality = 1; price = 100; };
  class   TRYK_H_Helmet_CC                                { quality = 1; price = 100; };
  class   TRYK_H_Helmet_WOOD                              { quality = 1; price = 100; };
  class   TRYK_H_Helmet_ACU                               { quality = 1; price = 100; };
@@ -75,6 +76,7 @@
  class   TRYK_H_Helmet_MARPAT_Desert                     { quality = 1; price = 100; };
  class   TRYK_H_Helmet_MARPAT_Desert2                    { quality = 1; price = 100; };
  class   TRYK_H_Helmet_3C                                { quality = 1; price = 100; };
+ class   TRYK_H_Booniehat_JSDF                           { quality = 1; price = 100; };
  class   TRYK_H_Booniehat_3CD                            { quality = 1; price = 100; };
  class   TRYK_H_Booniehat_CC                             { quality = 1; price = 100; };
  class   TRYK_H_Booniehat_WOOD                           { quality = 1; price = 100; };
@@ -114,6 +116,7 @@
  ////////////////////////////////////
 /////Vests
 /////////////////////////////// 
+ class   TRYK_V_PlateCarrier_JSDF                        { quality = 1; price = 150; };
  class   TRYK_V_ArmorVest_AOR1                           { quality = 1; price = 150; };
  class   TRYK_V_ArmorVest_AOR2                           { quality = 1; price = 150; };
  class   TRYK_V_ArmorVest_coyo                           { quality = 1; price = 150; };
@@ -189,6 +192,8 @@
  class   TRYK_U_B_WOOD_MARPAT_CombatUniformTshirt        { quality = 1; price = 150; };
  class   TRYK_U_B_woodtan_CombatUniform                  { quality = 1; price = 150; };
  class   TRYK_U_B_woodtanR_CombatUniformTshirt           { quality = 1; price = 150; };
+ class   TRYK_U_B_JSDF_CombatUniform                     { quality = 1; price = 150; };
+ class   TRYK_U_B_JSDF_CombatUniformTshirt               { quality = 1; price = 150; };
  class   TRYK_U_B_3CD_Delta_BDU                          { quality = 1; price = 150; };
  class   TRYK_U_B_3CD_Delta_BDUTshirt                    { quality = 1; price = 150; };
  class   TRYK_U_B_3CD_Ranger_BDU                         { quality = 1; price = 150; };
@@ -433,45 +438,47 @@
  class   TRYK_U_B_PCUHsW8                                { quality = 1; price = 150; };
  class   TRYK_U_B_PCUHsW9 							     { quality = 1; price = 150; };
  
-///////////////////////////////////////////////////////////////////////////////
-// TRYK BackPacks
-///////////////////////////////////////////////////////////////////////////////
-
-class TRYK_B_AssaultPack_UCP                        { quality = 1; price = 200; };
-class TRYK_B_AssaultPack_Type2camo                  { quality = 1; price = 200; };
-class TRYK_B_AssaultPack_MARPAT_Desert              { quality = 1; price = 200; };
-class TRYK_B_AssaultPack_MARPAT_Wood                { quality = 1; price = 200; };
-class TRYK_B_Kitbag_Base                            { quality = 2; price = 200; };
-class TRYK_B_Kitbag_blk                             { quality = 2; price = 200; };
-class TRYK_B_Kitbag_aaf                             { quality = 2; price = 200; };
-class TRYK_B_Carryall_blk                           { quality = 3; price = 200; };
-class TRYK_B_Carryall_wh                            { quality = 3; price = 200; };
-class TRYK_B_Carryall_wood                          { quality = 3; price = 200; };
-class TRYK_B_Coyotebackpack                         { quality = 1; price = 200; };
-class TRYK_B_Coyotebackpack_OD                      { quality = 1; price = 200; };
-class TRYK_B_Coyotebackpack_BLK                     { quality = 1; price = 200; };
-class TRYK_B_Coyotebackpack_WH                      { quality = 1; price = 200; };
-class TRYK_B_Alicepack                              { quality = 1; price = 200; };
-class TRYK_B_Medbag                                 { quality = 1; price = 200; };
-class TRYK_B_Medbag_OD                              { quality = 1; price = 200; };
-class TRYK_B_Medbag_BK                              { quality = 1; price = 200; };
-class TRYK_B_Medbag_ucp                             { quality = 1; price = 200; };
-class TRYK_B_Belt                                   { quality = 1; price = 200; };
-class TRYK_B_Belt_BLK                               { quality = 1; price = 200; };
-class TRYK_B_Belt_CYT                               { quality = 1; price = 200; };
-class TRYK_B_Belt_tan                               { quality = 1; price = 200; };
-class TRYK_B_Belt_br                                { quality = 1; price = 200; };
-class TRYK_B_Belt_GR                                { quality = 1; price = 200; };
-class TRYK_B_Belt_AOR1                              { quality = 1; price = 200; };
-class TRYK_B_Belt_AOR2                              { quality = 1; price = 200; };
-class TRYK_B_BAF_BAG_BLK                            { quality = 1; price = 200; };
-class TRYK_B_BAF_BAG_CYT                            { quality = 1; price = 200; };
-class TRYK_B_BAF_BAG_OD                             { quality = 1; price = 200; };
-class TRYK_B_BAF_BAG_rgr                            { quality = 1; price = 200; };
-class TRYK_B_BAF_BAG_mcamo                          { quality = 1; price = 200; };
-class TRYK_B_tube_cyt                               { quality = 1; price = 200; };
-class TRYK_B_tube_od                                { quality = 1; price = 200; };
-class TRYK_B_tube_blk                               { quality = 1; price = 200; };
-class TRYK_B_FieldPack_Wood                         { quality = 1; price = 200; };
-class TRYK_Winter_pack                              { quality = 1; price = 200; };
+    ///////////////////////////////////////////////////////////////////////////////
+    // TRYK BackPacks
+    ///////////////////////////////////////////////////////////////////////////////
+   
+    class TRYK_B_AssaultPack_UCP                        { quality = 1; price = 200; };
+    class TRYK_B_AssaultPack_Type2camo                  { quality = 1; price = 200; };
+    class TRYK_B_AssaultPack_MARPAT_Desert              { quality = 1; price = 200; };
+    class TRYK_B_AssaultPack_MARPAT_Wood                { quality = 1; price = 200; };
+    class TRYK_B_Kitbag_Base                            { quality = 2; price = 200; };
+    class TRYK_B_Kitbag_blk                             { quality = 2; price = 200; };
+    class TRYK_B_Kitbag_aaf                             { quality = 2; price = 200; };
+    class TRYK_B_Carryall_blk                           { quality = 3; price = 200; };
+    class TRYK_B_Carryall_wh                            { quality = 3; price = 200; };
+    class TRYK_B_Carryall_wood                          { quality = 3; price = 200; };
+    class TRYK_B_Carryall_JSDF                          { quality = 3; price = 200; };
+    class TRYK_B_Kitbag_Base_JSDF                       { quality = 1; price = 200; };
+    class TRYK_B_Coyotebackpack                         { quality = 1; price = 200; };
+    class TRYK_B_Coyotebackpack_OD                      { quality = 1; price = 200; };
+    class TRYK_B_Coyotebackpack_BLK                     { quality = 1; price = 200; };
+    class TRYK_B_Coyotebackpack_WH                      { quality = 1; price = 200; };
+    class TRYK_B_Alicepack                              { quality = 1; price = 200; };
+    class TRYK_B_Medbag                                 { quality = 1; price = 200; };
+    class TRYK_B_Medbag_OD                              { quality = 1; price = 200; };
+    class TRYK_B_Medbag_BK                              { quality = 1; price = 200; };
+    class TRYK_B_Medbag_ucp                             { quality = 1; price = 200; };
+    class TRYK_B_Belt                                   { quality = 1; price = 200; };
+    class TRYK_B_Belt_BLK                               { quality = 1; price = 200; };
+    class TRYK_B_Belt_CYT                               { quality = 1; price = 200; };
+    class TRYK_B_Belt_tan                               { quality = 1; price = 200; };
+    class TRYK_B_Belt_br                                { quality = 1; price = 200; };
+    class TRYK_B_Belt_GR                                { quality = 1; price = 200; };
+    class TRYK_B_Belt_AOR1                              { quality = 1; price = 200; };
+    class TRYK_B_Belt_AOR2                              { quality = 1; price = 200; };
+    class TRYK_B_BAF_BAG_BLK                            { quality = 1; price = 200; };
+    class TRYK_B_BAF_BAG_CYT                            { quality = 1; price = 200; };
+    class TRYK_B_BAF_BAG_OD                             { quality = 1; price = 200; };
+    class TRYK_B_BAF_BAG_rgr                            { quality = 1; price = 200; };
+    class TRYK_B_BAF_BAG_mcamo                          { quality = 1; price = 200; };
+    class TRYK_B_tube_cyt                               { quality = 1; price = 200; };
+    class TRYK_B_tube_od                                { quality = 1; price = 200; };
+    class TRYK_B_tube_blk                               { quality = 1; price = 200; };
+    class TRYK_B_FieldPack_Wood                         { quality = 1; price = 200; };
+    class TRYK_Winter_pack                              { quality = 1; price = 200; };
 	

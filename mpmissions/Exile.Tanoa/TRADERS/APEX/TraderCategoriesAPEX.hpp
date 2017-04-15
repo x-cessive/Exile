@@ -326,7 +326,13 @@ class ApexChoppers
 		"B_T_VTOL_01_armed_F",
 		"B_T_VTOL_01_infantry_F",
 		"O_T_VTOL_02_infantry_F",
-		"O_T_VTOL_02_vehicle_F"
+		"O_T_VTOL_02_vehicle_F",
+		"O_T_VTOL_02_infantry_hex_F",
+		"O_T_VTOL_02_infantry_ghex_F",
+		"O_T_VTOL_02_infantry_grey_F",
+		"O_T_VTOL_02_vehicle_hex_F",
+		"O_T_VTOL_02_vehicle_ghex_F",
+		"O_T_VTOL_02_vehicle_grey_F"
 	};
 };
 

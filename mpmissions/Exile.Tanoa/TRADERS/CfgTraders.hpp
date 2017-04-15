@@ -169,7 +169,8 @@
 			"SAFUniforms",
 			"SAFVests",
 			"SAFHeadgear",
-			"SAFBackpacks"
+			"SAFBackpacks",
+			"RDSUniforms"
 		};
 	};
 
@@ -199,7 +200,9 @@
 			"Hardware",
 			//"R3FTools",
 			"ExtendedBaseMod",
-			"CBuilding"
+			"CBuilding",
+			"RDSHardware"
+
 		};
 	};
 
@@ -238,10 +241,12 @@
 			"CUGVs",
 			"FMPCars",
 			"FMPTrucks",
-			"A3Tanks",	
-			"UGV",	
-			"A3UGVs",	
-			"ApexUAVs"
+			"RDSVehicles"
+			//"MASTanks"
+			//"A3Tanks"	
+			//"UGV"	
+			//"A3UGVs"	
+			//"ApexUAVs"
 		};
 	};
 

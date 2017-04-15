@@ -32,6 +32,8 @@
 			"TRYK_U_B_WOOD_MARPAT_CombatUniformTshirt",
 			"TRYK_U_B_woodtan_CombatUniform",
 			"TRYK_U_B_woodtanR_CombatUniformTshirt",
+			"TRYK_U_B_JSDF_CombatUniform",
+			"TRYK_U_B_JSDF_CombatUniformTshirt",
 			"TRYK_U_B_3CD_Delta_BDU",
 			"TRYK_U_B_3CD_Delta_BDUTshirt",
 			"TRYK_U_B_3CD_Ranger_BDU",
@@ -290,6 +292,7 @@
 		icon = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\vest_ca.paa";
 		items[] =
 		{
+			"TRYK_V_PlateCarrier_JSDF",
 			"TRYK_V_ArmorVest_AOR1",
 			"TRYK_V_ArmorVest_AOR2",
 			"TRYK_V_ArmorVest_coyo",
@@ -401,6 +404,7 @@
 			"TRYK_G_bala_wh_NV",
 			"TRYK_ESS_wh_NV",
 			"TRYK_Kio_Balaclava",
+			"TRYK_H_Helmet_JSDF",
 			"TRYK_H_Helmet_CC",
 			"TRYK_H_Helmet_WOOD",
 			"TRYK_H_Helmet_ACU",
@@ -408,6 +412,7 @@
 			"TRYK_H_Helmet_MARPAT_Desert",
 			"TRYK_H_Helmet_MARPAT_Desert2",
 			"TRYK_H_Helmet_3C",
+			"TRYK_H_Booniehat_JSDF",
 			"TRYK_H_Booniehat_3CD",
 			"TRYK_H_Booniehat_CC",
 			"TRYK_H_Booniehat_WOOD",
@@ -464,6 +469,8 @@
 			"TRYK_B_Carryall_blk",
 			"TRYK_B_Carryall_wh",
 			"TRYK_B_Carryall_wood",
+			"TRYK_B_Carryall_JSDF",
+			"TRYK_B_Kitbag_Base_JSDF",
 			"TRYK_B_Coyotebackpack",
 			"TRYK_B_Coyotebackpack_OD",
 			"TRYK_B_Coyotebackpack_BLK",

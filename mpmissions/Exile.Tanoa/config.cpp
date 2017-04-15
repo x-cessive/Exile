@@ -1286,7 +1286,7 @@ class CfgExileArsenal
 	#include "TRADERS\EBM\ItemListEBM.hpp"
 	//#include "TRADERS\FMP\ItemListFMP.hpp"
 	//#include "TRADERS\HAP\ItemListHAP.hpp"
-	//#include "TRADERS\HLC\ItemListHLC.hpp"		//should use NIArms
+	////#include "TRADERS\HLC\ItemListHLC.hpp"		//should use NIArms
 	//#include "TRADERS\HVP\ItemListHVP.hpp"
 	//#include "TRADERS\HWP\ItemListHWP.hpp"
 	//#include "TRADERS\Jonzie\ItemListJonzie.hpp"
@@ -1296,15 +1296,14 @@ class CfgExileArsenal
 	//#include "TRADERS\R3FW\ItemListR3FW.hpp"
 	//#include "TRADERS\RHSGREF\ItemListGREF.hpp"
 	//#include "TRADERS\RHSSAF\ItemListRHSSAF.hpp"
-	//#include "TRADERS\RHSV\ItemListRHSV.hpp"
-	//#include "TRADERS\RHSW\ItemListRHSW.hpp"
-	#include "TRADERS\TRYK\ItemListTRYK.hpp"
+	#include "TRADERS\RHSV\ItemListRHSV.hpp"
+	#include "TRADERS\RHSW\ItemListRHSW.hpp"
+	//#include "TRADERS\TRYK\ItemListTRYK.hpp"
 	#include "TRADERS\PODS\ItemListPODS.hpp"
 	//#include "TRADERS\CUSTOM\ItemListCUSTOM.hpp"
 	#include "TRADERS\Exile\ItemListExile.hpp"
+	#include "TRADERS\RDS\ItemListRDS.hpp"
 };
-
-
 
 class CfgExileCustomCode
 {
@@ -2568,12 +2567,14 @@ class CfgTraderCategories
 	//#include "TRADERS\R3FW\TraderCategoriesR3FW.hpp"
 	//#include "TRADERS\RHSGREF\TraderCategoriesGREF.hpp"
 	//#include "TRADERS\RHSSAF\TraderCategoriesRHSSAF.hpp"
-	//#include "TRADERS\RHSV\TraderCategoriesRHSV.hpp"
-	//#include "TRADERS\RHSW\TraderCategoriesRHSW.hpp"
-	#include "TRADERS\TRYK\TraderCategoriesTRYK.hpp"
+	#include "TRADERS\RHSV\TraderCategoriesRHSV.hpp"
+	#include "TRADERS\RHSW\TraderCategoriesRHSW.hpp"
+	//#include "TRADERS\TRYK\TraderCategoriesTRYK.hpp"
 	#include "TRADERS\PODS\TraderCategoriesPODS.hpp"	
 	//#include "TRADERS\CUSTOM\TraderCategoriesCUSTOM.hpp"
 	#include "TRADERS\Exile\TraderCategoriesExile.hpp"
+	#include "TRADERS\RDS\TraderCategoriesRDS.hpp"
+
 };
 
 class CfgTraders

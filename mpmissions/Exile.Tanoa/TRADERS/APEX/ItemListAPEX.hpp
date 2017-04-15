@@ -11,15 +11,21 @@ class B_T_LSV_01_armed_F					{ quality = 1; price = 35000; };
 class B_T_LSV_01_unarmed_F					{ quality = 1; price = 25000; };
 class O_T_LSV_02_armed_F					{ quality = 1; price = 35000; };
 class O_T_LSV_02_unarmed_F					{ quality = 1; price = 25000; };
-class B_T_UAV_03_F							{ quality = 1; price = 120000; };
-class C_Plane_Civil_01_F					{ quality = 1; price = 5000; };
-class O_T_UAV_04_CAS_F						{ quality = 1; price = 90000; };
-class B_T_VTOL_01_armed_F					{ quality = 1; price = 120000; };
-class B_T_VTOL_01_infantry_F				{ quality = 1; price = 60000; };
-class I_C_Boat_Transport_02_F				{ quality = 1; price = 4000; };
-class C_Scooter_Transport_01_F				{ quality = 1; price = 500; };
-class O_T_VTOL_02_infantry_F				{ quality = 1; price = 100000; };
-class O_T_VTOL_02_vehicle_F					{ quality = 1; price = 100000; };
+class B_T_UAV_03_F							{ quality = 1; price = 200000; };
+class C_Plane_Civil_01_F					{ quality = 1; price = 20000; };
+class O_T_UAV_04_CAS_F						{ quality = 1; price = 200000; };
+class B_T_VTOL_01_armed_F					{ quality = 1; price = 1000000; };
+class B_T_VTOL_01_infantry_F				{ quality = 1; price = 175000; };
+class I_C_Boat_Transport_02_F				{ quality = 1; price = 20000; };
+class C_Scooter_Transport_01_F				{ quality = 1; price = 10000; };
+class O_T_VTOL_02_infantry_F				{ quality = 1; price = 175000; };
+class O_T_VTOL_02_vehicle_F					{ quality = 1; price = 175000; };
+class O_T_VTOL_02_infantry_hex_F			{ quality = 1; price = 175000; };
+class O_T_VTOL_02_infantry_ghex_F			{ quality = 1; price = 175000; };
+class O_T_VTOL_02_infantry_grey_F			{ quality = 1; price = 175000; };
+class O_T_VTOL_02_vehicle_hex_F				{ quality = 1; price = 175000; };
+class O_T_VTOL_02_vehicle_ghex_F			{ quality = 1; price = 175000; };
+class O_T_VTOL_02_vehicle_grey_F			{ quality = 1; price = 175000; };
 
 //////////////////////////////////////////////////////////////////////////////
 //Rifles
@@ -46,6 +52,9 @@ class arifle_SPAR_01_snd_F					{ quality = 1; price = 750; };
 class arifle_SPAR_01_GL_blk_F				{ quality = 1; price = 750; };
 class arifle_SPAR_01_GL_khk_F				{ quality = 1; price = 750; };
 class arifle_SPAR_01_GL_snd_F				{ quality = 1; price = 750; };
+//class arifle_SPAR_02_blk_F					{ quality = 1; price = 750; };		//Exile dupe warning
+//class arifle_SPAR_02_khk_F					{ quality = 1; price = 750; };		//Exile dupe warning
+//class arifle_SPAR_02_snd_F					{ quality = 1; price = 750; };		//Exile dupe warning
 class arifle_SPAR_03_blk_F					{ quality = 1; price = 750; };
 class arifle_SPAR_03_khk_F					{ quality = 1; price = 750; };
 class arifle_SPAR_03_snd_F					{ quality = 1; price = 750; };
@@ -68,11 +77,11 @@ class SMG_05_F								{ quality = 1; price = 200; };
 //////////////////////////////////////////////////////////////////////////////
 //Snipers
 //////////////////////////////////////////////////////////////////////////////
-class srifle_DMR_07_blk_F					{ quality = 1; price = 3000; };
-class srifle_DMR_07_ghex_F					{ quality = 1; price = 2000; };
-class srifle_DMR_07_hex_F					{ quality = 1; price = 2000; };
-class srifle_GM6_ghex_F						{ quality = 1; price = 12000; };
-class srifle_LRR_tna_F						{ quality = 1; price = 9000; };
+class srifle_DMR_07_blk_F					{ quality = 1; price = 1000; };
+class srifle_DMR_07_ghex_F					{ quality = 1; price = 1000; };
+class srifle_DMR_07_hex_F					{ quality = 1; price = 1000; };
+class srifle_GM6_ghex_F						{ quality = 1; price = 1000; };
+class srifle_LRR_tna_F						{ quality = 1; price = 1000; };
 
 //////////////////////////////////////////////////////////////////////////////
 //Pistols
@@ -109,8 +118,8 @@ class H_MilCap_ghex_F						{ quality = 1; price = 100; };
 class H_Booniehat_tna_F						{ quality = 1; price = 100; };
 class H_Beret_gen_F							{ quality = 1; price = 75; };
 class H_MilCap_gen_F						{ quality = 1; price = 75; };
-class H_HelmetO_ViperSP_ghex_F				{ quality = 1; price = 1075; };
-class H_HelmetO_ViperSP_hex_F				{ quality = 1; price = 1075; };
+class H_HelmetO_ViperSP_ghex_F				{ quality = 1; price = 75; };
+class H_HelmetO_ViperSP_hex_F				{ quality = 1; price = 75; };
 
 //////////////////////////////////////////////////////////////////////////////
 //Clothes
