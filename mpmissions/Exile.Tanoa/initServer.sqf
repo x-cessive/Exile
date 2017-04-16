@@ -11,7 +11,8 @@ ExileRouletteChairPositions = [];
 
 // Fix Trader Spawns
 private _objects = [
-	["Land_HelipadSquare_F",[9922.91,11799,415.438],[[-0.99817,0.0604675,0],[0,0,1]],[true,false]]
+	["Land_HelipadSquare_F",[9922.91,11799,415.438],[[-0.99817,0.0604675,0],[0,0,1]],[true,false]],
+	["Land_HelipadSquare_F",[10090.8,11769.9,420.442],[[0.0494987,0.998774,0],[0,0,1]],[true,false]]
 ];
 {
 	private _object = (_x select 0) createVehicle [0,0,0];

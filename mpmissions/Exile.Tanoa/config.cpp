@@ -1281,26 +1281,11 @@ class CfgExileArsenal
 	#include "TRADERS\APEX\ItemListAPEX.hpp"
 	#include "TRADERS\ARMA3V\ItemListARMA3V.hpp"
 	#include "TRADERS\ARMA3W\ItemListARMA3W.hpp"
-	//#include "TRADERS\CUPW\ItemListCUPW.hpp"
-	//#include "TRADERS\CUPV\ItemListCUPV.hpp"
 	#include "TRADERS\EBM\ItemListEBM.hpp"
-	//#include "TRADERS\FMP\ItemListFMP.hpp"
-	//#include "TRADERS\HAP\ItemListHAP.hpp"
-	////#include "TRADERS\HLC\ItemListHLC.hpp"		//should use NIArms
-	//#include "TRADERS\HVP\ItemListHVP.hpp"
-	//#include "TRADERS\HWP\ItemListHWP.hpp"
-	//#include "TRADERS\Jonzie\ItemListJonzie.hpp"
-	//#include "TRADERS\MASV\ItemListMASV.hpp"
-	//#include "TRADERS\MASW\ItemListMASW.hpp"
+	#include "TRADERS\HAP\ItemListHAP.hpp"
+	#include "TRADERS\Jonzie\ItemListJonzie.hpp"
 	#include "TRADERS\NIA\ItemListNIA.hpp"
-	//#include "TRADERS\R3FW\ItemListR3FW.hpp"
-	//#include "TRADERS\RHSGREF\ItemListGREF.hpp"
-	//#include "TRADERS\RHSSAF\ItemListRHSSAF.hpp"
-	#include "TRADERS\RHSV\ItemListRHSV.hpp"
-	#include "TRADERS\RHSW\ItemListRHSW.hpp"
-	//#include "TRADERS\TRYK\ItemListTRYK.hpp"
 	#include "TRADERS\PODS\ItemListPODS.hpp"
-	//#include "TRADERS\CUSTOM\ItemListCUSTOM.hpp"
 	#include "TRADERS\Exile\ItemListExile.hpp"
 	#include "TRADERS\RDS\ItemListRDS.hpp"
 };
@@ -1323,7 +1308,8 @@ class CfgExileCustomCode
     exileclient_system_lootmanager_thread_spawn = "EBM\exileclient_system_lootmanager_thread_spawn.sqf";
     ExileServer_system_rcon_thread_check = "restart\ExileServer_system_rcon_thread_check.sqf";
     ExileServer_object_player_event_onMpKilled = "overwrites\KillMessages\ExileServer_object_player_event_onMpKilled.sqf";
-    ExileServer_system_trading_network_purchaseVehicleRequest = "overwrites\ExileServer_system_trading_network_purchaseVehicleRequest.sqf";  
+    ExileServer_system_trading_network_purchaseVehicleRequest = "overwrites\ExileServer_system_trading_network_purchaseVehicleRequest.sqf";
+    ExileClient_util_playerEquipment_add = "overwrites\ExileClient_util_playerEquipment_add.sqf";
     #include "CfgExileCustomCode.cpp"
 };
 class CfgExileEnvironment
@@ -2552,26 +2538,11 @@ class CfgTraderCategories
 	#include "TRADERS\APEX\TraderCategoriesAPEX.hpp"
 	#include "TRADERS\ARMA3V\TraderCategoriesARMA3V.hpp"
 	#include "TRADERS\ARMA3W\TraderCategoriesARMA3W.hpp"
-	//#include "TRADERS\CUPW\TraderCategoriesCUPW.hpp"
-	//#include "TRADERS\CUPV\TraderCategoriesCUPV.hpp"
 	#include "TRADERS\EBM\TraderCategoriesEBM.hpp"
-	//#include "TRADERS\FMP\TraderCategoriesFMP.hpp"	
-	//#include "TRADERS\HAP\TraderCategoriesHAP.hpp"
-	//#include "TRADERS\HLC\TraderCategoriesHLC.hpp"		//should use NIArms
-	//#include "TRADERS\HVP\TraderCategoriesHVP.hpp"
-	//#include "TRADERS\HWP\TraderCategoriesHWP.hpp"
-	//#include "TRADERS\Jonzie\TraderCategoriesJonzie.hpp"
-	//#include "TRADERS\MASV\TraderCategoriesMASV.hpp"
-	//#include "TRADERS\MASW\TraderCategoriesMASW.hpp"
+	#include "TRADERS\HAP\TraderCategoriesHAP.hpp"
+	#include "TRADERS\Jonzie\TraderCategoriesJonzie.hpp"
 	#include "TRADERS\NIA\TraderCategoriesNIA.hpp"
-	//#include "TRADERS\R3FW\TraderCategoriesR3FW.hpp"
-	//#include "TRADERS\RHSGREF\TraderCategoriesGREF.hpp"
-	//#include "TRADERS\RHSSAF\TraderCategoriesRHSSAF.hpp"
-	#include "TRADERS\RHSV\TraderCategoriesRHSV.hpp"
-	#include "TRADERS\RHSW\TraderCategoriesRHSW.hpp"
-	//#include "TRADERS\TRYK\TraderCategoriesTRYK.hpp"
 	#include "TRADERS\PODS\TraderCategoriesPODS.hpp"	
-	//#include "TRADERS\CUSTOM\TraderCategoriesCUSTOM.hpp"
 	#include "TRADERS\Exile\TraderCategoriesExile.hpp"
 	#include "TRADERS\RDS\TraderCategoriesRDS.hpp"
 

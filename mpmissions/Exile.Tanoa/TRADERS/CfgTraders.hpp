@@ -241,9 +241,9 @@
 			"CUGVs",
 			"FMPCars",
 			"FMPTrucks",
-			"RDSVehicles"
+			"RDSVehicles",
 			//"MASTanks"
-			//"A3Tanks"	
+			"A3Tanks"	
 			//"UGV"	
 			//"A3UGVs"	
 			//"ApexUAVs"

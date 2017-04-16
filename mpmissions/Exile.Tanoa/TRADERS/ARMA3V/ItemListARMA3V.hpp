@@ -5,26 +5,23 @@
 	///////////////////////////////////////////////////////////////////////////////
 	// Arma 3 Cars
 	///////////////////////////////////////////////////////////////////////////////
-	class B_G_Offroad_01_F  							{ quality = 3; price = 15000; };
-	class B_G_Offroad_01_armed_F 						{ quality = 3; price = 25000; };
-	class B_G_Offroad_01_repair_F  						{ quality = 3; price = 35000; };
-	class B_G_Quadbike_01_F								{ quality = 1; price = 2500; };
-	class B_MRAP_01_F 									{ quality = 3; price = 50000; };
-	class B_MRAP_01_gmg_F  								{ quality = 3; price = 60000; };
-	class B_MRAP_01_hmg_F  								{ quality = 3; price = 55000; };
-	class B_Quadbike_01_F 								{ quality = 1; price = 2500; };
-	class O_G_Quadbike_01_F 							{ quality = 1; price = 2500; };
-	class O_MRAP_02_F  									{ quality = 3; price = 50000; };
-	class O_MRAP_02_gmg_F   							{ quality = 3; price = 60000; };
-	class O_MRAP_02_hmg_F  								{ quality = 3; price = 55000; };
+	class B_G_Offroad_01_F  							{ quality = 3; price = 5500; };
+	class B_G_Offroad_01_armed_F 						{ quality = 3; price = 7654; };
+	class B_G_Offroad_01_repair_F  						{ quality = 3; price = 11000; };
+	class B_G_Quadbike_01_F								{ quality = 1; price = 500; };
+	class B_MRAP_01_F 									{ quality = 3; price = 22000; };
+	class B_MRAP_01_gmg_F  								{ quality = 3; price = 32000; };
+	class B_MRAP_01_hmg_F  								{ quality = 3; price = 29000; };
+	class B_Quadbike_01_F 								{ quality = 1; price = 500; };
+	class O_G_Quadbike_01_F 							{ quality = 1; price = 500; };
 	class O_Quadbike_01_F 								{ quality = 1; price = 2500; };
 	class I_Quadbike_01_F 								{ quality = 1; price = 2500; };
 	class I_G_Quadbike_01_F 							{ quality = 1; price = 2500; };
-	class I_MRAP_03_F  									{ quality = 3; price = 50000; };
-	class I_MRAP_03_hmg_F  								{ quality = 3; price = 60000; };
-	class I_MRAP_03_gmg_F 	 							{ quality = 3; price = 55000; };
-	class O_T_MRAP_02_hmg_ghex_F						{ quality = 3; price = 55000; };
-    class O_T_MRAP_02_gmg_ghex_F						{ quality = 3; price = 60000; };
+	class I_MRAP_03_F  									{ quality = 3; price = 22000; };
+	class I_MRAP_03_hmg_F  								{ quality = 3; price = 29000; };
+	class I_MRAP_03_gmg_F 	 							{ quality = 3; price = 32000; };
+	class O_T_MRAP_02_hmg_ghex_F						{ quality = 3; price = 29000; };
+    class O_T_MRAP_02_gmg_ghex_F						{ quality = 3; price = 32000; };
 
 	///////////////////////////////////////////////////////////////////////////////
 	// Arma 3 Trucks

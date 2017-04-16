@@ -10,7 +10,6 @@
 			"B_MRAP_01_F",
 			"B_Quadbike_01_F",
 			"O_G_Quadbike_01_F",
-			"O_MRAP_02_F",
 			"O_Quadbike_01_F",
 			"I_Quadbike_01_F",
 			"I_G_Quadbike_01_F",
@@ -72,8 +71,6 @@
 			"O_G_Offroad_01_armed_F",
 			"B_MRAP_01_gmg_F",
 			"B_MRAP_01_hmg_F",
-			"O_MRAP_02_gmg_F",
-			"O_MRAP_02_hmg_F",
 			"I_MRAP_03_hmg_F",
 			"I_MRAP_03_gmg_F",
 			"O_T_MRAP_02_hmg_ghex_F",
@@ -89,7 +86,7 @@
 		icon = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\gps_ca.paa";
 		items[] =
 		{
-			/*"B_APC_Tracked_01_rcws_F",
+			"B_APC_Tracked_01_rcws_F",
 			"B_APC_Tracked_01_CRV_F",
 			"B_APC_Tracked_01_AA_F",
 			"B_MBT_01_cannon_F",
@@ -102,7 +99,7 @@
 			"O_MBT_02_arty_F",
 			"O_APC_Wheeled_02_rcws_F",
 			"I_APC_tracked_03_cannon_F",
-			"I_MBT_03_cannon_F"*/
+			"I_MBT_03_cannon_F"
 
 
 		};
@@ -119,7 +116,7 @@
 			"B_Lifeboat",
 			"B_SDV_01_F",
 			"B_G_Boat_Transport_01_F",
-			//"O_Boat_Armed_01_hmg_F",
+			"O_Boat_Armed_01_hmg_F",
 			"O_Boat_Transport_01_F",
 			"O_Lifeboat",
 			"O_SDV_01_F",

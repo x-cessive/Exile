@@ -320,58 +320,58 @@
     ///////////////////////////////////////////////////////////////////////////////////
 	// SUV ARMA II
 	///////////////////////////////////////////////////////////////////////////////////
-    class HAP_SUV_blue                                   { quality = 1; price = 20000; };
-    class HAP_SUV_red                                    { quality = 1; price = 20000; };
+    class HAP_SUV_blue                                   { quality = 1; price = 5200; };
+    class HAP_SUV_red                                    { quality = 1; price = 5200; };
 
 
     ///////////////////////////////////////////////////////////////////////////////////
 	// OFFROADS
 	///////////////////////////////////////////////////////////////////////////////////
-    class HAP_OFFRD_hobo                                 { quality = 1; price = 16000; };
-    class HAP_OFFRD_hobo1                                { quality = 1; price = 16000; };
-    class HAP_OFFRD_bandit                               { quality = 1; price = 16000; };
-    class HAP_OFFRD_banhammer                            { quality = 1; price = 16000; };
-    class HAP_OFFRD_exilelogo                            { quality = 1; price = 16000; };
-    class HAP_OFFRD_generallee                           { quality = 1; price = 16000; };
-    class HAP_OFFRD_kitty                                { quality = 1; price = 16000; };
-    class HAP_OFFRD_larry                                { quality = 1; price = 16000; };
-    class HAP_OFFRD_police1                              { quality = 1; price = 25000; };
-    class HAP_OFFRD_racer_BW                             { quality = 1; price = 16000; };
-    class HAP_OFFRD_racer_RW                             { quality = 1; price = 16000; };
-    class HAP_OFFRD_rustbucket_racer1                    { quality = 1; price = 16000; };
-    class HAP_OFFRD_rustbucket1                          { quality = 1; price = 16000; };
-    class HAP_OFFRD_rustbucket2                          { quality = 1; price = 16000; };
-    class HAP_OFFRD_rustbucket3                          { quality = 1; price = 16000; };
-    class HAP_OFFRD_woodland                             { quality = 1; price = 16000; };
-    class HAP_OFFRD_hemi                                 { quality = 1; price = 16000; };
-    class HAP_OFFRD_digi_BW                              { quality = 1; price = 16000; };
-    class HAP_OFFRD_digi_red                             { quality = 1; price = 16000; };
-    class HAP_OFFRD_autumn                               { quality = 1; price = 16000; };
-    class HAP_OFFRD_HUNTR_1                              { quality = 1; price = 16000; };
-    class HAP_OFFRD_HUNTR_2                              { quality = 1; price = 16000; };
+    class HAP_OFFRD_hobo                                 { quality = 1; price = 5500; };
+    class HAP_OFFRD_hobo1                                { quality = 1; price = 5500; };
+    class HAP_OFFRD_bandit                               { quality = 1; price = 5500; };
+    class HAP_OFFRD_banhammer                            { quality = 1; price = 5500; };
+    class HAP_OFFRD_exilelogo                            { quality = 1; price = 5500; };
+    class HAP_OFFRD_generallee                           { quality = 1; price = 5500; };
+    class HAP_OFFRD_kitty                                { quality = 1; price = 5500; };
+    class HAP_OFFRD_larry                                { quality = 1; price = 5500; };
+    class HAP_OFFRD_police1                              { quality = 1; price = 5500; };
+    class HAP_OFFRD_racer_BW                             { quality = 1; price = 5500; };
+    class HAP_OFFRD_racer_RW                             { quality = 1; price = 5500; };
+    class HAP_OFFRD_rustbucket_racer1                    { quality = 1; price = 5500; };
+    class HAP_OFFRD_rustbucket1                          { quality = 1; price = 5500; };
+    class HAP_OFFRD_rustbucket2                          { quality = 1; price = 5500; };
+    class HAP_OFFRD_rustbucket3                          { quality = 1; price = 5500; };
+    class HAP_OFFRD_woodland                             { quality = 1; price = 5500; };
+    class HAP_OFFRD_hemi                                 { quality = 1; price = 5500; };
+    class HAP_OFFRD_digi_BW                              { quality = 1; price = 5500; };
+    class HAP_OFFRD_digi_red                             { quality = 1; price = 5500; };
+    class HAP_OFFRD_autumn                               { quality = 1; price = 5500; };
+    class HAP_OFFRD_HUNTR_1                              { quality = 1; price = 5500; };
+    class HAP_OFFRD_HUNTR_2                              { quality = 1; price = 5500; };
 
 
     ///////////////////////////////////////////////////////////////////////////////////
 	// STRIDERS
 	///////////////////////////////////////////////////////////////////////////////////
-    class HAP_STRY_woodland1                             { quality = 1; price = 44000; };
-    class HAP_STRY_urban1                                { quality = 1; price = 44000; };
-    class HAP_STRY_green1                                { quality = 1; price = 44000; };
-    class HAP_STRY_desert1                               { quality = 1; price = 44000; };
-    class HAP_STRY_HUNTR_1                               { quality = 1; price = 44000; };
+    class HAP_STRY_woodland1                             { quality = 1; price = 33000; };
+    class HAP_STRY_urban1                                { quality = 1; price = 33000; };
+    class HAP_STRY_green1                                { quality = 1; price = 33000; };
+    class HAP_STRY_desert1                               { quality = 1; price = 33000; };
+    class HAP_STRY_HUNTR_1                               { quality = 1; price = 33000; };
 
     ///////////////////////////////////////////////////////////////////////////////////
 	// MRAP
 	///////////////////////////////////////////////////////////////////////////////////
-    class HAP_MRAP_winter_1                              { quality = 1; price = 44000; };
-    class HAP_MRAP_snake_1                               { quality = 1; price = 44000; };
-    class HAP_MRAP_red_1                                 { quality = 1; price = 44000; };
-    class HAP_MRAP_orange_1                              { quality = 1; price = 44000; };
-    class HAP_MRAP_hobo_1                                { quality = 1; price = 44000; };
-    class HAP_MRAP_green_1                               { quality = 1; price = 44000; };
-    class HAP_MRAP_bomber_1                              { quality = 1; price = 44000; };
-    class HAP_MRAP_blue_1                                { quality = 1; price = 44000; };
-    class HAP_MRAP_HUNTRS_1                              { quality = 1; price = 44000; };
+    class HAP_MRAP_winter_1                              { quality = 1; price = 32000; };
+    class HAP_MRAP_snake_1                               { quality = 1; price = 32000; };
+    class HAP_MRAP_red_1                                 { quality = 1; price = 32000; };
+    class HAP_MRAP_orange_1                              { quality = 1; price = 32000; };
+    class HAP_MRAP_hobo_1                                { quality = 1; price = 32000; };
+    class HAP_MRAP_green_1                               { quality = 1; price = 32000; };
+    class HAP_MRAP_bomber_1                              { quality = 1; price = 32000; };
+    class HAP_MRAP_blue_1                                { quality = 1; price = 32000; };
+    class HAP_MRAP_HUNTRS_1                              { quality = 1; price = 32000; };
 
 
     ///////////////////////////////////////////////////////////////////////////////////

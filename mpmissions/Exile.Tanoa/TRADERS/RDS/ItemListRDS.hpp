@@ -3,11 +3,11 @@
 /////////////////////////////////////////////////////////////////////////////////////
 class rds_S1203_Civ_02                                            { quality = 1; price = 3000; };
 class rds_S1203_Civ_03                                            { quality = 1; price =3500; };
-class rds_Gaz24_Civ_01                                            { quality = 3; price = 30000; };
-class rds_Gaz24_Civ_02                                            { quality = 4; price = 35000; };
-class rds_Gaz24_Civ_03                                            { quality = 5; price = 40000; }; //Not this one
-class rds_Ikarus_Civ_01                                           { quality = 4; price = 35000; };
-class rds_Ikarus_Civ_02                                           { quality = 5; price = 40000; }; //Not this one
+class rds_Gaz24_Civ_01                                            { quality = 3; price = 3000; };
+class rds_Gaz24_Civ_02                                            { quality = 4; price = 3500; };
+class rds_Gaz24_Civ_03                                            { quality = 5; price = 4000; }; //Not this one
+class rds_Ikarus_Civ_01                                           { quality = 4; price = 3500; };
+class rds_Ikarus_Civ_02                                           { quality = 5; price = 4000; }; //Not this one
 
 /////////////////////////////////////////////////////////////////////////////////////
 ///// RDS Uniforms //////////////////////////////////////////////////////////////////
@@ -43,7 +43,6 @@ class rds_uniform_priest                                          { quality = 1;
 class rds_uniform_doctor                                          { quality = 1; price = 30; };
 class rds_uniform_schoolteacher                                   { quality = 1; price = 30; };
 class rds_uniform_assistant                                       { quality = 1; price = 30; };
-class rds_pistol_holster								          { quality = 1; price = 30; };
 
 /////////////////////////////////////////////////////////////////////////////////////
 ///// RDS Hardware //////////////////////////////////////////////////////////////////
