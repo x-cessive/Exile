@@ -1,0 +1,4 @@
+class CfgFunctions
+{
+	#include "HaloParachute\config.cpp"
+};
