@@ -1,0 +1,16 @@
+Battleye filters depend greatly on the server setup. The mods you have will have a huge impact in determining your battleye filters.
+For this reason, I am NOT including battleye filters with this. You will need to set them up on your own.
+
+Here is what I changed:
+
+remoteexec.txt Line 2, add:
+!="avs_fnc_rearmvehicle \[.*,.*\]"
+
+scripts.txt Line 25 (addAction), add: 
+!="\"Rearm: %1 poptabs\", _rearmCost];\nAVS_rearmAction = player addAction [_rearmTitle, AVS_fnc_requestRearm, [_vehicle]];\nAVS_previo"
+
+scripts.txt Line 26 (remoteexec) add:
+!="icle Rearm.";\n[ExileClientSessionId, _vehicle, _rearmCost] remoteExecCall [\"AVS_fnc_rearmVehicle\", 2];\nExileClientPlayerMoney = "!="icle Rearm.";\n[ExileClientSessionId, _vehicle, _rearmCost] remoteExecCall [\"AVS_fnc_rearmVehicle\", 2];\nExileClientPlayerMoney = "
+
+scripts.txt Line 55 (setVehicleAmmo), add:
+!="Turret with invalid parameters: %1",_this];\n};\n\n_vehicle setVehicleAmmoDef 1; "

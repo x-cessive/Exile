@@ -1,0 +1,1 @@
+You only need to put the R3F_LOG folder inside of your mission pbo (Exile.Altis).  The init and description are examples.

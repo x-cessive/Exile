@@ -1,0 +1,13 @@
+Installation:
+
+1) Modify "AVS\@ExileServer\addons\AVS\AVS_configuration.sqf" to your liking.
+2) Make a PBO out of "AVS\@ExileServer\addons\AVS" and leave it in the addons folder.
+3) Drop "AVS\@ExileServer" into your server directory.
+4) Merge the files from AVS\mpmissions\Exile.Altis into your mission file.
+5) Read the battlEye.txt file to setup your battleye filters.
+6) Execute the following query on your exile MySQL database:
+
+ALTER TABLE vehicle  
+ADD ammo text  
+NOT NULL;  
+UPDATE vehicle SET ammo='[]'

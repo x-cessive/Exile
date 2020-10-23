@@ -1,0 +1,1 @@
+[] execVM "AVS\AVS_fnc_init.sqf";

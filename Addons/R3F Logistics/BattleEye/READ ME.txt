@@ -1,0 +1,1 @@
+These are my Battle Eye filters. You can either use mine or use the find (Ctrl+F) feature to find the R3F lines and add them to your filters.  WinMerge is a good program to use as well.
