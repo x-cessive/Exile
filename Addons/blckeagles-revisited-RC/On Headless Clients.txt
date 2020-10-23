@@ -1,0 +1,46 @@
+
+7-29-19
+NOTE: you do not need to run @GMS on your HC. Any code needed is broadcast to the HC from the server.
+With implementation of the ability to offload AI to clients, the need for HC is probably diminished. Still, should you wish to use them, HC are supported.
+The major issues in implementing HC are to assure your HC can connect to the server, which requires adding a few lines to your server.cfg and adding at least once slot for the HC.
+See the link to the right for information on updating your server.cfg.  https://community.bistudio.com/wiki/Arma_3_Headless_Client
+The simplest way to create a slot for the HC is to modify your mission.sqm to convert one currently used for players. 
+
+Epoch add or merge the info below (thanks He-Man for this code)
+		class Item105
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={1444.047,-0.17100525,29465.613};
+			};
+			name="HC1";
+			id=5;
+			type="HeadlessClient_F";
+			atlOffset=185.799;
+		};
+
+Exile: Edit the class for the last player slot as follows:
+		class Item37_HC  // Make sure this is something unique
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={1940.665,12.955395,3410.7729};
+				angles[]={6.2805324,0,0};
+			};
+			name="HC";
+			isPlayable=1;
+			id=151;
+			type="HeadlessClient_F";
+			atlOffset=198.9254;
+		};
+
+Start your headless client through a bat file or scheduler. Be sure to restart it periodically in some way. The command line for startup from a batch file would look something like this.
+
+@echo off
+start "arma3" "arma3server_x64.exe"  -client  -port=2302 -connect 127.0.0.1 -profiles="HC1_Logs" "-mod=@Exile;@Extended_Base_Mod;"
+
+
+
+

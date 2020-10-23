@@ -1,0 +1,21 @@
+I am way behind on these.
+If you find something that is not listed here please post it on the github.
+
+setVariable.txt
+
+!="blck_AIState"
+
+Scripts.txt
+
+To a line begining with:
+5 "BIS_fnc_dynamictext"
+Add:
+ !="[_text,_xcoord,_ycoord,_screentime,0.5] spawn BIS_fnc_dynamicText;"
+ 
+ 
+to a line beginning with:
+ 
+5 removeAllEventHandlers 
+
+ Add:
+ !="call GMS_fnc_nextAnimation;\n} else {\n_hostage removeAllEventHandlers "AnimDone";"

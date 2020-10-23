@@ -1,0 +1,77 @@
+Installation:
+
+/////////////////////////////
+CLIENT
+/////////////////////////////
+// MPMissions - modify your mission pbo (epoch.Altis.pbo) as follows.
+1) Unpack the Zip file you downloaded from the Github to a convenient location.
+2) Unpack your mission pbo (epoch.Altis.pbo or Exile.Altis.pbo). 
+3) Open the folder containing the unpacked mission.
+4) Copy the debug folder from your download (MPMissions\epoch.Altis or MPMissions\exile.Altis)
+5) Merge the line in MPMissions\epoch.Altis\init.sqf with your init.sqf, or use the one provided if you do not have an init.sqf in your mission.
+6) Adjust settings for messages shown by the client by changing values in \debug\blckclient.sqf to suit your needs.
+  (see blckClient.sqf for details)
+7) Repack your mission.pbo.
+///////////////////////////
+
+///////////////////////////
+//  Server
+// ////////////////////////
+
+Adjust settings in @GMS\addons\custom_server\Configs to suit your needs.
+Pack custom_server.
+Add the @GMS folder to the root directory of your server (the same location as your mods such as @Epoch or @Exile
+Add "@GMS;" to -servermods in the startup parameters for your server.
+
+Alternative method:
+Copy custom_server to either:
+@epochhive\addons 
+
+or 
+
+@exileserver\addons
+
+as appropriate.
+
+/////////////////////////
+// Battleye Exceptions
+
+More to come on this.
+Please see the links below for some how-to's and two useful tools to automate adding appropriate exceptions:
+
+http://opendayz.net/threads/a-guide-to-battleye-filters.21066/
+https://epochmod.com/forum/topic/29736-all-you-need-to-know-about-be-filters-but-were-too-lazy-to-google/
+http://www.exilemod.com/topic/9779-releasetool-bem-battleye-filter-manager-by-themeq/
+http://www.exilemod.com/topic/9256-battleye-filter-tool/
+http://www.exilemod.com/topic/9708-battleye-filter-editor/
+
+If you would let me know what exceptions you need to add I will start a list in this document.
+	
+11) Start your server and join. By default missions will start spawning in around 5-10 min. 
+
+//////////////////////////
+// Adjusting configurations settings
+a) Unpack custom_server.pbo
+b) Make a backup of the relevant configuration file (custom_server\Configs\epoch_configs.sqf)
+c) open the mod-specific configuration file custom_server\Configs\epoch_configs.sqf) in Notepad++ or another text editor
+d) Modify settings as desired.
+e) Repack custom_server.pbo
+
+
+///////////////////////
+//  Can I add map, mod or server-specific overrides for certain settings?
+
+Yes !
+You can use blck_custom_config.sqf to code any overrides you like. An example for changing some settings for Namalsk is provided.
+
+////////////////////////
+// What is this blck_debugON variable about?
+I use it to speed things up for debugging. Best to leave this one alone.
+
+///////////////////////////////////////////
+// Further customization
+
+Just about anything about the missions can be modified. 
+
+Please see the FAQ for more information
+

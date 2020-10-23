@@ -1,0 +1,48 @@
+For what I've seen in the files,
+
+ 
+
+You have to put the content of exile.map in your mission folder. 
+
+ 
+
+Be careful, surely you have already the config.cpp and initServer.sqf files on your mission, so on those files you have to merge the content.
+
+ 
+
+Find your CfgExileCustomCode and copy
+
+//You have to copy this line inside your CfgExileCustomCode
+ExileServer_object_tree_network_chopTreeRequest = "custom\ExileServer_object_tree_network_chopTreeRequest.sqf";	
+And then copy:
+
+ 
+
+ExecVM "custom\removetrees.sqf";
+At the end of your initServer.sqf.
+
+ 
+
+Then if you are using 32bits go to: @ExileServer\extDB\sql_custom_v2
+
+ 
+
+And copy the content of exile.ini at the end of your exile.ini.
+
+ 
+
+And then on mysql workbench or your mysql program run query.sql  to create the tree table.
+
+ 
+
+Remember that you have to change the database name in the 2 first lines if your db name is not "exile".
+
+ 
+
+CREATE DATABASE IF NOT EXISTS `exile` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `exile`;
+
+to
+
+CREATE DATABASE IF NOT EXISTS `youDBname` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `yourDBname`;
