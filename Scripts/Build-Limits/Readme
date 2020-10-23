@@ -1,0 +1,30 @@
+Build Height Limits
+
+First is to create a folder named Custom, if you already have that add another folder name it
+Build_Limits then add these to the folder Build_Limits.
+
+
+config.sqf
+ExileClient_construction_handleAbort.sqf
+ExileClient_object_item_construct.sqf
+ExileClient_construction_threads.sqf
+
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+
+Add this to your CfgExileCustomCode
+
+	// Build limits
+	ExileClient_construction_handleAbort = "Custom\Build_Limits\ExileClient_construction_handleAbort.sqf";
+	ExileClient_object_item_construct = "Custom\Build_Limits\ExileClient_object_item_construct.sqf";
+	ExileClient_construction_threads = "Custom\Build_Limits\ExileClient_construction_threads.sqf";	
+	
+Then add this part to your init.sqf	
+	
+execVM "Custom\Build_Limits\config.sqf";                                                         // Build Limits	
+
+To change the height for the build limits, open your \Custom\Build_Limits\config.sqf
+and on line 5 under 
+ExileBuildHeightLimit = 150;  // this is what you would change the height you like.
