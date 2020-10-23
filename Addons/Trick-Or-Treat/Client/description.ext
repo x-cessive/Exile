@@ -1,0 +1,47 @@
+class CfgSounds
+{
+	sounds[] = {"SM_incomingMissile_warning"};    
+    class SM_incomingMissile_warning
+    {
+        name = "SM_incomingMissile_warning";
+        sound[] = {"SM\IncomingMissile\warning.ogg", 1, 1};
+        titles[] = {};
+    };
+	// GADD Trick or Treat
+	class Knock1
+    {
+        name = "Knock1";
+        sound[] = {"GADD_Apps\TrickOrTreat\Sounds\Knock1.ogg", 0.5, 1, 100 };
+        titles[] = { 0, "" };
+    };
+	class Knock2
+    {
+        name = "Knock2";
+        sound[] = {"GADD_Apps\TrickOrTreat\Sounds\Knock2.ogg", 0.5, 1, 100 };
+        titles[] = { 0, "" };
+    };
+	class Laugh1
+    {
+        name = "Laugh1";
+        sound[] = {"GADD_Apps\TrickOrTreat\Sounds\Laugh1.ogg", 0.5, 1, 100 };
+        titles[] = { 0, "" };
+    };
+	class Laugh2
+    {
+        name = "Laugh2";
+        sound[] = {"GADD_Apps\TrickOrTreat\Sounds\Laugh2.ogg", 0.5, 1, 100 };
+        titles[] = { 0, "" };
+    };
+	class Laugh3
+    {
+        name = "Laugh3";
+        sound[] = {"GADD_Apps\TrickOrTreat\Sounds\Laugh3.ogg", 0.5, 1, 100 };
+        titles[] = { 0, "" };
+    };
+	class TrickOrTreat1
+    {
+        name = "TrickOrTreat1";
+        sound[] = {"GADD_Apps\TrickOrTreat\Sounds\TrickOrTreat1.ogg", 0.5, 1, 100 };
+        titles[] = { 0, "" };
+    };
+};
