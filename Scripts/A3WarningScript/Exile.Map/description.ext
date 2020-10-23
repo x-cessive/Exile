@@ -1,0 +1,16 @@
+class RscTitles
+{
+	#include "custom\MWarning\dialog.hpp"
+};
+
+
+class CfgSounds
+{
+	sounds[] = {};
+	class MWarningAlarm
+	{
+		name = "MWarningAlarm";
+		sound[] = {"custom\MWarning\alarm.ogg", 0.4, 0.8};
+		titles[] = {};
+	};
+};
