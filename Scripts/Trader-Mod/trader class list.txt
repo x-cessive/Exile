@@ -1,0 +1,335 @@
+----------- [CiC]red_ned ----------
+----------- http://cic-gaming.co.uk ----------
+
+ApexVTOL 		//added
+
+----------- community ----------
+Community
+
+----------- Pointer attachments ----------
+BPPointerAttachments
+CUPPointerAttachments
+FFAAPointerAttachments
+KAAttachments
+MASPointerAttachments
+NIAAttachments
+PointerAttachments
+R3FPointerAttachments
+RHSPointerAttachments
+
+----------- bipods ----------
+BipodAttachments
+FFAABipodAttachments
+R3FBipodAttachments
+RHSBipodAttachments
+// APEXBipodAttachments		//not used
+
+----------- silencers ----------
+APEXMuzzleAttachments
+BPMuzzleAttachments
+CUPMuzzleAttachments
+FFAAMuzzleAttachments
+HLCMuzzleAttachments
+KAMuzzleAttachments
+MASMuzzleAttachments
+MuzzleAttachments
+NIAMuzzleAttachments
+R3FMuzzleAttachments
+RHSMuzzleAttachments
+
+----------- uavs ----------
+A3UAVs
+APEXUAVs
+CUAVs
+UAVs
+
+----------- ugvs ----------
+A3UGVs
+CUGVs
+
+----------- staticMGs ----------
+StaticMGs
+
+----------- scopes ----------
+APEXOpticAttachments
+BPOpticAttachments
+CUPOpticAttachments
+FFAAOpticAttachments
+FHQACCESSORIES
+HLCOpticAttachments
+KAOpticAttachments
+MASOpticAttachments
+NIAOpticAttachments
+OpticAttachments
+R3FOpticAttachments
+RHSForegripAttachments // "RHS Foregrip Attachments" - NEW CATEGORY, be sure to add under ARMORY - 8 New Items 
+RHSOpticAttachments
+
+----------- ammo ----------
+APEXAmmunition
+Ammunition
+BPAmmunition
+CUPAmmunition
+FFAAAmunition
+GREFAmmunition
+HLCAmmunition
+KAAmmunition
+MASAmmunition
+NIAAmmunition
+R3FAmmunition
+RHSAmmunition
+RHSUGLAmmo // "RHS UGL Ammunition" - NEW CATEGORY, be sure to add under SPEC OPS - 25 New Items 
+
+----------- flares ----------
+Flares
+
+----------- smokes ----------
+Smokes
+
+----------- explosives ----------
+CUPExplosive
+Explosives
+MASExplosive
+RHSExplosives // "RHS Explosives" - MODIFIED CATEGORY, this replaces RHSMines under SPEC OPS - 26 New Items 
+
+----------- launchers ----------
+A3Launchers
+APEXLaunchers		
+CUPLaunchers
+MASLaunchers
+R3FLaunchers
+RHSLaunchers
+WW2LAUNCHERS
+TankDLCLaunchers
+
+----------- launcher ammo ----------			
+A3LauncherAmmo
+APEXLauncherAmmo
+CUPLauncherAmmo
+MASLauncherAmmo	
+R3FLauncherAmmo		
+RHSLauncherAmmo
+TankDLCLauncherAmmo
+			
+----------- pistols ----------
+APEXPistols
+BPPistols
+CUPPistols
+FFAAPistols
+KAPistols
+MASPistols
+Pistols
+R3FPistols
+RHSPistols
+
+----------- Shotguns ----------
+Shotguns
+
+----------- sub machineguns ----------
+APEXSubMachineGuns
+BPSubMachineGuns
+CUPSubMachineGuns
+FFAASmg
+MASSubMachineGuns
+R3FSubMachineGuns
+RHSSubMachineGuns // "RHS Sub Machine Guns" - NEW CATEGORY, be sure to add under ARMORY - 4 New Items 
+SubMachineGuns
+
+----------- light machineguns ----------
+APEXLightMachineGuns
+BPLightMachineGuns
+CUPLightMachineGuns
+HAPASSAULTRIFLES
+HLCLightMachineGuns
+LightMachineGuns
+MASLightMachineGuns
+NIALightMachineGuns
+R3FLightMachineGuns
+RHSLightMachineGuns
+
+----------- assault rifles ----------
+APEXAssaultRifles
+AssaultRifles
+BPAssaultRifles
+CUPAssaultRifles
+FFAARifles
+GREFWeapons
+HLCAssaultRifles
+KARifles
+MASAssaultRifles
+NIAAssaultRifles
+R3FAssaultRifles
+RHSAssaultRifles
+
+----------- sniper rifles ----------
+APEXSniperRifles
+BPSniperRifles
+CUPSniperRifles
+FFAASniperRifles
+HAPSNIPERRIFLES
+HLCSniperRifles
+HWPweapons
+MASSniperRifles
+NIASniperRifles
+RHSSniperRifles
+SniperRifles
+Nlweapons
+WW2WEAPONS
+
+----------- uniforms ----------
+APEXUniforms
+CUPUniforms
+Diving
+FFAAUniform
+GREFUniforms
+HAPUNIFORMS
+Nlunit
+RHSUniforms
+TRYKUniforms
+TankDLCclothing
+Uniforms
+WW2Clothing
+
+----------- vests ----------
+APEXVests
+CUPVests
+FFAAVest
+GREFVests
+HAFMCloth
+HAPVESTS
+RHSVests
+TRYKVests
+Vests
+
+----------- headgear ----------
+A3Headgear
+APEXHeadgear
+CUPHeadgear
+FFAAHeadgear
+FFAAfaceware
+GREFHeadgear
+HAPHEADGEAR
+Headgear
+MASHeadgear
+RHSHeadgear
+TRYKHeadgear
+
+----------- hardware ----------
+Hardware
+----------- building supplies ----------
+CBuilding - exile wood and concrete building materials
+ExtendedBaseMod
+
+----------- food ----------
+Food
+NonVeganFood
+
+----------- drinks ----------
+Drinks
+
+----------- tools ----------
+Tools
+MASTools
+R3FTools	<<probably best not use.
+//APEXTools		//not used
+
+----------- first aid ----------
+FirstAid
+
+----------- navigation ----------
+Navigation
+
+----------- backpacks ----------
+A3Backpacks
+APEXBackpacks
+Backpacks
+CUPBackpacks
+FFAAbackpack
+HAPBACKPACKS
+MASBackpacks
+RHSAccessories // "RHS Accessories" - NEW CATEGORY, be sure to add under EQUIPMENT - 11 New Items 
+RHSBackpacks // "RHS Backpacks" - NEW CATEGORY, be sure to add under EQUIPMENT - 11 New Items 
+TRYKBackpacks
+
+----------- bikes ----------
+Bikes
+
+----------- cars ----------
+A3Cars
+APEXCars
+Cars
+FMPCars
+FOXCars
+HAFMvehicle
+HAPCARS
+HVPCars
+JonzieCars
+MASCars
+
+----------- trucks ----------
+// CTrucks - no longer used
+A3Trucks
+APEXTrucks
+CUPArmed
+CUPUnarmed
+FMPTrucks
+FOXTrucks
+GREFArmed
+GREFUnarmed
+HAPTRUCKS
+MASArmed
+MASTrucks
+RHSVehicles
+Trucks
+Nlvehicle
+
+----------- tanks ----------
+A3Tanks
+MASTanks
+Nltank
+TankDLC
+
+----------- helicopters ----------
+//CChoppers - no longer used
+A3armedChoppers
+A3unarmedChoppers
+APEXChoppers
+CUPChoppers
+Choppers
+GREFChoppers
+MASChoppers
+RHSChoppers
+HAFMHeliarm
+HAFMheli
+Pook
+Nlheli
+Nlpoli
+
+----------- boats ----------
+A3Boats
+APEXBoats
+RHSBoats
+Boats
+
+----------- planes ----------
+A3Planes
+APEXPlanes
+CPlanes
+GREFPlanes
+HAFMJet
+HAFMPlane
+HVPPlanes
+MASPlanes
+MASPlanes
+Planes
+RHSPlanes
+
+----------- taru pods ----------
+PODS
+
+----------- RHS:SAF ----------
+Air Trader - SAFChoppers 
+Armory Trader - SAFWeapons, SAFAmmunition, SAFAttachments 
+Equipment Trader - SAFUniforms, SAFVests, SAFHeadgear, SAFBackpacks 
+SpecOps Trader - SAFMines 
+Vehicle Trader - SAFUnarmed, SAFArmed
