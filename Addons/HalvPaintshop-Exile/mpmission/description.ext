@@ -1,0 +1,4 @@
+// Add to Bottom
+
+#include "addons\paintshop\Halv_defines.hpp"
+#include "addons\paintshop\paintshop.hpp"
