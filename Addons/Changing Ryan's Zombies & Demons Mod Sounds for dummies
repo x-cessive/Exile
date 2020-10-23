@@ -1,0 +1,94 @@
+I found Ryan's Zombies & Demons sounds were not immersive enough when playing, so I decided to find a way to replace them. Since sounds are built-in the mod itself , I have no way of directly replacing them to my custom ones.
+But what I decided to do , as a server owner, is upload my custom sounds to a folder inside mission.pbo and redirect the path , coded inside the mod, to these sounds .
+
+This setup was configured and tested only on ChernarusRedux map. You may need to tweak some parts of the code to get it working. Try to understand the general idea and test things out, before asking to help you out with this.
+
+Here is what you need to do, in order to change Zombies & Demons mod sounds:
+
+1. Find and download / create or record  a LOT of custom zombie sounds in ogg format. Save / encode them in decent sound quality , but try to create a small sized files. I used sound quality around ~100kbps , so most of the sound files were around 20-40 KB.
+Keeping sound files small sized is important, this will reduce the total mission.pbo file size and players wait time when joining your server. Now rename all of this files according to the zombies sounds names required and put them in "sounds" folder inside your mission.
+ 
+
+2. Edit description.ext and add the following path redirects to the new sounds:
+ 
+
+class CfgSounds
+{
+
+sounds[] = {};
+		
+	class ryanzombiesmoan1
+	{
+		name = "Zombie Moan 1";﻿
+		sound[] = {"\sounds\moaning1.ogg",0.6,"0.925 + random 0.15"};
+		titles[] = {};
+	};
+	class ryanzombiesmoan2
+	{
+		name = "Zombie Moan 2";
+		sound[] = {"\sounds\moaning2.ogg",0.6,"0.925 + random 0.15"};
+		titles[] = {};
+	};
+	class ryanzombiesmoan3
+	{
+		name = "Zombie Moan 3";
+		sound[] = {"\sounds\moaning3.ogg",0.6,"0.925 + random 0.15"};
+		titles[] = {};
+	};
+	class ryanzombiesmoan4
+	{
+		name = "Zombie Moan 4";
+		sound[] = {"\sounds\moaning4.ogg",0.6,"0.925 + random 0.15"};
+		titles[] = {};
+	};
+	class ryanzombiesmoan5
+	{
+		name = "Zombie Moan 5";
+		sound[] = {"\sounds\moaning5.ogg",0.6,"0.925 + random 0.15"};
+		titles[] = {};
+	};
+	class ryanzombiesmoan6
+	{
+		name = "Zombie Moan 6";
+		sound[] = {"\sounds\moaning6.ogg",0.6,"0.925 + random 0.15"};
+		titles[] = {};
+	};
+	class ryanzombiesmoan7
+	{
+		name = "Zombie Moan 7";
+		sound[] = {"\sounds\moaning7.ogg",0.6,"0.925 + random 0.15"};
+		titles[] = {};
+	};	
+		
+};
+This will redirect some of the zombies﻿ sounds (the moaning sounds) to the ones we chose and dropped to "sounds" folder.
+
+3. Since rest of the zombies sounds configured in a different way (lets skip the details of relative path , array and such) , we can't add them to class CfgSounds as we did with moaning sounds.
+We need an external sqf to do it for us. In this sqf called sounds.sqf , we configure the new array of sounds and their file paths. Normal zombies attack & aggressive sounds, zombies eating sounds, crawlers and spiders. Each category have their own sounds and exact file names.
+
+Sounds.sqf:
+
+ 
+
+waitUntil {!isNil "RZ_NormalZombieAttackArray"};
+
+RZ_NormalZombieAttackArray = ["mpmissions\__cur_mp.ChernarusRedux\sounds\attack1.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\attack2.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\attack3.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\attack4.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\attack5.ogg"];
+
+RZ_ZombieEatingArray = ["mpmissions\__cur_mp.ChernarusRedux\sounds\eat1.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\eat2.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\eat3.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\eat4.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\eat5.ogg"];	
+
+RZ_CrawlerAttackArray = ["mpmissions\__cur_mp.ChernarusRedux\sounds\attack_crawler1.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\attack_crawler2.ogg"];
+
+﻿
+	RZ_NormalZombieAggressiveArray = ["mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive1.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive2.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive3.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive4.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive5.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive6.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive7.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive8.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive9.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive10.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive11.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive12.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive13.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive14.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive15.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive16.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive17.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive18.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive19.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive20.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive21.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive22.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive23.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive24.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive25.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive26.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive27.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive28.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive29.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive30.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive31.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive32.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive33.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive34.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive35.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive36.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive37.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive38.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive39.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive40.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive41.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive42.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive43.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive44.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive45.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive46.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive47.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive48.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive49.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive50.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive51.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive52.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive53.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive54.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive55.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive56.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive57.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive58.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive59.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive60.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive61.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive62.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive63.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive64.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive65.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive66.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive67.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive68.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive69.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive70.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive71.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive72.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive73.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive74.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive75.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive76.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive77.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive78.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive79.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive80.ogg"];
+
+	RZ_SpiderZombieAggressiveArray = ["mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider1.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider2.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider3.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider4.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider5.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider6.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider7.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider8.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider9.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider10.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider11.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider12.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider13.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider14.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider15.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider16.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider17.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider18.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider19.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider20.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider21.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider22.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider23.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider24.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider25.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider26.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider27.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider28.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider29.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider30.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider31.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider32.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider33.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider34.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider35.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider36.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider37.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider38.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider39.ogg", "mpmissions\__cur_mp.ChernarusRedux\sounds\aggressive_spider40.ogg"];
+
+	﻿
+
+3. When you done with the above steps, all you left to do is add Sounds.sqf to your init.sqf:
+ 
+
+[] execVM "sounds.sqf";  // Zombies & Demons sound re-write
+ 
+
+4. RE-PBO the whole mission folder with newly created "sounds" folder where all the new sounds are , with sounds.sqf and edited init.sqf. 
