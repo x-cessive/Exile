@@ -1,4 +1,0 @@
-Add this to setpos.txt 
-
-//This is my Line 2
-7 "" !"Exile_" !"Land_" !"CamoNet_OPFOR_open_F" !"CamoNet_INDP_open_F" !"CamoNet_BLUFOR_open_F" !"CamoNet_OPFOR_open_F_Preview" !"CamoNet_INDP_open_F_Preview" !"CamoNet_BLUFOR_open_F_Preview" !"Portable" !"_Preview" !"_F" !"PortableHelipadlight_" !"ShootingPos_F" !"BlockConcrete_F" !"MapBoard_altis_F" !"B_"
