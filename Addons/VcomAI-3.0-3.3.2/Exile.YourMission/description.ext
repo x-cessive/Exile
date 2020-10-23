@@ -1,0 +1,6 @@
+// These lines MUST be at the top and in this order
+#define true 1
+#define false 0
+#include "Defines.hpp"
+#include "Exile.hpp"
+#include "VCOM.hpp"
