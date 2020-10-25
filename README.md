@@ -17,7 +17,7 @@ If you like this Repo, Please click the :star:
 List of `awesome README Profile` categories mentioned below
 
 ## Contents
-//
+
 A3XAI – A3XAI is a roaming/ambient AI spawning addon for ArmA 3 Exile mod. Support for Headless Client Included.
 
 Sarge’s AI System – This is an AI system that is intended to simulate real players roaming the map, scavenging, looting and engaging in combat.
@@ -119,7 +119,7 @@ Hide Body – Gives a scroll option on a dead player to hide his/her body to rem
 Loading Screen – Displays a custom screen just as the player loads in. 
 
 Loot Positions – Loot Positions for 100s of buildings on different maps. These are some of the maps we support : Taviana Esseker Chernarus Bornholm You can request 
-//
+
   - [Github README PROFILE CATEGORY](#github-readme-profile-category)
   - [List out `Awesome README Profile` Tools](#list-out-awesome-readme-profile-tools)
   - [List out `Awesome README Profile` Articles](#list-out-awesome-readme-profile-articles)
