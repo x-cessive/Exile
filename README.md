@@ -8,7 +8,7 @@ Group love
 <br>
 <p align="center"><i>Loved the project? Please visit our <a href="https://awesome-github-readme-profile.netlify.app">Website</a></i></p>
 <br>
-This repo aims to collect the all `awesome beautiful READMEs profile` and make your Profile look good & Inspire other's.
+This repo aims to collect all available scripts addons and extras for creating an Arma 3 Exile Server and make your server stand out from the rest.
 
 If you are intersted, will create a PR for to add your `README` profile here.
 
@@ -78,4 +78,3 @@ This project is licensed under [MIT](https://opensource.org/licenses/MIT) licens
 ## :man_astronaut: Show your support
 
 Give a ⭐️ if this project helped you!
-
