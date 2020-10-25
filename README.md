@@ -1,12 +1,12 @@
 # Exile
 Group love
-<h1 align="center">Welcome To My Collection</h1>
+<h1 align="center">Welcome To The Collection</h1>
 <p align="center"><i>Just Trying to Make Setting up an Arma 3 Exile server A bit easier</i></p>
 <div align="center">
 
 </div>
 <br>
-<p align="center"><i>Loved the project? Please visit our <a href="https://awesome-github-readme-profile.netlify.app">Website</a></i></p>
+<p align="center"><i>Wanna contact us? Please visit our <a href="https://discord.gg/9tmMR5g">Discord</a></i></p>
 <br>
 This repo aims to collect all available scripts addons and extras for creating an Arma 3 Exile Server and make your server stand out from the rest.
 
