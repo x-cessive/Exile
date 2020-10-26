@@ -33,8 +33,8 @@ Each time a player spawns it will randomly select one of these lines to display 
 
 _tipTextList = selectRandom 
 [
-	"Connect to the xstreme gaming discord at discord.xstremegaming.com",
-	"Server news, comp claims and more join the communnity www.xstremegaming.com",
+	"Connect to the XCSVs gaming discord at https://discord.gg/UWnVMmq",
+	"Server news, comp claims and more join the communnity https://discord.gg/UWnVMmq",
 	"This is a game of loss, its a wild world out there, good luck!",
 	"Enjoy the server... Please consider donating to help keep us alive",
 	"Any vehicle left inside the black safezone circle will be deleted at restart",
