@@ -27,6 +27,21 @@ class CfgExileCustomCode
 ```
 Now replace @ExileLootDrop\ExileLootDrop.cfg with your own servers loot (this is the default Exile table). The loot is in the "pre-compiled" format.
 
+There are a number of ways to set this up. You can run the mod -servermod=@Exile;@Exile_Server;@ExileLootDrop
+
+Or you can copy the pbo into @ExileServer/addons, copy the DLL+CFG to @ExileServer
+
+Then you ADD the override line into the exile mission config.
+
+class CfgExileCustomCode
+{
+  ...
+  ExileServer_system_lootManager_dropItem = "\ExileLootDrop\ExileServer_system_lootManager_dropItem.sqf";
+  ExileServer_system_lootManager_spawnLootInBuilding = "\ExileLootDrop\ExileServer_system_lootManager_spawnLootInBuilding.sqf";
+  ...
+};
+
+
 ### Performance
 
 ExileLootDrop.VR mission contains the original Exile method for loot and the original tables for testing
