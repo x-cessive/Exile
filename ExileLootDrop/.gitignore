@@ -1,0 +1,11 @@
+.hg/*
+@ExileLootDrop/*
+src/ExileLootDrop/bin/*
+src/ExileLootDrop/obj/*
+src/ExileLootDropTester/bin/*
+src/ExileLootDropTester/obj/*
+*.suo
+src/packages/*
+.hgignore
+@ExileLootDrop.zip
+src/ExileLootDropTester/ExileLootDropTester.csproj.user
