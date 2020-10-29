@@ -1,0 +1,4 @@
+add this to customcode
+
+//helipad
+ExileServer_system_trading_network_purchaseVehicleRequest = "Overrides\ExileServer_system_trading_network_purchaseVehicleRequest.sqf";
