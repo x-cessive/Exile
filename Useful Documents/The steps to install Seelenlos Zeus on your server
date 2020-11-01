@@ -1,10 +1,5 @@
 The steps to install Seelenlos Zeus on your server after you download the mod. 
-1.  Place @SLZ in your server root folder. 
-2.  copy and paste the userconfig folder from inside @SLZ to the root folder of your server. 
-3.  Edit your slz_settings.sqf file and add the uid of the person(s) you want to have Zeus access. 
-4.  Add -filepatching to your startup script. 
-5.  Add @SLZ to your -servermod lists (ie.  -servermod=@exileserver;@admintoolkitserver;@slz;) 
-6.  Start your server and have fun. The steps to install Seelenlos Zeus on your server after you download the mod. 
+
 1.  Place @SLZ in your server root folder. 
 2.  copy and paste the userconfig folder from inside @SLZ to the root folder of your server. 
 3.  Edit your slz_settings.sqf file and add the uid of the person(s) you want to have Zeus access. 
