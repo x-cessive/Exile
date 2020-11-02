@@ -9,7 +9,7 @@
  * To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
  */
  
- private ["_playerChoice"];
+ private ["_playerChoice","_curSel","_data","_num"];
  
 _playerChoice = _this select 0;
 
@@ -23,7 +23,17 @@ if (_playerChoice isEqualTo 1) then {
 	
 };
 
-ExileClientSpawnLocationSelectionDone = true;
-//closeDialog 1;
+disableSerialization;
+_display = uiNamespace getVariable ["xstremeGroundorHaloDialog",displayNull];
+_lB = _display displayCtrl 1500;
+_curSel = lbCurSel _lB;
+_data = _lB lbData _curSel;
+_num = parseNumber _data;
+_flag = playerFlags select _num;
+_baseName = lbText [1500, _curSel];
+spawnRegistry pushBack [_baseName, time];
 
+ExileClientSpawnLocationSelectionDone = true;
+uiSleep 0.1;
+closeDialog 1;
 true
