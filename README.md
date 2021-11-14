@@ -1,26 +1,6 @@
 ##NO LONGER MAINTAINED
 
 
-# Exile
-Group love
-<h1 align="center">Welcome To The Collection</h1>
-<p align="center"><i>Just Trying to Make Setting up an Arma 3 Exile server A bit easier</i></p>
-<div align="center">
-
-</div>
-<br>
-<p align="center"><i>Wanna contact us? Please visit our <a href="https://discord.gg/9tmMR5g">Discord</a></i></p>
-<br>
-This repo aims to collect all available scripts addons and extras for creating an Arma 3 Exile Server and make your server stand out from the rest.
-
-If you are intersted, will create a PR for to add your `README` profile here.
-
-If you like this Repo, Please click the :star:
-
-List of `awesome README Profile` categories mentioned below
-
-## Contents
-
 A3XAI – A3XAI is a roaming/ambient AI spawning addon for ArmA 3 Exile mod. Support for Headless Client Included.
 
 Sarge’s AI System – This is an AI system that is intended to simulate real players roaming the map, scavenging, looting and engaging in combat.
