@@ -24,6 +24,10 @@ been exercised by a player — anything requiring a live client is marked accord
 | `Addons/Trick-Or-Treat` | Event | Installed — Halloween flag action, server PBO live | **no** |
 | Virtual Garage | Stock Exile VG, no addon | Shix `VirtualGarage_Server.pbo` **removed** (redundant) | n/a (stock) |
 | `Scripts/Exile-Anti-Floating-bug-script-aka-stair-bug` | QoL | Installed | **no** |
+| `Scripts/Statusbar-32-64Bit-master` | HUD | Installed — 12 indicators, `RscTitles` created | **no** |
+| `Addons/ExilePersistentVehicles` | Vehicles | Running — hooks confirmed, 58 vehicles spawned | n/a (server-side) |
+| `Scripts/Exile-Safezone-Markers` | Map | Installed — `initServer` call | **no** |
+| `Scripts/Build-Limits` | Building | Installed — `ExileBuildHeightLimit = 150` | **no** |
 
 ---
 
@@ -235,6 +239,153 @@ Evidence VG is stock-live: mission `CfgVirtualGarage` `enableVirtualGarage = 1`,
 `numberOfVehicles[]` and `allowedVehicleTypes[]` populated, `clearInventoryOnStore = 1`; stock
 `exile_client.pbo` ships `virtualGarageDialog` + `ExileClient_gui_virtualGarageDialog_show`; stock
 `exile.ini` has the 4 VG queries; `virtual_garage` table exists (0 rows).
+
+---
+
+## StatusBar (kuplion, from Stats Bar by Creampie)
+
+Mission-side only, no server PBO, no database, no BattlEye exception.
+
+1. `Scripts/Statusbar-32-64Bit-master/StatusBar/` → mission `custom/StatusBar/`.
+2. Rename **`32bit!!!!!!!!!  ExileServer_system_database_connect.sqf`** →
+   `ExileServer_system_database_connect.sqf` into that folder. The 32-bit variant is the correct
+   one here: this server runs `arma3server.exe` (x86) with extDB2. Taking the 64-bit file would
+   query a database handle that does not exist on this build.
+3. `config.cpp` → `class CfgExileCustomCode`:
+
+   ```cpp
+   ExileServer_system_database_connect = "custom\StatusBar\ExileServer_system_database_connect.sqf";
+   ```
+
+   This override is what feeds the "players online" counter — the stock function does not expose it.
+4. `description.ext`: this mission had **no `RscTitles` class at all** (only `Header`,
+   `CfgFunctions`, `CfgSounds`, `CfgRemoteExec`). The README assumes one exists. Create it:
+
+   ```cpp
+   class RscTitles
+   {
+       #include "custom\StatusBar\statusBar.hpp"
+   };
+   ```
+5. `initPlayerLocal.sqf`: `[] execVM "custom\StatusBar\statusBar_init.sqf";`
+
+**Path case.** The script ships referencing `Custom\StatusBar\...`; this mission uses lowercase
+`custom/`. Arma's PBO lookup is case-insensitive so either works, but the files were normalised to
+lowercase for consistency. Beware when scripting that fix: PowerShell's `-replace` and `-ne` are
+both case-**insensitive**, so the naive rewrite silently no-ops. Use `-creplace` / `-cne`.
+
+**Layout bug — fixed here, not upstream.** As shipped, `statusBar.hpp` sets a pixel-derived height
+against a normalised font size:
+
+```cpp
+y = safeZoneY + safeZoneH - 40 * pixelH;
+h = 30 * pixelH;      // pixel-scaled
+size = 0.04;          // normalised (fraction of screen height)
+```
+
+30 px is ~2.8% of screen height at 1080p but only ~1.4% at 2160p, while the glyphs stay 4% tall
+regardless. On a 4K display the text overflows its control and renders visibly cut in half. Fixed by
+making both values normalised:
+
+```cpp
+y = safeZoneY + safeZoneH - 0.055;
+h = 0.05;
+```
+
+Restart times for the countdown indicator live in `statusBar_update.sqf`
+(`_restartTimes = [0,6,12,18,24];`). **This server has no scheduled restart task**, so that
+countdown is currently decorative — either add a restart task or edit the array to match reality.
+
+Indicators: health, hunger, thirst, temperature, body damage, respect, wallet, locker, players
+online, FPS, compass, restart countdown.
+
+---
+
+## ExilePersistentVehicles (Andrew_S90) — random vehicle spawner
+
+Server-side only. No client or mission changes.
+
+```powershell
+E:\ArmaTools\pbo.ps1 Pack -Path <build>\vehicles -Out E:\arma3server\@ExileServer\addons\vehicles.pbo -Prefix vehicles
+```
+
+Prefix **must** be `vehicles` (matches the shipped `$PREFIX$`), or its `CfgFunctions` paths will not
+resolve.
+
+**Retuned from the shipped defaults — do not ship those as-is.** The upstream config is written for
+Altis and is far heavier than it looks:
+
+| Class | Shipped | Here | Active |
+|---|---|---|---|
+| `PersistantVehiclesRandom` → RandomVehicles | 100 | **30** | yes |
+| → RandomHeli | 15 | **8** | yes |
+| → RandomBoats | 40 | **12** | yes |
+| → RandomTanks | 5 | 5 | **no** |
+| → RandomAPC | 5 | 5 | **no** |
+| `PersistantVehiclesRoad` → RandomVehicles | 15 | **8** | yes |
+| `PersistantVehiclesTown` → RandomVehicles | 35 | 35 | **no** |
+| `PersistantVehiclesLocation` → RandomHeli | 10 | 10 | **no** |
+
+Active total went from **170 → 58**. Every one is a persistent row in the `vehicle` table, so the
+shipped numbers cost both server FPS and database growth permanently.
+
+`BigTowns[]` shipped as `{"Kavala","Athira","Pyrgos"}` — Altis towns, none of which exist on Tanoa.
+Changed to `{"Georgetown","Lijnhaven","La Rochelle"}`. Only matters if `PersistantVehiclesTown` is
+switched on, but leaving Altis names in a Tanoa config is a trap for the next reader.
+
+`PersistantVehiclesLocation` ships `Active = 0` with a list of hardcoded **Altis** coordinates.
+Leave it off unless you replace every coordinate with Tanoa ones.
+
+It works by **hooking**, not overriding — it redirects `ExileServer_object_vehicle_database_load`
+and `ExileServer_world_initialize` to its own copies and calls on to the originals. Confirmed in RPT:
+
+```
+VehicleServer - Hooked ExileServer_object_vehicle_database_load to redirect to vehicles\code\hooks\...
+VehicleServer - Hooked ExileServer_world_initialize to redirect to vehicles\code\hooks\...
+ExileServer - VehicleServer_world_spawnAllVehicles - Dynamic persistent vehicles spawned.
+```
+
+⚠ Its README states it was developed "with EXTDB2, no infistar and no battleye." This server runs
+**both infiSTAR and BattlEye**. It loaded and spawned cleanly, but it has **not** been exercised with
+BattlEye enforcing — see the BattlEye note at the bottom.
+
+---
+
+## Exile-Safezone-Markers (twist)
+
+Mission-side only.
+
+1. `Scripts/Exile-Safezone-Markers/*.sqf` → mission `custom/SafezoneMarkers/`.
+2. Bottom of `initServer.sqf`:
+
+   ```sqf
+   call compile preprocessFileLineNumbers "custom\SafezoneMarkers\initSafezoneMarkers.sqf";
+   ```
+
+**Map-agnostic** — it discovers trader zones by scanning for markers of type
+`ExileTraderZoneIcon`, so no Tanoa coordinates are needed. Defaults: safezone radius 125 m, no-combat
+radius 250 m, both enabled. Tunable at the top of `initSafezoneMarkers.sqf`.
+
+---
+
+## Build-Limits
+
+Mission-side only, client-side overrides.
+
+1. `Scripts/Build-Limits/Build_Limits/` (4 files) → mission `custom/Build_Limits/`.
+2. `config.cpp` → `class CfgExileCustomCode`:
+
+   ```cpp
+   ExileClient_construction_handleAbort = "custom\Build_Limits\ExileClient_construction_handleAbort.sqf";
+   ExileClient_object_item_construct    = "custom\Build_Limits\ExileClient_object_item_construct.sqf";
+   ExileClient_construction_threads     = "custom\Build_Limits\ExileClient_construction_threads.sqf";
+   ```
+3. `initPlayerLocal.sqf`: `execVM "custom\Build_Limits\config.sqf";`
+
+   The README says `init.sqf`; this mission has no `init.sqf`. All three overrides are
+   `ExileClient_*`, i.e. client-side, so `initPlayerLocal.sqf` is the correct home.
+
+Height limit is `ExileBuildHeightLimit = 150;` in `config.sqf` (upstream default is 30).
 
 ---
 
