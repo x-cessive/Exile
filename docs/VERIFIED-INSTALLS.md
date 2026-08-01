@@ -18,7 +18,11 @@ been exercised by a player — anything requiring a live client is marked accord
 | `Addons/DMD_BuildingReplace` | Map | Loaded | n/a (server-side) |
 | `Addons/Exile_Abandon_Territory` | Territory | Installed, `exile_abandon ready` | **no** |
 | `Addons/Claim-Vehicles` | Vehicles | Installed, pre/postInit clean | **no** |
-| `Addons/ExileLoadouts` | Loadouts | Server PBO repaired and loading | **no** |
+| `Addons/ExileLoadouts` | Loadouts | Installed — XM8 app + locker menu, server PBO live | **no** |
+| `Addons/PlayerMarketByCyunide` | Economy | Installed — XM8 App05, DB table present | **no** |
+| `Addons/ExileRevive` | Revive | Installed — network `ReviveRequest` + defibrillator | **no** |
+| `Addons/Trick-Or-Treat` | Event | Installed — Halloween flag action, server PBO live | **no** |
+| Virtual Garage | Stock Exile VG, no addon | Shix `VirtualGarage_Server.pbo` **removed** (redundant) | n/a (stock) |
 | `Scripts/Exile-Anti-Floating-bug-script-aka-stair-bug` | QoL | Installed | **no** |
 
 ---
@@ -93,6 +97,144 @@ Confirmed by `ClaimVehicles_Server_fnc_preInit` / `_postInit` in the RPT.
 Append the contents of its `initplayerlocal.sqf` to the mission's `initPlayerLocal.sqf`. That is
 the entire installation — no PBO, no config, no database, no BattlEye. It registers a 1-second
 Exile thread task that zeroes player velocity when stuck in a fall animation near ground level.
+
+---
+
+## Player Market By Cyunide
+
+Server PBO: `@ExileServer/addons/PlayerMarketByCyunide.pbo` (pre-packed, has `.bisign` + bikey in
+the repo; the live server uses the bare PBO — see note below).
+
+Mission side:
+
+1. `mission/MarketByCyunide/` → mission root (includes `CfgFunctions.cpp`, `Functions/` with the
+   client response/UI handlers).
+2. `description.ext`: add `class CfgFunctions { #include "MarketByCyunide\CfgFunctions.cpp" };`.
+   This exposes `CyFs_fnc_RequestBuy` and `CyFs_fnc_doSearch`, which the XM8 slide's buttons call.
+3. `config.cpp`:
+   - `CfgXM8` gains `class cyMachine` (`appID = "App05"`) and `class cyMachineSell`.
+   - `XM8_App05_Button` → Player Market (opens `XM8SlideCyunide`).
+   - `XM8SlideCyunide` + `XM8SlideCyunideSell` controls (idc 85150–85166) pasted from the addon's
+     install config; all `RscExileXM8*` parents exist in `RscDefines.hpp`.
+   - `CfgNetworkMessages`: `getItemGUIRequest/Response`, `listItemPlayerMarketRequest`,
+     `listPlayerMarketResponse`, all `module = "system_transport"`.
+4. `initPlayerLocal.sqf`: register the four client functions (two network responses, two slide
+   `onOpen` handlers).
+5. `exile.ini` already contains the 10 PlayerMarket queries — no edit needed.
+6. DB: `playermarket` table created by `install/playermarket.sql`.
+
+**BattlEye**: the addon uses `ExileClient_system_network_send`, so no publicVariable exceptions
+are needed.
+
+**Bisign note**: the repo's `PlayerMarketByCyunide.pbo` ships signed (`.bisign`); the live server
+runs the bare PBO. Keep them in sync — a signed PBO with a missing/rotated bikey will be rejected
+when BattlEye is enforcing signatures.
+
+Confirmed by `PlayerMarketByCyunide_fnc_preInit` / `_postInit` in the RPT. **Not player-tested.**
+
+---
+
+## Exile Revive (Enigma)
+
+There are **two unrelated "Enigma revive" implementations** in the repo. Do not mix them:
+
+| Implementation | Protocol | Server PBO |
+|---|---|---|
+| `Scripts/Enigma_Exile_Revive/` (classic) | `publicVariableServer "ENIGMA_revivePlayer"` + server `addPublicVariableEventHandler` | `enigma_exile_revive.pbo` |
+| `Addons/ExileRevive/` (this one) | Exile network message `ReviveRequest` → module `system_revive` | `revive_server.pbo` (built from `Server/revive_server/`) |
+
+The classic PBO was present in `@ExileServer/addons` but its client counterpart (`Custom/EnigmaRevive/`)
+was not installed, so it was silently inert. **It was removed** and replaced with `revive_server.pbo`
+built from `Addons/ExileRevive/Server/revive_server/` (prefix `revive_server`). Backup of the
+classic PBO: `E:\ArmaTools\be-backups\revive-replacement\enigma_exile_revive_CLASSIC.pbo`.
+
+Mission side (only config — no client `.sqf` files needed):
+
+1. `config.cpp`:
+   - `CfgNetworkMessages`: `class ReviveRequest { module = "system_revive"; parameters[] = {"STRING"}; };`.
+   - In `CfgInteractionMenus` → Player menu → `Revive: ExileAbstractAction` (title "Revive Player",
+     condition `player distance ExileClientInteractionObject < 3 and !(alive ...) and
+     (magazines player find 'Exile_Item_Defibrillator' >= 0)`, action sends `ReviveRequest` with
+     `netId ExileClientInteractionObject`).
+2. The server PBO compiles `ExileServer_system_revive_network_ReviveRequest` in preInit — no
+   `CfgExileCustomCode` entry required.
+3. `Exile_Item_Defibrillator` exists in the stock item list; its trader price is commented out in
+   `CfgTrading` (as shipped). The shipwrecks addon places defibrillators in loot crates, so the item
+   is obtainable.
+
+Confirmed by `revive_server_fnc_preInit` / `_postInit` in the RPT. **Not player-tested.**
+
+---
+
+## GADD Trick-Or-Treat
+
+Server PBO: `@ExileServer/addons/GADD_TrickOrTreat_Server.pbo` (pre-packed).
+
+Mission side (client folder from `Addons/Trick-Or-Treat/Client/`):
+
+1. `GADD_Apps/TrickOrTreat/` → mission root (config, `GADD_TrickOrTreat_Request.sqf`,
+   `ExileClient_gaddTT_network_trickOrTreatResponse.sqf`, `GADD_TreatList.sqf`, `Sounds/` 6 ogg,
+   `Tricks/` 4 sqf).
+2. `description.ext`: add `class CfgSounds` with the 6 ogg files (`Knock1/2`, `Laugh1/2/3`,
+   `TrickOrTreat1`).
+3. `config.cpp`:
+   - Top of file: `#include "GADD_Apps\TrickOrTreat\config.cpp"` (defines `GADDTrickOrTreat`
+     settings).
+   - `CfgNetworkMessages`: `getFlagKnocked` (module `gaddTT`), `trickOrTreatResponse` (module
+     `gadd`).
+   - `CfgInteractionMenus` → Construction → `TrickOrTreat: ExileAbstractAction` (condition: target
+     is `Exile_Construction_ConcreteGate_Static`/`ConcreteDoor_Static` **and** date is Oct 31).
+4. `initPlayerLocal.sqf`: register 5 client functions (`ExileClient_gadd_network_TrickOrTreatResponse`,
+   `GADD_TrickOrTreat_Request`, and the 3 trick handlers).
+5. `exile.ini` already has the GADD queries (`getKnockedList`, `updateFlagKnocked`).
+6. DB: run `TrickOrTreat.SQL` → `territory.knocked` column exists (verified 0 rows, empty).
+
+Auto-disables outside Halloween via the date condition — safe to leave installed year-round.
+
+Confirmed by `GADD_TrickOrTreat_Server_fnc_preInit` + "Starting GADD Trick or Treat Server side" /
+"Finished Loading" in the RPT. **Not player-tested.**
+
+---
+
+## Exile Loadouts (Andrew_S90)
+
+Server PBO: `@ExileServer/addons/Server.pbo` (repacked with prefix `loadout_server` from
+`Addons/ExileLoadouts/Server/loadout_server/`).
+
+Mission side (client folder from `Addons/ExileLoadouts/Client/`):
+
+1. `custom/loadouts/` → mission root (27 `.sqf` + `loadoutDialog.hpp`).
+2. `description.ext`: `#include "custom\loadouts\loadoutDialog.hpp"` (dialog idd 47147,
+   `RscExileLoadoutDialog`). Must be included **after** `RscDefines.hpp`.
+3. `config.cpp`:
+   - `CfgLoadout`: `ServerName = "QuieteSpace"` (no spaces, unique), `MaxLoadouts = 5`,
+     `BlockedItems[]` copied verbatim from the addon's client config.
+   - `CfgNetworkMessages`: `purchaseLoadoutRequest` / `purchaseLoadoutResponse`
+     (`module = "system_trading"`).
+   - `CfgInteractionMenus` → `Locker` (target `Exile_Locker`, stock class) → `Loadout` action
+     (`condition = "player call ExileClient_util_world_isInTraderZone"`, action opens the dialog).
+4. `initPlayerLocal.sqf`: set `ExileClientPlayerLoadoutServerName` / `Max` from config, register
+   all 27 client functions.
+5. `initServer.sqf`: server-side compile of `ExileClient_gui_loadoutDialog_calculateLoadoutPrice`
+   and `ExileClient_gui_loadoutDialog_event_checkLoadout` (used to price/validate purchases
+   server-side).
+6. No database / hextension needed — purchases run through stock `setAccountScore` /
+   fire-and-forget `system_trading`.
+
+Confirmed by `loadout_server_fnc_preInit` / `_postInit` in the RPT. **Not player-tested.**
+
+---
+
+## Virtual Garage — stock, no addon
+
+Stock Exile VG is fully configured and **is** the live feature; the Shix `VirtualGarage_Server.pbo`
+is redundant (its own config comments say it "disables/displaces" the stock XM8 VG). It was removed
+from `@ExileServer/addons` and committed to `E:\ArmaTools\be-backups\shix-vg-removal\`.
+
+Evidence VG is stock-live: mission `CfgVirtualGarage` `enableVirtualGarage = 1`,
+`numberOfVehicles[]` and `allowedVehicleTypes[]` populated, `clearInventoryOnStore = 1`; stock
+`exile_client.pbo` ships `virtualGarageDialog` + `ExileClient_gui_virtualGarageDialog_show`; stock
+`exile.ini` has the 4 VG queries; `virtual_garage` table exists (0 rows).
 
 ---
 
