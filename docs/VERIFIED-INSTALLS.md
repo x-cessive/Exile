@@ -38,6 +38,10 @@ been exercised by a player — anything requiring a live client is marked accord
 | `Scripts/A3ExilePilotHUD` | HUD | Installed — `custom\PilotHUD\` dialog + vehicle driver init | **no** |
 | `Scripts/Exile-Vanilla-Hud` | HUD | Installed — `RscInGameUI.hpp` + `custom\Hud\vanillaHud.sqf` | **no** |
 | `Scripts/xsSpawn` | Spawn | Installed — `xs\` dialogs + `CfgBaseSpawn` + custom spawn selection | **no** |
+| `Addons/a3-exile-scratchie` | Economy | Installed — XM8 lottery buttons + `@ScratchieServer` + `xtra_lottery` tables | **no** |
+| `Addons/ExileTravellingTrader` | Trader | Installed — `a3_travellingTrader.pbo` server mod | **no** |
+| `Addons/Exile-Vehicle-Crash-Loot` | Salvage | Installed — `VehicleCrashLoot` container pack overrides | **no** |
+| `Scripts/w4_lockpick` | Raiding | Installed — `w4_lockpick.pbo` server mod + `lockpick` DB table + `initLockpick` | **no** |
 
 ---
 
