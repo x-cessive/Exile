@@ -29,6 +29,8 @@ been exercised by a player — anything requiring a live client is marked accord
 | `Scripts/Exile-Safezone-Markers` | Map | Installed — `initServer` call | **no** |
 | `Scripts/Build-Limits` | Building | Installed — `ExileBuildHeightLimit = 150` | **no** |
 | `Scripts/Exile_auto_Reload_melee_weapons` | QoL | Installed — `CfgExileCustomCode` checkSafezone override | **no** |
+| `Scripts/Exile_Block_Floor_Peeking` | Security | Installed — merged `initialize` + `stats_update` overrides | **no** |
+| `Scripts/Exile-fix-drone-uav-stealing` | Security | Installed — merged `initialize` `WeaponAssembled` event handler | **no** |
 
 ---
 
