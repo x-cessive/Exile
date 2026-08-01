@@ -1,4 +1,4 @@
-﻿# Exile â€” server addon & script collection
+﻿# Exile server addon & script collection
 
 A working collection of third-party addons, scripts, tools and reference data for
 **Arma 3 Exile Mod 1.0.4 "Pineapple" / 1.0.4a**.
