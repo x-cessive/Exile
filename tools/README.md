@@ -98,6 +98,57 @@ checking", not "definitely broken". Real findings look like `Land_jbad_Fridge` (
 Chernarus map-mod object) or `Exile_Item_RazorWireKit_Long`; noise looks like
 `diag_tickTime` or `CAN_COLLIDE`.
 
+## `battleye/` — stop the anti-cheat kicking your players
+
+BattlEye filters are the other half of "is this addon working", and the RPT cannot see
+them. A missing exception does not log a script error — it kicks, and with Exile's stock
+`scripts.txt` (action **7** = log + kick + ban) it bans. You only find out when a real
+player tries to use a feature.
+
+Filter action codes are a bitmask: `1` = log, `2` = kick, `4` = ban.
+
+### `be-exception.ps1` — one kick, by hand
+
+Turns a kick log entry into a correctly escaped exception and locates the rule it belongs
+on. The `#N` in a kick record is the index of the rule that fired, counted over rule lines
+only, ignoring comments — so it maps precisely back to a line.
+
+```powershell
+.\be-exception.ps1                                        # scan logs, print exceptions
+.\be-exception.ps1 -Text 'execVM "thing.sqf"'             # convert a pasted string
+.\be-exception.ps1 -Text '...' -Filter scripts -Rule 43   # show the target rule
+.\be-exception.ps1 -Text '...' -Filter scripts -Rule 43 -Apply
+```
+
+Escaping is mechanical: every `"` becomes `\"`, every newline becomes `\n`, the result is
+prefixed with `!=` and re-quoted. Doing that by hand is where filter edits go wrong.
+
+### `be-autofilter.ps1` — watch and auto-fix
+
+Tails `battleye\*.log`, groups repeated kicks, and turns them into exceptions.
+
+```powershell
+.\be-autofilter.ps1                     # one pass, propose only
+.\be-autofilter.ps1 -Watch              # poll continuously
+.\be-autofilter.ps1 -Mode Auto -Watch   # apply what clears the guards
+.\be-autofilter.ps1 -ShowPending
+.\be-autofilter.ps1 -ApplyPending 0
+```
+
+> **This is automated anti-cheat disablement.** The same rules that kick players for a
+> broken mod script are the ones that catch cheaters. Four guards are on by default:
+> propose-don't-apply; a protected list of cheat-vector filters (`setpos`, `createvehicle`,
+> `remoteexec`, …) that are never auto-applied; a distinct-player threshold, because a
+> broken mod kicks everyone while an exploit usually kicks one person; and a backup plus
+> changelog for every write.
+>
+> BattlEye loads filters at server start, so an applied fix needs a restart.
+
+Note it cannot be an Arma addon — SQF cannot read or write arbitrary files, and the
+filters live outside the mission.
+
+---
+
 ### `rpt-triage.ps1`
 
 Classifies a server RPT into real problems vs known-harmless noise, collapsing repeated

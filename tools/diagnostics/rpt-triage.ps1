@@ -55,7 +55,9 @@ $Categories = [ordered]@{
     'Missing classname'         = 'Vehicle class .* no longer exists|No such class|Unknown weapon|Unknown magazine'
     'Network / remoteExec'      = 'remoteExec|RemoteExec .* not allowed|is not allowed to be executed'
     'BattlEye'                  = 'BattlEye .*(kick|Kick|ban|Ban|restriction)'
-    'Database / extDB'          = 'extDB|SQL|Database|MySQL'
+    # Only flag DB lines that indicate trouble -- Exile logs a dozen cheerful
+    # "Connected to database!" / "Loading vehicles..." lines on every boot.
+    'Database / extDB'          = '(extDB|SQL|[Dd]atabase|MySQL).*(rror|ailed|[Cc]annot|denied|refused|timeout|no such|missing)'
     'Warning message'           = 'Warning Message:'
 }
 
