@@ -29,7 +29,7 @@ This README is generated from the actual folder contents.
 | Folder | Contents |
 |---|---|
 | [`tools/`](tools/README.md) | **Original tooling** — PBO packer, RPT triage, classname validation |
-| [`docs/`](docs/DEVELOPMENT-SETUP.md) | Development environment setup and prerequisites |
+| [`docs/`](docs/DEVELOPMENT-SETUP.md) | Development setup, prerequisites, and [what is verified working](docs/VERIFIED-INSTALLS.md) |
 | `Addons/` | 45 server-side addons and larger systems |
 | `Scripts/` | 18 smaller mission-side scripts |
 | `ExileLootDrop/` | C# source for maca134's loot-drop DLL extension |
