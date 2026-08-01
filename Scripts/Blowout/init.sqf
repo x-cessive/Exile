@@ -1,0 +1,1 @@
+[] execVM "Custom\blowout\blowout_config.sqf";

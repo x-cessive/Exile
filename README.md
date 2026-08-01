@@ -30,8 +30,8 @@ This README is generated from the actual folder contents.
 |---|---|
 | [`tools/`](tools/README.md) | **Original tooling** — PBO packer, RPT triage, classname validation |
 | [`docs/`](docs/DEVELOPMENT-SETUP.md) | Development setup, prerequisites, and [what is verified working](docs/VERIFIED-INSTALLS.md) |
-| `Addons/` | 45 server-side addons and larger systems |
-| `Scripts/` | 18 smaller mission-side scripts |
+| `Addons/` | 51 server-side addons and larger systems |
+| `Scripts/` | 29 smaller mission-side scripts |
 | `ExileLootDrop/` | C# source for maca134's loot-drop DLL extension |
 | `ops/` | Server auto-restart and SteamCMD update batch files |
 | `reference/` | Pricing spreadsheets, MySQL strict-mode fix, server rules, script wish-list |

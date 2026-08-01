@@ -1,0 +1,1 @@
+[] execVM "custom\PilotHUD\init.sqf";
