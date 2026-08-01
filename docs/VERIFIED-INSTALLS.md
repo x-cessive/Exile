@@ -31,6 +31,10 @@ been exercised by a player — anything requiring a live client is marked accord
 | `Scripts/Exile_auto_Reload_melee_weapons` | QoL | Installed — `CfgExileCustomCode` checkSafezone override | **no** |
 | `Scripts/Exile_Block_Floor_Peeking` | Security | Installed — merged `initialize` + `stats_update` overrides | **no** |
 | `Scripts/Exile-fix-drone-uav-stealing` | Security | Installed — merged `initialize` `WeaponAssembled` event handler | **no** |
+| `Scripts/ExileMod-CruiseMode` | QoL | Installed — merged `onKeyUp` override (User8 keybind) | **no** |
+| `Scripts/ExileMod-HolsterPlus` | QoL | Installed — merged `onKeyUp` + `onKeyDown` + `stats_reset` | **no** |
+| `Scripts/ExileMod-StopMoaning` | Audio | Installed — `event_hook` `SoundPlayed` event handler | **no** |
+| `Scripts/Exile-large-numbers-in-Xm8` | UI | Installed — `xm8_slide_apps_onOpen` formatted values | **no** |
 
 ---
 
