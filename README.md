@@ -1,166 +1,238 @@
-##NO LONGER MAINTAINED
+# Exile — server addon & script collection
 
+A working collection of third-party addons, scripts, tools and reference data for
+**Arma 3 Exile Mod 1.0.4 "Pineapple" / 1.0.4a**.
 
-A3XAI – A3XAI is a roaming/ambient AI spawning addon for ArmA 3 Exile mod. Support for Headless Client Included.
+Nothing in this repository is original work. Every folder is a copy of someone else's release,
+gathered here so a server can be rebuilt from one place. Authors, upstream repositories and licences
+are listed per entry below — check the upstream before deploying anything, because several of these
+projects have moved on since the copy here was taken.
 
-Sarge’s AI System – This is an AI system that is intended to simulate real players roaming the map, scavenging, looting and engaging in combat.
+**Repo status:** last commit 2021-11-14. Treat every folder as a 2018–2021 snapshot.
 
-Headless Client Setup – Headless Client is used to offload AI calculations from the server, it can be used to take load off the server for the heavy stuff and put it on the client, which can lead to higher server performance.
+---
 
-FuMS – FuMS is a powerful mission system designed to be used by a Headless client.
+## What changed in this README
 
-VEMF – A moderate and very stable mission system meant to be supreme at performance and reliability. Provides players with location/town invasion missions for now.
+The previous version of this file was the contents of `Useful Documents/List Of Exile Scripts`, which
+is a **wish-list** ("LIST OF MODS TO BE INSTALLED!!!"), not an inventory — followed by an unrelated
+*Awesome README Templates* boilerplate block. It described roughly 50 things that are not in this
+repository (A3XAI, AdminToolkit, bAdmin, IgiLoad, Air Drops, BRAma Recipes, Vector Building, Encrypted
+PBO, Loot Positions, …) and omitted most of what actually is here.
 
-Zupa’s Capture Points – An independent addon for your Exile server. It will spawn random bases on the map which the player can go to and start capturing. This creates PVP magnets with decent rewards.
+This README is generated from the actual folder contents.
 
-AdminToolkit – This tool is used to administrate Arma3 multiplayer servers. It also supports an option to overwrite the sections for additional features.
+---
 
-bAdmin – Admin Panel from A3Wasteland ported and customized for exile Features: Player Management (Infos, Spectate, Kill). Player Markers. Shop Menu (No working yet). Add Poptabs. Add Score. Teleport Menu (Map Pos, To Player, Player to). Show Server FPS. Toggle God-mode. 
+## Repository layout
 
-Advanced Vehicle System – Fully configurable. Persistent vehicle ammo. Vehicle rearm system. Vehicle weapon and ammo blacklists (Including UAVs/Static Guns). Vehicle Thermal and Nightvision limits (Including UAVs/Static Guns). Custom persistent vehicle spawn system Fully supported by DM.  Deploy Vehicle – This is what you need if you want a player to spawn… eerr…request a bike/quad bike or any other vehicle on spawn. 
+| Folder | Contents |
+|---|---|
+| `Addons/` | 45 server-side addons and larger systems |
+| `Scripts/` | 18 smaller mission-side scripts |
+| `ExileLootDrop/` | C# source for maca134's loot-drop DLL extension |
+| `Bat Files/` | Server auto-restart and SteamCMD update batch files |
+| `Useful Documents/` | Pricing spreadsheets, MySQL strict-mode fix, server rules, script wish-list |
+| `THIS IS FOR 3DEN EDITOR NOT FOR SERVER/` | 3DEN editor tooling + the stock Exile 1.0.4a server pack |
 
-Secure Safezones – This script is made to ensure your full safety in a safezone by stopping other people to steal your vehicle and/or its contents. Fully customizable and easy to install, this should hopefully remove the big hassle of having an admin punishing safezone thieves all the time and make this process automated. 
+---
 
-Vehicle Service Points – Proper vehicle service points around the map where you are able to refuel, repair and rearm your vehicles! 
+## How to read the tables
 
-IgiLoad – The main task for IgiLoad script is to allow delivery of boxes and vehicles in larger vehicles. Smaller vehicles like ATV’s and SUVs can be loaded into larger trucks or helicopters.
+**Ships** — what the folder actually contains:
 
-Air Drops – Once you buy an Air Drop, The Drop Zone will be marked on the map and announced to every player. It will give you the random items worth your money.
+- `PBO` — a ready-to-drop, pre-packed `.pbo`. Installable with no build tooling.
+- `SRC` — source only. **You need a PBO packer** (Arma 3 Tools / AddonBuilder, Mikero's tools, or
+  PBO Manager) before this can go on a server.
+- `MIS` — mission-side files. They go *inside* your `Exile.<Map>.pbo`, which means unpacking and
+  repacking the mission — again, a packer.
 
-Base Marker - XM8 App to mark your bases on the map.
+**Needs** — additional work beyond dropping in a file:
 
-Base Paint - Paint your base with different colors. It works on Walls, Floors, Doors.
+- `DB` — SQL to import, and usually new queries appended to `@ExileServer/extDB/sql_custom_v2/exile.ini`.
+- `BE` — BattlEye filter exceptions, or players get kicked.
+- `HC` — designed for, or much happier with, a headless client.
+- `MOD` — requires a client-side mod that every player must also load.
 
-Base Spawn – Spawn on your Base with a cool down timer.  Lock Pick System – Currently Exile bases, safes and cars are impossible to raid properly. With this addon I wanted to bring to Exile Mod the possibility of raiding.
+---
 
-Indestructible bases – It’s exactly what it says, makes them Indestructible so no one can break them. 
+## Anatomy of an Exile addon (why most of these are not one-file installs)
 
-Xentended Base Raiding – Rig your Base with Trap Explosives, lock pick a safe. 
+A typical Exile addon has up to five parts, and skipping any one of them leaves it silently broken:
+
+1. **Server PBO** → `@ExileServer/addons/`
+2. **Mission files** → inside `mpmissions/Exile.<Map>.pbo`, usually a folder plus edits to
+   `config.cpp` (`CfgExileCustomCode`), `description.ext` and `initPlayerLocal.sqf`
+3. **Database** → a `.sql` import plus new query blocks in `exile.ini`
+4. **BattlEye filters** → exceptions in `battleye/scripts.txt`, `publicvariable.txt`, etc.
+5. **Client mod** → for the handful that need one (zombies, survival pack, VCOM as a mod)
 
-Battleye Filters – Create, Fix, or whitelist your BE Filters. They are known to be the most frustrating thing when running your server, and we are here to take that off of your head. 
+The most common failure mode is installing 1 and 3 and forgetting 2. The server starts, the database
+looks right, and the feature simply does not exist for players.
 
-Bounty - Most Wanted – Place a Bounty on a player, make money by doing contracts. 
+---
 
-BRAma Recipies – This App allows you to view from your xm8 all available crafting recipes and will show you everything required. Clicking Craft will open the regular exile crafting screen. 
+## Mission & AI systems
 
-Chernarus Open Buildings – So you’re running a Chernarus Server, and well… you can’t really enter many buildings. So you’re kinda forced to add more buildings and map edits around the map. This script will replace most of the non enterable buildings on chernarus with altis/arma 3 style enterable buildings (and some AiA buildings). This can easily be adapted to work with any map of course. But if you want to do that, figure it out for yourself 
+Pick **one** primary system. They all spawn AI and missions, and stacking them fights for the same
+server budget.
 
-Daily Reward System by GR8 - Every 24 hours, people can claim a reward, reward can include Respect, Pop Tabs or a special Item. 
+| Name | Author | Ships | Needs | Notes |
+|---|---|---|---|---|
+| `Addons/DMS_Exile` | Defent & eraser1 | SRC | — | The de-facto standard Exile mission system, and a **hard dependency of Exile Occupation**. Upstream: [Defent/DMS_Exile](https://github.com/Defent/DMS_Exile). CC BY-NC-SA 4.0. |
+| `Addons/a3_exile_occupation-development` | second_coming | PBO + SRC | DMS | Roaming/static/air/sea AI, survivor AI, loot crates, heli crashes, a public bus. **Will not run without `a3_dms`.** Upstream: [secondcoming/a3_exile_occupation](https://github.com/secondcoming/a3_exile_occupation). CC BY-SA 4.0. |
+| `Addons/FuMS-HC-Exile` | horbin | PBO (3.4 MB) | HC | Fulcrum Mission System. The deepest and the most configuration-hungry. Read `Docs/` before touching it. Upstream: [horbin/FuMS-HC-Exile](https://github.com/horbin/FuMS-HC-Exile). |
+| `Addons/ZCP-A3-Exile` | DevZupa | PBO | MIS | Zupa's Capture Points — timed capture bases as PvP magnets. Wiki: [DevZupa/ZCP-A3-Exile](https://github.com/DevZupa/ZCP-A3-Exile/wiki). Badges here say Exile 1.0.2, so it is the oldest system in the repo. |
+| `Addons/a3_vemf_reloaded` | IT07 | SRC | — | VEMFr, town/location invasion missions. Upstream stopped in 2017: [IT07/a3_vemf_reloaded](https://github.com/IT07/a3_vemf_reloaded). |
+| `Addons/A3_vemf_re-reloaded` | Porkeld (fork of IT07) | **PBO** | — | The maintained fork, and the only VEMF here that ships pre-packed (`a3_vemf_reloaded.pbo` + `_config.pbo`). Prefer this over the folder above. |
+| `Addons/blckeagles-revisited-RC` | Ghostrider-GRG- | SRC + 3DEN PBO | BE | Full DMS alternative with built-in HC support and A3EDEN mission export. **Superseded upstream** — development moved to [GMS_RC](https://github.com/Ghostrider-DbD-/GMS_RC) + [GMSCore](https://github.com/Ghostrider-DbD-/GMSCore); get it from there instead. |
+| `Addons/Sarge-AI` | Azroul13 (headers) | SRC | — | Faction-based AI that reacts to player *rating* — friendly AI turn hostile as your rating drops. Simulated PvE/PvP rather than mission-driven. Upstream: [Teh-Dango/Sarge-AI](https://github.com/Teh-Dango/Sarge-AI). |
+| `Addons/VcomAI-3.0-3.3.2`, `Addons/VcomAI-3.0-develop` | genesis92x | MIS | — | **Not a mission system** — an AI *behaviour* overhaul (flanking, suppression, garrisoning) that makes whichever system above you choose far more dangerous. These are the **script versions** (`Vcom/` + `init.sqf` + `cfgFunctions.hpp` into the mission), so no CBA and no client mod. Upstream [genesis92x/VcomAI-3.0](https://github.com/genesis92x/VcomAI-3.0) is on hold as of 2023. |
+
+---
+
+## Zombies & creatures
+
+| Name | Author | Ships | Needs | Notes |
+|---|---|---|---|---|
+| `Addons/ExileZ-Mod` | [FPS]kuplion, from ExileZ 2.0 by Patrix87 | PBO (570 KB) | DB, MOD | Dynamic zombie spawner, server-side, scales with players in a town; safezone-aware, optional exploding zombies and kill rewards. Requires the **Ryan's Zombies and Demons** client mod ([501966277](https://steamcommunity.com/sharedfiles/filedetails/?id=501966277)) and optionally RZ Infection ([614815221](https://steamcommunity.com/sharedfiles/filedetails/?id=614815221)). |
+| `Addons/ExileReborn-Reborn_Zombies` | Happydayz / Enigma team | SRC | BE, MOD | The larger, heavier zombie option — 522 sqf files and its own BattlEye filters. |
+| `Scripts/Alias-Anomaly-Creatures` | AliasCartoons, adapted for Exile by "aussie" | SRC | — | S.T.A.L.K.E.R.-style environmental anomalies. Original author's work: [patreon.com/aliascartoons](https://www.patreon.com/aliascartoons). |
 
-Kill Messages – Custom Kill Message GUI with Gun Image by GR8 
-
-DeathSpawn – This system is designed to have “less” total zombies for the given individual but have harder zombies should the individual run into them. 
-
-Loot Tables – Custom Loot Tables for exilemod. We support all weapons, unit mods like : CUP, TRYK, RHS, HLC, and more. With rare, medium and high loot. 
-
-Military Bases – We can make custom military bases for any map, We can make anything from ground up in a 3D editor, Just tell us what you are looking for. We will place all the building serverside so no one can steal it from your mission PBO.
-
-NPC Base - Make a custom AI Base on any map, anywhere you like.
-
-Mod Missing Warning – This gives a warning to players joining if they dont have the mod on the server. On Spawn it brings up a HUD and offers a hyperlink for the downloads needed. The smaller box will stay on screen for 1 minute then disappears. 
-
-Presistent View Distance Menu – Press 7 to activate. Put your view distance upto 5000m. Different settings for air,ground and on foot. Save your settings through restarts. 
-
-Rank Loadouts – Spawn Loadouts based on your respect. Higher the respect, better loadouts. You can also disable bambi status on these loadouts if you wish. Due to variety mods, you will have to add weapons, items on a rank yourself. 
-
-UID Loadouts – Loadout menu dialog on the spawn selection screen, support for donor and respect loadouts. Each loadout can be tied into a player or their respect. There is support for deducting money from the player when using a loadout. UIDs are recorded serverside. 
-
-Reserved Slots – Reserved slots for admins or donators. This will kick regular players out until there is more room for regular slots. Add in their UID in the script to give them access to the reserved slots. 
-
-Revive – Custom made Revive Script for Exile! Players need a defibrillator to perform a CPR on a knocked out player. 
-
-Selfie – Selfie app allows the allows the player to take a screenshot from the front of their player.  
-
-Server Info Menu – An advanced but easy ServerInfoMenu that you can add to your server's mission file so that people can see all sorts of stuff you want them to see.  
-
-Status Bar – Add a HUD on the bottom on your screen to show stats and information such as : Online Players, Hunger, Thirst, Temp, Compass, FPS, etc.
-
-Suicide Animation - Suicide in Style with animation with a pistol to the head. 
-
-Tanoa Bridges – 3 Different Bridges for Tanoa on different Islands 
-
-Taru Pod Repair & Lock – This script will allow the locking, unlocking, and repairing of all taru pods using the scroll menu. I was sick of having to bind user action 1 to lock and unlock and there was no repair option for taru pods. Unless they were attatched to the taru. 
-
-Trader City – Make a fully unique and custom trader city just for you. We support almost all maps and all mods. We will prepare the trader city in the 3D editor will all the traders you wish you have in there. 
-
-Serverside Buildings and Traders – Hide all your buildings and trader cities serverside where a pesky PBO thieves can’t reach. It will keep your server secure, unique and out of the hands of copy cats. 
-
-Encrypted PBO - Encrypt your Mission PBO so it cannot be opened by anyone that joins your server. 
-
-Update PBOs on Restart – This tool will take the frustration of waiting for server restarts to push your changes to your server. Easily work on your computer and when a restart hits, all your new changes will push into the server automatically.
-
-Watermark Logo – Very small script that lets your place an image on the bottom on your screen. It can be used to brand your server, advertise or show an important message or symbol. 
-
-Welcome Messages – Credit Styled Welcome Messages For ExileMod. Whenever a new player or a Bambi spawns in and parashoots, You get these Beautiful Credits for a Warm Welcome to every new spawn. These can work in any map and compatible with the ExileMod Spawn Selection Menu.  
-
-Zeus – Add Zeus Module to your exile server. This is allow you to spawn vehicles, AI, Control the AIs and spawn buildings, etc. 
-
-Vector Building - Ability to rotate your construction items from all 4 angles. 
-
-Hide Body – Gives a scroll option on a dead player to hide his/her body to remove traces of activity in the area or to get rid of the gear on the body. 
-
-Loading Screen – Displays a custom screen just as the player loads in. 
-
-Loot Positions – Loot Positions for 100s of buildings on different maps. These are some of the maps we support : Taviana Esseker Chernarus Bornholm You can request 
-
-  - [Github README PROFILE CATEGORY](#github-readme-profile-category)
-  - [List out `Awesome README Profile` Tools](#list-out-awesome-readme-profile-tools)
-  - [List out `Awesome README Profile` Articles](#list-out-awesome-readme-profile-articles)
-  - [Contribute](#contribute)
-
-## Website
-
-Link : http://xcsv.tv
-
-<a href="http://xcsv.tv"><img src="https://raw.githubusercontent.com/elangosundar/awesome-README-templates/master/awesome-github-profile.png" alt="Awesome README Templates" /></a>
-
-
-## Github README PROFILE CATEGORY
-
-- [ ] [Art](art)
-- [ ] [Code Styled](code-styled)
-- [ ] [Creativity](creativity)
-- [ ] [Flowcharts](flowcharts)
-- [ ] [Default](default)
-- [ ] [Dynamic Realtime](dynamic-realtime)
-- [ ] [Elaborate](elaborate)
-- [ ] [Multimedia](multimedia)
-- [ ] [Short-and-sweet](short-and-sweet)
-- [ ] [Tabular](tabular)
-- [ ] [Pie Charts](pie-charts)
-
-# List out `Awesome README Profile` Tools
-
-- [Profile Summary For Github](https://profile-summary-for-github.com/search)
-- [Github Readme Stats](https://github.com/anuraghazra/github-readme-stats) - Dynamically generated stats for your github readmes
-- [Profile Activity Generator](https://github.com/omidnikrah/profile-activity-generator) - Generate custom profile activity for your profile README
-- [All Dev Stats in Readme](https://github.com/anmol098/waka-readme-stats) - Are you an early 🐤 or a night 🦉? When are you most productive during the day? What languages you code in? And other stuff... Let's check out in your readme!
-- [Visitor Badge](https://visitor-badge.glitch.me/#docs) - Count visitors for your README.md, Issues, PRs in GitHub
-- [1990s style Visitor Counter](https://twitter.com/ryanlanciaux/status/1283755637126705152) - Add a 1990s style visitor counter with one line of markdown.
-- [Vists Count](https://pufler.dev/git-badges/) - Count visitors for README.md that can be used with shields.io
-- [Shields Project](https://shields.io/) - Use Shields to create profile badges, compatible with Simple Icons
-- [Simple Icons](https://github.com/simple-icons/simple-icons#cdn-usage) - SVG icons for popular brands for your README.md files
-- [Laravel GitHub Profile Visit Counter](https://github.com/caneco/laravel-github-profile-view-counter) - Add on your Laravel project a quick-badge to count your profile visits.
-- [Dev Metrics in Readme](https://github.com/athul/waka-readme) - [WakaTime](https://wakatime.com/) Weekly Metrics on your Profile Readme
-- [Current UTC time](https://github.com/jojoee/jojoee) - Example code of server that can serve dynamic content on GitHub profile
-- [Github Activity in README](https://github.com/jamesgeorge007/github-activity-readme) - Updates `README.md` with the recent GitHub activity of a user
-- [Github Profile README Generator](https://github.com/rahuldkjain/github-profile-readme-generator) - This tool provides an easy way to create github profile readme with latest addons like `visitors count`, `github stats` etc.
-- [Dynamic Profile Page On Github](https://github.com/umutphp/github-action-dynamic-profile-page) - Get dynamically generated list of your commits (of the repositories that the action is configured) on GitHub profile readme.
-- [npm package downloads](https://github.com/maddhruv/github-readme-npm-downloads) - Show all of your npm packages and their total downloads
-- [Feedparser](https://pythonhosted.org/feedparser/) - Convenient processing of RSS files
-- [Github Profile README Generator](https://github.com/arturssmirnovs/github-profile-readme-generator) - This project allows you to create nice and simple github profile readme files.
-- [Github Gist Count Generator](https://github.com/lifeparticle/Gist-Count) - Get gist count for your github readmes.
-
-# List out `Awesome README Profile` Articles
-
-# Contribute
-
-Contributions are always welcome! Please create a PR to add Github Profile.
-
-## :pencil: License
-
-This project is licensed under [MIT](https://opensource.org/licenses/MIT) license.
-
-## :man_astronaut: Show your support
-
-Give a ⭐️ if this project helped you!
+---
+
+## Economy & traders
+
+| Name | Author | Ships | Needs | Notes |
+|---|---|---|---|---|
+| `Addons/PlayerMarketByCyunide` | Cyunide | PBO | DB, MIS | Player-to-player auction house as an XM8 app. Adds a `playermarket` table and six `exile.ini` queries. Upstream: [Cyunide/PlayerMarketByCyunide](https://github.com/Cyunide/PlayerMarketByCyunide). |
+| `Addons/ExileBarterTrader` | Andrew_S90 | MIS | DB | Item-for-item trading, no poptabs. Configurable stock with per-item rarity. |
+| `Addons/ExileSafeX` | Andrew_S90 | MIS | DB | Private per-player storage at traders, capacity scaling with respect. Prerequisite for MarXet-style setups. |
+| `Addons/ExileVehicleCustomsMods` | Andrew_S90 | MIS | DB | Sell cosmetic vehicle attachments (RPG cages, camo nets) — anything placeable in the editor can be priced. |
+| `Addons/A3EX_CMAT` v0.10 | El Rabito | SRC | — | Server-side custom mapping **and** custom traders — add trader towns without touching the mission PBO, which also keeps them out of the hands of PBO thieves. |
+| `Scripts/Trader-Mod` | compiled by [CiC]red_ned | data | — | Not a script: a full trader/price data pack. Prebuilt trader configs plus class-name dumps for CUP, HLC, NIArsenal, RHS, ARMAV, BAF, Apex/Jets and vanilla. Feed into `exile_server_config`. |
+
+---
+
+## Vehicles
+
+| Name | Author | Ships | Needs | Notes |
+|---|---|---|---|---|
+| `Addons/Arma-3-Exile-Virtual-Garage` | Shix (Shix07) | PBO | DB, MIS | Store vehicles out of world. Adds `virtual_garage` plus four `exile.ini` queries. Note Exile 1.0.4 has its own Virtual Garage — check you want this one before layering it. |
+| `Addons/ExilePublicVirtualGarage` | Andrew_S90 | MIS | DB | Single-slot public garage, meant for an airfield or similar non-safezone spot. |
+| `Addons/Claim-Vehicles` | MezoPlays | PBO | MIS | Claim non-persistent (mission/AI) vehicles with a code lock. Upstream: [MezoPlays/Claim-Vehicles](https://github.com/MezoPlays/Claim-Vehicles). |
+| `Addons/AVS` | Rod-Serling, co-dev Vishpala | SRC | — | Advanced Vehicle System: persistent vehicle ammo, rearm points, weapon/ammo blacklists, thermal and night-vision limits including UAVs and statics. Config lives in `AVS_configuration.sqf`. |
+| `Addons/ExilePersistentVehicles` | Andrew_S90 | MIS | — | Random **persistent** vehicle spawner with random / road / city / water / fixed-position modes. |
+| `Addons/HalvPaintshop-Exile` | Halvhjearne | MIS | — | Vehicle and backpack paint shop. Upstream: [Halvhjearne/paintshop](https://github.com/Halvhjearne/paintshop). GPL. |
+| `Addons/R3F Logistics` | Team R3F (Madbull) | MIS | BE | Lift, tow, and load cargo/vehicles into larger vehicles. Long-standing, well-documented ([EN documentation PDF](http://team-r3f.org/madbull/logistics/EN_DOCUMENTATION.pdf)). Ships its own BE filters — you will need them. |
+| `Scripts/ExileMod-Advanced-Repair` | John | MIS | — | Repair and salvage engine/wheels with a selection menu. |
+| `Scripts/Exilemod-Super-Advanced-Repair-System-SARS` v1.0 | Bones50 | MIS | — | The bigger sibling of the above. **Pick one, not both.** |
+| `Scripts/Vehicle_Salvage` v1.0.1 | GADD (Gaming At Deaths Door) | MIS | — | Scroll-wheel salvage from destroyed vehicles with a progress bar. |
+| `Addons/ExileIncomingMissile` | Andrew_S90 | MIS | — | Warning when a missile locks/launches at your vehicle. |
+| `Scripts/A3WarningScript` | — | MIS | — | Same idea with sound + on-screen warning and a per-class blacklist. Redundant with the above. |
+
+---
+
+## Base & territory
+
+| Name | Author | Ships | Needs | Notes |
+|---|---|---|---|---|
+| `Addons/Exile_Abandon_Territory` | MGTDB | PBO | BE, MIS | Lets players abandon a territory. Ships client `abandon.sqf` + `config.cpp` and BE filters for `deleteVehicle` and `publicvariable`. |
+| `Addons/Abandon Flag` | — | PBO | MIS | A second, independent abandon implementation. Choose one; do not install both. |
+| `Addons/ExileFlagHacking` | Andrew_S90 | MIS | DB | Hack a territory flag with `Exile_Item_Laptop` to steal its vehicles. Uses the `getKnockedList` / `updateFlagKnocked` queries. |
+| `Addons/ExileBaseMover` | Andrew_S90 | MIS | — | **Admin tool** — relocate an entire base by moving its flag. |
+| `Addons/ExileBuildCheck` | Andrew_S90 | MIS | — | Tells the player whether they can build where they are standing. Cuts a lot of support questions. |
+| `Scripts/Build-Limits` | — | MIS | — | Build height caps. Drops into a `Custom/Build_Limits` folder in the mission. |
+| `Addons/DMD_BuildingReplace` | DMD | PBO | — | Replaces non-enterable buildings (written for Chernarus) with enterable Arma 3 equivalents. Server-side only. |
+
+---
+
+## Survival, loot & farming
+
+| Name | Author | Ships | Needs | Notes |
+|---|---|---|---|---|
+| `Addons/bigfoots-shipwrecks` v1.0.3 | Bigfoot | PBO | — | Underwater wrecks with loot crates, spawned at server start. Server-side only — genuinely a drop-in. APL-SA. |
+| `Addons/ExileHelicrashes` | Andrew_S90 | MIS | — | Random helicopter crash sites at restart, with configurable loot and count. |
+| `Addons/a3_exile_lootbox` v1.5 | nabek | SRC | — | Lootbox reward items. Badged for Arma 1.92 / Exile 1.0.4a — one of the newest things here. |
+| `Addons/ClaimCrates` | — | SRC | — | Claimable supply crates. Builds on Claim-Vehicles and R3F WasteDumpOverride. Badged Exile 1.0.3. |
+| `Scripts/Exile_Scavenge` v0.7 | — | MIS | — | Scavenge trash piles, bins and wrecks for loot. |
+| `Scripts/Exile-Plants` | — | MIS | — | Plant and harvest crops (weed by default, retargetable). |
+| `Addons/Farming-scripts-for-Extended-Survival-Pack-Mod` | ServerAtze | MIS | MOD | Weed and mushroom farms, ore/crystal mining. |
+| `Addons/fishing-script-for-Extended-Survival-Pack-Mod`, `Scripts/FishingBoat` | JackFrost, modified by ServerAtze | MIS | MOD | Fishing, shore and boat variants. |
+| `Addons/exile-tree-stay-down` | — | MIS | DB | Felled trees are written to MySQL and stay down across restarts. |
+
+> The three Extended Survival Pack items require the **Extended Survival Pack** client mod by ServerAtze
+> ([Workshop 1208270228](https://steamcommunity.com/sharedfiles/filedetails/?id=1208270228)) — 165 items,
+> vehicles, skins and recipes. Its Workshop terms **do not permit redistribution inside a server/mod
+> pack**; link players to a Steam Collection instead.
+
+---
+
+## Bounty & PvP
+
+| Name | Author | Ships | Needs | Notes |
+|---|---|---|---|---|
+| `Addons/ExileBountySystem` | Andrew_S90 | MIS | — | Player bounty contracts. **Duplicated** at `Scripts/ExileBountySystem` — same content, ignore one. |
+| `Addons/MostWanted` v1.5 | Taylor Swift & WolfkillArcadia | MIS | DB | Alternative bounty mod with extra anti-abuse handling. |
+
+---
+
+## Quality of life & UI
+
+| Name | Author | Ships | Needs | Notes |
+|---|---|---|---|---|
+| `Scripts/Statusbar-32-64Bit-master` | — | MIS | — | HUD bar: players online, hunger, thirst, temp, health, respect, poptabs, locker, FPS, restart timer, compass. **It overwrites `ExileServer_system_database_connect.sqf` and ships separate 32-bit and 64-bit copies — pick the one matching the server exe you actually run.** |
+| `Scripts/Exile-Safezone-Markers` | dtavana | MIS | — | Draws safezones on the map. Upstream: [dtavana/Exile-Safezone-Markers](https://github.com/dtavana/Exile-Safezone-Markers). |
+| `Scripts/xsSpawn` | — | MIS | — | Custom spawn-point selection; `xs/` folder goes at the mission root. |
+| `Scripts/ExAd-HaloParachute-Standalone` | Bjanski (ExAd) | MIS | — | HALO jump on spawn. Standalone extract from the ExAd suite ([bjanski.github.io/ExAd](http://bjanski.github.io/ExAd/)). |
+| `Scripts/Exile-Anti-Floating-bug-script-aka-stair-bug` | — | MIS | — | One-file fix for the floating/stair-clipping bug — kills velocity instead of forcing prone. Highest value-per-line in the repo. |
+| `Scripts/Helipad` | — | MIS | — | Helipad placement. |
+| `Addons/ExileRevive` | Andrew_S90 | MIS | — | Revive system. |
+| `Scripts/Enigma_Exile_Revive` v0.80 | Enigma | PBO | MIS | A second revive system. **Conflicts with the above — install exactly one.** |
+| `Addons/Trick-Or-Treat` | [GADD]Monkeynutz | PBO | DB, MIS | Seasonal Halloween event that self-activates by date, so it is safe to leave installed all year. |
+
+---
+
+## Admin, mapping & tooling
+
+| Name | Author | Ships | Notes |
+|---|---|---|---|
+| `Addons/Objects-Server-Side` | maca134 | PBO | Load custom map objects/buildings exported from M3Editor **server-side**, so they cannot be lifted out of your mission PBO. Includes `m3e_3den.pbo` and `exile_3den.pbo`. |
+| `ExileLootDrop/` | maca134 | C# source | Replaces Exile's loot-drop function with a **native DLL extension** for speed and far more flexible loot tables. Needs a .NET build (`build.bat`, `ExileLootDrop.sln`) — **and the DLL's architecture must match your server exe**. Upstream: [maca134/ExileLootDrop](https://github.com/maca134/ExileLootDrop). CC BY-NC-ND 4.0. |
+| `Addons/exile-loot-compiler-js` | — | Node | Loot-table compiler supporting arbitrarily nested groups/tables — finer control than the stock compiler. Needs [Node.js](https://nodejs.org/en/). |
+| `THIS IS FOR 3DEN EDITOR NOT FOR SERVER/` | — | archives | `@m3e_3den.rar` and `Exile3DEN-1.0.0.zip` (load as client mods in the 3DEN editor, **not** on the server), `LootTableCompiler-1.0.3b.zip`, and `ExileServer-1.0.4a.zip` — the **stock Exile 1.0.4a server pack**: `exile_server.pbo`, `exile_server_config.pbo`, extDB2, XM8, BattlEye templates, all six stock missions and the MySQL schema. Useful as a clean baseline to diff against. |
+| `Bat Files/autorestart.bat` | — | batch | Restart-on-exit loop. Hard-codes a public IP, `-cpuCount=4`, and a mod line of `@Exile;@Extended_Base_Mod;@NIArsenal;@ASDG_JR;@CBA_A3` with `-servermod=@exileserver;@ATS`. Retarget before use. Note it already uses `-autoinit`, which Exile needs in order to start the mission without waiting for a player. |
+| `Bat Files/download_arma3.bat` | — | batch | SteamCMD install/update for the dedicated server (app 233780). |
+| `Useful Documents/` | — | docs | `Exile Balanced Pricing Generator.xlsx` and `Exile Vehicles.xlsx` (economy balancing), `Change Msql Strict Mode.txt` (the `sql-mode` fix Exile needs — the note targets MySQL 5.7 paths; adapt for MariaDB), `The steps to install Seelenlos Zeus on your server`, `General Rules` (server rules boilerplate), and `List Of Exile Scripts` (the wish-list that used to be this README). |
+
+---
+
+## Caveats worth knowing before you deploy
+
+- **Age.** Everything targets Exile 1.0.4/1.0.4a and Arma 3 builds from 1.62–1.92. Arma 3 is well past
+  that. Expect script errors and BattlEye kicks that the original authors never saw.
+- **Dead links.** `exilemod.com` links throughout these READMEs are largely gone; the community forum
+  now lives at **[exile.majormittens.co.uk](https://exile.majormittens.co.uk/)** with the same topic IDs,
+  so an old `exilemod.com/topic/12345-...` URL usually resolves by swapping the domain.
+- **Stale forks.** At minimum `blckeagles-revisited-RC` (→ GMS/GMSCore) and `a3_vemf_reloaded`
+  (→ `A3_vemf_re-reloaded`) are outdated relative to upstream.
+- **Duplicates and conflicts.** ExileBountySystem appears twice; ExileRevive vs Enigma Revive, the two
+  Abandon addons, the two repair systems, and Virtual Garage vs Exile 1.0.4's built-in VG are all
+  mutually exclusive choices.
+- **Licences vary.** CC BY-NC-SA (DMS), CC BY-SA (Occupation), CC BY-NC-ND (ExileLootDrop), GPL
+  (Paintshop), APL-SA (Shipwrecks), MIT, and several with no licence at all. There is no single licence
+  covering this repository — respect each author's terms, especially the non-commercial ones.
+- **Server architecture.** Exile's `extDB2.dll` and `XM8.dll` in the 1.0.4a pack are **32-bit only**, so
+  a server loading them must run `arma3server.exe`, not `arma3server_x64.exe`. This decides which
+  Statusbar file you use and which way you build ExileLootDrop.
+
+---
+
+## Credits
+
+Every addon here belongs to its author. In alphabetical order of the names that appear in the source:
+Alias (AliasCartoons), Andrew_S90, Azroul13, Bigfoot, Bjanski, Bones50, [CiC]red_ned, Cyunide, Defent,
+DevZupa (Zupa), dtavana, El Rabito, Enigma, eraser1, [GADD]Monkeynutz, genesis92x, Ghostrider-GRG-,
+Halvhjearne, Happydayz, horbin, IT07, JackFrost, John, kuplion, maca134, MezoPlays, MGTDB, nabek,
+Patrix87, Porkeld, Rod-Serling, Sarge, second_coming, ServerAtze, Shix, Taylor Swift, Team R3F (Madbull),
+Vishpala, WolfkillArcadia — and the Exile Mod team for the mod itself.
