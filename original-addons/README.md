@@ -13,7 +13,7 @@ then drop the `.pbo` into `@ExileServer\addons\` and restart.
 
 | Addon | What it does | State |
 |---|---|---|
-| `sovran_zeus` | Grants the vanilla Zeus (Curator) interface to whitelisted Steam64 UIDs, so an admin can build and spawn live while players are connected. Server-side only — players need no mod. | Loads clean on Arma 3 2.20 / Exile 1.0.4a. **Not yet tested with a connected player.** |
+| `sovran_zeus` | Grants the vanilla Zeus (Curator) interface to whitelisted Steam64 UIDs, so an admin can build and spawn live while players are connected. Server-side only — players need no mod. **Placements persist across restarts** via the Exile database. | Loads clean on Arma 3 2.20 / Exile 1.0.4a; persistence load path verified end to end. **Not yet tested with a connected player.** |
 
 ## sovran_zeus notes
 

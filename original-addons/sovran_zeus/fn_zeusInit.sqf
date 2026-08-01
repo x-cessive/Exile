@@ -1,4 +1,4 @@
-/*
+﻿/*
     sovran_zeus - grant the Curator (Zeus) interface to whitelisted players.
 
     Runs server-side only. Polls connected players and, for anyone on the whitelist
@@ -53,6 +53,24 @@ if (SOVRAN_ZEUS_UIDS isEqualTo []) exitWith
 
                     _player assignCurator _curator;
                     _curator addCuratorEditableObjects [entities "", true];
+
+                    // Persistence hooks. These fire server-side on the curator logic, so
+                    // every placement/removal by this admin is saved or cleared.
+                    if (!isNil "SOVRAN_fnc_zeusPersistSave") then
+                    {
+                        _curator setVariable ["SOVRAN_ZEUS_OWNER_UID", _uid];
+
+                        _curator addEventHandler ["CuratorObjectPlaced", {
+                            params ["_curatorLogic", "_entity"];
+                            private _owner = _curatorLogic getVariable ["SOVRAN_ZEUS_OWNER_UID", ""];
+                            [_entity, _owner] call SOVRAN_fnc_zeusPersistSave;
+                        }];
+
+                        _curator addEventHandler ["CuratorObjectDeleted", {
+                            params ["_curatorLogic", "_entity"];
+                            [_entity] call SOVRAN_fnc_zeusPersistDelete;
+                        }];
+                    };
 
                     diag_log format ["[SOVRAN_ZEUS] granted Zeus to %1 (%2)", name _player, _uid];
                 };

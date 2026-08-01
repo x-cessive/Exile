@@ -42,7 +42,8 @@ class CfgFunctions
         class Zeus
         {
             file = "sovran_zeus";
-            class zeusInit { postInit = 1; };
+            class zeusPersist { postInit = 1; };   // defines the save/load API, restores objects
+            class zeusInit    { postInit = 1; };   // grants curator, hooks the persistence events
         };
     };
 };
