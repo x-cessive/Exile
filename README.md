@@ -118,6 +118,8 @@ This repository brings together a full suite of community-developed features, se
 | Addon / Script | Type | Description |
 |---|---|---|
 | **[`Addons/Exile-Vehicle-Crash-Loot`](Addons/Exile-Vehicle-Crash-Loot)** | **LIVE** | Turn destroyed vehicle wrecks into lootable cargo containers. |
+| **[`Addons/ExileHelicrashes`](Addons/ExileHelicrashes)** | **LIVE** | Random helicopter crash sites at server restart with configurable loot (`helicrash_server.pbo`). |
+| **[`Addons/HalvPaintshop-Exile`](Addons/HalvPaintshop-Exile)** | **LIVE** | Vehicle and backpack paint reskin shop with SQL paint persistence (`ExileHalvPaintshop_Server.pbo`). |
 | **[`Addons/ExileIncomingMissile`](Addons/ExileIncomingMissile)** | **LIVE** | On-screen & audio warning when a missile locks/launches at player's vehicle. |
 | **[`Scripts/Exile_Scavenge`](Scripts/Exile_Scavenge)** | **LIVE** | Interactive hold-action scavenging for trash piles, bins, wrecks, and furniture. |
 | **[`Addons/bigfoots-shipwrecks`](Addons/bigfoots-shipwrecks)** | **LIVE** | Dynamic underwater shipwreck loot crates spawned at server start. |

@@ -49,6 +49,8 @@ been exercised by a player — anything requiring a live client is marked accord
 | `Addons/ExileBuildCheck` | UI | Installed — `XM8_App09_Button` build permission check app | **no** |
 | `Addons/ExileIncomingMissile` | Combat | Installed — vehicle creation overrides + `incomingMissile` network message | **no** |
 | `Scripts/Exile_Scavenge` | Survival | Installed — interactive hold-action scavenging for trash, bins, wrecks & furniture | **no** |
+| `Addons/ExileHelicrashes` | Loot | Installed — `helicrash_server.pbo` random helicopter crash sites at server restart | **no** |
+| `Addons/HalvPaintshop-Exile` | QoL / Vehicle | Installed — `ExileHalvPaintshop_Server.pbo` + `Save Paint` vehicle interaction action | **no** |
 
 ---
 
