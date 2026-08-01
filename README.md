@@ -28,12 +28,21 @@ This README is generated from the actual folder contents.
 
 | Folder | Contents |
 |---|---|
+| [`tools/`](tools/README.md) | **Original tooling** — PBO packer, RPT triage, classname validation |
+| [`docs/`](docs/DEVELOPMENT-SETUP.md) | Development environment setup and prerequisites |
 | `Addons/` | 45 server-side addons and larger systems |
 | `Scripts/` | 18 smaller mission-side scripts |
 | `ExileLootDrop/` | C# source for maca134's loot-drop DLL extension |
 | `Bat Files/` | Server auto-restart and SteamCMD update batch files |
 | `Useful Documents/` | Pricing spreadsheets, MySQL strict-mode fix, server rules, script wish-list |
 | `THIS IS FOR 3DEN EDITOR NOT FOR SERVER/` | 3DEN editor tooling + the stock Exile 1.0.4a server pack |
+
+Everything outside `tools/` and `docs/` is third-party work under its authors' own
+licences (see [Credits](#credits)). `tools/` and `docs/` were written for this repository.
+
+**New here?** Start with [`docs/DEVELOPMENT-SETUP.md`](docs/DEVELOPMENT-SETUP.md) to get a
+server running, then [`tools/README.md`](tools/README.md) for the packing and diagnostic
+workflow, then the catalogue below to choose what to install.
 
 ---
 

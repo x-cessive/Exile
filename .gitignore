@@ -1,4 +1,26 @@
+# =========================
+# Exile server development
+# =========================
+
+# Tool scratch space: unpacked PBOs and build output
+work/
+tools/**/work/
+
+# Class dumps are install-specific and regenerable via
+# tools/diagnostics/sovran_classdump + extract-classdump.ps1
+classes/
+tools/diagnostics/classes/
+
+# Server logs
+*.rpt
+
+# Never commit live server credentials
+**/extdb-conf.ini
+**/BEServer_x64.cfg
+
+# =========================
 # Windows image file caches
+# =========================
 Thumbs.db
 ehthumbs.db
 
