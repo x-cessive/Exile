@@ -45,6 +45,10 @@ been exercised by a player — anything requiring a live client is marked accord
 | `Addons/A3XAI` | AI Patrols | Running — 16 static spawn locations created on Tanoa, 279 rifles loaded | n/a (server-side) |
 | `Addons/A3ExileVPS` | Protection | Installed — vehicle database load/update overrides for territory flag invincibility | **no** |
 | `Scripts/Blowout` | Event | Installed — `ns_blowout = false;` master toggle (OFF by default) | **no** |
+| `Addons/ExileFlagHacking` | Raiding | Installed — `FlagHack_server.pbo` + `CfgFlagHacking` + `randomVehicle` DB query | **no** |
+| `Addons/ExileBuildCheck` | UI | Installed — `XM8_App09_Button` build permission check app | **no** |
+| `Addons/ExileIncomingMissile` | Combat | Installed — vehicle creation overrides + `incomingMissile` network message | **no** |
+| `Scripts/Exile_Scavenge` | Survival | Installed — interactive hold-action scavenging for trash, bins, wrecks & furniture | **no** |
 
 ---
 

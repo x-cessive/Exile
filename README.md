@@ -72,7 +72,9 @@ This repository brings together a full suite of community-developed features, se
 | **[`Addons/a3-exile-scratchie`](Addons/a3-exile-scratchie)** | **LIVE** | XM8 app lottery & scratchcard mini-game with instant vehicle/poptab prize delivery. |
 | **[`Addons/ExileTravellingTrader`](Addons/ExileTravellingTrader)** | **LIVE** | Dynamic mobile roaming trader vehicle navigating map markers across land and water. |
 | **[`Addons/PlayerMarketByCyunide`](Addons/PlayerMarketByCyunide)** | **LIVE** | Player-to-player XM8 auction house and trade market. |
-| **[`Addons/ExileSafeX`](Addons/ExileSafeX)** | Standby | Private player safe deposit storage at safezone traders. |
+| **[`Addons/ExileFlagHacking`](Addons/ExileFlagHacking)** | **LIVE** | Hack territory flags with laptops to steal base vehicles (`FlagHack_server.pbo`). |
+| **[`Addons/ExileBuildCheck`](Addons/ExileBuildCheck)** | **LIVE** | XM8 app checking whether players can build where they are standing. |
+| **[`Addons/ExileBaseMover`](Addons/ExileBaseMover)** | Standby | Admin tool to relocate an entire base by moving its flag. |
 | **[`Addons/ExileBarterTrader`](Addons/ExileBarterTrader)** | Standby | Item-for-item barter trade system without poptab currency. |
 | **[`Addons/ExileVehicleCustomsMods`](Addons/ExileVehicleCustomsMods)** | Standby | Customizable vehicle cosmetic attachments (camo nets, RPG cages). |
 
@@ -116,6 +118,8 @@ This repository brings together a full suite of community-developed features, se
 | Addon / Script | Type | Description |
 |---|---|---|
 | **[`Addons/Exile-Vehicle-Crash-Loot`](Addons/Exile-Vehicle-Crash-Loot)** | **LIVE** | Turn destroyed vehicle wrecks into lootable cargo containers. |
+| **[`Addons/ExileIncomingMissile`](Addons/ExileIncomingMissile)** | **LIVE** | On-screen & audio warning when a missile locks/launches at player's vehicle. |
+| **[`Scripts/Exile_Scavenge`](Scripts/Exile_Scavenge)** | **LIVE** | Interactive hold-action scavenging for trash piles, bins, wrecks, and furniture. |
 | **[`Addons/bigfoots-shipwrecks`](Addons/bigfoots-shipwrecks)** | **LIVE** | Dynamic underwater shipwreck loot crates spawned at server start. |
 | **[`Addons/Trick-Or-Treat`](Addons/Trick-Or-Treat)** | **LIVE** | Date-triggered seasonal event adding interactive trick-or-treat flag rewards. |
 | **[`Scripts/Blowout`](Scripts/Blowout)** | **TOGGLED OFF** | S.T.A.L.K.E.R. radioactive emission storm event (`ns_blowout = false;`). |
