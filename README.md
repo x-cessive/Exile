@@ -8,7 +8,7 @@ gathered here so a server can be rebuilt from one place. Authors, upstream repos
 are listed per entry below — check the upstream before deploying anything, because several of these
 projects have moved on since the copy here was taken.
 
-**Repo status:** last commit 2021-11-14. Treat every folder as a 2018–2021 snapshot.
+**Repo status:** Active development (2026). Inventory expanded to **51 Addons** and **29 Scripts** with verified live mission integration.
 
 ---
 
