@@ -140,7 +140,7 @@ foreach ($log in $logs) {
 
     # Entries look like: Name (IP) GUID - #N text...  (text may span lines)
     $matches = [regex]::Matches($content,
-        '(?m)^(?<name>.+?)\s+\((?<ip>[\d\.]+)\)\s+(?<guid>[0-9a-fA-F]{32})\s+-\s+#(?<rule>\d+)\s+(?<text>.*?)(?=^\S.*?\([\d\.]+\)\s+[0-9a-fA-F]{32}\s+-\s+#|\z)',
+        '(?m)^(?:\d{2}\.\d{2}\.\d{4}\s+\d{2}:\d{2}:\d{2}:\s*)?(?<name>.+?)\s+\((?<ip>[\d\.]+)(?::\d+)?\)\s+(?<guid>[0-9a-fA-F]{32})\s+-\s+#(?<rule>\d+)\s+(?<text>.*?)(?=^(?:\d{2}\.\d{2}\.\d{4}\s+\d{2}:\d{2}:\d{2}:\s*)?\S.*?\([\d\.]+(?::\d+)?\)\s+[0-9a-fA-F]{32}\s+-\s+#|\z)',
         [Text.RegularExpressions.RegexOptions]::Singleline)
 
     if ($matches.Count -eq 0) { continue }

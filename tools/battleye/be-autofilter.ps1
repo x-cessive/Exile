@@ -1,4 +1,4 @@
-﻿<#
+<#
 .SYNOPSIS
     Watch BattlEye logs for kicks and propose (or apply) filter exceptions.
 
@@ -193,7 +193,7 @@ function Invoke-Pass {
         if (-not $new.Trim()) { continue }
 
         $records = [regex]::Matches($new,
-            '(?m)^(?<name>.+?)\s+\((?<ip>[\d\.]+)\)\s+(?<guid>[0-9a-fA-F]{32})\s+-\s+#(?<rule>\d+)\s+(?<text>.*?)(?=^\S.*?\([\d\.]+\)\s+[0-9a-fA-F]{32}\s+-\s+#|\z)',
+            '(?m)^(?:\d{2}\.\d{2}\.\d{4}\s+\d{2}:\d{2}:\d{2}:\s*)?(?<name>.+?)\s+\((?<ip>[\d\.]+)(?::\d+)?\)\s+(?<guid>[0-9a-fA-F]{32})\s+-\s+#(?<rule>\d+)\s+(?<text>.*?)(?=^(?:\d{2}\.\d{2}\.\d{4}\s+\d{2}:\d{2}:\d{2}:\s*)?\S.*?\([\d\.]+(?::\d+)?\)\s+[0-9a-fA-F]{32}\s+-\s+#|\z)',
             [Text.RegularExpressions.RegexOptions]::Singleline)
 
         foreach ($g in ($records | Group-Object { $_.Groups['rule'].Value + '|' + $_.Groups['text'].Value.Trim() })) {
