@@ -35,6 +35,9 @@ been exercised by a player — anything requiring a live client is marked accord
 | `Scripts/ExileMod-HolsterPlus` | QoL | Installed — merged `onKeyUp` + `onKeyDown` + `stats_reset` | **no** |
 | `Scripts/ExileMod-StopMoaning` | Audio | Installed — `event_hook` `SoundPlayed` event handler | **no** |
 | `Scripts/Exile-large-numbers-in-Xm8` | UI | Installed — `xm8_slide_apps_onOpen` formatted values | **no** |
+| `Scripts/A3ExilePilotHUD` | HUD | Installed — `custom\PilotHUD\` dialog + vehicle driver init | **no** |
+| `Scripts/Exile-Vanilla-Hud` | HUD | Installed — `RscInGameUI.hpp` + `custom\Hud\vanillaHud.sqf` | **no** |
+| `Scripts/xsSpawn` | Spawn | Installed — `xs\` dialogs + `CfgBaseSpawn` + custom spawn selection | **no** |
 
 ---
 
