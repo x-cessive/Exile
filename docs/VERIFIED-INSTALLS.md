@@ -51,6 +51,9 @@ been exercised by a player — anything requiring a live client is marked accord
 | `Scripts/Exile_Scavenge` | Survival | Installed — interactive hold-action scavenging for trash, bins, wrecks & furniture | **no** |
 | `Addons/ExileHelicrashes` | Loot | Installed — `helicrash_server.pbo` random helicopter crash sites at server restart | **no** |
 | `Addons/HalvPaintshop-Exile` | QoL / Vehicle | Installed — `ExileHalvPaintshop_Server.pbo` + `Save Paint` vehicle interaction action | **no** |
+| `Addons/AVS` | Vehicle | Installed — `AVS.pbo` Advanced Vehicle System (rearm points, thermal restrictions, ammo persistence) | **no** |
+| `Addons/a3_exile_lootbox` | Loot / Rewards | Installed — `a3_exile_lootbox.pbo` lootbox reward items & prize crates | **no** |
+| `Addons/ExileSafeX` | Storage | Installed — `safex_server.pbo` + `safex` DB table + safezone trader locker safe deposit storage | **no** |
 
 ---
 

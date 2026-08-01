@@ -125,6 +125,9 @@ This repository brings together a full suite of community-developed features, se
 | **[`Addons/bigfoots-shipwrecks`](Addons/bigfoots-shipwrecks)** | **LIVE** | Dynamic underwater shipwreck loot crates spawned at server start. |
 | **[`Addons/Trick-Or-Treat`](Addons/Trick-Or-Treat)** | **LIVE** | Date-triggered seasonal event adding interactive trick-or-treat flag rewards. |
 | **[`Scripts/Blowout`](Scripts/Blowout)** | **TOGGLED OFF** | S.T.A.L.K.E.R. radioactive emission storm event (`ns_blowout = false;`). |
+| **[`Addons/AVS`](Addons/AVS)** | **LIVE** | Advanced Vehicle System: rearm points, thermal/NVG restrictions, and ammo DB persistence (`AVS.pbo`). |
+| **[`Addons/a3_exile_lootbox`](Addons/a3_exile_lootbox)** | **LIVE** | Lootbox reward items & prize crates (`a3_exile_lootbox.pbo`). |
+| **[`Addons/ExileSafeX`](Addons/ExileSafeX)** | **LIVE** | Private player safe deposit storage at safezone trader lockers (`safex_server.pbo`). |
 | **[`Addons/ExileZ-Mod`](Addons/ExileZ-Mod)** | Standby | Dynamic zombie spawner scaling with player presence in towns (requires RZ mod). |
 | **[`Addons/ExileHelicrashes`](Addons/ExileHelicrashes)** | Standby | Dynamic helicopter crash sites with high-tier military loot drops. |
 
