@@ -28,6 +28,7 @@ been exercised by a player — anything requiring a live client is marked accord
 | `Addons/ExilePersistentVehicles` | Vehicles | Running — hooks confirmed, 58 vehicles spawned | n/a (server-side) |
 | `Scripts/Exile-Safezone-Markers` | Map | Installed — `initServer` call | **no** |
 | `Scripts/Build-Limits` | Building | Installed — `ExileBuildHeightLimit = 150` | **no** |
+| `Scripts/Exile_auto_Reload_melee_weapons` | QoL | Installed — `CfgExileCustomCode` checkSafezone override | **no** |
 
 ---
 
