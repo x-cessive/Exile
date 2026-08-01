@@ -42,6 +42,9 @@ been exercised by a player — anything requiring a live client is marked accord
 | `Addons/ExileTravellingTrader` | Trader | Installed — `a3_travellingTrader.pbo` server mod | **no** |
 | `Addons/Exile-Vehicle-Crash-Loot` | Salvage | Installed — `VehicleCrashLoot` container pack overrides | **no** |
 | `Scripts/w4_lockpick` | Raiding | Installed — `w4_lockpick.pbo` server mod + `lockpick` DB table + `initLockpick` | **no** |
+| `Addons/A3XAI` | AI Patrols | Running — 16 static spawn locations created on Tanoa, 279 rifles loaded | n/a (server-side) |
+| `Addons/A3ExileVPS` | Protection | Installed — vehicle database load/update overrides for territory flag invincibility | **no** |
+| `Scripts/Blowout` | Event | Installed — `ns_blowout = false;` master toggle (OFF by default) | **no** |
 
 ---
 
