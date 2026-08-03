@@ -1,4 +1,11 @@
-# Arma 3 Exile Mod Addon & Script Repository
+<div align="center">
+
+# 📦 Arma 3 Exile Mod Addon &amp; Script Repository
+
+**The catalogue: third-party addons, scripts, schemas and the tooling that packs them.**
+
+[![Part of XCSV](https://img.shields.io/badge/part_of-XCSV-3D9CFF.svg?style=for-the-badge)](https://github.com/x-cessive/XCSV)
+[![Docs](https://img.shields.io/badge/docs-x--cessive.github.io%2FXCSV-3FC16A.svg?style=for-the-badge)](https://x-cessive.github.io/XCSV/)
 
 [![Arma 3](https://img.shields.io/badge/Arma_3-2.20.152984-blue.svg?logo=steam&logoColor=white)](https://arma3.com/)
 [![Exile Mod](https://img.shields.io/badge/Exile_Mod-1.0.4a_Pineapple-00b2cd.svg)](https://exile.majormittens.co.uk/)
@@ -8,7 +15,23 @@
 [![Scripts](https://img.shields.io/badge/Scripts-29_Mods-2ea44f.svg)](https://github.com/x-cessive/Exile/tree/master/Scripts)
 [![Status](https://img.shields.io/badge/Server_Status-Active_%26_Verified-brightgreen.svg)](docs/VERIFIED-INSTALLS.md)
 
+</div>
+
+> **Part of the XCSV system** ·
+> [Hub](https://github.com/x-cessive/XCSV) ·
+> [GUARD](https://github.com/x-cessive/XCSV_GUARD) ·
+> [Addons](https://github.com/x-cessive/XCSV_ADDONS) ·
+> **Catalogue** ·
+> [Site](https://x-cessive.github.io/XCSV/)
+
+---
+
 A comprehensive, production-tested repository of third-party addons, scripts, administrative tools, database schemas, and custom engine modifications for **Arma 3 Exile Mod 1.0.4 / 1.0.4a ("Pineapple")**.
+
+This is the **catalogue** half of XCSV: everything here is other people's work,
+collected and version-controlled. Our own content lives in
+[XCSV_ADDONS](https://github.com/x-cessive/XCSV_ADDONS) and never mixes with it.
+The exception is `tools/`, which is ours.
 
 This repository brings together a full suite of community-developed features, security fixes, economic systems, and AI frameworks into a unified, version-controlled codebase.
 
@@ -44,8 +67,13 @@ This repository brings together a full suite of community-developed features, se
    ```
 3. **Server Execution**: Launch `arma3server.exe` with active servermod parameters:
    ```powershell
-   arma3server.exe -mod=@Exile -servermod=@ExileServer;@infiSTAR_A3_vision;@ScratchieServer -config=@ExileServer\config.cfg -cfg=@ExileServer\basic.cfg -profiles=E:\arma3server\profiles -bepath=E:\arma3server\battleye -name=exile -port=2302 -world=empty -autoInit -showScriptErrors -noPause -noSound -cpuCount=12 -exThreads=7 -enableHT
+   arma3server.exe -mod=@Exile -servermod=@ExileServer;@infiSTAR_A3_vision;@ScratchieServer -config=@ExileServer\config.cfg -cfg=@ExileServer\basic.cfg -profiles=E:\arma3server\profiles -bepath=E:\arma3server\battleye -name=exile -port=2302 -world=empty -autoInit -filePatching -showScriptErrors -noPause -noSound -cpuCount=12 -exThreads=7 -enableHT
    ```
+   **`-filePatching` is mandatory** — A3XAI reads `a3xai_config.sqf` as a loose
+   file and without the flag it silently ends the mission during world init,
+   putting the server into a restart loop. **`-world=empty` is a server-only
+   flag**; passing it to the game client causes an `ACCESS_VIOLATION` in the
+   graphics driver at startup.
 
 ---
 
@@ -142,8 +170,53 @@ This repository brings together a full suite of community-developed features, se
 
 ---
 
+## ⚠️ Read this before using `tools/pbo/pbo.ps1`
+
+**Always list the entry paths after packing.** A PBO whose entries all begin with
+a leading `\` passes a checksum verify and still breaks the server completely —
+Arma resolves `<prefix>` + `\path`, finds nothing, and the server core silently
+never loads. It produced **219 mission starts in eight minutes** here, and every
+visible error was a *database* error.
+
+```powershell
+tools\pbo\pbo.ps1 Pack -Path <src> -Out <dst> -Prefix <prefix>
+tools\pbo\pbo.ps1 List -Path <dst>      # not optional. Read the paths.
+```
+
+The cause was in the packer itself: `Resolve-Path` hands a path back in whatever
+form it was given, so a source path containing an 8.3 short name
+(`C:\Users\ARCHIT~1\…`) stayed short while directory enumeration returned the
+long form. One character of difference left a separator on every entry path. It
+now uses `Get-Item -LiteralPath` and refuses to pack a bad entry — **verify
+anyway.**
+
+The corruption is arithmetically visible: broken files are exactly one byte
+larger per entry.
+
+| pbo | good | broken | delta | entries |
+|---|---:|---:|---:|---:|
+| `exile_server.pbo` | 506,736 | 507,018 | +282 | 285 |
+| `safex_server.pbo` | 22,956 | 22,967 | +11 | 11 |
+| `Server.pbo` | 4,818 | 4,822 | +4 | 4 |
+
+[XCSV GUARD](https://github.com/x-cessive/XCSV_GUARD) checks this on every poll
+and refuses to start the server while any PBO fails.
+
+---
+
 ## 📜 Credits & Author Attribution
 
 All third-party addons and scripts in this repository remain the intellectual property of their respective creators:
 
 * **Developers & Contributors**: *AliasCartoons, Andrew_S90, Azroul13, Bigfoot, Bjanski, Bones50, Cyunide, Defent, DevZupa, dtavana, El Rabito, Enigma, eraser1, [GADD]Monkeynutz, genesis92x, Ghostrider-GRG-, Halvhjearne, Happydayz, horbin, IT07, JackFrost, John, kuplion, maca134, MezoPlays, MGTDB, nabek, Patrix87, Porkeld, Rod-Serling, Sarge, second_coming, ServerAtze, Shix, Taylor Swift, Team R3F, Vishpala, WolfkillArcadia, ynpmoose*, and the **Exile Mod Team**.
+
+---
+
+<div align="center">
+<sub>
+Part of <a href="https://github.com/x-cessive/XCSV">XCSV</a> ·
+<a href="https://x-cessive.github.io/XCSV/">site</a> ·
+<a href="https://x-cessive.github.io/XCSV/wiki/Runbook.html">runbook</a> ·
+<a href="https://github.com/x-cessive/XCSV_ADDONS">our own addons</a>
+</sub>
+</div>

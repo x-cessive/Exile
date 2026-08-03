@@ -44,11 +44,16 @@
 |	StatusReporter	: Server status
 |дﾟ)
 */
-LB_DebugMode = true;
+LB_DebugMode = false;	// XCSV: off on a live server - debug output inflates the RPT
 LB_StatusReporter = 10;	// 0:Disable 1-:Report time(min)
 LB_OutputLog = true;
 LB_PendingTime = 0;		// Slow start(second)
-LB_WaitSysBusy = 40;	// 0:Disable 1-:Working ??Fps Higher
+LB_WaitSysBusy = 15;	// XCSV 2026-08-02: was 40 -> DEADLOCK. The addon pauses while server
+					// FPS is below this value, but the objects it spawns hold FPS at ~22,
+					// so it waited for 40 FPS that could never arrive and froze at 66/103
+					// for 21+ minutes. A third of the map got no loot. This server idles
+					// 46-47 and works at ~22, so the threshold must sit BELOW the working
+					// FPS. 15 still throttles on genuine overload without deadlocking.
 LB_Used_CUPMOD = false;	// Used:CUP Terrains-MOD
 LB_TraderSide = EAST;
 
@@ -62,7 +67,7 @@ LB_TraderSide = EAST;
 	Marker Types
 	https://community.bistudio.com/wiki/cfgMarkers
 	*/
-LB_MapMarker = true;
+LB_MapMarker = false;					// XCSV: debug markers OFF - they exposed loot boxes, secret traders, mines, AI and vehicles on the map
 //*Item-box
 LB_MapMarkerType = "mil_dot_noShadow";
 LB_MapMarkerColor = "ColorYellow";
@@ -523,6 +528,12 @@ LB_LocationLoot = [
 		["ammo","civ","foods","asalt","sniper","scope","explosives"]
 		]
 	],
+	// XCSV: field 15 (vehicles) 7 -> 2 and field 12 (strange objects) 5 -> 2.
+	// Tanoa has ~50-60 named settlements, so 7 vehicles per village alone was
+	// several hundred cars nobody drives. Arma counts crates and props as
+	// "vehicles" too, which is why the world object count climbed 282 -> 653
+	// during boot while server FPS fell 46 -> 29. Loot box count is untouched:
+	// the scavenging loop is the point of this addon.
 	["NameVillage",[	// 1:(Type:NameVillage)
 		300,			// 2:
 		3,				// 3:
@@ -534,10 +545,10 @@ LB_LocationLoot = [
 		0,				// 9:
 		0,				// 10:
 		0.2,			// 11:
-		5,				// 12:
+		2,				// 12:
 		0,				// 13:
 		0,				// 14:
-		7,				// 15:
+		2,				// 15:
 		["poor"],		// 16:
 		["ammo","civ","foods","asalt","weapon","backpack"]
 		]
@@ -553,10 +564,10 @@ LB_LocationLoot = [
 		2,				// 9:
 		0,				// 10:
 		0.3,			// 11:
-		5,				// 12:
+		2,				// 12:   XCSV: strange objects 5 -> 2
 		0,				// 13:
 		1,				// 14:
-		4,				// 15:
+		2,				// 15:   XCSV: vehicles 4 -> 2
 		["poor","car"],	// 16:
 		["ammo","civ","foods","armar","explosives","medicine"]
 		]
@@ -573,9 +584,9 @@ LB_LocationLoot = [
 		0,				// 10:
 		0.5,			// 11:
 		0,				// 12:
-		2,				// 13:
+		1,				// 13:   XCSV: flaming objects 2 -> 1
 		1,				// 14:
-		4,				// 15:
+		2,				// 15:   XCSV: vehicles 4 -> 2
 		["car","guerilla"],	// 16:
 		["ammo","civ","foods","medicine","sniper","scope","armar","explosives","books"]
 		]
@@ -1077,20 +1088,14 @@ LB_Maptext = [
 	* repeat the list
 	*/
 LB_Bcmessage = [
-	"* Hello everyone! ;-)",
-	"* Welcome to SABA-MISO Exile Server ;-)",
-	"* [PR] FaminyMart : Convenience Stores",
-	"* No Ero-books, No Life.",
-	"* [PR] FOWA-Type89 Rifle, Made in Japan.",
-	"* Yellow Duck is Danger!",
-	"* Warning!! Mr.Miller is invincible!",
-	"* [PR] TOKYO 2020 Olympics.",
-	"* Find it! Secret Traders & Loot Boxes !",
-	"* [PR] FashionCenter - SIMAMORA -",
-	"* SCORE BOARD : Press P Key",
-	"* [PR] DIY:Do it your self! KOMARI",
-	"* Linux & AMD A6-3650 OC Powered!",
-	"* Web ScoreBoard : http://blog.ahh.jp/exile"
+	"* Welcome to XCSV EXILE ;-)",
+	"* Tanoa survival - build, raid, survive.",
+	"* Find it! Secret Traders & Loot Boxes!",
+	"* Territory flags decay - pay your protection money.",
+	"* Lockpicks work on vehicles, safes and doors.",
+	"* Helicrash sites drop military loot at restart.",
+	"* Check the XM8 for build permissions before you build.",
+	"* AI patrols roam the island - travel armed."
 ];
 
 /* SAMPLE

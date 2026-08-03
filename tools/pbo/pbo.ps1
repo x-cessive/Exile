@@ -197,7 +197,21 @@ switch ($Action) {
     'Pack' {
         if (-not $Out) { throw '-Out <file.pbo> is required for Pack' }
         if (-not (Test-Path $Path -PathType Container)) { throw "Source '$Path' is not a directory" }
-        $root = (Resolve-Path $Path).Path.TrimEnd('\')
+        # Get-Item -> FullName, NOT Resolve-Path.
+        #
+        # Resolve-Path hands back the path in whatever form it was given, so a
+        # source path containing an 8.3 short name ("C:\Users\ARCHIT~1\...")
+        # stays short while Get-ChildItem below returns canonical long-form
+        # FullName ("C:\Users\Architect\..."). ARCHIT~1 is 8 characters and
+        # Architect is 9, so $root.Length came out one short and the relative
+        # path calculation left a leading backslash on EVERY entry.
+        #
+        # That is not cosmetic. Arma resolves <prefix> + "\bootstrap\..." and
+        # finds nothing, so the addon silently loads no code. It is what broke
+        # exile_server.pbo, Server.pbo and safex_server.pbo on 2026-08-01 and
+        # put the server in a 219-restart loop. A PBO corrupted this way still
+        # passes a checksum verify, which is why it went unnoticed for hours.
+        $root = (Get-Item -LiteralPath $Path).FullName.TrimEnd('\')
 
         # Prefix: explicit, else $PBOPREFIX$/$PREFIX$ in the folder, else folder name.
         if (-not $Prefix) {
@@ -239,7 +253,13 @@ switch ($Action) {
 
         $epoch = [datetime]'1970-01-01Z'
         foreach ($f in $files) {
-            $rel = $f.FullName.Substring($root.Length + 1).Replace('/', '\')
+            # Trim the separator off rather than assuming exactly one character
+            # of it, so any residual off-by-one cannot reintroduce the leading
+            # backslash. Belt and braces on top of the $root fix above.
+            $rel = $f.FullName.Substring($root.Length).TrimStart('\', '/').Replace('/', '\')
+            if ([string]::IsNullOrWhiteSpace($rel) -or $rel.StartsWith('\')) {
+                throw "refusing to pack: bad entry path '$rel' for $($f.FullName)"
+            }
             $ts  = [uint32][math]::Max(0, [math]::Floor(($f.LastWriteTimeUtc - $epoch).TotalSeconds))
             Write-CString $bw $rel
             $bw.Write([uint32]$MIME_UNCOMPRESSED)
