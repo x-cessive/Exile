@@ -4,8 +4,8 @@
 
 **The catalogue: third-party addons, scripts, schemas and the tooling that packs them.**
 
-[![Part of XCSV](https://img.shields.io/badge/part_of-XCSV-3D9CFF.svg?style=for-the-badge)](https://github.com/x-cessive/XCSV)
-[![Docs](https://img.shields.io/badge/docs-x--cessive.github.io%2FXCSV-3FC16A.svg?style=for-the-badge)](https://x-cessive.github.io/XCSV/)
+[![Project page](https://img.shields.io/badge/project_page-x--cessive.github.io%2FXCSV%2Fcatalogue-3FC16A.svg?style=for-the-badge)](https://x-cessive.github.io/XCSV/catalogue/)
+[![Part of XCSV](https://img.shields.io/badge/part_of-XCSV-3D9CFF.svg?style=for-the-badge)](https://x-cessive.github.io/XCSV/)
 
 [![Arma 3](https://img.shields.io/badge/Arma_3-2.20.152984-blue.svg?logo=steam&logoColor=white)](https://arma3.com/)
 [![Exile Mod](https://img.shields.io/badge/Exile_Mod-1.0.4a_Pineapple-00b2cd.svg)](https://exile.majormittens.co.uk/)
@@ -18,11 +18,11 @@
 </div>
 
 > **Part of the XCSV system** ·
-> [Hub](https://github.com/x-cessive/XCSV) ·
-> [GUARD](https://github.com/x-cessive/XCSV_GUARD) ·
-> [Addons](https://github.com/x-cessive/XCSV_ADDONS) ·
-> **Catalogue** ·
-> [Site](https://x-cessive.github.io/XCSV/)
+> [Overview](https://x-cessive.github.io/XCSV/) ·
+> [GUARD](https://x-cessive.github.io/XCSV/guard/) ·
+> [Addons](https://x-cessive.github.io/XCSV/addons/) ·
+> **[Catalogue](https://x-cessive.github.io/XCSV/catalogue/)** ·
+> [Docs](https://x-cessive.github.io/XCSV/wiki/Home.html)
 
 ---
 
