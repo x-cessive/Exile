@@ -27,11 +27,24 @@ _ok = true;
 if !(LB_MapMarker)then
 {
 	_ok = false;
-	if ((_name find "LB_GPS#") > -1)then{_ok = true;};
+	// XCSV 2026-08-03: this whitelist is why LB_MapMarker = false did NOT clear
+	// the map. Five name prefixes were exempted from the switch and drew anyway.
+	//
+	// Removed from the exemption (they were the "?" and "X" litter on the map):
+	//   LB_REOBJ  - "hd_unknown" (?) on every Random Exile Object: clean-water,
+	//               ConcreteMixer, locker and SECRET TRADER spawns. Same
+	//               loot-exposure class LB_MapMarker was set false to stop.
+	//   LB_BFUEL  - "hd_destroy" (X) on every broken-down fuel station. Also
+	//               gated by LB_BFuel_MapMark, now false; belt and braces.
+	//   LB_GPS#   - live black dots written by eh_Fired/eh_Engine at AI firing
+	//               and vehicle positions. That is player-visible AI ESP.
+	//
+	// Kept exempt, deliberately:
+	//   LB_BANDITCITY - a labelled red "Bandit city" zone. Intended gameplay
+	//                   information, not debug litter.
+	//   LB_MAPTEXT    - operator-authored labels from LB_Maptext, empty today.
 	if ((_name find "LB_BANDITCITY") > -1)then{_ok = true;};
-	if ((_name find "LB_REOBJ") > -1)then{_ok = true;};
 	if ((_name find "LB_MAPTEXT") > -1)then{_ok = true;};
-	if ((_name find "LB_BFUEL") > -1)then{_ok = true;};
 };
 if !(_ok)exitWith{};
 

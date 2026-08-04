@@ -459,7 +459,15 @@ DMS_SpawnMissions_Scheduled = false;	// Whether or not to spawn missions in a sc
 	DMS_ai_skill_moderate				= [["aimingAccuracy",0.60],["aimingShake",0.60],["aimingSpeed",0.60],["spotDistance",0.60],["spotTime",0.60],["courage",1.00],["reloadSpeed",1.00],["commanding",1.00],["general",0.60]];	// Moderate
 	DMS_ai_skill_difficult				= [["aimingAccuracy",0.70],["aimingShake",0.70],["aimingSpeed",0.70],["spotDistance",0.70],["spotTime",0.80],["courage",1.00],["reloadSpeed",1.00],["commanding",1.00],["general",0.70]]; 	// Difficult
 	DMS_ai_skill_hardcore				= [["aimingAccuracy",1.00],["aimingShake",1.00],["aimingSpeed",1.00],["spotDistance",1.00],["spotTime",1.00],["courage",1.00],["reloadSpeed",1.00],["commanding",1.00],["general",1.00]]; 	// Hardcore
-	DMS_ai_skill_random					= ["hardcore","difficult","difficult","difficult","moderate","moderate","moderate","moderate","easy","easy"];	// Skill frequencies for "random" AI skills | Default: 10% hardcore, 30% difficult, 40% moderate, and 20% easy
+	// XCSV 2026-08-03: "hardcore" removed from the random pool. It is
+	// aimingAccuracy 1.00 / spotDistance 1.00 / spotTime 1.00 -- perfect aim,
+	// perfect spotting, instant reaction. Occupation spawns heli-crash guards
+	// with difficulty "random" and a3_exile_lootbox spawns every island bandit
+	// with LB_BanditDifficulty = "random", so 1 in 10 AI server-wide was
+	// flawless. Now 30% difficult / 50% moderate / 20% easy -- still varied and
+	// still dangerous, but nothing is unbeatable.
+	// Was: ["hardcore","difficult","difficult","difficult","moderate","moderate","moderate","moderate","easy","easy"]
+	DMS_ai_skill_random					= ["difficult","difficult","difficult","moderate","moderate","moderate","moderate","moderate","easy","easy"];	// XCSV: 30% difficult, 50% moderate, 20% easy
 	DMS_ai_skill_randomDifficult		= ["hardcore","hardcore","difficult","difficult","difficult"];	// 60% chance for "difficult", 40% chance for "hardcore" AI.
 	DMS_ai_skill_randomEasy				= ["moderate","moderate","easy","easy","easy"];					// 60% chance for "easy", 40% chance for "moderate" AI.
 	DMS_ai_skill_randomIntermediate		= ["difficult","difficult","moderate","moderate","moderate"];	// 60% chance for "moderate", 40% chance for "difficult" AI.

@@ -54,10 +54,26 @@ SC_occupyHeliCrashes			= true;						// true if you want to have Dayz style helic
 //	Fast nights Setup
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// XCSV 2026-08-03: DAYTIME-ONLY server, by owner request.
+//
+// occupationFastNights.sqf is the ONLY thing on this server that calls
+// setTimeMultiplier -- verified by grepping every server PBO and the mission.
+// So these two numbers are the whole clock.
+//
+// Day at 1x means in-game time tracks real time, and with Exile's 3-hour
+// restart cycle (exile_server_config RCON restartTimer) starting at 08:00,
+// a full uptime ends around 11:00. Daylight the entire session.
+//
+// Night at 120x (the engine maximum) is the safety net: if uptime ever runs
+// long enough to reach 18:00, the whole night is over in about six real
+// minutes instead of half an hour.
+//
+// Was: night 24, day 4. At 4x, a 3-hour restart advanced 12 in-game hours,
+// which is why the island kept ending up dark.
 SC_fastNightsStarts         	= 18;                   	// Start fast nights at this hour (24 hour clock) eg. 18 for 6pm
-SC_fastNightsMultiplierNight	= 24;                   	// the time multiplier to use at night (12 = 12x speed)
+SC_fastNightsMultiplierNight	= 120;                   	// XCSV: was 24. Engine max; blows through night in ~6 real minutes.
 SC_fastNightsEnds           	= 6;                    	// End fast nights at this hour (24 hour clock) eg. 6 for 6am
-SC_fastNightsMultiplierDay  	= 4;                    	// the time multiplier to use during daylight hours (4 = 4x speed)
+SC_fastNightsMultiplierDay  	= 1;                    	// XCSV: was 4. Real-time daylight, so a session never outruns the day.
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //	Random Spawn Setup (Work in progress)
@@ -210,7 +226,10 @@ SC_occupyHeliCrashesLocations	= [
 SC_HeliCrashesOnFire			= true;                 	// true if you want the crash on fire, false if you just want smoke
 SC_SpawnHeliCrashGuards			= true;						// true if you want to enable AI guards
 SC_numberofHeliCrashes      	= 5;						// if SC_occupyHeliCrashes = true spawn this many Heli Crashes
-SC_HeliCrashGuards          	= 6;                    	// number of AI to spawn at each crate
+SC_HeliCrashGuards          	= 4;                    	// XCSV 2026-08-03: was 6. Several crashes are
+														// live at once, so this multiplies. 4 is still a
+														// real fight; it is destination content, so it was
+														// trimmed rather than cut.
 SC_HeliCrashGuardsRandomize 	= true;                 	// Use a random number of guards up to a maximum = SC_HeliCrashGuards (so between 1 and SC_HeliCrashGuards)
 SC_HeliCrashMarkers				= true;						// true if you want to have markers on the Heli Crashes
 

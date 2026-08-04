@@ -561,7 +561,7 @@ LB_LocationLoot = [
 		0.2,			// 6:
 		1500,			// 7:
 		0.3,			// 8:
-		2,				// 9:
+		1,				// 9:   XCSV 2026-08-03: 2 -> 1 ambient town bandits
 		0,				// 10:
 		0.3,			// 11:
 		2,				// 12:   XCSV: strange objects 5 -> 2
@@ -580,7 +580,7 @@ LB_LocationLoot = [
 		0.3,			// 6:
 		3000,			// 7:
 		0.1,			// 8:
-		2,				// 9:
+		1,				// 9:   XCSV 2026-08-03: 2 -> 1 ambient town bandits
 		0,				// 10:
 		0.5,			// 11:
 		0,				// 12:
@@ -1129,7 +1129,9 @@ LB_BCGroups = 3;	// *1group 3AIs, 0:disable
 	boolean
 	*/
 LB_BFuel_Rate = 0.5;
-LB_BFuel_MapMark = true;
+LB_BFuel_MapMark = false;	// XCSV 2026-08-03: was true -> an "X" (hd_destroy) on every
+							// broken fuel station, island-wide. Cosmetic litter and it
+							// hands players a free fuel-station status map.
 
 /*=============================
 	(25) Traveling Trader
