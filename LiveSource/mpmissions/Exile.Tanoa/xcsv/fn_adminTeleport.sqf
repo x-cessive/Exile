@@ -32,15 +32,15 @@ XCSV_TP_ADMINS = [
 // How long the map stays armed after choosing "teleport to map click".
 XCSV_TP_ArmSeconds = 45;
 
-// Named jump targets for testing the dialogue addons. Trader zones are where
-// fn_traderVoice lives, so they are the useful ones.
+// Named jump targets for testing the dialogue addons. These are verified
+// mission marker/trader coordinates, not rough town centers.
 XCSV_TP_Places = [
-    ["Trader - Central",  [7500.0,  7660.0,  0]],
-    ["Trader - Air",      [11074.7, 13391.8, 0]],
-    ["Georgetown",        [6200.0,  15000.0, 0]],
-    ["Lijnhaven",         [11700.0, 12300.0, 0]],
-    ["Katkoula",          [4600.0,  12300.0, 0]],
-    ["Map centre",        [7680.0,  7680.0,  0]]
+    ["Trader - South",       [2265.13, 8596.37, 0]],
+    ["Trader - Mountain",    [12190.4, 8167.03, 0]],
+    ["Trader - North",       [7991.1, 12411.6, 0]],
+    ["Aircraft - North",     [11579.8, 13156.0, 0]],
+    ["Aircraft - Central",   [7199.99, 6961.1, 0]],
+    ["Boat Trader - NE",     [11074.7, 13391.8, 0]]
 ];
 
 XCSV_fnc_tpTo = {
@@ -52,11 +52,9 @@ XCSV_fnc_tpTo = {
     private _dest = +_pos;
     _dest set [2, 0];
 
-    // Nudge upward so we never land inside terrain or a building floor.
-    private _safe = [_dest select 0, _dest select 1, 0.5];
-    ["xcsvTeleportRequest", [_safe, _what]] call ExileClient_system_network_send;
+    ["xcsvTeleportRequest", [_dest, _what]] call ExileClient_system_network_send;
     systemChat format ["XCSV TP: requested %1 [%2, %3]",
-        _what, round (_safe select 0), round (_safe select 1)];
+        _what, round (_dest select 0), round (_dest select 1)];
 };
 
 XCSV_fnc_tpArmMapClick = {
