@@ -168,7 +168,7 @@
 			[  
 				// Drivers                          	# and type  |         Patrol     |    spawn   | dest       | 'Patrol' options
 				[
-					["EAST","COMBAT","RED","COLUMN"],   [  [16, "Rifleman"]  ],   ["Gunner",[0,0],[12227,8371.93,3.08834],[0]   ]
+					["EAST","COMBAT","RED","COLUMN"],   [  [16, "Rifleman_E"]  ],   ["Gunner",[0,0],[12227,8371.93,3.08834],[0]   ]
 
 				]
 				// proceed from origin, move from City to City, stay on the roads, then RTB and despawn
