@@ -30,11 +30,9 @@ _themeData =
 												// List of Missions. 
 												// The below missions MUST be in the same folder as this file!            
 
-		["CommsAlpha", [10033.3,11792.4]]
-		// Georgetown is intentionally disabled for the initial XCSV FuMS slice:
-		// the inherited static mission has parser defects and should be repaired
-		// before it is re-enabled.
-		// ["Georgetown", [5765.37,10368.9]]
+		["CommsAlpha", [10033.3,11792.4]],
+		// Re-enabled after repairing Georgetown.sqf's static HMG array syntax.
+		["Georgetown", [5765.37,10368.9]]
 
     ],
     [   //***** Locations ***** !! 2D coords ONLY !!

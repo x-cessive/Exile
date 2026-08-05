@@ -200,7 +200,7 @@
 				[  "O_HMG_01_high_F"   		,[5748.03,10360.1,3.34197],		[0],     	"None" ],   
 				[  "O_HMG_01_high_F"   		,[5488.29,10046.1,0],			[0],     	"None" ], 
 				[  "O_HMG_01_high_F"   		,[5799.66,10560.4,3.19466],		[0],     	"None" ],   
-				[  "O_HMG_01_high_F"   		,[5702.8,10400.8,0,]			[0],     	"None" ],   
+				[  "O_HMG_01_high_F"   		,[5702.8,10400.8,0],			[0],     	"None" ],   
 				[  "O_HMG_01_high_F"   		,[5768.91,10186.1,0],			[0],     	"None" ]
 				// If driver-less vehicles are desired, place them at the bottom of the list AND have less drivers than vehicles in the next section
 				// NOTE: Troops WILL be placed into 'driver-less' vehicles if the other vehicles are full!!!
