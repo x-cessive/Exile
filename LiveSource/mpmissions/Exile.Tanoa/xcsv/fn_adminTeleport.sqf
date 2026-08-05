@@ -108,7 +108,10 @@ XCSV_fnc_tpMenu = {
         if (!(isNull _p) && {_p != player}) then {
             _added pushBack (player addAction [
                 format ["<t color='#3D9CFF'>TP to %1</t>", name _p],
-                { (getPosATL ((_this select 3) select 0)) call XCSV_fnc_tpTo },
+                {
+                    private _target = (_this select 3) select 0;
+                    [getPosATL _target, format ["player %1", name _target]] call XCSV_fnc_tpTo;
+                },
                 [_p], 2.0, false, true, "", "true", 10
             ]);
         };
@@ -119,8 +122,11 @@ XCSV_fnc_tpMenu = {
         private _pos   = _x select 1;
         _added pushBack (player addAction [
             format ["<t color='#7E8896'>TP: %1</t>", _label],
-            { ((_this select 3) select 0) call XCSV_fnc_tpTo },
-            [_pos], 1.0, false, true, "", "true", 10
+            {
+                private _args = _this select 3;
+                [_args select 0, _args select 1] call XCSV_fnc_tpTo;
+            },
+            [_pos, _label], 1.0, false, true, "", "true", 10
         ]);
     } forEach XCSV_TP_Places;
 
