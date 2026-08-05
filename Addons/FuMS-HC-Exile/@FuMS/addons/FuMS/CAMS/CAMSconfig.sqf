@@ -24,7 +24,6 @@ CAMS_useExile		= true;	// True - Loads Exile Content | False - Does not load exi
 
 CAMS_cartList = 	[	// Name of CART directory 
 							"helicopters",
-							"marksmen",
 							"jets",
 							"apex"
 						];
