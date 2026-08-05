@@ -34,7 +34,7 @@ class Header
 {
     gameType = Survive; // Do NOT change this
     minPlayers = 1;
-    maxPlayers = 100;
+    maxPlayers = 101;
 };
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -188,4 +188,3 @@ class RscTitles
 // Halv's Paintshop
 #include "addons\paintshop\Halv_defines.hpp"
 #include "addons\paintshop\paintshop.hpp"
-
