@@ -3703,7 +3703,7 @@ class CfgExileCustomCode
 	ExileClient_object_item_construct = "custom\Build_Limits\ExileClient_object_item_construct.sqf";
 	ExileClient_construction_threads = "custom\Build_Limits\ExileClient_construction_threads.sqf";
 
-	// StatusBar -- 32-bit extDB2 variant (matches arma3server.exe x86)
+	// StatusBar -- extDB3 variant (matches arma3server_x64.exe)
 	ExileServer_system_database_connect = "custom\StatusBar\ExileServer_system_database_connect.sqf";
 
 	/*
