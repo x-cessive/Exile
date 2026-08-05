@@ -1,0 +1,13 @@
+///////////////////////////////////////////////////////////////
+// Player Market By Cyunide
+// Copyright ©2018
+///////////////////////////////////////////////////////////////
+class CyFs { 
+	tag = "CyFs";
+	class Functions {
+		file = "MarketByCyunide\Functions";
+		class RequestBuy {};
+		class doSearch {};
+	};
+};
+

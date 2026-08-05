@@ -1,0 +1,191 @@
+#define true 1
+#define false 0
+// Required for the XM8, do not remove!
+#include "RscDefines.hpp"
+
+// Required for the Exile Loadouts dialog
+#include "custom\loadouts\loadoutDialog.hpp"
+
+// R3F Logistics - lift, tow and move objects. Defines its own Rsc controls, so
+// it must come after RscDefines.hpp above. Loaded from init.sqf, not from
+// initPlayerLocal, because R3F sets up a different half on server and client.
+#include "R3F_LOG\desc_include.h"
+
+///////////////////////////////////////////////////////////////////////////////
+// Server Settings - Modify at will
+///////////////////////////////////////////////////////////////////////////////
+author = "Exile Mod Team";
+onLoadName = "XCSV EXILE";
+onLoadMission= "www.exilemod.com";
+loadScreen = "exile_assets\texture\mod\logo.paa";
+// Channel 2 (Command) stays off. Global (0) is ENABLED so players have a
+// server-wide channel to talk in.
+//
+// HARD RULE: player chat must never reach any language model. Faction/AI
+// chatter is generated OFFLINE from server-controlled game state and shipped
+// as static lines - there is no runtime inference, and no path exists from a
+// player's keyboard into a model. Do not add one.
+disableChannels[] = {2};
+OnLoadIntro = "";
+OnLoadIntroTime = false;
+OnLoadMissionTime = false;
+
+class Header
+{
+    gameType = Survive; // Do NOT change this
+    minPlayers = 1;
+    maxPlayers = 100;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+// Exile Settings - Do not change these!
+///////////////////////////////////////////////////////////////////////////////
+forceRotorLibSimulation = 2;
+skipLobby = 1;
+joinUnassigned = 1;
+respawn = "BASE";
+respawnDelay = 120;
+respawnDialog = 0;
+respawnOnStart = 0;
+respawnButton = 1;
+respawnTemplates[] = {"Exile"};
+corpseManagerMode = 0;
+corpseLimit = 20;
+corpseRemovalMinTime = 1800;
+corpseRemovalMaxTime = 3600;
+wreckManagerMode = 0;
+wreckLimit = 2;
+wreckRemovalMinTime = 60;
+wreckRemovalMaxTime = 360;
+scriptedPlayer = 1;
+disabledAI = 1;
+enableItemsDropping = 0;
+briefing = 0;
+debriefing = 0;
+allowFunctionsLog = 1;
+enableDebugConsole = 0;
+allowFunctionsRecompile = 0;
+showSquadRadar = 0;
+showUAVFeed = 0;
+reviveDelay = 6;
+reviveForceRespawnDelay = 3;
+reviveBleedOutDelay = 120;
+
+showHUD[] =
+{
+    true,   // Scripted HUD (same as showHUD command)
+    true,   // Vehicle + soldier info
+    true,   // Vehicle radar
+    true,   // Vehicle compass
+    true,   // Tank direction indicator
+    false,  // Commanding menu
+    false,  // Group Bar
+    true,   // HUD Weapon Cursors
+    true   // Vehicle Panel (Required for GPS)
+};
+
+#include "config.cpp"
+
+// Player Market By Cyunide
+class CfgFunctions
+{
+	#include "MarketByCyunide\CfgFunctions.cpp"
+	#include "custom\scavenge\CfgFunctions.hpp"
+};
+
+// GADD Trick or Treat
+class CfgSounds
+{
+	class Knock1
+	{
+		name = "Knock1";
+		sound[] = {"GADD_Apps\TrickOrTreat\Sounds\Knock1.ogg", 0.5, 1, 100 };
+		titles[] = { 0, "" };
+	};
+	class Knock2
+	{
+		name = "Knock2";
+		sound[] = {"GADD_Apps\TrickOrTreat\Sounds\Knock2.ogg", 0.5, 1, 100 };
+		titles[] = { 0, "" };
+	};
+	class Laugh1
+	{
+		name = "Laugh1";
+		sound[] = {"GADD_Apps\TrickOrTreat\Sounds\Laugh1.ogg", 0.5, 1, 100 };
+		titles[] = { 0, "" };
+	};
+	class Laugh2
+	{
+		name = "Laugh2";
+		sound[] = {"GADD_Apps\TrickOrTreat\Sounds\Laugh2.ogg", 0.5, 1, 100 };
+		titles[] = { 0, "" };
+	};
+	class Laugh3
+	{
+		name = "Laugh3";
+		sound[] = {"GADD_Apps\TrickOrTreat\Sounds\Laugh3.ogg", 0.5, 1, 100 };
+		titles[] = { 0, "" };
+	};
+	class TrickOrTreat1
+	{
+		name = "TrickOrTreat1";
+		sound[] = {"GADD_Apps\TrickOrTreat\Sounds\TrickOrTreat1.ogg", 0.5, 1, 100 };
+		titles[] = { 0, "" };
+	};
+};
+
+class CfgRemoteExec
+{
+    class Functions
+    {
+        mode = 1;
+        jip = 0;
+
+        class ExileServer_system_network_dispatchIncomingMessage
+        {
+            allowedTargets = 2;
+        };
+
+        class w4_lockpick_fnc_lockpicked { allowedTargets = 2; };
+        class w4_lockpick_fnc_lockpick_attempt { allowedTargets = 2; };
+        class w4_lockpick_fnc_lockpick_failed { allowedTargets = 2; };
+        class w4_lockpick_fnc_create_marker_client { allowedTargets = 1; };
+        class ExileExpansionServer_system_scavenge_spawnLoot { allowedTargets = 0; };
+        class AVS_fnc_rearmVehicle { allowedTargets = 2; };
+    };
+
+    class Commands
+    {
+        mode = 0;
+        jip = 0;
+    };
+};
+
+class RscTitles
+{
+	// StatusBar
+	#include "custom\StatusBar\statusBar.hpp"
+	// PilotHUD
+	#include "custom\PilotHUD\dialog.hpp"
+	// Vanilla Vehicle HUD
+	#include "RscInGameUI.hpp"
+	// Scavenge system UI
+	#include "custom\scavenge\dialogs\ExileScavengeUI.hpp"
+};
+
+// xsSpawn Dialogs
+#include "xs\spawn\Dialog\xsSpawnDefines.hpp"
+#include "xs\spawn\Dialog\xsSpawnDiaglog.hpp"
+
+// ExileSafeX Dialog
+#include "custom\SafeX\safeXDialog.hpp"
+
+// Exile Scavenge System Configs
+#include "custom\scavenge\CfgScavengeRecipes.hpp"
+#include "custom\scavenge\CfgExileScavenge.hpp"
+#include "custom\scavenge\CfgExileHoldActions.hpp"
+
+// Halv's Paintshop
+#include "addons\paintshop\Halv_defines.hpp"
+#include "addons\paintshop\paintshop.hpp"
+
