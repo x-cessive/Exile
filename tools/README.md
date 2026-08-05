@@ -161,3 +161,44 @@ errors and attributing them to an addon where the text names one.
 The noise list is empirically derived. Notably, `dependent on downloadable content that
 has been deleted.\na3_characters_f` is **not** a real dependency failure — it appears on a
 vanilla server running a mission that declares zero addons.
+
+---
+
+## x64/extDB3 operating tools
+
+### `diagnostics/x64-baseline.ps1`
+
+Captures the live x64/extDB3 operating baseline without printing credentials:
+server process, headless-client candidate, latest RPT evidence, extDB3 log path,
+and the newest infiSTAR metric when present.
+
+```powershell
+E:\ExileRepo\tools\diagnostics\x64-baseline.ps1
+```
+
+Default output goes to `D:\CAGE\xcsv-baselines\baseline-*.json` and
+`baseline-*.md`.
+
+### `database/test-extdb3-persistence.ps1`
+
+Read-only probe for the extDB3 SQL custom file and the core Exile tables.
+
+```powershell
+E:\ExileRepo\tools\database\test-extdb3-persistence.ps1
+```
+
+It verifies required SQL sections, table presence, row counts, and recent
+`player`, `vehicle`, `container`, and `territory` timestamps.
+
+### `database/backup-exile-db.ps1`
+
+Creates a MariaDB dump of the Exile database under `D:\CAGE\xcsv-db-backups`.
+
+```powershell
+E:\ExileRepo\tools\database\backup-exile-db.ps1
+E:\ExileRepo\tools\database\backup-exile-db.ps1 -WhatIf
+```
+
+Default retention keeps the newest 14 `exile-*.sql` dumps. The script reads
+`@ExileServer\extdb3-conf.ini` and keeps credentials inside a temporary MariaDB
+defaults file.
