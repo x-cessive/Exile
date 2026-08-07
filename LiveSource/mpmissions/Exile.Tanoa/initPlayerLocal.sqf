@@ -331,3 +331,9 @@ ExileClientPlayerMarXetItems = [];
 // parameterless request; price, affordability, rate limiting and identity are
 // all decided server-side in xcsv_chatter\network\fn_policyBuyRequest.sqf.
 [] execVM "xcsv\fn_policy.sqf";
+
+// Player Inspector, XM8 App20 (roadmap 10.1.2). Admin-only: sends a name
+// fragment over xcsvInspectRequest; the server re-resolves the session, checks
+// its own whitelist and answers the requesting admin with the account + flag
+// rows via xcsvInspectResponse. Read-only. See xcsv\fn_playerInspector.sqf.
+[] execVM "xcsv\fn_playerInspector.sqf";

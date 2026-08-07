@@ -69,6 +69,14 @@ class CfgNetworkMessages
 	// on this wire to tamper with.
 	class xcsvPolicyBuyRequest { module = "system_xcsv"; parameters[] = {}; };
 	class xcsvTeleportRequest { module = "system_xcsv"; parameters[] = {"ARRAY","STRING"}; };
+	// Player Inspector (roadmap 10.1.2, App20). Admin requests a name fragment,
+	// the server answers ONE admin with structured rows. Both sides carry the
+	// module "system_xcsv" so Exile's dispatcher maps to
+	// ExileServer_system_xcsv_network_xcsvInspectRequest and
+	// ExileClient_system_xcsv_network_xcsvInspectResponse. The request
+	// parameter is bound (STRONG), never interpolated into SQL.
+	class xcsvInspectRequest { module = "system_xcsv"; parameters[] = {"STRING"}; };
+	class xcsvInspectResponse { module = "system_xcsv"; parameters[] = {"ARRAY","ARRAY"}; };
 
 	class depositItemRequest { module="system_safex"; parameters[]={"STRING"}; };
 	class depositItemResponse { module="system_safex"; parameters[]={"SCALAR","ARRAY"}; };
@@ -3742,6 +3750,11 @@ class CfgExileCustomCode
 
 	// Large numbers formatting in XM8
 	ExileClient_gui_xm8_slide_apps_onOpen = "custom\ExileClient_gui_xm8_slide_apps_onOpen.sqf";
+
+	// XCSV: widen the extra-apps grid. Stock exiled client only instantiates
+	// XM8_AppNN_Button slots 01..14, so our App15..App20 never render. This
+	// override rebuilds the grid for every configured app class.
+	ExileClient_gui_xm8_slide_extraApps_onOpen = "custom\ExileClient_gui_xm8_slide_extraApps_onOpen.sqf";
 
 	// Vanilla Vehicle HUD fix
 	ExileClient_gui_hud_renderGroupPanel = "custom\ExileClient_gui_hud_renderGroupPanel.sqf";
@@ -7838,6 +7851,12 @@ class CfgXM8
 		appID = "App17";
 		title = "Standing";
 	};
+	class xcsvInspector
+	{
+		controlID = 71840;
+		appID = "App20";
+		title = "Player Inspector";
+	};
 };
 /*
 	XM8 Extra apps, the Exile way of doing it
@@ -8029,6 +8048,18 @@ class XM8_App19_Button: RscExileXM8AppButton1x1
     text = "Insurance";
     onButtonClick = "call XCSV_fnc_policyShow";
     resource = "XM8SlideXcsvPolicy";
+};
+
+// Player Inspector, XM8 App20 (roadmap 10.1.2). Admin-only: click a name from
+// the on-server roster, then the named player's account row + territory
+// membership is requested and rendered. Read-only, so no BattlEye filter; the
+// authority check is server-side (fn_inspectorRequest.sqf), not in the button.
+class XM8_App20_Button: RscExileXM8AppButton1x1
+{
+    textureNoShortcut = "\exile_assets\texture\ui\xm8_app_settings_ca.paa";
+    text = "Players";
+    onButtonClick = "call XCSV_fnc_inspectorShow";
+    resource = "XM8SlideXcsvInspector";
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -8260,6 +8291,72 @@ class XM8SlideXcsvPrices: RscExileXM8Slide
                 class DetailBody: RscExileXM8StructuredText
                 {
                     idc = 71823;
+                    x = 0;
+                    y = 0;
+                    w = 16 * (0.025);
+                    h = 15.5 * (0.04);
+                };
+            };
+        };
+    };
+};
+
+class XM8SlideXcsvInspector: RscExileXM8Slide
+{
+    idc = 71840;
+
+    class Controls
+    {
+        class GoBackButton: RscExileXM8ButtonMenu
+        {
+            idc = 71844;
+            text = "GO BACK";
+            x = (30 - 3) * (0.025);
+            y = (19 - 2) * (0.04);
+            w = 6 * (0.025);
+            h = 1 * (0.04);
+            onButtonClick = "['extraApps', 1] call ExileClient_gui_xm8_slide";
+        };
+
+        class SearchBox: RscExileXM8SearchEdit
+        {
+            idc = 71841;
+            x = (5 - 3) * (0.025);
+            y = (4 - 2) * (0.04);
+            w = 12 * (0.025);
+            h = 1 * (0.04);
+            text = "";
+            tooltip = "Type part of a player name";
+            // Fire the request on Enter (key 28). Return false so the key still
+            // reaches normal handling; the request body is just side effects.
+            onKeyDown = "_this select 1 == 28 && {call XCSV_fnc_inspectorRequest}; false";
+        };
+
+        class ResultList: RscExileXM8ListBox
+        {
+            idc = 71842;
+            x = (5 - 3) * (0.025);
+            y = (5.5 - 2) * (0.04);
+            w = 12 * (0.025);
+            h = 14 * (0.04);
+            // Single-selection league table; the detail pane is on the right.
+            onLBSelChanged = "[_this select 1] call XCSV_fnc_inspectorFill";
+        };
+
+        class DetailGroup: RscExileXM8ControlsGroupNoHScrollbars
+        {
+            idc = -1;
+            x = (18 - 3) * (0.025);
+            y = (4 - 2) * (0.04);
+            w = 17 * (0.025);
+            h = 15.5 * (0.04);
+            colorBackground[] = {0, 0, 0, 0.25};
+
+            class controls
+            {
+                class DetailBody: RscExileXM8StructuredText
+                {
+                    idc = 71843;
                     x = 0;
                     y = 0;
                     w = 16 * (0.025);
