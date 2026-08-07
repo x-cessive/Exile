@@ -6,11 +6,18 @@ This repo tracks deployed source mirrors, migration tooling, diagnostics, and th
 
 ## Mandatory entrypoint
 
-Read `AI-START-HERE.md`, then the canonical XCSV contract at `D:\XCSV\wiki\AI-Start-Here.md` before roadmap interpretation or implementation.
+Read `AI-START-HERE.md`, then both canonical XCSV policies before roadmap interpretation or implementation:
+
+- `D:\XCSV\wiki\AI-Start-Here.md`
+- `D:\XCSV\wiki\AI-Provenance-and-Doc-Sync.md`
 
 When Architect says **read the GitHub**, **read the roadmap**, **get caught up**, **resume XCSV**, or equivalent, execute `READ_ONLY_BOOTSTRAP` first.
 
 Roadmap status is intent, not implementation proof. Reconcile RAG/history, this working tree, Git/GitHub, `LiveSource`, packed/deployed state and runtime evidence. Work only on the smallest remaining delta.
+
+During bootstrap declare desktop/GitHub documentation state. Treat the first 2026-08-07 reconciliation as `DIVERGED` until local evidence proves otherwise. Preserve unique facts from both sides and never overwrite one side merely to make the estate look clean.
+
+Any AI-authored commit must carry XCSV provenance trailers. Prefer `D:\XCSV\tools\ai-commit.ps1` after review/staging; do not fake Git author identity.
 
 ## RAG Maintenance
 
