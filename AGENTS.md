@@ -30,3 +30,17 @@ After changing live-source mirrors, PBO tooling, extDB/database tooling, BattlEy
 Use `D:\XCSV\tools\search-rag.ps1 -Query "terms"` before broad manual searches for project history. The generated RAG files under `D:\CAGE\xcsv-rag\` are local-only and must not be committed.
 
 Live PBO work must be mirrored into `E:\ExileRepo\LiveSource\...` before commit; the packed server PBO must never be the only copy of a change.
+
+## GUARD screenshots and GIFs
+
+Any change to XCSV GUARD behavior or UI must refresh the GitHub-facing screenshots
+and GIFs across the XCSV repos before the work is called complete. Use
+`D:\XCSV_GUARD\tools\capture.ps1` for publishable tab captures and animated
+assets, then update the hub/site outputs and the relevant repo READMEs/wiki
+references. Treat stale images as stale documentation.
+
+For live debugging screenshots, keep Orca pinned left and XCSV GUARD pinned right
+with `D:\XCSV\tools\ai-desktop-capture.ps1 -Layout -Shot`. Use
+`-GuardTab <tab>` to navigate by name. If a shot needs more width, use
+`-WideGuardForShot`; the tool may temporarily enlarge GUARD but must restore the
+right-pinned operator layout before it exits.
