@@ -3755,6 +3755,10 @@ class CfgExileCustomCode
 	// XM8_AppNN_Button slots 01..14, so our App15..App20 never render. This
 	// override rebuilds the grid for every configured app class.
 	ExileClient_gui_xm8_slide_extraApps_onOpen = "custom\ExileClient_gui_xm8_slide_extraApps_onOpen.sqf";
+// The other half of the pair. Without it, stock's onClose removes stock's
+// controls and leaves ours alive on the display - which is what put the custom
+// apps on top of the XM8 home screen and stacked a fresh grid on every open.
+ExileClient_gui_xm8_slide_extraApps_onClose = "custom\ExileClient_gui_xm8_slide_extraApps_onClose.sqf";
 
 	// Vanilla Vehicle HUD fix
 	ExileClient_gui_hud_renderGroupPanel = "custom\ExileClient_gui_hud_renderGroupPanel.sqf";
@@ -7857,12 +7861,78 @@ class CfgXM8
 		appID = "App20";
 		title = "Player Inspector";
 	};
+
+	// Added 2026-08-10. Both slides existed and both apps were wired to open
+	// them, but neither was registered here - and ExileClient_gui_xm8_slide
+	// resolves a slide ONLY through this config. Without an entry the lookup
+	// returns controlID 0, the switch silently does nothing, and the app opens
+	// on whatever page was already showing.
+	class xcsvPrices
+	{
+		controlID = 71850;
+		appID = "App18";
+		title = "Trader Prices";
+	};
+
+	class xcsvPolicy
+	{
+		controlID = 71830;
+		appID = "App19";
+		title = "Insurance";
+	};
 };
+/*
+	XCSV grid button. Every XM8_AppNN_Button inherits this instead of
+	RscExileXM8AppButton1x1.
+
+	WHY a separate class rather than resizing at runtime
+	====================================================
+	RscExileXM8AppButton1x1 positions its icon (ShortcutPos) and its label
+	(TextPos) from the CONFIG constants 6*(0.025) x 5*(0.04) - not from whatever
+	size the control is given by ctrlSetPosition. Shrink the control at runtime
+	and the icon keeps its original size while the label lands outside the
+	button entirely, which is exactly how the XM8 ended up with oversized
+	overlapping icons and no names on any custom app.
+
+	So the geometry has to change HERE, where the icon and label offsets are
+	derived from it, and every fraction below is the stock one applied to the
+	new height. The result scales as a unit.
+
+	WHY 4.25 rather than 5
+	======================
+	The extraApps slide is 19 units tall and its GO BACK button sits at 17, so
+	roughly 17 units are usable. There are 16 real apps, which is 4 rows of 5,
+	and 4 * 5 = 20 does not fit. 4 * 4.25 = 17 exactly.
+*/
+class RscXcsvXM8AppButtonGrid: RscExileXM8AppButton
+{
+	x = 0;
+	y = 0;
+	w = 6 * (0.025);
+	h = 4.25 * (0.04);
+	textureNoShortcut = "";
+	text = "";
+	class ShortcutPos
+	{
+		left = (6 * (0.025)) * 0.25;
+		top = (4.25 * (0.04)) * 0.15;
+		w = (6 * (0.025)) * 0.5;
+		h = (4.25 * (0.04)) * 0.5;
+	};
+	class TextPos
+	{
+		bottom = 0;
+		left = 0;
+		right = 0;
+		top = (4.25 * (0.04)) * 0.65;
+	};
+};
+
 /*
 	XM8 Extra apps, the Exile way of doing it
 	
 	Here is an example app layout:
-	class XM8_App01_Button: RscExileXM8AppButton1x1
+	class XM8_App01_Button: RscXcsvXM8AppButtonGrid
 	{
 	    textureNoShortcut = "";  	// Path to picture. This can be via mission file or client side PBO
 	    text = "";					// The name of the app to be display on the button
@@ -7871,7 +7941,7 @@ class CfgXM8
 	};
 */
 
-class XM8_App01_Button: RscExileXM8AppButton1x1
+class XM8_App01_Button: RscXcsvXM8AppButtonGrid
 {
     textureNoShortcut = "\exile_assets\texture\ui\xm8_app_settings_ca.paa";
     text = "Settings";
@@ -7879,7 +7949,7 @@ class XM8_App01_Button: RscExileXM8AppButton1x1
     resource = "XM8SlideSettings";
 };
 
-class XM8_App02_Button: RscExileXM8AppButton1x1
+class XM8_App02_Button: RscXcsvXM8AppButtonGrid
 {
     textureNoShortcut = "\exile_assets\texture\ui\xm8_app_health_scanner_ca.paa";
     text = "Health Scanner";
@@ -7887,7 +7957,7 @@ class XM8_App02_Button: RscExileXM8AppButton1x1
     resource = "XM8SlideHealthScanner";
 };
 
-class XM8_App03_Button: RscExileXM8AppButton1x1
+class XM8_App03_Button: RscXcsvXM8AppButtonGrid
 {
     textureNoShortcut = "\exile_assets\texture\ui\xm8_app_slothMachine_ca.paa";
     text = "Sloth Machine";
@@ -7895,7 +7965,7 @@ class XM8_App03_Button: RscExileXM8AppButton1x1
     resource = "XM8SlideSlothMachine";
 };
 
-class XM8_App04_Button: RscExileXM8AppButton1x1
+class XM8_App04_Button: RscXcsvXM8AppButtonGrid
 {
     textureNoShortcut = "\exile_assets\texture\ui\xm8_app_boom_ca.paa";
     text = "BOOM!";
@@ -7903,7 +7973,7 @@ class XM8_App04_Button: RscExileXM8AppButton1x1
     resource = "";
 };
 
-class XM8_App05_Button: RscExileXM8AppButton1x1
+class XM8_App05_Button: RscXcsvXM8AppButtonGrid
 {
     textureNoShortcut = "\exile_assets\texture\ui\poptab_ca.paa";
     text = "Player Market";
@@ -7911,7 +7981,7 @@ class XM8_App05_Button: RscExileXM8AppButton1x1
     resource = "XM8SlideCyunide";
 };
 
-class XM8_App06_Button: RscExileXM8AppButton1x1
+class XM8_App06_Button: RscXcsvXM8AppButtonGrid
 {
     textureNoShortcut = "scratchie\icons\scratchie.paa";
     text = "Play Scratchie";
@@ -7919,7 +7989,7 @@ class XM8_App06_Button: RscExileXM8AppButton1x1
     resource = "";
 };
 
-class XM8_App07_Button: RscExileXM8AppButton1x1
+class XM8_App07_Button: RscXcsvXM8AppButtonGrid
 {
     textureNoShortcut = "scratchie\icons\scratchie-buy.paa";
     text = "Buy Scratchie";
@@ -7927,7 +7997,7 @@ class XM8_App07_Button: RscExileXM8AppButton1x1
     resource = "";
 };
 
-class XM8_App08_Button: RscExileXM8AppButton1x1
+class XM8_App08_Button: RscXcsvXM8AppButtonGrid
 {
     textureNoShortcut = "scratchie\icons\scratchie-prize.paa";
     text = "Get Prize";
@@ -7935,7 +8005,7 @@ class XM8_App08_Button: RscExileXM8AppButton1x1
     resource = "";
 };
 
-class XM8_App09_Button: RscExileXM8AppButton1x1
+class XM8_App09_Button: RscXcsvXM8AppButtonGrid
 {
     textureNoShortcut = "custom\buildCheck\xm8baselocate.paa";
     text = "Build Check";
@@ -7943,7 +8013,7 @@ class XM8_App09_Button: RscExileXM8AppButton1x1
     resource = "";
 };
 
-class XM8_App10_Button: RscExileXM8AppButton1x1
+class XM8_App10_Button: RscXcsvXM8AppButtonGrid
 {
     textureNoShortcut = "";
     text = "";
@@ -7951,7 +8021,7 @@ class XM8_App10_Button: RscExileXM8AppButton1x1
     resource = "";
 };
 
-class XM8_App11_Button: RscExileXM8AppButton1x1
+class XM8_App11_Button: RscXcsvXM8AppButtonGrid
 {
     textureNoShortcut = "";
     text = "";
@@ -7959,7 +8029,7 @@ class XM8_App11_Button: RscExileXM8AppButton1x1
     resource = "";
 };
 
-class XM8_App12_Button: RscExileXM8AppButton1x1
+class XM8_App12_Button: RscXcsvXM8AppButtonGrid
 {
     textureNoShortcut = "";
     text = "";
@@ -7967,7 +8037,7 @@ class XM8_App12_Button: RscExileXM8AppButton1x1
     resource = "";
 };
 
-class XM8_App13_Button: RscExileXM8AppButton1x1
+class XM8_App13_Button: RscXcsvXM8AppButtonGrid
 {
     textureNoShortcut = "";
     text = "";
@@ -7986,7 +8056,7 @@ class XM8_App13_Button: RscExileXM8AppButton1x1
 // NOTE: teleport uses setPosATL and trips BattlEye's setpos filter. Those rules
 // are action 1 (log only) today. Before raising them to enforce, add ONE narrow
 // exception by hand - never auto-whitelist setpos, it is a real cheat vector.
-class XM8_App14_Button: RscExileXM8AppButton1x1
+class XM8_App14_Button: RscXcsvXM8AppButtonGrid
 {
     textureNoShortcut = "\exile_assets\texture\ui\xm8_app_settings_ca.paa";
     text = "Admin TP";
@@ -7998,9 +8068,9 @@ class XM8_App14_Button: RscExileXM8AppButton1x1
 // resource = "" - the pattern established here is what every later app reuses.
 // Two steps in onButtonClick on purpose: the slide has to be created before its
 // controls can be written to.
-class XM8_App15_Button: RscExileXM8AppButton1x1
+class XM8_App15_Button: RscXcsvXM8AppButtonGrid
 {
-    textureNoShortcut = "\exile_assets\texture\ui\xm8_app_settings_ca.paa";
+    textureNoShortcut = "xcsv\icons\xm8_app_xcsv_scoreboard_ca.paa";
     text = "Scoreboard";
     onButtonClick = "call XCSV_fnc_scoreboardShow";
     resource = "XM8SlideXcsvScoreboard";
@@ -8009,9 +8079,9 @@ class XM8_App15_Button: RscExileXM8AppButton1x1
 // Field Notes - the manual Exile never shipped. Every number in it is read from
 // THIS mission's config, so it is worth more than a generic guide - and it has
 // to be updated when those values change.
-class XM8_App16_Button: RscExileXM8AppButton1x1
+class XM8_App16_Button: RscXcsvXM8AppButtonGrid
 {
-    textureNoShortcut = "\exile_assets\texture\ui\xm8_app_settings_ca.paa";
+    textureNoShortcut = "xcsv\icons\xm8_app_xcsv_notes_ca.paa";
     text = "Field Notes";
     onButtonClick = "call XCSV_fnc_notesShow";
     resource = "XM8SlideXcsvNotes";
@@ -8020,9 +8090,9 @@ class XM8_App16_Button: RscExileXM8AppButton1x1
 // Faction Standing. Observational in v1 - it reports how the island reads you,
 // it does not yet change prices. Gating needs trading overrides plus a
 // client->server write path; see roadmap 12.2/12.6.
-class XM8_App17_Button: RscExileXM8AppButton1x1
+class XM8_App17_Button: RscXcsvXM8AppButtonGrid
 {
-    textureNoShortcut = "\exile_assets\texture\ui\xm8_app_settings_ca.paa";
+    textureNoShortcut = "xcsv\icons\xm8_app_xcsv_standing_ca.paa";
     text = "Standing";
     onButtonClick = "call XCSV_fnc_standingShow";
     resource = "XM8SlideXcsvStanding";
@@ -8031,9 +8101,9 @@ class XM8_App17_Button: RscExileXM8AppButton1x1
 // Trader price lookup. Pure config read -- CfgExileArsenal, CfgTraderCategories
 // and CfgTraders all live in missionConfigFile, so this makes no server call,
 // no database query and creates no objects. See xcsv\fn_traderPrices.sqf.
-class XM8_App18_Button: RscExileXM8AppButton1x1
+class XM8_App18_Button: RscXcsvXM8AppButtonGrid
 {
-    textureNoShortcut = "\exile_assets\texture\ui\xm8_app_settings_ca.paa";
+    textureNoShortcut = "xcsv\icons\xm8_app_xcsv_prices_ca.paa";
     text = "Prices";
     onButtonClick = "call XCSV_fnc_priceShow";
     resource = "XM8SlideXcsvPrices";
@@ -8042,9 +8112,9 @@ class XM8_App18_Button: RscExileXM8AppButton1x1
 // Dead Man's Switch, XM8 App19. First app that WRITES: the Buy button sends
 // xcsvPolicyBuyRequest. Price, affordability and rate limiting are all decided
 // server-side -- see xcsv_chatter\network\fn_policyBuyRequest.sqf.
-class XM8_App19_Button: RscExileXM8AppButton1x1
+class XM8_App19_Button: RscXcsvXM8AppButtonGrid
 {
-    textureNoShortcut = "\exile_assets\texture\ui\xm8_app_settings_ca.paa";
+    textureNoShortcut = "xcsv\icons\xm8_app_xcsv_policy_ca.paa";
     text = "Insurance";
     onButtonClick = "call XCSV_fnc_policyShow";
     resource = "XM8SlideXcsvPolicy";
@@ -8054,9 +8124,9 @@ class XM8_App19_Button: RscExileXM8AppButton1x1
 // the on-server roster, then the named player's account row + territory
 // membership is requested and rendered. Read-only, so no BattlEye filter; the
 // authority check is server-side (fn_inspectorRequest.sqf), not in the button.
-class XM8_App20_Button: RscExileXM8AppButton1x1
+class XM8_App20_Button: RscXcsvXM8AppButtonGrid
 {
-    textureNoShortcut = "\exile_assets\texture\ui\xm8_app_settings_ca.paa";
+    textureNoShortcut = "xcsv\icons\xm8_app_xcsv_inspector_ca.paa";
     text = "Players";
     onButtonClick = "call XCSV_fnc_inspectorShow";
     resource = "XM8SlideXcsvInspector";
@@ -8176,7 +8246,24 @@ class XM8SlideXcsvStanding: RscExileXM8Slide
 // Search box inherits RscEdit, which RscDefines.hpp forward-declares. That is
 // the same mechanism RscExileXM8ListBox uses against RscListbox, so it resolves
 // against Exile's client config at runtime rather than needing a local copy.
-class RscExileXM8SearchEdit: RscEdit
+/*
+    Rebased 2026-08-10 from RscEdit to RscExileXM8Edit.
+
+    RscEdit is an Arma stock class. Mission config resolves base classes from
+    @Exile's config fine - RscXcsvXM8AppButtonGrid inherits RscExileXM8AppButton
+    and renders correctly - but it does NOT resolve A3's own UI bases, so this
+    class came out with no `type` and ctrlCreate died with
+
+        No entry '...description.ext/XM8SlideXcsvPrices/Controls/SearchBox.type'
+
+    That was never reachable before, because nothing ever created the slide.
+
+    RscExileXM8Edit is the XM8's own edit box: it carries type = 2 and, more
+    importantly, the onSetFocus/onKillFocus handlers the XM8 uses to take and
+    release keyboard capture. Inheriting it gets correct typing behaviour for
+    free rather than reimplementing it here.
+*/
+class RscExileXM8SearchEdit: RscExileXM8Edit
 {
     colorBackground[] = {0, 0, 0, 0.35};
     colorText[] = {1, 1, 1, 1};
@@ -8236,15 +8323,19 @@ class XM8SlideXcsvPolicy: RscExileXM8Slide
     };
 };
 
+// Renumbered 2026-08-10 into its own 7185x block. It previously shared idc
+// 71820 with XM8SlideXcsvStanding, and its SearchBox shared 71821 with that
+// slide's body - so whichever rendered last won, and displayCtrl lookups from
+// either app could land on the other app's controls.
 class XM8SlideXcsvPrices: RscExileXM8Slide
 {
-    idc = 71820;
+    idc = 71850;
 
     class Controls
     {
         class GoBackButton: RscExileXM8ButtonMenu
         {
-            idc = 71824;
+            idc = 71854;
             text = "GO BACK";
             x = (30 - 3) * (0.025);
             y = (19 - 2) * (0.04);
@@ -8255,7 +8346,7 @@ class XM8SlideXcsvPrices: RscExileXM8Slide
 
         class SearchBox: RscExileXM8SearchEdit
         {
-            idc = 71821;
+            idc = 71851;
             x = (5 - 3) * (0.025);
             y = (4 - 2) * (0.04);
             w = 12 * (0.025);
@@ -8269,7 +8360,7 @@ class XM8SlideXcsvPrices: RscExileXM8Slide
 
         class ResultList: RscExileXM8ListBox
         {
-            idc = 71822;
+            idc = 71852;
             x = (5 - 3) * (0.025);
             y = (5.5 - 2) * (0.04);
             w = 12 * (0.025);
@@ -8290,7 +8381,7 @@ class XM8SlideXcsvPrices: RscExileXM8Slide
             {
                 class DetailBody: RscExileXM8StructuredText
                 {
-                    idc = 71823;
+                    idc = 71853;
                     x = 0;
                     y = 0;
                     w = 16 * (0.025);

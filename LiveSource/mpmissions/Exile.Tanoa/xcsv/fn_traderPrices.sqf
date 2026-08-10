@@ -113,7 +113,7 @@ XCSV_fnc_priceFill = {
     params [["_row", -1]];
     private _display = uiNamespace getVariable ["RscExileXM8", displayNull];
     if (isNull _display) exitWith {};
-    private _body = _display displayCtrl 71823;
+    private _body = _display displayCtrl 71853;
     if (isNull _body) exitWith {};
 
     if (_row < 0 || {_row >= count XCSV_PRICE_Rows}) exitWith {
@@ -159,8 +159,8 @@ XCSV_fnc_priceFill = {
 XCSV_fnc_priceSearch = {
     private _display = uiNamespace getVariable ["RscExileXM8", displayNull];
     if (isNull _display) exitWith {};
-    private _edit = _display displayCtrl 71821;
-    private _list = _display displayCtrl 71822;
+    private _edit = _display displayCtrl 71851;
+    private _list = _display displayCtrl 71852;
     if (isNull _list) exitWith {};
 
     private _q = toLower (ctrlText _edit);
