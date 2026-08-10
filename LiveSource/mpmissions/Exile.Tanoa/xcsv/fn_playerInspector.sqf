@@ -26,6 +26,20 @@
 
 if (!hasInterface) exitWith {};
 
+/*
+    ADVISORY ONLY. The authoritative whitelist is XCSV_INSPECTOR_SERVER_ADMINS in
+    xcsv_chatter\network\fn_inspectorRequest.sqf, which re-resolves the player
+    from the session and refuses anyone not on it. This copy exists so a
+    non-admin gets a message instead of silence; it grants nothing, and a client
+    that edits it still gets refused by the server.
+
+    It is still two literals that must agree, which is a shape that has already
+    bitten this estate twice in one day (GUARD's mission_src and doctor's copy of
+    the same path). Drift here is not a security hole - it is a confusing one:
+    an admin removed from the SERVER list still gets a working-looking search box
+    that silently returns nothing. If this list grows past one UID, that is the
+    point to make the server publish it rather than keeping a second copy.
+*/
 XCSV_INSPECTOR_ADMINS = [
     "76561198108041726"     // Mr. Sage
 ];
@@ -34,6 +48,8 @@ XCSV_INSPECTOR_ADMINS = [
 // request. The server does the whitelist + length checks; we only pre-guard
 // so a non-admin gets a gentle message instead of silence.
 XCSV_fnc_inspectorRequest = {
+    disableSerialization;
+
     if !((getPlayerUID player) in XCSV_INSPECTOR_ADMINS) exitWith {
         systemChat "XCSV INS: not authorised.";
     };
@@ -49,6 +65,33 @@ XCSV_fnc_inspectorRequest = {
         systemChat "XCSV INS: type at least 2 characters.";
     };
 
+    // LIKE wildcards are stripped rather than escaped. The fragment is already
+    // bound as a positional ? so this is not an injection guard - it is a
+    // CORRECTNESS one. A stray "%" turns "%<fragment>%" into a pattern that
+    // matches every account, and the query is ORDER BY last_connect_at LIMIT 1,
+    // so the app would confidently show the wrong player rather than fail.
+    // Stripping keeps the query shape "find a name containing this text", which
+    // is the only thing the box claims to do. The server strips again, because
+    // this check runs on a machine the player controls.
+    // Deliberately plain string handling rather than regexMatch/regexReplace:
+    // new engine commands have to be cleared through BattlEye's scripts.txt
+    // before they can be used on a live client, and a filter kick is a far
+    // worse outcome than a slightly longer loop.
+    //
+    // Character CODES rather than string literals, because the character being
+    // filtered is a backslash and Arma's preprocessor treats a backslash as a
+    // line continuation. Writing it as "\" is asking a preprocessor question
+    // nobody should have to answer. 37 = %, 95 = _, 92 = backslash.
+    private _clean = toString ((toArray _fragment) select { !(_x in [37, 95, 92]) });
+
+    if (_clean != _fragment) then {
+        systemChat "XCSV INS: wildcards removed from the search.";
+        _fragment = _clean;
+    };
+    if ((count _fragment) < 2) exitWith {
+        systemChat "XCSV INS: type at least 2 characters.";
+    };
+
     ["xcsvInspectRequest", [_fragment]] call ExileClient_system_network_send;
     systemChat format ["XCSV INS: looking up '%1'...", _fragment];
 };
@@ -58,6 +101,7 @@ XCSV_fnc_inspectorRequest = {
 // title reads as a broken app, which is exactly how it was reported on
 // 2026-08-10. Trader Prices already says what to do; this now does too.
 XCSV_fnc_inspectorHint = {
+    disableSerialization;
     private _bodyCtrl = call XCSV_fnc_inspectorBody;
     if (isNull _bodyCtrl) exitWith {};
 
@@ -75,6 +119,7 @@ XCSV_fnc_inspectorHint = {
 // slides are created at runtime by extraApps_onOpen, so a handle stashed on one
 // open is not guaranteed to still address a live control on the next.
 XCSV_fnc_inspectorBody = {
+    disableSerialization;
     private _display = uiNamespace getVariable ["RscExileXM8", displayNull];
     if (isNull _display) exitWith { controlNull };
     _display displayCtrl 71843
@@ -83,6 +128,7 @@ XCSV_fnc_inspectorBody = {
 // onLBSelChanged from the result list. Row 0 is always the header we prepend;
 // real account rows live at index+1.
 XCSV_fnc_inspectorFill = {
+    disableSerialization;
     params [["_row", -1]];
     if (_row < 1) exitWith {};
 
@@ -130,6 +176,7 @@ XCSV_fnc_inspectorFill = {
 // Entry point for the XM8 button: authorise, switch to the slide, bind the
 // detail pane, then wipe prior results.
 XCSV_fnc_inspectorShow = {
+    disableSerialization;
     if !((getPlayerUID player) in XCSV_INSPECTOR_ADMINS) exitWith {
         systemChat "XCSV INS: not authorised.";
     };
@@ -152,6 +199,7 @@ XCSV_fnc_inspectorShow = {
 // Called by DISPATCH, _this = [rows, terrRows], where rows has one account row
 // and terrRows are the flag rows (a "P" flag reference format from the server).
 ExileClient_system_xcsv_network_xcsvInspectResponse = {
+    disableSerialization;
     private _rows     = _this select 0;
     private _terrRows = _this select 1;
 

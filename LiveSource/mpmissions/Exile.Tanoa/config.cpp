@@ -59,8 +59,13 @@ class CfgSafeX
 class CfgNetworkMessages
 {
 	// XCSV Dead Man's Switch (roadmap 12.6). Handled by
-	// ExileServer_system_xcsv_network_policyBuyRequest, which xcsv_chatter's
+	// ExileServer_system_xcsv_network_xcsvPolicyBuyRequest, which xcsv_chatter's
 	// postInit aliases into missionNamespace for Exile's dispatcher to find.
+	//
+	// The handler name repeats the message name IN FULL, prefix included. This
+	// comment said "..._network_policyBuyRequest" until 2026-08-10 and so did
+	// the alias, which is why the buy path never fired once: the dispatcher only
+	// ever looks up format ["ExileServer_%1_network_%2", module, messageName].
 	//
 	// parameters[] IS EMPTY ON PURPOSE. The dispatcher enforces parameter count
 	// and type, so declaring none means a modified client cannot send anything
@@ -8288,7 +8293,12 @@ class XM8SlideXcsvPolicy: RscExileXM8Slide
         class BuyButton: RscExileXM8ButtonMenu
         {
             idc = 71832;
-            text = "BUY POLICY - 2500";
+            // No price in the caption. The authoritative price is
+            // XCSV_POLICY_PRICE in xcsv_chatter\network\fn_policyBuyRequest.sqf,
+            // and the two live in different PBOs deployed by different steps -
+            // so a literal here is a promise this file cannot keep. The body
+            // text, which the server drives, states the cost.
+            text = "BUY POLICY";
             x = (5 - 3) * (0.025);
             y = (19 - 2) * (0.04);
             w = 10 * (0.025);
@@ -8425,7 +8435,10 @@ class XM8SlideXcsvInspector: RscExileXM8Slide
             // symptom was an error popup - invisible unless -showScriptErrors
             // is on, which it is. `if/then` does not care what the block
             // returns, so the handler stays free to end however it likes.
-            onKeyDown = "if ((_this select 1) == 28) then { call XCSV_fnc_inspectorRequest }; false";
+            // 28 is main Enter, 156 is numpad Enter. Accepting only 28 meant an
+            // admin who habitually uses the keypad got silence from a box that
+            // looked like it was working.
+            onKeyDown = "if ((_this select 1) in [28, 156]) then { call XCSV_fnc_inspectorRequest }; false";
         };
 
         class ResultList: RscExileXM8ListBox

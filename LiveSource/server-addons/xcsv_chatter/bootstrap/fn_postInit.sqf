@@ -167,7 +167,24 @@ diag_log format [
 
 call xcsv_chatter_fnc_policyDeath;
 
-ExileServer_system_xcsv_network_policyBuyRequest = xcsv_chatter_fnc_policyBuyRequest;
+/*
+    2026-08-10: this read ExileServer_system_xcsv_network_policyBuyRequest - the
+    message name without its "xcsv" prefix - and so the entire Insurance feature
+    had never worked, from the day it shipped.
+
+    ExileServer_system_network_dispatchIncomingMessage derives the handler name
+    mechanically as format ["ExileServer_%1_network_%2", module, messageName].
+    The message is declared in CfgNetworkMessages as `xcsvPolicyBuyRequest` with
+    module `system_xcsv`, so the ONLY name it will ever look up is
+    ExileServer_system_xcsv_network_xcsvPolicyBuyRequest. Anything else throws
+    "Invalid function call!" inside the dispatcher, which catches it and logs
+    server-side, so the player pressing BUY POLICY got nothing at all - not an
+    error, not a toast, not a refusal.
+
+    The two lines below it were always correct, which is what makes this a typo
+    rather than a convention. Match them.
+*/
+ExileServer_system_xcsv_network_xcsvPolicyBuyRequest = xcsv_chatter_fnc_policyBuyRequest;
 ExileServer_system_xcsv_network_xcsvTeleportRequest = xcsv_chatter_fnc_teleportRequest;
 ExileServer_system_xcsv_network_xcsvInspectRequest = xcsv_chatter_fnc_inspectorRequest;
 

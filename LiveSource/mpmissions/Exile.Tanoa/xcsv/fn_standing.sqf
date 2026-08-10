@@ -27,20 +27,10 @@ if (!hasInterface) exitWith {};
     A single pass also removes the double-escaping trap - replacing "&" after
     "<" would turn "&lt;" into "&amp;lt;".
 */
-XCSV_fnc_esc = {
-    params ["_s"];
-    if (isNil "_s" || {!(_s isEqualType "")}) exitWith { "" };
-    private _out = "";
-    {
-        _out = _out + (switch (_x) do {
-            case "&": { "&amp;" };
-            case "<": { "&lt;"  };
-            case ">": { "&gt;"  };
-            default  { _x };
-        });
-    } forEach (_s splitString "");
-    _out
-};
+// XCSV_fnc_esc moved to xcsv\fn_shared.sqf on 2026-08-10. It lived here, which
+// made it look like part of the Standing app; fn_scoreboard.sqf renders player
+// names into structured text too and never escaped them because the helper was
+// not visible as something shared. One definition, both callers.
 
 XCSV_STAND_Bands = [
     [80, "TRUSTED"],
@@ -117,6 +107,11 @@ XCSV_fnc_standingShow = {
         "<t size='0.7' color='#5f6a78'>Standing is observational. It does not change prices - yet.</t>";
 
     _ctrl ctrlSetStructuredText parseText _html;
+
+    // Render heartbeat - see the note in fn_scoreboard.sqf. Until 2026-08-10 the
+    // only thing any XCSV app logged was that its file had loaded, which is why
+    // "has this app ever actually drawn anything?" was unanswerable.
+    diag_log "[XCSV_STAND] rendered standing.";
 };
 
 diag_log "[XCSV_STAND] standing app ready.";

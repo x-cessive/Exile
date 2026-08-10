@@ -61,6 +61,20 @@ try {
     private _last = _cooldowns getOrDefault [_uid, -9999];
     if ((_now - _last) < XCSV_POLICY_COOLDOWN) throw "Slow down.";
 
+    // Stamp the cooldown on ATTEMPT, not on success.
+    //
+    // It used to be stamped further down, past every validation, so only a
+    // COMPLETED purchase started the clock. Every refusal path - dead, broke,
+    // already at max charges - was therefore free to repeat immediately, and
+    // the client-side 3s timer that would normally hide that runs on a machine
+    // the player controls. A modified client could hold the button down and
+    // generate unbounded toasts and log writes.
+    //
+    // The database is not exposed by this: every refusal returns before any
+    // query. This is a log and CPU abuse fix, not a data one.
+    _cooldowns set [_uid, _now];
+    missionNamespace setVariable ["XCSV_POLICY_Cooldowns", _cooldowns];
+
     private _held = _playerObject getVariable ["XCSV_PolicyCharges", 0];
     if (_held >= XCSV_POLICY_MAXCHARGES) then {
         throw format ["You already hold %1 policies.", _held];
@@ -72,9 +86,6 @@ try {
     };
 
     // --- past this point we are committing --------------------------------
-    _cooldowns set [_uid, _now];
-    missionNamespace setVariable ["XCSV_POLICY_Cooldowns", _cooldowns];
-
     _money = _money - XCSV_POLICY_PRICE;
     _playerObject setVariable ["ExileMoney", _money, true];
     format ["setPlayerMoney:%1:%2", _money, _playerObject getVariable ["ExileDatabaseID", 0]]

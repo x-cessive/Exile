@@ -296,6 +296,14 @@ ExileClientPlayerMarXetItems = [];
 //
 //  Both are static-text only and create no objects, so BattlEye is untouched.
 // ---------------------------------------------------------------------------
+// Shared helpers (XCSV_fnc_esc, XCSV_fnc_num) used by more than one app.
+//
+// `call compile preprocessFileLineNumbers`, NOT execVM. execVM is scheduled, so
+// two execVM'd files have no guaranteed order relative to each other, and a
+// helper that half the apps depend on should not be racing the apps. This runs
+// to completion before the line below it starts.
+call compile preprocessFileLineNumbers "xcsv\fn_shared.sqf";
+
 [] execVM "xcsv\fn_traderVoice.sqf";
 [] execVM "xcsv\fn_welcome.sqf";
 // Admin-only: self-gates on UID and exits immediately for everyone else.

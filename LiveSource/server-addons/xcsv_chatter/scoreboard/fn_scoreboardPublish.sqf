@@ -56,7 +56,12 @@ if (isNil "_result" || {!(_result isEqualType [])}) exitWith {
 // Published so clients can read it without asking. The `true` broadcasts it;
 // clients joining later get it from the JIP queue on the next refresh.
 missionNamespace setVariable ["XCSV_Scoreboard", _rows, true];
-missionNamespace setVariable ["XCSV_ScoreboardAt", diag_tickTime, true];
+// serverTime, not diag_tickTime. diag_tickTime is per-machine engine uptime, so
+// a client subtracting the server's value from its own got noise - routinely
+// negative for a client that joined after the server started. serverTime reads
+// identically on the server and on every client. fn_scoreboard.sqf reads this
+// with the matching change; the two must move together.
+missionNamespace setVariable ["XCSV_ScoreboardAt", serverTime, true];
 
 diag_log format ["[XCSV_SB] published %1 player(s)", count _rows];
 

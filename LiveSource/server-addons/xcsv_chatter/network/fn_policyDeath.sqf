@@ -127,7 +127,20 @@ XCSV_fnc_policyLoad = {
 */
 XCSV_fnc_policySweep = {
     {
-        if (!isNull _x && {alive _x} && {!(_x getVariable ["XCSV_PolicyInit", false])}) then {
+        // `allPlayers` includes headless clients, so every restart spent a
+        // database round trip looking up policies for "HC6940" and hung an
+        // MPKilled handler on something that cannot buy insurance or die.
+        // Harmless, but it also wrote a misleading "loaded 0 charge(s) for
+        // HC18844" line into every RPT, which is noise in the one log used to
+        // prove this feature works.
+        //
+        // A real Steam UID is 17 digits; an HC's is "HC" + its process id. The
+        // length test is enough and needs no regex.
+        if (!isNull _x
+            && {alive _x}
+            && {isPlayer _x}
+            && {(count (getPlayerUID _x)) isEqualTo 17}
+            && {!(_x getVariable ["XCSV_PolicyInit", false])}) then {
             // Set the guard BEFORE loading: the load does a database round
             // trip, and the next sweep must not start a second one.
             _x setVariable ["XCSV_PolicyInit", true];

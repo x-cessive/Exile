@@ -83,8 +83,10 @@ XCSV_NOTES = [
     - Flags must be <t color='#E8B339'>1,000 m</t> from any trader or spawn zone,
       and <t color='#E8B339'>325 m</t> from another territory.<br/><br/>
     <t color='#E05050'>DECAY IS THE THING THAT KILLS BASES.</t> Protection money
-    is due regularly - 10 poptabs per object. Let it lapse and the base is
-    deleted. Not raided. Deleted.<br/><br/>
+    is due regularly - <t color='#E8B339'>10 poptabs per object, per flag
+    level</t>. A level 5 base with 100 objects costs 5,000 a cycle, and it gets
+    more expensive every time you upgrade. Let it lapse and the base is deleted.
+    Not raided. Deleted.<br/><br/>
     After a charge is planted on your territory, building is blocked for 5
     minutes, so you cannot wall in an attacker mid-raid.
     "],
@@ -156,6 +158,9 @@ XCSV_fnc_notesFill = {
     if (_index < 0 || {_index >= (count XCSV_NOTES)}) exitWith {};
 
     _body ctrlSetStructuredText parseText ((XCSV_NOTES select _index) select 1);
+
+    // Render heartbeat - see the note in fn_scoreboard.sqf.
+    diag_log format ["[XCSV_NOTES] rendered topic %1.", _index];
 };
 
 XCSV_fnc_notesShow = {

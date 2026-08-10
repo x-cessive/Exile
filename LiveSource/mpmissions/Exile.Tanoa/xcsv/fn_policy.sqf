@@ -52,6 +52,11 @@ XCSV_fnc_policyRefresh = {
         <t size='0.85' color='#7E8896'>A policy is only spent on a death where
         you were actually carrying poptabs. Dying broke keeps the charge.</t>
     ", _state, _money];
+
+    // Render heartbeat - see the note in fn_scoreboard.sqf. This one also
+    // records the charge count, which is the number the whole feature turns on
+    // and which had never once been observed as non-zero.
+    diag_log format ["[XCSV_POLICY] rendered panel, %1 charge(s) held.", _charges];
 };
 
 XCSV_fnc_policyBuy = {
@@ -68,9 +73,31 @@ XCSV_fnc_policyBuy = {
     // The server answers with a toast either way. Refresh shortly after so the
     // held-count reflects a success without needing a response message of our
     // own.
-    [] spawn {
-        uiSleep 1.5;
+    // Say something if the server says nothing.
+    //
+    // All feedback used to be delegated to a server toast, so when the request
+    // could not reach its handler at all - which was the case from the day this
+    // shipped until 2026-08-10, see the alias fix in xcsv_chatter's postInit -
+    // the panel simply redrew itself unchanged. A failed purchase and a
+    // successful one were byte-identical on screen.
+    //
+    // Comparing the charge count before and after is enough to tell them apart
+    // without inventing a second network message, and it stays useful after the
+    // alias fix: it now also covers a dropped packet or a server-side refusal.
+    private _before = player getVariable ["XCSV_PolicyCharges", 0];
+    [_before] spawn {
+        params ["_before"];
+        uiSleep 2.5;
         call XCSV_fnc_policyRefresh;
+        if ((player getVariable ["XCSV_PolicyCharges", 0]) isEqualTo _before) then {
+            // Deliberately does NOT claim the server failed to answer. A refusal
+            // the server DID send - broke, already at max charges, dead - also
+            // leaves the count unchanged, and the server's own toast explains
+            // those. Claiming "no response" would contradict a message the
+            // player can see on screen. All this line can honestly assert is
+            // that nothing changed and nothing was taken.
+            systemChat "Insurance: policy not purchased. Nothing was charged.";
+        };
     };
 };
 

@@ -71,9 +71,20 @@ XCSV_fnc_scoreboardFill = {
             _kills
         };
 
-        // Trim rather than let a long name push every column out of line.
+        // Trim rather than let a long name push every column out of line, THEN
+        // escape. That order matters: escaping first would let the 17-character
+        // cut land inside an entity like "&amp;" and emit "&am", which is just
+        // as broken as the character it replaced.
+        //
+        // The escape itself was missing entirely until 2026-08-10. A Steam name
+        // containing "&" or "<" corrupted the markup for the whole board, for
+        // every player who opened it - one row poisoning the entire control.
+        // fn_standing.sqf had spotted this and handled it; this file had not,
+        // because the helper looked like part of that app. It is now in
+        // xcsv\fn_shared.sqf.
         private _shown = _name;
         if (count _shown > 18) then { _shown = (_shown select [0, 17]) + "." };
+        _shown = [_shown] call XCSV_fnc_esc;
 
         // Pad to fixed widths. A monospace face is not guaranteed here, so this
         // is approximate - good enough to read as columns, and it degrades to a
@@ -91,14 +102,21 @@ XCSV_fnc_scoreboardFill = {
             _colour,
             [format ["%1.", _rank], 4] call _pad,
             [_shown, 30] call _pad,
-            [str _score, 8] call _pad,
+            [[_score] call XCSV_fnc_num, 8] call _pad,
             [str _kills, 7] call _pad,
             [str _deaths, 8] call _pad,
             str _kd
         ];
     } forEach _rows;
 
-    private _age = diag_tickTime - (missionNamespace getVariable ["XCSV_ScoreboardAt", diag_tickTime]);
+    // serverTime, not diag_tickTime. diag_tickTime is time since THIS machine's
+    // engine started, so subtracting the server's value from the client's was
+    // comparing two unrelated clocks: a client that had Arma open longer than
+    // the server read a large positive age, a freshly joined one read a large
+    // negative age, and the footer was only ever right by coincidence. The
+    // publisher was changed to broadcast serverTime in the same pass - patching
+    // one side alone leaves it broken.
+    private _age = 0 max (serverTime - (missionNamespace getVariable ["XCSV_ScoreboardAt", serverTime]));
     _html = _html + format [
         "<br/><t size='0.7' color='#7E8896'>%1 player(s) ranked by respect. Updated %2 minute(s) ago.</t>",
         count _rows,
@@ -106,6 +124,14 @@ XCSV_fnc_scoreboardFill = {
     ];
 
     _ctrl ctrlSetStructuredText parseText _html;
+
+    // Render heartbeat. Every XCSV app was auditable only as far as "the file
+    // loaded" until 2026-08-10, because the load-time diag_log at the bottom of
+    // each file was the only thing any of them ever logged. That is how the
+    // Player Inspector sat visibly broken with nobody able to prove whether its
+    // render had ever run. One line here makes the question answerable from the
+    // client RPT.
+    diag_log format ["[XCSV_SB] rendered %1 row(s).", count _rows];
 };
 
 // Entry point for the XM8 button: switch to the slide, then fill it. The slide

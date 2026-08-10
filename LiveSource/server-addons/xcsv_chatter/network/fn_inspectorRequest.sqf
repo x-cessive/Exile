@@ -42,6 +42,20 @@ try {
     if ((count _fragment) < 2) throw "Name too short.";
     if ((count _fragment) > 64) throw "Name too long.";
 
+    // Strip LIKE wildcards. The client does this too, but the client runs on a
+    // machine the player controls, so the authoritative strip is here.
+    //
+    // This is a CORRECTNESS guard, not an injection guard - the fragment is
+    // bound as a positional ? and was never concatenated into SQL. The bug it
+    // prevents is quieter than injection: a "%" makes "%<fragment>%" match every
+    // account, and the query is ORDER BY last_connect_at DESC LIMIT 1, so the
+    // app would confidently render the wrong player instead of failing.
+    // Character codes, not string literals: the third character is a backslash
+    // and Arma's preprocessor reads a backslash as a line continuation.
+    // 37 = %, 95 = _, 92 = backslash.
+    _fragment = toString ((toArray _fragment) select { !(_x in [37, 95, 92]) });
+    if ((count _fragment) < 2) throw "Name too short after wildcard strip.";
+
     // LIKE needs the fragment wrapped to match substrings. Both the fragment
     // and the % wildcards are bound values, never concatenated into SQL.
     private _pattern = "%" + _fragment + "%";
@@ -75,6 +89,18 @@ try {
 }
 catch {
     diag_log format ["[XCSV_INS] refused: %1", _exception];
+
+    // Answer even on refusal. Without this the client sends a request and then
+    // waits forever on a screen that looks identical to "still loading", which
+    // is how a refused admin experiences a bug rather than a decision.
+    //
+    // The reply is deliberately an EMPTY result rather than the reason: it
+    // renders as "No match", so a refusal and a genuine miss look the same to
+    // the caller and this cannot be used to probe the whitelist. The real
+    // reason is in the server log, where it belongs.
+    try {
+        [_sessionID, "xcsvInspectResponse", [[], []]] call ExileServer_system_network_send_to;
+    } catch {};
 };
 
 true
