@@ -8243,9 +8243,6 @@ class XM8SlideXcsvStanding: RscExileXM8Slide
     };
 };
 
-// Search box inherits RscEdit, which RscDefines.hpp forward-declares. That is
-// the same mechanism RscExileXM8ListBox uses against RscListbox, so it resolves
-// against Exile's client config at runtime rather than needing a local copy.
 /*
     Rebased 2026-08-10 from RscEdit to RscExileXM8Edit.
 
@@ -8420,7 +8417,15 @@ class XM8SlideXcsvInspector: RscExileXM8Slide
             tooltip = "Type part of a player name";
             // Fire the request on Enter (key 28). Return false so the key still
             // reaches normal handling; the request body is just side effects.
-            onKeyDown = "_this select 1 == 28 && {call XCSV_fnc_inspectorRequest}; false";
+            //
+            // This was `== 28 && {call ...}` until 2026-08-10. The handler ends
+            // in systemChat, which returns Nothing, so `&&` got a non-Boolean
+            // right side and threw "Type Nothing, expected Bool" on EVERY
+            // Enter. The request had already been sent by then, so the only
+            // symptom was an error popup - invisible unless -showScriptErrors
+            // is on, which it is. `if/then` does not care what the block
+            // returns, so the handler stays free to end however it likes.
+            onKeyDown = "if ((_this select 1) == 28) then { call XCSV_fnc_inspectorRequest }; false";
         };
 
         class ResultList: RscExileXM8ListBox

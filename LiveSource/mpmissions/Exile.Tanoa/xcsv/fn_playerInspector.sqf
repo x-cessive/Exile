@@ -53,13 +53,40 @@ XCSV_fnc_inspectorRequest = {
     systemChat format ["XCSV INS: looking up '%1'...", _fragment];
 };
 
+// The detail pane's resting state. This app is a search box, so it is EMPTY
+// until an admin types a name - and an empty pane beside a "Player Inspector"
+// title reads as a broken app, which is exactly how it was reported on
+// 2026-08-10. Trader Prices already says what to do; this now does too.
+XCSV_fnc_inspectorHint = {
+    private _bodyCtrl = call XCSV_fnc_inspectorBody;
+    if (isNull _bodyCtrl) exitWith {};
+
+    _bodyCtrl ctrlSetStructuredText parseText (
+        "<t size='1.0' color='#3D9CFF'>Player Inspector</t><br/><br/>" +
+        "<t color='#7E8896'>Type part of a player name in the box on the left " +
+        "and press Enter. Matching accounts appear in the list; pick one to " +
+        "read it here.</t><br/><br/>" +
+        "<t size='0.8' color='#7E8896'>Admin only. Read-only - nothing here " +
+        "writes to the database.</t>"
+    );
+};
+
+// Resolve the detail pane. Looked up on demand rather than cached: the app
+// slides are created at runtime by extraApps_onOpen, so a handle stashed on one
+// open is not guaranteed to still address a live control on the next.
+XCSV_fnc_inspectorBody = {
+    private _display = uiNamespace getVariable ["RscExileXM8", displayNull];
+    if (isNull _display) exitWith { controlNull };
+    _display displayCtrl 71843
+};
+
 // onLBSelChanged from the result list. Row 0 is always the header we prepend;
 // real account rows live at index+1.
 XCSV_fnc_inspectorFill = {
     params [["_row", -1]];
     if (_row < 1) exitWith {};
 
-    private _bodyCtrl = uiNamespace getVariable ["XCSV_INSPECTOR_BodyCtrl", controlNull];
+    private _bodyCtrl = call XCSV_fnc_inspectorBody;
     if (isNull _bodyCtrl) exitWith {};
 
     private _rows = missionNamespace getVariable ["XCSV_INSPECTOR_Rows", []];
@@ -111,15 +138,15 @@ XCSV_fnc_inspectorShow = {
 
     private _display = uiNamespace getVariable ["RscExileXM8", displayNull];
     if (isNull _display) exitWith {};
-    // Remember the pane idc so onLBSelChanged can write into it without a
-    // second lookup each time.
-    uiNamespace setVariable ["XCSV_INSPECTOR_BodyCtrl", _display displayCtrl 71843];
 
     missionNamespace setVariable ["XCSV_INSPECTOR_Rows", []];
     missionNamespace setVariable ["XCSV_INSPECTOR_Territories", []];
 
     private _list = _display displayCtrl 71842;
     if (!(isNull _list)) then { lbClear _list; };
+
+    // Say what the app wants, rather than presenting a blank pane.
+    call XCSV_fnc_inspectorHint;
 };
 
 // Called by DISPATCH, _this = [rows, terrRows], where rows has one account row
@@ -143,6 +170,20 @@ ExileClient_system_xcsv_network_xcsvInspectResponse = {
     {
         _list lbAdd format ["%1  (uid %2)", _x select 1, _x select 0];
     } forEach _rows;
+
+    // A search that matched nothing and a search that was never sent look the
+    // same on screen otherwise, so say which happened.
+    if ((count _rows) == 0) then {
+        private _bodyCtrl = call XCSV_fnc_inspectorBody;
+        if (!(isNull _bodyCtrl)) then {
+            _bodyCtrl ctrlSetStructuredText parseText (
+                "<t size='1.0' color='#E8B339'>No match</t><br/><br/>" +
+                "<t color='#7E8896'>No account name contains that fragment. " +
+                "The lookup matches on the stored name, so try a shorter " +
+                "piece of it.</t>"
+            );
+        };
+    };
 
     diag_log format ["[XCSV_INS] response: %1 account row(s), %2 territory row(s).",
         (count _rows), (count _terrRows)];

@@ -116,6 +116,7 @@ class CfgFunctions
             class policyDeath {};
             class teleportRequest {};
             class debugBridge {};
+            class inspectorRequest {};
         };
     };
 };
