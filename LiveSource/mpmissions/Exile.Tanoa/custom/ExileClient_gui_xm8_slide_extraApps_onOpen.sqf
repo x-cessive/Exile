@@ -63,6 +63,13 @@ if (isNull _slide) exitWith {
 private _maxApp = 26;
 private _cols   = 5;
 
+// Four rows of five is the space above GO BACK, so 20 buttons is the ceiling
+// while _maxApp scans up to App26. Today 20 slots are declared and 16 carry an
+// icon and a name, so this never binds - but a 21st real app would silently
+// draw a fifth row straight through the GO BACK button, and the symptom would
+// be "the grid looks wrong" rather than anything naming a cause.
+private _maxSlots = 20;
+
 // Slide-relative, in the same unit grid the slide's own children use
 // (see GoBackButton at x = (30-3)*0.025, y = (19-2)*0.04).
 private _btnW   = 6 * (0.025);
@@ -98,6 +105,14 @@ for "_appIndex" from 1 to _maxApp do
 		if (!(_tex isEqualTo "") || {!(_txt isEqualTo "")}) then
 		{
 			private _slot = count _created;
+
+			if (_slot >= _maxSlots) exitWith {
+				diag_log format [
+					"[XCSV_XM8] %1 apps have icons but only %2 fit above GO BACK - %3 not drawn.",
+					_slot + 1, _maxSlots, _buttonClassName
+				];
+			};
+
 			private _col  = _slot % _cols;
 			private _row  = floor (_slot / _cols);
 
@@ -118,8 +133,6 @@ for "_appIndex" from 1 to _maxApp do
 			private _res = getText (_cfg >> "resource");
 			if !(_res isEqualTo "") then {
 				private _slideIdc = getNumber (missionConfigFile >> _res >> "idc");
-				// Stock resources live in configFile and are already instantiated,
-				// so they resolve to 0 here and are correctly skipped.
 				if (_slideIdc > 0) then {
 					if (isNull (_display displayCtrl _slideIdc)) then {
 						private _sc = _display ctrlCreate [_res, _slideIdc];
@@ -134,13 +147,44 @@ for "_appIndex" from 1 to _maxApp do
 						_sc ctrlShow false;
 						_sc ctrlSetPosition [(19 * 0.05), 0];
 						_sc ctrlCommit 0;
+
+						// Register ONLY slides we just created, which is why this sits
+						// inside the creation branch rather than beside it.
+						//
+						// It used to sit outside, on the belief - stated in a comment
+						// here until 2026-08-10 - that stock resources live only in
+						// configFile and so resolve to 0 above. They do not:
+						// XM8SlideSettings (4070), XM8SlideHealthScanner (4120),
+						// XM8SlideSlothMachine (4140) and XM8SlideCyunide (85150) are
+						// all declared in THIS mission's config.cpp. The lookup found
+						// them, the isNull guard correctly declined to re-create them,
+						// and then we added four stock ids to our own teardown list and
+						// hid and reparked them on every grid open and every grid leave.
+						//
+						// Nothing visibly broke, because ExileClient_gui_xm8_slide runs
+						// onOpen, then onClose, then shows the target. What it cost was
+						// the slide-in animation for those four stock apps, and it
+						// violated the invariant xm8ExtraAppsClear.sqf states about
+						// itself: "Only ever touches ids we created."
+						private _slides = uiNamespace getVariable ["XCSV_XM8_SlideIDCs", []];
+						if !(_slideIdc in _slides) then {
+							_slides pushBack _slideIdc;
+							uiNamespace setVariable ["XCSV_XM8_SlideIDCs", _slides];
+						};
 					};
-					// Remembered so the teardown can hide them. Not deleted - the app
-					// being switched to must survive this function.
-					private _slides = uiNamespace getVariable ["XCSV_XM8_SlideIDCs", []];
-					if !(_slideIdc in _slides) then {
-						_slides pushBack _slideIdc;
-						uiNamespace setVariable ["XCSV_XM8_SlideIDCs", _slides];
+
+					// The slide id the grid creates comes from the resource class's
+					// own idc, but ExileClient_gui_xm8_slide resolves the same slide
+					// through CfgXM8 >> <name> >> controlID. Two sources of truth, and
+					// drift between them is SILENT - the title changes and the page
+					// stays blank, which is exactly the failure that went unnoticed
+					// until 2026-08-10. Say so rather than letting it happen twice.
+					private _declared = getNumber (_cfg >> "controlID");
+					if (_declared > 0 && {_declared != _slideIdc}) then {
+						diag_log format [
+							"[XCSV_XM8] WARNING: %1 has idc %2 but CfgXM8 declares controlID %3 - the app will open blank.",
+							_res, _slideIdc, _declared
+						];
 					};
 				};
 			};
@@ -155,11 +199,24 @@ for "_appIndex" from 1 to _maxApp do
 			];
 			_button ctrlCommit 0;
 
-			_created pushBack _idc;
+			// Store the CONTROL, not its id.
+			//
+			// Deleting by id means looking the control up again at teardown time,
+			// which quietly assumes that a ctrlDelete has fully retired the id
+			// before a later ctrlCreate reuses it in the same frame. If that ever
+			// fails you get two controls sharing an idc, displayCtrl finds one,
+			// and the other is an orphan that accumulates one per open/close
+			// cycle. Deleting by reference cannot race anything - and it is what
+			// stock's own extraApps_onClose does.
+			_created pushBack _button;
 		};
 	};
 };
 
-uiNamespace setVariable ["XCSV_XM8_ExtraAppIDCs", _created];
+// Renamed from XCSV_XM8_ExtraAppIDCs when this stopped holding ids and started
+// holding controls. A NEW key rather than the old one reused: uiNamespace
+// survives a mission reload, so a client that ran the previous build could
+// otherwise leave a list of numbers where the teardown now expects controls.
+uiNamespace setVariable ["XCSV_XM8_ExtraAppCtrls", _created];
 
 diag_log format ["[XCSV_XM8] extra apps grid: %1 buttons in slide %2", count _created, _slideId];

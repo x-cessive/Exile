@@ -11,12 +11,23 @@
 
 	WHY THE SLIDES ARE HIDDEN HERE AND NOT DELETED
 	==============================================
-	Deleting them would destroy the very slide an app is switching into. Hiding
-	is also what actually fixes the bleed: our slides are created on the display,
-	so when ExileClient_gui_xm8_slide "slides one away" it merely moves it to
-	x = -19 * 0.05 - which for a display-level control is not off-screen at all,
-	it is just somewhere else on the monitor. That is why app content appeared
-	stacked over other apps and floating beside the tablet.
+	Deleting them would destroy the very slide an app is switching into.
+
+	The hide is belt-and-braces rather than the load-bearing part, and the
+	original note here got the reason wrong: it claimed x = -19 * 0.05 leaves a
+	display-level control "not off-screen at all". It does move off. An
+	RscExileXM8Slide is w = 34 * 0.025 = 0.85, so parked at x = -0.95 its right
+	edge sits at -0.10, clear of the UI area - and stock relies on exactly that,
+	since ExileClient_gui_xm8_slide never calls ctrlShow false on the outgoing
+	slide at all.
+
+	The real cause of the bleed was that the slides were being created VISIBLE
+	(ctrlCreate does not honour show = false) and never parked in the first
+	place. Both halves are fixed in extraApps_onOpen; this hide simply guarantees
+	the resting state rather than trusting the animation to have run.
+
+	Keeping the wrong reason written down would send the next reader chasing a
+	problem that does not exist.
 
 	WHY DOING THIS IN BOTH DIRECTIONS IS SAFE
 	=========================================
@@ -31,19 +42,39 @@
 	Hiding the target before it is shown is harmless; hiding it after would not
 	be, which is why this must never run later than onClose.
 
-	Only ever touches ids we created. Stock's controls are stock's business.
+	Only ever touches controls we created. Stock's controls are stock's business.
+
+	That was an aspiration rather than a fact until 2026-08-10: the grid was
+	registering four STOCK slides (Settings, Health Scanner, Sloth Machine,
+	Player Market) into the list below, because they are declared in this
+	mission's config.cpp and so the id lookup found them. Fixed at the source, in
+	extraApps_onOpen.
 */
 
 private _display = uiNameSpace getVariable ["RscExileXM8", displayNull];
 if (isNull _display) exitWith {};
 
-// The app buttons.
-private _idcs = uiNamespace getVariable ["XCSV_XM8_ExtraAppIDCs", []];
+// The app buttons. These are CONTROLS, not ids - deleting by reference cannot
+// race a same-frame ctrlCreate that reuses the id, which deleting by id could.
+private _ctrls = uiNamespace getVariable ["XCSV_XM8_ExtraAppCtrls", []];
 {
-	private _ctrl = _display displayCtrl _x;
-	if (!isNull _ctrl) then { ctrlDelete _ctrl };
-} forEach _idcs;
-uiNamespace setVariable ["XCSV_XM8_ExtraAppIDCs", []];
+	if (!isNull _x) then { ctrlDelete _x };
+} forEach _ctrls;
+uiNamespace setVariable ["XCSV_XM8_ExtraAppCtrls", []];
+
+// One-time sweep of the previous build's list, which held IDs rather than
+// controls. uiNamespace outlives a mission reload, so without this a client
+// that ran the old build keeps 16 orphaned buttons until it restarts Arma.
+private _legacy = uiNamespace getVariable ["XCSV_XM8_ExtraAppIDCs", []];
+if !(_legacy isEqualTo []) then {
+	{
+		if (_x isEqualType 0) then {
+			private _old = _display displayCtrl _x;
+			if (!isNull _old) then { ctrlDelete _old };
+		};
+	} forEach _legacy;
+	uiNamespace setVariable ["XCSV_XM8_ExtraAppIDCs", []];
+};
 
 // The app slides. Kept alive, parked out of the way.
 private _slides = uiNamespace getVariable ["XCSV_XM8_SlideIDCs", []];
