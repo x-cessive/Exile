@@ -36,7 +36,20 @@ if (!hasInterface) exitWith {};
     // how a future rewrite reaches players who already saw version 1.
     private _version = 1;
 
-    if (_seen >= _version && !_force) exitWith {};
+    // Log the DECISION, not just the delivery.
+    //
+    // The only log in this file used to sit after the briefing had been sent, so
+    // "never logged" had two possible meanings that could not be told apart:
+    // the briefing was suppressed because the player had already seen it, or it
+    // never ran at all. On 2026-08-10 a cold-path scan found this tag had never
+    // appeared in 601 log files, and no profile on the machine contained
+    // XCSV_WelcomeSeen either - which points at "never delivered" without
+    // proving it. One line makes the next boot answer the question outright.
+    diag_log format ["[XCSV_WELCOME] reached the gate: seen=%1 version=%2 force=%3", _seen, _version, _force];
+
+    if (_seen >= _version && !_force) exitWith {
+        diag_log "[XCSV_WELCOME] suppressed - this profile has already seen it.";
+    };
 
     profileNamespace setVariable ["XCSV_WelcomeSeen", _version];
     saveProfileNamespace;
