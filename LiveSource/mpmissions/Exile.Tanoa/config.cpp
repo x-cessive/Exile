@@ -8193,9 +8193,9 @@ class XM8SlideXcsvScoreboard: RscExileXM8Slide
         {
             idc = -1;
             x = (5 - 3) * (0.025);      // 0.050 - left margin 0.050
-            y = (4 - 2) * (0.04);       // 0.080 - was 0.120
+            y = (5 - 2) * (0.04);       // 0.080 - was 0.120
             w = 30 * (0.025);           // 0.750 - right margin 0.050, centred
-            h = 14 * (0.04);            // 0.560 - bottom 0.640, clear of GO BACK
+            h = 13 * (0.04);            // 0.560 - bottom 0.640, clear of GO BACK
             colorBackground[] = {0, 0, 0, 0.25};
 
             // Spelled out rather than inherited. RscExileXM8ControlsGroupNoHScrollbars
@@ -8317,9 +8317,9 @@ class StandingGroup: RscExileXM8ControlsGroupNoHScrollbars
         {
             idc = -1;
             x = (5 - 3) * (0.025);
-            y = (4 - 2) * (0.04);
+            y = (5 - 2) * (0.04);
             w = 30 * (0.025);
-            h = 14 * (0.04);
+            h = 13 * (0.04);
             colorBackground[] = {0, 0, 0, 0.25};
 
             class controls
@@ -8399,9 +8399,9 @@ class XM8SlideXcsvPolicy: RscExileXM8Slide
         {
             idc = -1;
             x = (5 - 3) * (0.025);
-            y = (4 - 2) * (0.04);
+            y = (5 - 2) * (0.04);
             w = 30 * (0.025);
-            h = 14 * (0.04);
+            h = 13 * (0.04);
             colorBackground[] = {0, 0, 0, 0.25};
 
             class controls
@@ -8444,7 +8444,7 @@ class XM8SlideXcsvPrices: RscExileXM8Slide
         {
             idc = 71851;
             x = (5 - 3) * (0.025);
-            y = (4 - 2) * (0.04);
+            y = (5 - 2) * (0.04);
             w = 12 * (0.025);
             h = 1 * (0.04);
             text = "";
@@ -8458,9 +8458,9 @@ class XM8SlideXcsvPrices: RscExileXM8Slide
         {
             idc = 71852;
             x = (5 - 3) * (0.025);
-            y = (5.5 - 2) * (0.04);
+            y = (6.5 - 2) * (0.04);
             w = 12 * (0.025);
-            h = 14 * (0.04);
+            h = 11.5 * (0.04);
             onLBSelChanged = "[_this select 1] call XCSV_fnc_priceFill";
         };
 
@@ -8470,9 +8470,9 @@ class DetailGroup: RscExileXM8ControlsGroupNoHScrollbars
         {
             idc = -1;
             x = (18 - 3) * (0.025);
-            y = (4 - 2) * (0.04);
+            y = (5 - 2) * (0.04);
             w = 17 * (0.025);
-            h = 14 * (0.04);
+            h = 13 * (0.04);
             colorBackground[] = {0, 0, 0, 0.25};
 
             class controls
@@ -8511,7 +8511,7 @@ class XM8SlideXcsvInspector: RscExileXM8Slide
         {
             idc = 71841;
             x = (5 - 3) * (0.025);
-            y = (4 - 2) * (0.04);
+            y = (5 - 2) * (0.04);
             w = 12 * (0.025);
             h = 1 * (0.04);
             text = "";
@@ -8536,9 +8536,9 @@ class XM8SlideXcsvInspector: RscExileXM8Slide
         {
             idc = 71842;
             x = (5 - 3) * (0.025);
-            y = (5.5 - 2) * (0.04);
+            y = (6.5 - 2) * (0.04);
             w = 12 * (0.025);
-            h = 14 * (0.04);
+            h = 11.5 * (0.04);
             // Single-selection league table; the detail pane is on the right.
             onLBSelChanged = "[_this select 1] call XCSV_fnc_inspectorFill";
         };
@@ -8547,9 +8547,9 @@ class XM8SlideXcsvInspector: RscExileXM8Slide
         {
             idc = -1;
             x = (18 - 3) * (0.025);
-            y = (4 - 2) * (0.04);
+            y = (5 - 2) * (0.04);
             w = 17 * (0.025);
-            h = 14 * (0.04);   // was 15.5 (bottom 0.700), which overlapped GO BACK at 0.680
+            h = 13 * (0.04);   // was 15.5 (bottom 0.700), which overlapped GO BACK at 0.680
             colorBackground[] = {0, 0, 0, 0.25};
 
             class controls
@@ -8590,7 +8590,7 @@ class XM8SlideXcsvNotes: RscExileXM8Slide
             x = (5 - 3) * (0.025);
             y = (5 - 2) * (0.04);
             w = 9 * (0.025);
-            h = 15 * (0.04);
+            h = 13 * (0.04);
             // lbCurSel is the selected row; the fill function reads the body
             // out of XCSV_NOTES by the same index.
             onLBSelChanged = "[_this select 1] call XCSV_fnc_notesFill";
@@ -8602,9 +8602,9 @@ class NotesGroup: RscExileXM8ControlsGroupNoHScrollbars
         {
             idc = -1;
             x = (15 - 3) * (0.025);
-            y = (4 - 2) * (0.04);
+            y = (5 - 2) * (0.04);
             w = 20 * (0.025);
-            h = 14 * (0.04);
+            h = 13 * (0.04);
             colorBackground[] = {0, 0, 0, 0.25};
 
             class controls
