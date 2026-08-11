@@ -1,3 +1,8 @@
+/*
+ * This file is subject to the terms and conditions defined in
+ * file 'APL-SA LICENSE.txt', which is part of this source code package.
+ */
+
 BS_debug_logCrateFill = true; // True to log items spawned in crates to server .RPT, usually right after [Display #24]
 
 BS_player_showCrateClaimMessage = true; // True to show toast and chat notification with coordinates to all players when any players are close to crate
@@ -9,9 +14,17 @@ BS_class_wreckage = "Land_UWreck_FishingBoat_F"; // Class of shipwreck.
 BS_count_shipwrecks = 7; // Total wrecks
 
 BS_locations_crateWreckOffset = 10; // Distance from wreck to spawn crate.
-BS_locations_center = [14912.4,15108.7,0]; // Center o fmap from which to spawn wrecks, on Altis this is in the central bay
-BS_locations_distance_min = 0; // Minimum distance from BS_location_center to spawn crate.
-BS_locations_distance_max = 13000; // Maximum distance from BS_locations_center to spawn crate. Careful putting this too high or they will spawn off the map!
+// XCSV 2026-08-03: this was still the stock ALTIS config on a TANOA server.
+// [14912.4,15108.7] is the centre of Altis (30720 m). Tanoa is 15360 m, so that
+// coordinate sits off the north-east corner, and with a 13000 m radius
+// BIS_fnc_findSafePos (waterMode 2 = water only) happily returned open ocean
+// beyond the map edge. All 7 of 7 wrecks spawned off-map -- measured in the RPT,
+// x values up to 27877 -- so every SafeKit, gold weapon and poptab crate this
+// addon has ever produced on this server was unreachable.
+// 7680,7680 is Tanoa's centre; 7680 +/- 6500 = 1180..14180, inside 0..15360.
+BS_locations_center = [7680,7680,0]; // Tanoa centre (was Altis centre)
+BS_locations_distance_min = 1500; // XCSV: was 0. Keeps wrecks off the middle of the main island.
+BS_locations_distance_max = 6500; // XCSV: was 13000, which overshot the map edge.
 
 BS_loot_enablePoptabs = true; // True to spawn random number of poptabs in crates, otherwise false.
 BS_loot_count_poptabs_seed = [3000, 5000, 18000]; // min/mid/max, so will spawn around 5k most of the time with small chance to be much closer to 18k and small chance to be closer to 3k

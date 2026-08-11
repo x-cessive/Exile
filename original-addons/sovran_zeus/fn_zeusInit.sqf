@@ -1,4 +1,4 @@
-﻿/*
+/*
     sovran_zeus - grant the Curator (Zeus) interface to whitelisted players.
 
     Runs server-side only. Polls connected players and, for anyone on the whitelist
@@ -18,7 +18,7 @@ if (!isServer) exitWith {};
 // ---------------------------------------------------------------------------
 SOVRAN_ZEUS_UIDS =
 [
-    // "76561198000000000"
+    "76561198108041726"     // atheistics1 / Mr. Sage
 ];
 
 SOVRAN_ZEUS_POLL = 15;

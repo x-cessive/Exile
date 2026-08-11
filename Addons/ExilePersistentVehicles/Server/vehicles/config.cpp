@@ -123,7 +123,7 @@ class CfgSettings
 			DamageMin = 65; //65% damaged
 			DamageMax = 85; //95% damaged
 			
-			NumberToSpawn = 100;
+			NumberToSpawn = 30;
 		};
 		
 		class RandomHeli
@@ -141,7 +141,7 @@ class CfgSettings
 			DamageMin = 65; //65% damaged
 			DamageMax = 85; //95% damaged
 			
-			NumberToSpawn = 15;
+			NumberToSpawn = 8;
 		};
 		
 		class RandomBoats
@@ -168,7 +168,7 @@ class CfgSettings
 			DamageMin = 65; //65% damaged
 			DamageMax = 85; //95% damaged
 			
-			NumberToSpawn = 40;
+			NumberToSpawn = 12;
 		};
 		
 		class RandomTanks
@@ -230,7 +230,7 @@ class CfgSettings
 			DamageMin = 65; //65% damaged
 			DamageMax = 85; //95% damaged
 			
-			NumberToSpawn = 15;
+			NumberToSpawn = 8;
 		};
 	};
 	
@@ -238,7 +238,7 @@ class CfgSettings
 	{
 		class RandomVehicles
 		{
-			BigTowns[] = {"Kavala","Athira","Pyrgos"}; //Used for increasing the spawn range of big towns on the map
+			BigTowns[] = {"Georgetown","Lijnhaven","La Rochelle"}; //Used for increasing the spawn range of big towns on the map
 			
 			ID = "RandomVehicles_Town";
 			
