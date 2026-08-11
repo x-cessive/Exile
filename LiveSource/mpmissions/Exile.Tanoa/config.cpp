@@ -7986,11 +7986,25 @@ class XM8_App05_Button: RscXcsvXM8AppButtonGrid
     resource = "XM8SlideCyunide";
 };
 
+/*
+    App06 "Play Scratchie" REMOVED from the grid on 2026-08-11, on request.
+
+    Blanked rather than deleted. extraApps_onOpen skips any slot whose
+    textureNoShortcut AND text are both empty, and the remaining apps close
+    ranks, so an emptied slot leaves no hole in the grid. Deleting the class
+    outright would be worse: the slot numbering is positional, App07 does not
+    slide up to become App06, and a missing class is one more thing for the next
+    reader to wonder about.
+
+    The lottery itself is untouched - only the XM8 tile is gone. The server-side
+    ExileServer_lottery_network_request still exists and still works if anything
+    else calls it, so this is reversible by restoring the two lines below.
+*/
 class XM8_App06_Button: RscXcsvXM8AppButtonGrid
 {
-    textureNoShortcut = "scratchie\icons\scratchie.paa";
-    text = "Play Scratchie";
-    onButtonClick = "['use',ExileClientSessionId, player, ''] remoteExecCall ['ExileServer_lottery_network_request', 2];";
+    textureNoShortcut = "";
+    text = "";
+    onButtonClick = "";
     resource = "";
 };
 
