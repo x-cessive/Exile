@@ -2,18 +2,31 @@
 	Exile Status Bar by [FPS]kuplion - Based on Stats Bar by Creampie
 */
 
-// Accurate Restarts
-_restartTimes	= [0,6,12,18,24]; // Military Time
-_startHour		= ExileServerStartTime select 3;
-_startMinute	= ExileServerStartTime select 4;
-_startSecond	= ExileServerStartTime select 5;
-_correcTime		= [];
-{
-	if (_startHour < _x and _startHour != 24) then
-	{
-		_correcTime pushBack _x;
-	};
-} forEach _restartTimes;
+/*
+	RESTART COUNTDOWN
+
+	This used to count down to the next of [0,6,12,18,24] on the wall clock -
+	a fixed six-hourly schedule, taken from the status bar's original author.
+
+	This server does not restart on that schedule, or on any wall-clock
+	schedule. Exile's own restart system is DISABLED here; XCSV GUARD does the
+	restarting, on a rolling `restart_interval_min` timer measured from when the
+	server process started. So the bar was counting down to events that never
+	happen, and the two only agreed by coincidence. That is why it read "0:14"
+	when nothing was 14 minutes away.
+
+	The rolling interval means the countdown is a function of UPTIME, not of the
+	time of day, and serverTime is exactly that - seconds since mission start,
+	synchronised across the server and every client. No wall-clock arithmetic,
+	no ExileServerStartTime, and nothing to drift.
+
+	XCSV_RESTART_INTERVAL_MIN must match `restart_interval_min` in
+	xcsv_guard.json. Two literals that must agree is a shape that has bitten this
+	estate repeatedly, so if this ever disagrees with GUARD the symptom is a
+	countdown that is wrong by a constant - obvious once you know to look, which
+	is what this comment is for.
+*/
+XCSV_RESTART_INTERVAL_MIN = 240;
 
 disableSerialization;
 
@@ -74,8 +87,12 @@ if (_respect > 999) then
 _energyPercent	= 100;
 _playerFPS		= round diag_fps;
 _dir			= round (getDir (vehicle player));
-_rightTime		= (((_correcTime select 0) - _startHour) - _startMinute/60) * 60;
-_time			= (round(_rightTime - (serverTime)/60));
+// Minutes remaining in the current rolling restart window. serverTime is
+// seconds since mission start, so this needs no wall clock and cannot drift.
+// Clamped at 0 rather than allowed to go negative: if GUARD is late, or its
+// interval has been changed without changing the constant above, a countdown
+// that reads 0:00 is honest and a countdown that reads -0:37 is not.
+_time			= 0 max (round (XCSV_RESTART_INTERVAL_MIN - (serverTime / 60)));
 _hours			= (floor(_time/60));
 _minutes		= (_time - (_hours * 60));
 
