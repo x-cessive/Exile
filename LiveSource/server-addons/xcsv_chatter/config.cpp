@@ -98,6 +98,25 @@ class CfgFunctions
             class blackoutTick {};
         };
 
+        // "While you were away." A private situation report pushed once to each
+        // returning player: protection running down, a stolen flag, vehicles the
+        // garbage collector took, deaths on their ground.
+        //
+        // Pure read of fields Exile already writes, so like the Chronicle there
+        // is no CfgExileCustomCode entry to collide with. No request/response
+        // pair either - the server notices and pushes, so a client cannot ask
+        // and therefore cannot spam the database.
+        //
+        // briefingDefine only DEFINES things when called; postInit must call it
+        // before the first tick.
+        class Briefing
+        {
+            file = "xcsv_chatter\briefing";
+
+            class briefingDefine {};
+            class briefingTick {};
+        };
+
         // Dead Man's Switch (roadmap 12.6). THE FIRST CLIENT -> SERVER WRITE
         // PATH in our addons -- everything before it was read-only or
         // server-push. Read fn_policyBuyRequest.sqf before adding a second
@@ -112,10 +131,10 @@ class CfgFunctions
         {
             file = "xcsv_chatter\network";
 
-            class policyBuyRequest {};
+class policyBuyRequest {};
             class policyDeath {};
-            class teleportRequest {};
             class debugBridge {};
+            class teleportRequest {};
             class inspectorRequest {};
         };
     };
