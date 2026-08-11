@@ -168,21 +168,9 @@ diag_log format [
 call xcsv_chatter_fnc_policyDeath;
 
 /*
-    2026-08-10: this read ExileServer_system_xcsv_network_policyBuyRequest - the
-    message name without its "xcsv" prefix - and so the entire Insurance feature
-    had never worked, from the day it shipped.
-
-    ExileServer_system_network_dispatchIncomingMessage derives the handler name
-    mechanically as format ["ExileServer_%1_network_%2", module, messageName].
-    The message is declared in CfgNetworkMessages as `xcsvPolicyBuyRequest` with
-    module `system_xcsv`, so the ONLY name it will ever look up is
-    ExileServer_system_xcsv_network_xcsvPolicyBuyRequest. Anything else throws
-    "Invalid function call!" inside the dispatcher, which catches it and logs
-    server-side, so the player pressing BUY POLICY got nothing at all - not an
-    error, not a toast, not a refusal.
-
-    The two lines below it were always correct, which is what makes this a typo
-    rather than a convention. Match them.
+    The message is declared as xcsvPolicyBuyRequest in CfgNetworkMessages, so
+    Exile's dispatcher looks up ExileServer_system_xcsv_network_xcsvPolicyBuyRequest.
+    The shorter policyBuyRequest alias is never called.
 */
 ExileServer_system_xcsv_network_xcsvPolicyBuyRequest = xcsv_chatter_fnc_policyBuyRequest;
 ExileServer_system_xcsv_network_xcsvTeleportRequest = xcsv_chatter_fnc_teleportRequest;
@@ -194,6 +182,34 @@ ExileServer_system_xcsv_network_xcsvInspectRequest = xcsv_chatter_fnc_inspectorR
     [],
     true
 ] call ExileServer_system_thread_addTask;
+
+/* ------------------------------------------------------------------------
+   "While you were away"
+
+   Same scheduler again. The tick scans for a returning player and pushes one
+   private report; it briefs at most one player per pass so six people
+   reconnecting after a restart cannot fire twenty-four queries into the same
+   connection Exile is using for saves.
+
+   briefingDefine carries the tuning constants and the two helper functions,
+   and like policyDeath it only defines them when called - so it runs first or
+   every tick resolves nil functions and fails silently.
+
+   A short interval is fine because the common case is cheap: no unbriefed
+   player means the tick exits after one array scan without touching the
+   database.
+   ------------------------------------------------------------------------ */
+
+call xcsv_chatter_fnc_briefingDefine;
+
+[
+    20,
+    { call xcsv_chatter_fnc_briefingTick },
+    [],
+    true
+] call ExileServer_system_thread_addTask;
+
+diag_log "[XCSV_BRIEF] armed: scanning every 20s, one briefing per pass.";
 
 call xcsv_chatter_fnc_debugBridge;
 
