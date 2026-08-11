@@ -56,11 +56,30 @@ if (isNull _display) exitWith {};
 
 // The app buttons. These are CONTROLS, not ids - deleting by reference cannot
 // race a same-frame ctrlCreate that reuses the id, which deleting by id could.
+/*
+	Deleted on a 0.25s delay, in a spawned thread, because that is what STOCK
+	does and the reason is not cosmetic.
+
+	Stock Exile's own extraApps_onClose is:
+
+		[] spawn { uiSleep 0.25; ... { ctrlDelete _x } forEach ... };
+
+	This teardown is reached from extraApps_onClose, which the slide switcher
+	calls from INSIDE the ButtonClick handler of one of these very tiles. Doing
+	it synchronously destroys the control the engine is currently dispatching a
+	click through. The delay gets the deletion out of that frame - and 0.25s is
+	also exactly the slide animation length.
+
+	The list is captured and cleared SYNCHRONOUSLY, before the spawn, so it
+	cannot race the re-create in extraApps_onOpen a few lines later. Stock reads
+	its list inside the spawn, which is the weaker version of this.
+*/
 private _ctrls = uiNamespace getVariable ["XCSV_XM8_ExtraAppCtrls", []];
-{
-	if (!isNull _x) then { ctrlDelete _x };
-} forEach _ctrls;
 uiNamespace setVariable ["XCSV_XM8_ExtraAppCtrls", []];
+_ctrls spawn {
+	uiSleep 0.25;
+	{ if (!isNull _x) then { ctrlDelete _x } } forEach _this;
+};
 
 // One-time sweep of the previous build's list, which held IDs rather than
 // controls. uiNamespace outlives a mission reload, so without this a client

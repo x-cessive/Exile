@@ -77,7 +77,26 @@ XCSV_fnc_scoreboardFill = {
         control per column. The dead helper is left in place for now rather than
         deleted, because deleting it belongs in a tidy-up rather than a fix.
     */
-    private _w = [4, 30, 8, 7, 8];   // rank, name, score, kills, deaths
+    /*
+        Column widths in CHARACTERS, and this is the one genuinely
+        aspect-ratio-dependent thing in the whole app.
+
+        Glyph WIDTH scales with sizeEx, which is a fraction of screen HEIGHT.
+        The panel width is a fraction of screen WIDTH. So characters-per-line is
+        proportional to the display's aspect ratio: a table that fits at 16:9
+        has roughly a third fewer columns to play with at 4:3, and wraps.
+
+        This was [4, 30, 8, 7, 8] = 57 columns plus separators = 66 characters,
+        which fits the 29*0.025 panel at 16:9 with nothing to spare. Two
+        independent reviews arrived at the same answer from different
+        directions - one measuring the glyph budget, one measuring the aspect
+        dependency - so the name column comes down and the row is now 51
+        characters, which survives down to 4:3.
+
+        20 glyphs is still more name than anyone types, and a longer one is
+        truncated with a trailing dot rather than wrapping the row.
+    */
+    private _w = [3, 20, 7, 5, 6];   // rank, name, score, kills, deaths
 
     // Left-align (pad on the right) for text, right-align (pad on the left) for
     // numbers. Numbers padded on the right make 9 and 1000 START at the same

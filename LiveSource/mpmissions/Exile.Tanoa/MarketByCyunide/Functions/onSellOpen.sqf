@@ -2,7 +2,37 @@ private["_display","_slidesControlGroup","_slideControl","_configName","_itemDis
 disableSerialization;
 _display = uiNameSpace getVariable ["RscExileXM8", displayNull];
 _slidesControlGroup = _display displayCtrl 4007;
-_slideControl = _display ctrlCreate ["XM8SlideCyunideSell", 5160, _slidesControlGroup];
+/*
+	XCSV 2026-08-11: this used to be
+
+		_slideControl = _display ctrlCreate ["XM8SlideCyunideSell", 5160, _slidesControlGroup];
+
+	and it was creating a permanent, invisible, input-eating overlay across the
+	whole tablet, every single time the Sell page was opened.
+
+	Three things were wrong with that one line:
+
+	  * 5160 is a typo for 85160. Nothing can ever address that control again -
+	    displayCtrl 85160 will not find it - so it could never be shown, hidden,
+	    moved or deleted. It just sat there.
+	  * There was no isNull guard, so a fresh one was created on every open.
+	  * XM8SlideCyunideSell inherits RscExileXM8Slide, which is w=34*0.025 and
+	    h=19*0.04 - it covers the tablet's entire content area - and ctrlCreate
+	    does NOT honour the class's show = false, so it is created VISIBLE at
+	    0,0 and stays there.
+
+	Because it is created later than the six XCSV app slides, it sits ABOVE all
+	of them in control 4007's child order and takes the mouse input they should
+	receive. That is why GO BACK rendered perfectly and was deaf, and why it only
+	started happening after "bouncing between apps" - it takes exactly one visit
+	to the Player Market's Sell page to plant it, and it never goes away.
+
+	This function does not switch slides at all (its slide call is commented out
+	on the next line); it only populates listbox 85162. So it does not need to
+	create anything. It resolves the slide onSellOpenFirst made, and does nothing
+	if that has not happened yet.
+*/
+_slideControl = _display displayCtrl 85160;
 //['cyMachineSell', 0] call ExileClient_gui_xm8_slide; 
 
 lbClear 85162;

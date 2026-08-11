@@ -19,35 +19,25 @@ if (isNil "XCSV_fnc_xm8ExtraAppsClear") then {
 call XCSV_fnc_xm8ExtraAppsClear;
 
 /*
-	Hide the grid slide on the way out, not merely park it.
+	NOT hiding the grid slide here, deliberately.
 
-	ExileClient_gui_xm8_slide NEVER hides an outgoing slide - it only moves it to
-	x = -19*0.05 and commits. A CT_CONTROLS_GROUP that has been moved but not
-	hidden is still a live control, and this estate has already been bitten twice
-	by a controls group taking mouse input that something underneath it should
-	have received: once when the grid buttons were parented to the display
-	instead of this slide, and once when each app's content group covered its own
-	GO BACK button.
+	A previous pass added `ctrlShow false` on the grid at this point, on the
+	theory that a parked-but-not-hidden controls group was still hit-testing and
+	stealing GO BACK's clicks. That theory is REFUTED, on two independent
+	grounds:
 
-	The reported symptom is GO BACK working on an app opened straight from the
-	grid and dying after bouncing between apps - which is a hit-testing fault,
-	not a rendering one, because the button is drawn correctly throughout.
+	  * Stock Exile parks every outgoing slide at x = +/-0.95 and never calls
+	    ctrlShow false on any of them. If a parked group still took input, the
+	    stock XM8 would be unusable.
+	  * These slides are children of control 4007, which is itself a
+	    CT_CONTROLS_GROUP at x=0.075 w=0.85. A child parked at relative -0.95 is
+	    clipped out of its parent entirely - for rendering AND for input.
 
-	Hiding costs the grid its slide-out animation. The stock switcher calls
-	ctrlShow true on the incoming slide before animating it, so the grid still
-	slides back IN correctly; only the outgoing sweep is lost. That is a cheap
-	price for removing an entire class of input ambiguity.
+	The real cause was found elsewhere: the Player Market created unguarded
+	full-tablet slide groups into 4007 that were never deleted and sat above
+	every XCSV app slide. See MarketByCyunide\Functions\onSell*.sqf.
 
-	Resolved through CfgXM8 rather than hardcoding the id, for the same reason
-	extraApps_onOpen does: the id lives in config and drift between the two is
-	silent.
+	Keeping a change whose justification has been disproved is how a codebase
+	accumulates cargo, so it is removed rather than left in as insurance - and
+	the grid gets its slide-out animation back.
 */
-private _display = uiNamespace getVariable ["RscExileXM8", displayNull];
-if (!isNull _display) then {
-	private _src = if (isClass (configFile >> "CfgXM8" >> "extraApps")) then { configFile } else { missionConfigFile };
-	private _gridId = getNumber (_src >> "CfgXM8" >> "extraApps" >> "controlID");
-	if (_gridId > 0) then {
-		private _grid = _display displayCtrl _gridId;
-		if (!isNull _grid) then { _grid ctrlShow false };
-	};
-};

@@ -2,7 +2,16 @@ private["_display","_slidesControlGroup","_slideControl","_configName","_itemDis
 disableSerialization;
 _display = uiNameSpace getVariable ["RscExileXM8", displayNull];
 _slidesControlGroup = _display displayCtrl 4007;
-_slideControl = _display ctrlCreate ["XM8SlideCyunideSell", 85160, _slidesControlGroup];
+// XCSV 2026-08-11: guarded. Unguarded, this created a NEW full-tablet controls
+// group on every visit - RscExileXM8Slide is 0.85 x 0.76 and ctrlCreate ignores
+// the class's show = false, so each one is created visible at 0,0, above the six
+// XCSV app slides in 4007's child order, and eats their mouse input. That is the
+// "GO BACK is visible but dead after bouncing between apps" fault. Create once
+// per display; the switcher shows and hides it after that.
+_slideControl = _display displayCtrl 85160;
+if (isNull _slideControl) then {
+	_slideControl = _display ctrlCreate ["XM8SlideCyunideSell", 85160, _slidesControlGroup];
+};
 ['cyMachineSell', 0] call ExileClient_gui_xm8_slide; 
 
 lbClear 85162;

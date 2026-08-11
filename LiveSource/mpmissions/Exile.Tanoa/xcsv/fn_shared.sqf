@@ -90,6 +90,29 @@ XCSV_fnc_fitText = {
     private _pos    = ctrlPosition _ctrl;
     private _needed = ctrlTextHeight _ctrl;
 
+    /*
+        The floor is the height this control was FIRST seen at, not its current
+        height.
+
+        The first version read ctrlPosition every time and took
+        `(_pos select 3) max _needed`. On the second visit that reads back the
+        already-grown height and takes the max again, so the control could only
+        ever get taller - monotonic growth, one step per open, and a scrollbar
+        whose range creeps without bound. It never shrinks back for a shorter
+        list.
+
+        Caching the declared height per control idc fixes it: the floor is
+        constant for the life of the client, so the height is a pure function of
+        the content. uiNamespace rather than a local, because the control is
+        destroyed and recreated with the dialog and this must survive that.
+    */
+    private _key  = format ["XCSV_fitBase_%1", ctrlIDC _ctrl];
+    private _base = uiNamespace getVariable [_key, -1];
+    if (_base < 0) then {
+        _base = _pos select 3;
+        uiNamespace setVariable [_key, _base];
+    };
+
     // Guarded: if ctrlTextHeight cannot measure in the same frame as the
     // ctrlSetStructuredText that preceded it, this degrades to exactly the old
     // behaviour rather than collapsing the control to zero height.
@@ -98,7 +121,7 @@ XCSV_fnc_fitText = {
             _pos select 0,
             _pos select 1,
             _pos select 2,
-            (_pos select 3) max _needed
+            _base max _needed
         ];
         _ctrl ctrlCommit 0;
     };
