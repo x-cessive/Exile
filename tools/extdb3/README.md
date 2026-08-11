@@ -26,6 +26,13 @@ The builder:
 - fails if old `extDB2` call sites, `SQL_CUSTOM_V2`, `LOCK_STATUS`, or leading
   slash PBO entries remain.
 
+Tracked recovery fragments:
+
+- `xcsv-briefing-sql.ini` contains the four `xcsvBriefing*` SQL_CUSTOM sections
+  deployed for XCSV-CHATTER-001. The live `exile.ini` remains authoritative, but
+  this fragment records the exact query block needed if the live template is
+  rebuilt or repaired by hand.
+
 Production was migrated on 2026-08-05 to `arma3server_x64.exe` plus extDB3. A
 healthy boot shows `extDB3_x64.dll`, `Connected to database!`, `Database
 protocol initialized!`, and `Game world initialized! Let the fun begin!` in the
