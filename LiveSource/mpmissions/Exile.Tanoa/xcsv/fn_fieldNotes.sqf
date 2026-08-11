@@ -156,6 +156,38 @@ XCSV_NOTES = [
     listening to.<br/><br/>
     Poptabs are prison scrip. Respect is standing among inmates. Territory tax is
     protection money. You are not a hero here; you are overflow.
+    "],
+
+    ["Warden Control", "
+    <t size='1.0' color='#E05050'>WARDEN CONTROL</t><br/><br/>
+    Warden Control is the contractor voice on the island. It owns the safe-zone
+    paperwork, pays the people with uniforms, and calls every transaction
+    compliance.<br/><br/>
+    You will hear it when order matters: markets, warnings, lockdowns, and public
+    reminders that the system is still in charge.<br/><br/>
+    The Warden does not need to win firefights. It wins by making every survivor
+    use its traders, its tax rules, and its definition of property.
+    "],
+
+    ["The Yard", "
+    <t size='1.0' color='#E8B339'>THE YARD</t><br/><br/>
+    The Yard is not a faction you join. It is what prisoners call the network of
+    crews, rivals, thieves, debt collectors, and people who remember what you did
+    last week.<br/><br/>
+    Respect matters here because it is the island's memory. Kill clean, pay your
+    debts, hold ground, and people price you differently. Fold often enough and
+    the Yard notices that too.<br/><br/>
+    The Yard does not announce rules. It proves them.
+    "],
+
+    ["Salvage Net", "
+    <t size='1.0' color='#3FC16A'>SALVAGE NET</t><br/><br/>
+    Salvage Net is the useful voice: traders, mechanics, scouts, runners, and
+    anyone who can turn wreckage into poptabs before the weather eats it.<br/><br/>
+    It cares less about guilt than supply. If you bring fuel, parts, vehicles,
+    medical stock, or reliable information, Salvage Net will talk.<br/><br/>
+    Listen for it when you need direction. Most days, survival is not heroic. It
+    is finding the thing somebody else needs before they find you.
     "]
 ];
 
