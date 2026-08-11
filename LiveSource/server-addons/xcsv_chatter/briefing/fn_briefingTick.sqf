@@ -67,7 +67,7 @@ private _target = objNull;
 private _targetUID = "";
 {
     private _uid = getPlayerUID _x;
-    if (!(_uid isEqualTo "") && {!(_uid in _done)}) then {
+    if (!(_uid isEqualTo "")) then {
         private _firstSeen = -1;
         {
             if ((_x select 0) isEqualTo _uid) exitWith { _firstSeen = _x select 1 };
@@ -94,10 +94,6 @@ missionNamespace setVariable ["XCSV_BRIEF_Seen", _seen];
 // burst on the same connection Exile is using for saves.
 if (isNull _target) exitWith { true };
 
-_done pushBack _targetUID;
-if (count _done > 200) then { _done = _done select [(count _done) - 200, 200]; };
-missionNamespace setVariable ["XCSV_BRIEF_Done", _done];
-
 private _owner = owner _target;
 
 /* ---- how long were they gone -------------------------------------------- */
@@ -111,16 +107,34 @@ if (isNil "_acct" || {!(_acct isEqualType [])} || {_acct isEqualTo []}) exitWith
 private _row      = _acct select 0;
 private _awayMin  = parseNumber str (_row select 0);
 private _visits   = parseNumber str (_row select 1);
+private _discKey  = if ((count _row) > 2) then { str (_row select 2) } else { "legacy" };
+private _doneKey  = format ["%1:%2", _targetUID, _discKey];
+
+if (_doneKey in _done) exitWith { true };
+
+private _markDone = {
+    params ["_key"];
+    private _items = missionNamespace getVariable ["XCSV_BRIEF_Done", []];
+    _items pushBack _key;
+    if (count _items > 200) then { _items = _items select [(count _items) - 200, 200]; };
+    missionNamespace setVariable ["XCSV_BRIEF_Done", _items];
+};
 
 // -1 is the COALESCE for "never disconnected", i.e. a first-ever session.
 if (_awayMin < 0) exitWith {
+    [_doneKey] call _markDone;
     ["XCSV NET: first contact logged. Your XM8 field notes explain the island.", _owner] call XCSV_fnc_briefSend;
+    diag_log format ["[XCSV_BRIEF] first-contact briefed %1", _targetUID];
     true
 };
 
 // Nothing meaningful decays in a few minutes, and a relog should not produce a
 // report. Silence is the correct output here, not an empty briefing.
-if (_awayMin < XCSV_BRIEF_MinAwayMinutes) exitWith { true };
+if (_awayMin < XCSV_BRIEF_MinAwayMinutes) exitWith {
+    [_doneKey] call _markDone;
+    diag_log format ["[XCSV_BRIEF] skipped %1 after %2 min away", _targetUID, _awayMin];
+    true
+};
 
 private _lines = [];
 private _awayText = [_awayMin] call XCSV_fnc_briefDuration;
@@ -197,6 +211,8 @@ if !(_myPositions isEqualTo []) then {
 };
 
 /* ---- deliver -------------------------------------------------------------- */
+
+[_doneKey] call _markDone;
 
 // Spaced out, because six systemChat lines in one frame scroll each other off
 // the screen before they can be read.
