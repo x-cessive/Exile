@@ -70,19 +70,40 @@ _damage			= round ((1 - (damage player)) * 100);
 _hunger			= round (ExileClientPlayerAttributes select 2);
 _thirst			= round (ExileClientPlayerAttributes select 3);
 _wallet			= (player getVariable ["ExileMoney", 0]);
-if (_wallet > 999) then
+if (_wallet > 999999) then
 {
-	_wallet = format ["%1k", floor (_wallet / 1000)];
+	_wallet = format ["%1m", floor (_wallet / 1000000)];
+}
+else
+{
+	if (_wallet > 999) then
+	{
+		_wallet = format ["%1k", floor (_wallet / 1000)];
+	};
 };
 _locker			= (player getVariable ["ExileLocker", 0]);
-if (_locker > 999) then
+if (_locker > 999999) then
 {
-	_locker = format ["%1k", floor (_locker / 1000)];
+	_locker = format ["%1m", floor (_locker / 1000000)];
+}
+else
+{
+	if (_locker > 999) then
+	{
+		_locker = format ["%1k", floor (_locker / 1000)];
+	};
 };
 _respect		= ExileClientPlayerScore;
-if (_respect > 999) then
+if (_respect > 999999) then
 {
-	_respect = format ["%1k", floor (_respect / 1000)];
+	_respect = format ["%1m", floor (_respect / 1000000)];
+}
+else
+{
+	if (_respect > 999) then
+	{
+		_respect = format ["%1k", floor (_respect / 1000)];
+	};
 };
 _energyPercent	= 100;
 _playerFPS		= round diag_fps;

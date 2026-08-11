@@ -5009,7 +5009,7 @@ class CfgLocker
 {
 	numbersOnly = "0123456789";
 	
-	maxDeposit = 10000;
+	maxDeposit = 1000000;
 };
 
 class CfgPlayer 
