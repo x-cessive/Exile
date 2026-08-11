@@ -7964,10 +7964,18 @@ class XM8_App02_Button: RscXcsvXM8AppButtonGrid
 
 class XM8_App03_Button: RscXcsvXM8AppButtonGrid
 {
-    textureNoShortcut = "\exile_assets\texture\ui\xm8_app_slothMachine_ca.paa";
-    text = "Sloth Machine";
-    onButtonClick = "['slothMachine', 0] call ExileClient_gui_xm8_slide";
-    resource = "XM8SlideSlothMachine";
+    /*
+    Sloth Machine - stock Exile gambling. Removed alongside Scratchie on
+        2026-08-11: the server tone is deliberately not a casino.
+
+    Blanked, not deleted: extraApps_onOpen skips a slot with no icon and no
+    text and the rest close ranks, and slot numbering is positional so nothing
+    slides up to take its place.
+    */
+    textureNoShortcut = "";
+    text = "";
+    onButtonClick = "";
+    resource = "";
 };
 
 class XM8_App04_Button: RscXcsvXM8AppButtonGrid
@@ -7980,10 +7988,26 @@ class XM8_App04_Button: RscXcsvXM8AppButtonGrid
 
 class XM8_App05_Button: RscXcsvXM8AppButtonGrid
 {
-    textureNoShortcut = "\exile_assets\texture\ui\poptab_ca.paa";
-    text = "Player Market";
-    onButtonClick = "['cyMachine', 0] call ExileClient_gui_xm8_slide;";
-    resource = "XM8SlideCyunide";
+    /*
+    Player Market - removed because it CANNOT WORK. Its populate function reads
+        missionNamespace "pumba", and nothing anywhere in this mission ever writes
+        that variable - it is read in two places and written in zero. The handler
+        that looks like it should supply it, listPlayerMarketResponse, is declared
+        parameters[] = {"SCALAR"} and its body removes a sold item from the player:
+        it is a sell CONFIRMATION, misnamed. So the listing never arrives, count on
+        nil throws, and the page renders blank with a title.
+    
+        A tile that opens a blank page is worse than no tile. Restore this once the
+        server side of the market is wired to something the client actually reads.
+
+    Blanked, not deleted: extraApps_onOpen skips a slot with no icon and no
+    text and the rest close ranks, and slot numbering is positional so nothing
+    slides up to take its place.
+    */
+    textureNoShortcut = "";
+    text = "";
+    onButtonClick = "";
+    resource = "";
 };
 
 /*
