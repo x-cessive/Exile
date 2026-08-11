@@ -63,6 +63,37 @@ if (isNull _slide) exitWith {
 private _maxApp = 26;
 private _cols   = 5;
 
+/*
+    4007 is the tablet's slide container, and EVERY other XM8 slide in this
+    estate is created as a child of it. Ours were created on the display itself,
+    and that single omission caused three separate reported faults:
+
+      * GO BACK was visible but deaf. A display-level control created at runtime
+        draws on top of 4007 yet receives none of the mouse input 4007 takes.
+        This is the same divergence between render order and input order that
+        XM8-APPS-001 hit from the other side, documented at the top of this file.
+      * The app sat top-left and oversized, because a display-level control's
+        0,0 is the SCREEN origin, while a child of 4007 has its 0,0 at the
+        tablet's content origin. RscExileXM8Slide declares x=0,y=0, so a
+        correctly parented slide lands centred in the tablet for free.
+      * It survived powering the XM8 off. ExileClient_gui_xm8_show fades a fixed
+        list of nine ids - 4002,4003,4004,4005,4007,4001,4010,4030,4020 - and a
+        group's fade propagates to its children. Ours were not under 4007 and
+        not in that list, so nothing ever faded them.
+
+    Not a guess: MarketByCyunide\Functions\onSellOpen.sqf, onSellOpenFirst.sqf
+    and onSellGoBack.sqf all resolve `_display displayCtrl 4007` as the slide
+    parent, and so does ExAd's fn_createExtraApps.sqf. Four shipped
+    implementations in this mission and its addons; ours was the only one that
+    omitted the parent.
+
+    Resolved once here rather than per app.
+*/
+private _slideParent = _display displayCtrl 4007;
+if (isNull _slideParent) then {
+    diag_log "[XCSV_XM8] WARNING: slide container 4007 not found - app slides will be created on the display and will not accept clicks.";
+};
+
 // Four rows of five is the space above GO BACK, so 20 buttons is the ceiling
 // while _maxApp scans up to App26. Today 20 slots are declared and 16 carry an
 // icon and a name, so this never binds - but a 21st real app would silently
@@ -135,7 +166,15 @@ for "_appIndex" from 1 to _maxApp do
 				private _slideIdc = getNumber (missionConfigFile >> _res >> "idc");
 				if (_slideIdc > 0) then {
 					if (isNull (_display displayCtrl _slideIdc)) then {
-						private _sc = _display ctrlCreate [_res, _slideIdc];
+						// Parented to 4007 - see the note where _slideParent is
+						// resolved. Falls back to display level only if 4007
+						// could not be found, which is logged above; a visible
+						// but unclickable app beats no app at all.
+						private _sc = if (isNull _slideParent) then {
+							_display ctrlCreate [_res, _slideIdc]
+						} else {
+							_display ctrlCreate [_res, _slideIdc, _slideParent]
+						};
 						// ctrlCreate does NOT honour the class's show = false, so a
 						// freshly created slide is visible immediately. Creating six
 						// of them stacks every app's content on screen at once.

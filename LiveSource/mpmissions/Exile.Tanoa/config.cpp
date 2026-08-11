@@ -8170,14 +8170,59 @@ class XM8SlideXcsvScoreboard: RscExileXM8Slide
             onButtonClick = "['extraApps', 1] call ExileClient_gui_xm8_slide";
         };
 
+        /*
+            THIS GROUP USED TO COVER ITS OWN GO BACK BUTTON.
+
+            It was y = (5-2)*0.04 = 0.120 with h = 15*0.04 = 0.600, so it ran to
+            0.720. GoBackButton above occupies 0.680 to 0.720 and 0.675 to 0.825
+            horizontally, against this group's 0.050 to 0.800 - so the group
+            covered the button's entire height and 83% of its width. A controls
+            group eats mouse input, and this one is declared AFTER the button, so
+            it wins hit-testing. The button rendered perfectly and could not be
+            clicked, which is exactly what was reported.
+
+            XM8SlideXcsvPolicy was the counter-example that proved it: it already
+            used y = (4-2)*0.04 with h = 14*0.04, stopping at 0.640, and its GO
+            BACK was the only one that worked. This now matches that geometry -
+            starting a row higher and ending a full cell clear of the button.
+
+            The 0.040 of height given up is precisely the strip that was
+            swallowing the button. Scrolling gives it back with interest.
+        */
         class ScoreboardGroup: RscExileXM8ControlsGroupNoHScrollbars
         {
             idc = -1;
-            x = (5 - 3) * (0.025);
-            y = (5 - 2) * (0.04);
-            w = 30 * (0.025);
-            h = 15 * (0.04);
+            x = (5 - 3) * (0.025);      // 0.050 - left margin 0.050
+            y = (4 - 2) * (0.04);       // 0.080 - was 0.120
+            w = 30 * (0.025);           // 0.750 - right margin 0.050, centred
+            h = 14 * (0.04);            // 0.560 - bottom 0.640, clear of GO BACK
             colorBackground[] = {0, 0, 0, 0.25};
+
+            // Spelled out rather than inherited. RscExileXM8ControlsGroupNoHScrollbars
+            // overrides VScrollbar with an empty class and relies on A3's base
+            // resolving through a forward declaration - and this mission has
+            // already been bitten once by a forward-declared A3 base failing to
+            // resolve from missionConfigFile, which is what left
+            // RscExileXM8SearchEdit with no `type` and killed ctrlCreate. A
+            // scrollbar with no width does not draw, and the symptom would be
+            // "it still does not scroll" with nothing to point at.
+            class VScrollbar
+            {
+                color[] = {1, 1, 1, 0.6};
+                width = 0.021;
+                height = 0;
+                shadow = 0;
+                scrollSpeed = 0.06;
+                autoScrollEnabled = 0;
+                autoScrollSpeed = -1;
+                autoScrollDelay = 5;
+                autoScrollRewind = 0;
+                thumb      = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+                arrowFull  = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+                arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+                border     = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+            };
+            class HScrollbar { color[] = {1, 1, 1, 0.6}; height = 0; shadow = 0; };
 
             class controls
             {
@@ -8187,7 +8232,12 @@ class XM8SlideXcsvScoreboard: RscExileXM8Slide
                     x = 0;
                     y = 0;
                     w = 29 * (0.025);   // minus 1, or the scrollbar overlaps
-                    h = 15 * (0.04);
+                    // Starting height only. XCSV_fnc_scoreboardFill grows this
+                    // at runtime to the height the content actually needs - a
+                    // child declared exactly as tall as its group can never
+                    // overflow it, so the group had nothing to scroll and the
+                    // list was silently clipped instead.
+                    h = 14 * (0.04);
 
                     /*
                         Monospace, because the scoreboard's columns are
@@ -8261,13 +8311,15 @@ class XM8SlideXcsvStanding: RscExileXM8Slide
             onButtonClick = "['extraApps', 1] call ExileClient_gui_xm8_slide";
         };
 
-        class StandingGroup: RscExileXM8ControlsGroupNoHScrollbars
+                    // Was y=(5-2)*0.04 h=15*0.04 (bottom 0.720), which covered the GO BACK
+            // button at 0.680-0.720. Matches XM8SlideXcsvPolicy's geometry now.
+class StandingGroup: RscExileXM8ControlsGroupNoHScrollbars
         {
             idc = -1;
             x = (5 - 3) * (0.025);
-            y = (5 - 2) * (0.04);
+            y = (4 - 2) * (0.04);
             w = 30 * (0.025);
-            h = 15 * (0.04);
+            h = 14 * (0.04);
             colorBackground[] = {0, 0, 0, 0.25};
 
             class controls
@@ -8278,7 +8330,7 @@ class XM8SlideXcsvStanding: RscExileXM8Slide
                     x = 0;
                     y = 0;
                     w = 29 * (0.025);
-                    h = 15 * (0.04);
+                    h = 14 * (0.04);
                 };
             };
         };
@@ -8412,13 +8464,15 @@ class XM8SlideXcsvPrices: RscExileXM8Slide
             onLBSelChanged = "[_this select 1] call XCSV_fnc_priceFill";
         };
 
-        class DetailGroup: RscExileXM8ControlsGroupNoHScrollbars
+                    // Was h=15.5*0.04 from y=0.080 (bottom 0.700), overlapping GO BACK at
+            // 0.680-0.720. Trimmed to end at 0.640, one cell clear.
+class DetailGroup: RscExileXM8ControlsGroupNoHScrollbars
         {
             idc = -1;
             x = (18 - 3) * (0.025);
             y = (4 - 2) * (0.04);
             w = 17 * (0.025);
-            h = 15.5 * (0.04);
+            h = 14 * (0.04);
             colorBackground[] = {0, 0, 0, 0.25};
 
             class controls
@@ -8429,7 +8483,7 @@ class XM8SlideXcsvPrices: RscExileXM8Slide
                     x = 0;
                     y = 0;
                     w = 16 * (0.025);
-                    h = 15.5 * (0.04);
+                    h = 14 * (0.04);
                 };
             };
         };
@@ -8495,7 +8549,7 @@ class XM8SlideXcsvInspector: RscExileXM8Slide
             x = (18 - 3) * (0.025);
             y = (4 - 2) * (0.04);
             w = 17 * (0.025);
-            h = 15.5 * (0.04);
+            h = 14 * (0.04);   // was 15.5 (bottom 0.700), which overlapped GO BACK at 0.680
             colorBackground[] = {0, 0, 0, 0.25};
 
             class controls
@@ -8506,7 +8560,7 @@ class XM8SlideXcsvInspector: RscExileXM8Slide
                     x = 0;
                     y = 0;
                     w = 16 * (0.025);
-                    h = 15.5 * (0.04);
+                    h = 14 * (0.04);
                 };
             };
         };
@@ -8542,13 +8596,15 @@ class XM8SlideXcsvNotes: RscExileXM8Slide
             onLBSelChanged = "[_this select 1] call XCSV_fnc_notesFill";
         };
 
-        class NotesGroup: RscExileXM8ControlsGroupNoHScrollbars
+                    // Was y=(5-2)*0.04 h=15*0.04 (bottom 0.720), which covered the GO BACK
+            // button at 0.680-0.720. Matches XM8SlideXcsvPolicy's geometry now.
+class NotesGroup: RscExileXM8ControlsGroupNoHScrollbars
         {
             idc = -1;
             x = (15 - 3) * (0.025);
-            y = (5 - 2) * (0.04);
+            y = (4 - 2) * (0.04);
             w = 20 * (0.025);
-            h = 15 * (0.04);
+            h = 14 * (0.04);
             colorBackground[] = {0, 0, 0, 0.25};
 
             class controls
@@ -8559,7 +8615,7 @@ class XM8SlideXcsvNotes: RscExileXM8Slide
                     x = 0;
                     y = 0;
                     w = 19 * (0.025);   // minus 1 for the scrollbar
-                    h = 15 * (0.04);
+                    h = 14 * (0.04);
                 };
             };
         };

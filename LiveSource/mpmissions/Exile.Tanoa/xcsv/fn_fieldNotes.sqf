@@ -158,6 +158,7 @@ XCSV_fnc_notesFill = {
     if (_index < 0 || {_index >= (count XCSV_NOTES)}) exitWith {};
 
     _body ctrlSetStructuredText parseText ((XCSV_NOTES select _index) select 1);
+    [_body] call XCSV_fnc_fitText;   // so the group can scroll when this overflows
 
     // Render heartbeat - see the note in fn_scoreboard.sqf.
     diag_log format ["[XCSV_NOTES] rendered topic %1.", _index];

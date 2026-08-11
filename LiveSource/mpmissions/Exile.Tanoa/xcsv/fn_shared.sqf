@@ -69,4 +69,39 @@ XCSV_fnc_num = {
     str _n
 };
 
+/*
+    Grow a structured-text control to the height its content needs, so the
+    controls group around it can scroll.
+
+    A CT_CONTROLS_GROUP scrolls only when a CHILD overflows it. Every XCSV app
+    declared its text control exactly as tall as its group, so nothing could ever
+    overflow, the scrollbar had nothing to scroll, and a long list was silently
+    CLIPPED instead - which is what happens to the scoreboard as soon as there
+    are more players than fit.
+
+    The group's declared height is kept as a floor, so a short list still fills
+    the panel and the background does not collapse around three rows.
+*/
+XCSV_fnc_fitText = {
+    disableSerialization;
+    params ["_ctrl"];
+    if (isNull _ctrl) exitWith {};
+
+    private _pos    = ctrlPosition _ctrl;
+    private _needed = ctrlTextHeight _ctrl;
+
+    // Guarded: if ctrlTextHeight cannot measure in the same frame as the
+    // ctrlSetStructuredText that preceded it, this degrades to exactly the old
+    // behaviour rather than collapsing the control to zero height.
+    if (_needed > 0) then {
+        _ctrl ctrlSetPosition [
+            _pos select 0,
+            _pos select 1,
+            _pos select 2,
+            (_pos select 3) max _needed
+        ];
+        _ctrl ctrlCommit 0;
+    };
+};
+
 diag_log "[XCSV_SHARED] helpers ready.";

@@ -107,6 +107,7 @@ XCSV_fnc_standingShow = {
         "<t size='0.7' color='#5f6a78'>Standing is observational. It does not change prices - yet.</t>";
 
     _ctrl ctrlSetStructuredText parseText _html;
+    [_ctrl] call XCSV_fnc_fitText;   // so the group can scroll when this overflows
 
     // Render heartbeat - see the note in fn_scoreboard.sqf. Until 2026-08-10 the
     // only thing any XCSV app logged was that its file had loaded, which is why

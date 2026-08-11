@@ -126,17 +126,13 @@ XCSV_fnc_scoreboardFill = {
             _kills
         };
 
-        // Trim rather than let a long name push every column out of line, THEN
-        // escape. That order matters: escaping first would let the 17-character
-        // cut land inside an entity like "&amp;" and emit "&am", which is just
-        // as broken as the character it replaced.
-        //
-        // The escape itself was missing entirely until 2026-08-10. A Steam name
+        // The escape was missing entirely until 2026-08-10. A Steam name
         // containing "&" or "<" corrupted the markup for the whole board, for
         // every player who opened it - one row poisoning the entire control.
         // fn_standing.sqf had spotted this and handled it; this file had not,
         // because the helper looked like part of that app. It is now in
         // xcsv\fn_shared.sqf.
+        //
         // Order is truncate -> pad -> escape, and all three positions matter.
         //
         // Truncate first, because escaping first would let the 17-character cut
@@ -196,6 +192,7 @@ XCSV_fnc_scoreboardFill = {
     ];
 
     _ctrl ctrlSetStructuredText parseText _html;
+    [_ctrl] call XCSV_fnc_fitText;   // so the group can scroll when this overflows
 
     // Render heartbeat. Every XCSV app was auditable only as far as "the file
     // loaded" until 2026-08-10, because the load-time diag_log at the bottom of
