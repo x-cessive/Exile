@@ -52,11 +52,66 @@ XCSV_fnc_scoreboardFill = {
         );
     };
 
-    // Header, then one line per player. <br/> rather than a real table because
-    // structured text has no columns; the widths below are eyeballed against
-    // the XM8 slide and hold for names up to roughly 18 characters.
-    private _html = "<t size='0.85' color='#3D9CFF'>#   PLAYER                        SCORE   KILLS  DEATHS   K/D</t><br/>";
-    _html = _html + "<t size='0.7' color='#2A303A'>______________________________________________________________</t><br/>";
+    /*
+        COLUMNS
+
+        Structured text has no table layout, so the columns are space-padded.
+        That only works in a monospace face, which the control did not have -
+        this file's own comment conceded the alignment was "approximate", and it
+        was: the header put PLAYER at column 4 and SCORE at 34, while a data row
+        put them at 5 and 36, because the row format string adds a literal space
+        between fields that are already padded. The drift compounded across the
+        row.
+
+        Both halves are fixed here. The control is now EtelkaMonospacePro (see
+        the class in config.cpp), which is already used elsewhere in this very
+        mission - RscInGameUI.hpp and the paintshop addon - so it is proven
+        available rather than hoped for. And the header is now BUILT FROM THE
+        SAME WIDTHS as the rows, so the two cannot drift apart again by hand.
+
+        Deliberately NOT done: resurrecting XCSV_fnc_sbCell, which emits
+        <t align=...> per column and has sat unused in this file since it was
+        written. It would not have worked. Multiple <t> elements on one line in
+        Arma's structured text are INLINE - align applies to the line, not to a
+        column box - so per-cell alignment cannot produce columns without one
+        control per column. The dead helper is left in place for now rather than
+        deleted, because deleting it belongs in a tidy-up rather than a fix.
+    */
+    private _w = [4, 30, 8, 7, 8];   // rank, name, score, kills, deaths
+
+    // Left-align (pad on the right) for text, right-align (pad on the left) for
+    // numbers. Numbers padded on the right make 9 and 1000 START at the same
+    // column, which is exactly the alignment a reader does not want: digits
+    // should line up by place value so the column can be scanned.
+    private _pad  = { params ["_s", "_n"]; while { count _s < _n } do { _s = _s + " " }; _s };
+    private _rpad = { params ["_s", "_n"]; while { count _s < _n } do { _s = " " + _s }; _s };
+
+    // Header cells use the same aligner as the column beneath them, or the
+    // label sits over the wrong end of its own numbers.
+    private _head =
+        ([ "#",      _w select 0] call _pad)  + " " +
+        ([ "PLAYER", _w select 1] call _pad)  + " " +
+        ([ "SCORE",  _w select 2] call _rpad) + " " +
+        ([ "KILLS",  _w select 3] call _rpad) + " " +
+        ([ "DEATHS", _w select 4] call _rpad) + " " + "K/D";
+
+    // The rule under the header is drawn to the width the columns actually
+    // occupy rather than to a hand-counted run of underscores.
+    private _ruleWidth = 0;
+    { _ruleWidth = _ruleWidth + _x + 1 } forEach _w;
+    _ruleWidth = _ruleWidth + 3;
+    private _bar = "";
+    for "_i" from 1 to _ruleWidth do { _bar = _bar + "_" };
+
+    // Header, rule and rows must all render at the SAME size. A monospace face
+    // gives a fixed advance width per glyph AT A GIVEN SIZE - it does not make
+    // 0.85 and 0.8 line up with each other. The header used to be 0.85 and the
+    // rule 0.7 against 0.8 rows, which mattered little while nothing aligned
+    // anyway and would have quietly undone this fix.
+    private _size = "0.8";
+
+    private _html = format ["<t size='%1' color='#3D9CFF'>%2</t><br/>", _size, _head];
+    _html = _html + format ["<t size='%1' color='#2A303A'>%2</t><br/>", _size, _bar];
 
     private _rank = 0;
     {
@@ -82,14 +137,31 @@ XCSV_fnc_scoreboardFill = {
         // fn_standing.sqf had spotted this and handled it; this file had not,
         // because the helper looked like part of that app. It is now in
         // xcsv\fn_shared.sqf.
+        // Order is truncate -> pad -> escape, and all three positions matter.
+        //
+        // Truncate first, because escaping first would let the 17-character cut
+        // land inside an entity like "&amp;" and emit "&am".
+        //
+        // Escape LAST, after padding, because the padding counts CHARACTERS and
+        // the escape changes the character count without changing the rendered
+        // width: "&" is one glyph but "&amp;" is five. Escaping before padding
+        // pads on markup length, so any name containing "&" or "<" would sit
+        // short and pull every column after it out of line. That was invisible
+        // while the face was proportional and everything was slightly wrong
+        // anyway; with a monospace face it would be obvious.
+        // Truncation is driven by the column width rather than a separate
+        // literal. It was hardcoded to 18 against a 30-wide column, throwing
+        // away twelve glyphs of a name for no reason, and pretending to be
+        // width-driven while not being.
+        private _nameMax = (_w select 1) - 1;
         private _shown = _name;
-        if (count _shown > 18) then { _shown = (_shown select [0, 17]) + "." };
-        _shown = [_shown] call XCSV_fnc_esc;
+        if (count _shown > _nameMax + 1) then { _shown = (_shown select [0, _nameMax]) + "." };
+        _shown = [[_shown, _w select 1] call _pad] call XCSV_fnc_esc;
 
-        // Pad to fixed widths. A monospace face is not guaranteed here, so this
-        // is approximate - good enough to read as columns, and it degrades to a
-        // readable list rather than to nonsense.
-        private _pad = { params ["_s", "_n"]; while { count _s < _n } do { _s = _s + " " }; _s };
+        // _pad and _w come from above, so the header and the rows are padded to
+        // the SAME widths by construction. This used to define its own _pad
+        // inside the loop - redefining an identical function once per player -
+        // while the header carried hand-counted spacing that did not match it.
         private _colour = switch (_rank) do {
             case 1: { "#E8B339" };   // gold
             case 2: { "#C0C6CE" };
@@ -98,13 +170,13 @@ XCSV_fnc_scoreboardFill = {
         };
 
         _html = _html + format [
-            "<t size='0.8' color='%1'>%2 %3 %4 %5 %6 %7</t><br/>",
+            "<t size='" + _size + "' color='%1'>%2 %3 %4 %5 %6 %7</t><br/>",
             _colour,
-            [format ["%1.", _rank], 4] call _pad,
-            [_shown, 30] call _pad,
-            [[_score] call XCSV_fnc_num, 8] call _pad,
-            [str _kills, 7] call _pad,
-            [str _deaths, 8] call _pad,
+            [format ["%1.", _rank], _w select 0] call _pad,
+            _shown,
+            [[_score] call XCSV_fnc_num, _w select 2] call _rpad,
+            [str _kills, _w select 3] call _rpad,
+            [str _deaths, _w select 4] call _rpad,
             str _kd
         ];
     } forEach _rows;

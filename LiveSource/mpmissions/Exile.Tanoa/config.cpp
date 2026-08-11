@@ -8188,6 +8188,43 @@ class XM8SlideXcsvScoreboard: RscExileXM8Slide
                     y = 0;
                     w = 29 * (0.025);   // minus 1, or the scrollbar overlaps
                     h = 15 * (0.04);
+
+                    /*
+                        Monospace, because the scoreboard's columns are
+                        space-padded and structured text has no table layout.
+                        Padding only lines up in a fixed-width face; in the
+                        inherited proportional face the columns were
+                        approximate, which fn_scoreboard.sqf's own comment used
+                        to concede.
+
+                        EtelkaMonospacePro is not a guess - it is already used
+                        inside this mission by RscInGameUI.hpp and by the
+                        paintshop addon, so it is known to load here.
+
+                        IT MUST GO IN class Attributes, NOT in a top-level
+                        `font` property. A CT_STRUCTURED_TEXT control takes its
+                        face from Attributes; RscExileXM8StructuredText sets
+                        font = "RobotoCondensed" there (RscDefines.hpp), and
+                        that wins over anything declared at the top level. This
+                        was written as a bare `font =` first, which would have
+                        left the proportional face in place and made the entire
+                        column fix silently do nothing - the failure would have
+                        been "the columns still look wrong" with no error
+                        anywhere.
+
+                        Every attribute is restated rather than relying on
+                        nested-class inheritance to merge, because a partial
+                        override that silently drops colorLink or shadow is the
+                        same class of quiet defect.
+                    */
+                    class Attributes
+                    {
+                        font = "EtelkaMonospacePro";
+                        color = "#ffffff";
+                        colorLink = "#D09B43";
+                        align = "left";
+                        shadow = 1;
+                    };
                 };
             };
         };
