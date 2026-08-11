@@ -15,3 +15,17 @@
 *.PDF	 diff=astextplain
 *.rtf	 diff=astextplain
 *.RTF	 diff=astextplain
+
+# =========================
+# Byte-faithful PBO source captures
+# =========================
+# LiveSource/server-addons/exile_server_config is the only surviving copy of the
+# server's economy (traders, prices, loadouts, territory). It must round-trip
+# through git unchanged so a repack reproduces the deployed addon exactly.
+# config.cpp has mixed line endings, which "* text=auto" above would rewrite to
+# uniform CRLF, so disable text/EOL conversion for that tree.
+#
+# NOTE: this rule lives here, not in a .gitattributes inside the addon folder,
+# because pbo.ps1 does not exclude .gitattributes when packing and would
+# otherwise bake it into the addon as a spurious entry.
+LiveSource/server-addons/exile_server_config/** -text
