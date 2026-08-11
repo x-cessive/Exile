@@ -141,7 +141,16 @@ XCSV_fnc_inspectorFill = {
     private _r = _rows select (_row - 1);
 
     private _html = format [
-        "<t size='1.1' color='#3D9CFF' align='center'>%1</t><br/>", _r select 1
+        // ESCAPED. This name came from Steam via the database, so it is
+        // player-controlled, and this is structured text where "<" opens a tag
+        // and "&" an entity. Unescaped, one player with "&" in their name
+        // corrupts the markup of the whole pane for the admin reading it.
+        //
+        // fn_scoreboard.sqf was fixed for exactly this on 2026-08-10. This file
+        // was not, because the name arrives from a database row rather than
+        // from a public variable and so did not look like the same thing. It is
+        // the same thing.
+        "<t size='1.1' color='#3D9CFF' align='center'>%1</t><br/>", [_r select 1] call XCSV_fnc_esc
     ];
     _html = _html + format ["<t color='#7E8896'>UID &nbsp;</t><t color='#E2E7EE'>%1</t><br/>", _r select 0];
     _html = _html + format ["<t color='#7E8896'>First &nbsp;</t><t color='#E2E7EE'>%1</t><br/>", _r select 6];

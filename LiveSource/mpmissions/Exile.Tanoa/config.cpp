@@ -8142,6 +8142,46 @@ class XM8_App20_Button: RscXcsvXM8AppButtonGrid
 //											   BELOW IS WHERE ALL THE XM8 APP RESOURCES CAN GO
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////
+//  Content group with a scrollbar that ACTUALLY DRAWS.
+//
+//  RscExileXM8ControlsGroupNoHScrollbars declares `class VScrollbar{}` EMPTY
+//  over a forward-declared A3 base, so the scrollbar inherits no width and
+//  never renders. Only XM8SlideXcsvScoreboard ever spelled it out; Standing,
+//  Insurance, Field Notes, Prices and Player Inspector have all been silently
+//  CLIPPING their content rather than scrolling it.
+//
+//  type and style are restated deliberately. These slides are built with
+//  ctrlCreate, and a class that inherits `type` from a forward declaration
+//  resolves to nothing and kills ctrlCreate with "No entry '...type'" - which
+//  is exactly how RscExileXM8SearchEdit failed when it was based on RscEdit.
+//////////////////////////////////////////////////////////////////////////////
+class RscXcsvGroup: RscExileXM8ControlsGroupNoHScrollbars
+{
+    idc = -1;
+    type = 15;
+    style = 16;
+    class VScrollbar
+    {
+        color[] = {1, 1, 1, 0.6};
+        width = 0.021;
+        height = 0;
+        shadow = 0;
+        scrollSpeed = 0.06;
+        autoScrollEnabled = 0;
+        autoScrollSpeed = -1;
+        autoScrollDelay = 5;
+        autoScrollRewind = 0;
+        thumb      = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+        arrowFull  = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+        arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+        border     = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+    };
+    class HScrollbar { color[] = {1, 1, 1, 0.6}; height = 0; shadow = 0; };
+};
+
+
 /*
     XCSV Scoreboard slide.
 
@@ -8189,7 +8229,7 @@ class XM8SlideXcsvScoreboard: RscExileXM8Slide
             The 0.040 of height given up is precisely the strip that was
             swallowing the button. Scrolling gives it back with interest.
         */
-        class ScoreboardGroup: RscExileXM8ControlsGroupNoHScrollbars
+        class ScoreboardGroup: RscXcsvGroup
         {
             idc = -1;
             x = (5 - 3) * (0.025);      // 0.050 - left margin 0.050
@@ -8313,7 +8353,7 @@ class XM8SlideXcsvStanding: RscExileXM8Slide
 
                     // Was y=(5-2)*0.04 h=15*0.04 (bottom 0.720), which covered the GO BACK
             // button at 0.680-0.720. Matches XM8SlideXcsvPolicy's geometry now.
-class StandingGroup: RscExileXM8ControlsGroupNoHScrollbars
+class StandingGroup: RscXcsvGroup
         {
             idc = -1;
             x = (5 - 3) * (0.025);
@@ -8395,7 +8435,7 @@ class XM8SlideXcsvPolicy: RscExileXM8Slide
             onButtonClick = "call XCSV_fnc_policyBuy";
         };
 
-        class BodyGroup: RscExileXM8ControlsGroupNoHScrollbars
+        class BodyGroup: RscXcsvGroup
         {
             idc = -1;
             x = (5 - 3) * (0.025);
@@ -8466,7 +8506,7 @@ class XM8SlideXcsvPrices: RscExileXM8Slide
 
                     // Was h=15.5*0.04 from y=0.080 (bottom 0.700), overlapping GO BACK at
             // 0.680-0.720. Trimmed to end at 0.640, one cell clear.
-class DetailGroup: RscExileXM8ControlsGroupNoHScrollbars
+class DetailGroup: RscXcsvGroup
         {
             idc = -1;
             x = (18 - 3) * (0.025);
@@ -8543,7 +8583,7 @@ class XM8SlideXcsvInspector: RscExileXM8Slide
             onLBSelChanged = "[_this select 1] call XCSV_fnc_inspectorFill";
         };
 
-        class DetailGroup: RscExileXM8ControlsGroupNoHScrollbars
+        class DetailGroup: RscXcsvGroup
         {
             idc = -1;
             x = (18 - 3) * (0.025);
@@ -8598,7 +8638,7 @@ class XM8SlideXcsvNotes: RscExileXM8Slide
 
                     // Was y=(5-2)*0.04 h=15*0.04 (bottom 0.720), which covered the GO BACK
             // button at 0.680-0.720. Matches XM8SlideXcsvPolicy's geometry now.
-class NotesGroup: RscExileXM8ControlsGroupNoHScrollbars
+class NotesGroup: RscXcsvGroup
         {
             idc = -1;
             x = (15 - 3) * (0.025);
