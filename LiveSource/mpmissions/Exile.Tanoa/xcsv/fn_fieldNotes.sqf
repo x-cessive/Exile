@@ -44,6 +44,20 @@ XCSV_NOTES = [
     Drink from wells and taps rather than the sea. Cook meat before eating it.
     "],
 
+    ["Fresh arrival", "
+    <t size='1.0' color='#3D9CFF'>FRESH ARRIVAL</t><br/><br/>
+    The old hands call a new spawn <t color='#E8B339'>Bambi</t>. It is not an
+    insult. It is a timer.<br/><br/>
+    This server gives a fresh spawn <t color='#E8B339'>5 minutes</t> of Bambi
+    state. The protection is for leaving the coast and getting oriented, not for
+    starting fights.<br/><br/>
+    It can end early when you arm yourself. Treat the first weapon you pick up as
+    the moment the island starts taking you seriously.<br/><br/>
+    Your spawn kit is deliberately small: map, compass, XM8, radio and one fresh
+    water. Find food, a blade, and somewhere inland before you start hoarding
+    loot. The coast is where people look first.
+    "],
+
     ["Medical", "
     <t size='1.0' color='#3D9CFF'>MEDICAL</t><br/><br/>
     Exile's medical model is short and unforgiving, and nothing in game explains
