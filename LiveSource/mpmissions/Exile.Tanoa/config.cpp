@@ -2478,7 +2478,9 @@ class CfgExileArsenal
 	// UAVS
 	///////////////////////////////////////////////////////////////////////////////
 	class I_UavTerminal								{ quality = 4; price = 750; };
-	class I_UAV_01_backpack_F						{ quality = 4; price = 3000; };
+	class I_UAV_01_backpack_F						{ quality = 4; price = 4500; };
+	class launch_I_Titan_F							{ quality = 5; price = 15000; };
+	class Titan_AA									{ quality = 5; price = 2500; };
 
 	///////////////////////////////////////////////////////////////////////////////
 	// Static MGs
@@ -5753,12 +5755,14 @@ class CfgTraderCategories
 
 	class UAVs
 	{
-		name = "Unmanned Aerial Vehicles";
+		name = "DRONES & ELECTRONICS";
 		icon = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\gps_ca.paa";
 		items[] =
 		{
 			"I_UavTerminal",
-			"I_UAV_01_backpack_F"
+			"I_UAV_01_backpack_F",
+			"launch_I_Titan_F",
+			"Titan_AA"
 		};
 	};
 
@@ -7901,6 +7905,13 @@ class CfgXM8
 		appID = "App21";
 		title = "Bounty Board";
 	};
+
+	class xcsvDrone
+	{
+		controlID = 71870;
+		appID = "App22";
+		title = "Drone Control";
+	};
 };
 /*
 	XCSV grid button. Every XM8_AppNN_Button inherits this instead of
@@ -8200,6 +8211,16 @@ class XM8_App21_Button: RscXcsvXM8AppButtonGrid
     text = "Bounties";
     onButtonClick = "call XCSV_fnc_bountyShow";
     resource = "XM8SlideXcsvBounty";
+};
+
+// Drone Control, XM8 App22. Native Arma UAV systems remain authoritative; this
+// app is a thin XCSV status and convenience surface around the AAF terminal.
+class XM8_App22_Button: RscXcsvXM8AppButtonGrid
+{
+    textureNoShortcut = "xcsv\icons\xm8_app_xcsv_prices_ca.paa";
+    text = "Drones";
+    onButtonClick = "call XCSV_fnc_droneShow";
+    resource = "XM8SlideXcsvDrone";
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -8771,6 +8792,90 @@ class XM8SlideXcsvBounty: RscExileXM8Slide
                     x = 0;
                     y = 0;
                     w = 19 * (0.025);
+                    h = 14 * (0.04);
+                };
+            };
+        };
+    };
+};
+
+class XM8SlideXcsvDrone: RscExileXM8Slide
+{
+    idc = 71870;
+
+    class Controls
+    {
+        class GoBackButton: RscExileXM8ButtonMenu
+        {
+            idc = 71875;
+            text = "GO BACK";
+            x = (30 - 3) * (0.025);
+            y = (19 - 2) * (0.04);
+            w = 6 * (0.025);
+            h = 1 * (0.04);
+            onButtonClick = "['extraApps', 1] call ExileClient_gui_xm8_slide";
+        };
+
+        class OpenTerminalButton: RscExileXM8ButtonMenu
+        {
+            idc = 71876;
+            text = "OPEN TERMINAL";
+            x = (5 - 3) * (0.025);
+            y = (19 - 2) * (0.04);
+            w = 9 * (0.025);
+            h = 1 * (0.04);
+            onButtonClick = "call XCSV_fnc_droneOpenTerminal";
+        };
+
+        class ConnectButton: RscExileXM8ButtonMenu
+        {
+            idc = 71877;
+            text = "CONNECT";
+            x = (15 - 3) * (0.025);
+            y = (19 - 2) * (0.04);
+            w = 6 * (0.025);
+            h = 1 * (0.04);
+            onButtonClick = "call XCSV_fnc_droneConnectSelected";
+        };
+
+        class DisconnectButton: RscExileXM8ButtonMenu
+        {
+            idc = 71878;
+            text = "DISCONNECT";
+            x = (22 - 3) * (0.025);
+            y = (19 - 2) * (0.04);
+            w = 7 * (0.025);
+            h = 1 * (0.04);
+            onButtonClick = "call XCSV_fnc_droneDisconnect";
+        };
+
+        class DroneList: RscExileXM8ListBox
+        {
+            idc = 71871;
+            x = (5 - 3) * (0.025);
+            y = (5 - 2) * (0.04);
+            w = 11 * (0.025);
+            h = 13 * (0.04);
+            onLBSelChanged = "[_this select 1] call XCSV_fnc_droneFill";
+        };
+
+        class DroneGroup: RscXcsvGroup
+        {
+            idc = -1;
+            x = (17 - 3) * (0.025);
+            y = (5 - 2) * (0.04);
+            w = 18 * (0.025);
+            h = 13 * (0.04);
+            colorBackground[] = {0, 0, 0, 0.25};
+
+            class controls
+            {
+                class DroneBody: RscExileXM8StructuredText
+                {
+                    idc = 71872;
+                    x = 0;
+                    y = 0;
+                    w = 17 * (0.025);
                     h = 14 * (0.04);
                 };
             };

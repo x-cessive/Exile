@@ -350,3 +350,8 @@ call compile preprocessFileLineNumbers "xcsv\fn_shared.sqf";
 // board surface and planned rules without posting money, targeting anyone or
 // installing death hooks.
 [] execVM "xcsv\fn_bountyBoard.sqf";
+
+// Drone Control, XM8 App22. Native Arma UAV control remains authoritative; this
+// client app reports terminal/drone status and opens/connects via native UAV
+// commands. No custom flight UI, object creation, database writes or polling.
+[] execVM "xcsv\fn_droneControl.sqf";
