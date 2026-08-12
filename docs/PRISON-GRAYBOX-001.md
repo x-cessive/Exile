@@ -62,6 +62,9 @@ These are inspection candidates only. Terrain slope and visual fit remain
   and footprint markers in an undoable `PRISON_SITE_CANDIDATES` layer.
 - `tools\eden\prison_graybox_tools.sqf` defines narrow helpers for layers, line
   placement, major mass placement and selected-object baseline measurement.
+- Mission-local copies are available under
+  `LiveSource\mpmissions\Exile.Tanoa\tools\eden\`, so Eden can run:
+  `execVM "tools\eden\prison_site_candidates.sqf";`
 
 The helpers use Eden APIs only as construction aids. The resulting accepted
 objects must remain editable in Eden.
@@ -72,4 +75,3 @@ This checkpoint stops before permanent prison geometry. Next required action is
 Architect visual inspection and site selection in Eden.
 
 Verdict: `READY_FOR_ARCHITECT_SITE_SELECTION`.
-
