@@ -53,6 +53,26 @@ These are inspection candidates only. Terrain slope and visual fit remain
 | id | anchor | approximate footprint | orientation | notes |
 |---|---:|---:|---:|---|
 | `A_NORTH_CENTRAL_COAST` | `[7140,11800,0]` | 520m x 360m | 35 deg | Coastal/dock concept, road-network potential, must verify separation from north trader/spawn activity. |
+
+## Selected Site: A_NORTH_CENTRAL_COAST (2026-08-12)
+
+Architect selected `A_NORTH_CENTRAL_COAST`, anchor `[7140,11800,0]`, footprint
+`520m x 360m`, heading `35 deg`.
+
+`tools/eden/prison_graybox_build.sqf` is the parametrized graybox builder for the
+selected site. Run in Eden after loading `prison_graybox_tools.sqf`:
+
+```
+execVM "tools\eden\prison_graybox_tools.sqf";
+execVM "tools\eden\prison_graybox_build.sqf";
+```
+
+The builder creates the perimeter, towers, gatehouse/intake band, cellblocks,
+max-sec/SHU, medical/workshop, armory/utilities and dock staging as ONE undoable
+history step in the `PRISON_*` layers. Every classname used is verified against
+the running-server classdump. The builder never saves `mission.sqm`; the accepted
+layout remains editable Eden source under Git custody. Terrain slope/visual fit
+remain to be accepted in Eden before any `PASS_GRAYBOX_VERIFIED` claim.
 | `B_EAST_INLAND_APPROACH` | `[13300,10400,0]` | 560m x 380m | 315 deg | Isolated approach and good sight-line concept, dock support uncertain. |
 | `C_WESTERN_COASTAL_EDGE` | `[4400,11850,0]` | 500m x 340m | 80 deg | Strong transfer-dock flavor, but contaminated-zone separation and road approach need visual proof. |
 

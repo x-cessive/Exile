@@ -22,7 +22,25 @@ Use this order:
 5. Architect visually inspects the `PRISON_SITE_CANDIDATES` layer and selects a
    site.
 6. Record the selected anchor coordinate and orientation.
-7. Only then run graybox helper functions from `prison_graybox_tools.sqf`.
+7. Run graybox helper functions from `prison_graybox_tools.sqf` and then the
+   parametrized site builder:
+
+   ```
+   execVM "tools\eden\prison_graybox_tools.sqf";
+   execVM "tools\eden\prison_graybox_build.sqf";
+   ```
+
+   `prison_graybox_build.sqf` creates the selected site's perimeter + interior
+   masses as one undoable history step in the `PRISON_*` layers. It never saves
+   `mission.sqm`; the accepted layout must remain editable Eden source.
+
+## A_NORTH_CENTRAL_COAST (Architect-selected 2026-08-12)
+
+- anchor: `[7140, 11800, 0]`, footprint `520m x 360m`, heading `35 deg`.
+- Parametrized builder: `prison_graybox_build.sqf` (single undo step,
+  `PRISON_*` layers, all classnames verified against the server classdump).
+- Coord frame: local x along heading, local y 90 deg clockwise from north;
+  world = anchor + lx*fwd + ly*right.
 
 Do not save candidate markers as accepted prison geometry unless Architect
 explicitly chooses to keep them as evidence. They are temporary inspection aids.
