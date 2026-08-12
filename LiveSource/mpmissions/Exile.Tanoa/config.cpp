@@ -2635,6 +2635,7 @@ class CfgExileArsenal
 	class Exile_Item_Handsaw						{ quality = 2; price = 500; };
 	class Exile_Item_Pliers							{ quality = 2; price = 350; };
 	class Exile_Item_Grinder						{ quality = 2; price = 1250; };
+	class Exile_Magazine_Battery					{ quality = 2; price = 250; };
 	class Exile_Item_Foolbox						{ quality = 2; price = 4000; };
 	//class Exile_Item_CordlessScrewdriver			{ quality = 1; price = 750; };
 	//class Exile_Item_FireExtinguisher				{ quality = 1; price = 650; };
@@ -5982,6 +5983,7 @@ class CfgTraderCategories
 			"Exile_Item_Handsaw",
 			"Exile_Item_Pliers",
 			"Exile_Item_Grinder",
+			"Exile_Magazine_Battery",
 			"Exile_Item_Foolbox",
 
 			/*
