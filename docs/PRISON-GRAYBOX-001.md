@@ -89,9 +89,36 @@ remain to be accepted in Eden before any `PASS_GRAYBOX_VERIFIED` claim.
 The helpers use Eden APIs only as construction aids. The resulting accepted
 objects must remain editable in Eden.
 
+## Runtime Deployment (2026-08-12, temporary in-game test)
+
+The Eden builder is `is3DEN`-gated and cannot run headless, so a temporary
+server-side graybox was added for in-game inspection pending the accepted Eden
+layout:
+
+- `LiveSource\mpmissions\Exile.Tanoa\xcsv\fn_prisonGraybox.sqf` spawns the
+  selected site (anchor `[7140,11800,0]`, heading `35 deg`) terrain-snapped via
+  `setPosATL`, gated by `XCSV_PRISON_GRAYBOX_TEST` (default true). This is
+  TEMPORARY test geometry; canonical custody stays with the Eden-authored
+  mission source once accepted.
+- Hooked at the end of `LiveSource\mpmissions\Exile.Tanoa\initServer.sqf`.
+- Packed with `tools\pbo\pbo.ps1`; round-trip verified (363 files each way, zero
+  path deltas, prefix `Exile.Tanoa`, checksum OK).
+- Live PBO backed up to
+  `E:\arma3server\mpmissions\Exile.Tanoa.pbo.20260812-011829.PRECAGE.bak`
+  (SHA256 `40C746125B278505112CD8D3FE6AC9BB9425235F7ECAE02B5B1F5AA31D0D9E28`).
+  Deployed PBO SHA256
+  `E337E72407F62A521C97FB917D750974F52CC0FFF81ADB66C14D0E5A3E68D79B`
+  (4,401,405 bytes, 362 entries).
+- Server RPT `arma3server_x64_2026-08-12_01-19-44.rpt` confirms:
+  `[PRISON-GRAYBOX-001] building A_NORTH_CENTRAL_COAST runtime graybox` and
+  `[PRISON-GRAYBOX-001] graybox spawned: 441 wall segments, tower/mass
+  placements done`.
+- Source committed in `E:\ExileRepo` as `c213636`.
+
 ## Stop Condition
 
 This checkpoint stops before permanent prison geometry. Next required action is
-Architect visual inspection and site selection in Eden.
+Architect visual inspection of the runtime graybox in game and the site in Eden.
 
-Verdict: `READY_FOR_ARCHITECT_SITE_SELECTION`.
+Verdict: `RUNTIME_GRAYBOX_DEPLOYED` (temporary test only, awaiting Architect
+in-game and in-Eden acceptance before `PASS_GRAYBOX_VERIFIED`).
