@@ -7885,6 +7885,13 @@ class CfgXM8
 		appID = "App19";
 		title = "Insurance";
 	};
+
+	class xcsvBounty
+	{
+		controlID = 71860;
+		appID = "App21";
+		title = "Bounty Board";
+	};
 };
 /*
 	XCSV grid button. Every XM8_AppNN_Button inherits this instead of
@@ -8173,6 +8180,17 @@ class XM8_App20_Button: RscXcsvXM8AppButtonGrid
     text = "Players";
     onButtonClick = "call XCSV_fnc_inspectorShow";
     resource = "XM8SlideXcsvInspector";
+};
+
+// Bounty Board, XM8 App21. First slice is deliberately read-only. The unused
+// bounty addons in the repository are NOT activated here; money posting,
+// target selection and death payouts need their own server-side integration.
+class XM8_App21_Button: RscXcsvXM8AppButtonGrid
+{
+    textureNoShortcut = "xcsv\icons\xm8_app_xcsv_policy_ca.paa";
+    text = "Bounties";
+    onButtonClick = "call XCSV_fnc_bountyShow";
+    resource = "XM8SlideXcsvBounty";
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -8693,6 +8711,57 @@ class NotesGroup: RscXcsvGroup
                     x = 0;
                     y = 0;
                     w = 19 * (0.025);   // minus 1 for the scrollbar
+                    h = 14 * (0.04);
+                };
+            };
+        };
+    };
+};
+
+class XM8SlideXcsvBounty: RscExileXM8Slide
+{
+    idc = 71860;
+
+    class Controls
+    {
+        class GoBackButton: RscExileXM8ButtonMenu
+        {
+            idc = 71863;
+            text = "GO BACK";
+            x = (30 - 3) * (0.025);
+            y = (19 - 2) * (0.04);
+            w = 6 * (0.025);
+            h = 1 * (0.04);
+            onButtonClick = "['extraApps', 1] call ExileClient_gui_xm8_slide";
+        };
+
+        class TopicList: RscExileXM8ListBox
+        {
+            idc = 71861;
+            x = (5 - 3) * (0.025);
+            y = (5 - 2) * (0.04);
+            w = 9 * (0.025);
+            h = 13 * (0.04);
+            onLBSelChanged = "[_this select 1] call XCSV_fnc_bountyFill";
+        };
+
+        class BountyGroup: RscXcsvGroup
+        {
+            idc = -1;
+            x = (15 - 3) * (0.025);
+            y = (5 - 2) * (0.04);
+            w = 20 * (0.025);
+            h = 13 * (0.04);
+            colorBackground[] = {0, 0, 0, 0.25};
+
+            class controls
+            {
+                class BountyBody: RscExileXM8StructuredText
+                {
+                    idc = 71862;
+                    x = 0;
+                    y = 0;
+                    w = 19 * (0.025);
                     h = 14 * (0.04);
                 };
             };

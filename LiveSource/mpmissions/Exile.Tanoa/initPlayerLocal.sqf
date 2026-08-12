@@ -345,3 +345,8 @@ call compile preprocessFileLineNumbers "xcsv\fn_shared.sqf";
 // its own whitelist and answers the requesting admin with the account + flag
 // rows via xcsvInspectResponse. Read-only. See xcsv\fn_playerInspector.sqf.
 [] execVM "xcsv\fn_playerInspector.sqf";
+
+// Bounty Board, XM8 App21. First slice is read-only: it exposes the player
+// board surface and planned rules without posting money, targeting anyone or
+// installing death hooks.
+[] execVM "xcsv\fn_bountyBoard.sqf";
