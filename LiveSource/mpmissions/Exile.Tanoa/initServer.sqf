@@ -886,3 +886,6 @@ forEach _simpleObjects;
 
 // Safezone Markers -- draws safezone circles on the map
 call compile preprocessFileLineNumbers "custom\SafezoneMarkers\initSafezoneMarkers.sqf";
+
+// PRISON-GRAYBOX-001 -- temporary runtime graybox for site A (server-side test)
+call compile preprocessFileLineNumbers "xcsv\fn_prisonGraybox.sqf";
