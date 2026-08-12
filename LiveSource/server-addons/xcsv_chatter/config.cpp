@@ -14,9 +14,9 @@
 
     * Server-side only. Lives in @ExileServer\addons. Players download nothing.
 
-    * Creates no objects. BattlEye fights createVehicle/deleteVehicle/setPos,
-      and auto-whitelisting those is how you open a cheat vector. Chatter only
-      sends text, so BE stays quiet and no filter exceptions are needed.
+    * Most modules create no objects. The XCSV scene module is the exception:
+      it creates bounded server-side world content only. Clients still get no
+      createVehicle authority, so BattlEye filter exposure stays unchanged.
 
     * Uses ExileServer_system_thread_addTask, NOT its own `while {true}` loop.
       Arma runs every scheduled script on ONE thread sharing ~3ms per frame;
@@ -96,6 +96,16 @@ class CfgFunctions
             file = "xcsv_chatter\weather";
 
             class blackoutTick {};
+        };
+
+        // Server-authored world scenes. First slice: poptab courier vans with
+        // dead runners and a locked safe that uses Exile's existing grinder
+        // action. Bounded count, tagged objects, no database persistence.
+        class Scenes
+        {
+            file = "xcsv_chatter\scenes";
+
+            class courierScenes {};
         };
 
         // "While you were away." A private situation report pushed once to each

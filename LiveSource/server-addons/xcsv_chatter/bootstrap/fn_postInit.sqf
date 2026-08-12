@@ -149,6 +149,23 @@ diag_log format [
 ];
 
 /* ------------------------------------------------------------------------
+   Courier wreck scenes
+
+   A small server-authored content slice: wrecked poptab vans with dead runners
+   and one locked safe. It is intentionally scheduled once after boot, not a
+   private loop. The scene code owns its object budget and tags every object it
+   creates so later cleanup/diagnostics can distinguish it from ordinary Exile
+   state.
+   ------------------------------------------------------------------------ */
+
+[] spawn {
+    uiSleep 120;
+    call xcsv_chatter_fnc_courierScenes;
+};
+
+diag_log "[XCSV_SCENE] courier scenes scheduled after startup settle.";
+
+/* ------------------------------------------------------------------------
    Dead Man's Switch — the first client->server write path (roadmap 12.6).
 
    Two wirings are needed and both are easy to get wrong:

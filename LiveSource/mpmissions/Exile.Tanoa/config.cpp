@@ -4443,6 +4443,13 @@ class CfgInteractionMenus
 				condition = "(getNumber(missionConfigFile >> 'CfgHacking' >> 'enableHacking') isEqualTo 1) && ('Exile_Item_Laptop' in (magazines player)) && ((ExileClientInteractionObject getvariable ['ExileIsLocked',1]) isEqualTo -1) && !ExilePlayerInSafezone";
 				action = "['HackLock', _this select 0] call ExileClient_action_execute";
 			};
+
+			class GrindLock: ExileAbstractAction
+			{
+				title = "Grind Lock";
+				condition = "(getNumber(missionConfigFile >> 'CfgGrinding' >> 'enableGrinding') isEqualTo 1) && ('Exile_Item_Grinder' in (magazines player)) && ('Exile_Magazine_Battery' in (magazines player)) && ((ExileClientInteractionObject getvariable ['ExileIsLocked',1]) isEqualTo -1) && !ExilePlayerInSafezone";
+				action = "['GrindLock', _this select 0] call ExileClient_action_execute";
+			};
 		};
 	};
 
