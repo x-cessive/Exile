@@ -13,6 +13,7 @@ missionNamespace setVariable ["XCSV_SCENE_CouriersSpawned", true];
 
 private _maxScenes = 2;
 private _objects = [];
+private _markers = [];
 
 private _anchors = [
     ["Lijnhaven road", [2283.58, 8591.60, 0], 80],
@@ -28,6 +29,11 @@ private _bodyTypes = [
     "I_C_Soldier_Bandit_3_F",
     "I_C_Soldier_Bandit_4_F",
     "I_C_Soldier_Bandit_5_F"
+];
+
+private _bodyAnimations = [
+    "AinjPpneMstpSnonWnonDnon",
+    "AinjPpneMstpSnonWrflDnon"
 ];
 
 private _fnc_tag = {
@@ -69,12 +75,16 @@ _selected resize (_maxScenes min (count _selected));
     private _wreck = createVehicle ["Land_Wreck_Van_F", _pos, [], 0, "CAN_COLLIDE"];
     _wreck setDir _dir;
     _wreck setPosATL _pos;
+    _wreck setVectorUp (surfaceNormal _pos);
     [_wreck, _sceneId] call _fnc_tag;
 
     private _safePos = _wreck modelToWorld [2.8, -2.4, 0];
+    _safePos set [2, 0];
     private _safe = createVehicle ["Exile_Container_Safe_Small", _safePos, [], 0, "CAN_COLLIDE"];
     _safe setDir (_dir + 25);
     _safe setPosATL _safePos;
+    _safe setPosATL [_safePos select 0, _safePos select 1, -0.08];
+    _safe setVectorUp (surfaceNormal _safePos);
     clearWeaponCargoGlobal _safe;
     clearItemCargoGlobal _safe;
     clearMagazineCargoGlobal _safe;
@@ -95,9 +105,16 @@ _selected resize (_maxScenes min (count _selected));
         private _group = createGroup independent;
         private _unit = _group createUnit [selectRandom _bodyTypes, _bodyPos, [], 0, "CAN_COLLIDE"];
         _unit setDir (_dir + 70 + random 180);
+        _unit setPosATL [_bodyPos select 0, _bodyPos select 1, 0];
+        _unit setUnitPos "DOWN";
         removeAllWeapons _unit;
         removeBackpackGlobal _unit;
         removeHeadgear _unit;
+        removeVest _unit;
+        removeAllAssignedItems _unit;
+        _unit disableAI "MOVE";
+        _unit switchMove (selectRandom _bodyAnimations);
+        _unit disableAI "ANIM";
         _unit setVariable ["ExileMoney", 450 + floor (random 1600), true];
         _unit setVariable ["ExileName", "Courier", true];
         [_unit, _sceneId] call _fnc_tag;
@@ -112,6 +129,21 @@ _selected resize (_maxScenes min (count _selected));
         _label
     ] remoteExecCall ["systemChat", -2];
 
+    private _areaMarker = createMarker [format ["XCSV_SCENE_%1_area", _sceneId], _pos];
+    _areaMarker setMarkerShape "ELLIPSE";
+    _areaMarker setMarkerSize [180, 180];
+    _areaMarker setMarkerColor "ColorOrange";
+    _areaMarker setMarkerBrush "Border";
+    _areaMarker setMarkerAlpha 0.65;
+    _markers pushBack _areaMarker;
+
+    private _iconMarker = createMarker [format ["XCSV_SCENE_%1_icon", _sceneId], _pos];
+    _iconMarker setMarkerShape "ICON";
+    _iconMarker setMarkerType "hd_destroy";
+    _iconMarker setMarkerColor "ColorOrange";
+    _iconMarker setMarkerText "SALVAGE: Courier Wreck";
+    _markers pushBack _iconMarker;
+
     diag_log format [
         "[XCSV_SCENE] courier scene %1 spawned near %2 at %3 with %4 objects, safe poptabs %5.",
         _sceneId,
@@ -123,7 +155,8 @@ _selected resize (_maxScenes min (count _selected));
 } forEach _selected;
 
 missionNamespace setVariable ["XCSV_SCENE_CourierObjects", _objects, false];
+missionNamespace setVariable ["XCSV_SCENE_CourierMarkers", _markers, false];
 
-diag_log format ["[XCSV_SCENE] courier scene spawn complete: %1 scene(s), %2 object(s).", count _selected, count _objects];
+diag_log format ["[XCSV_SCENE] courier scene spawn complete: %1 scene(s), %2 object(s), %3 marker(s).", count _selected, count _objects, count _markers];
 
 true
