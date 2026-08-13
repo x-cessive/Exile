@@ -8975,7 +8975,7 @@ class XM8SlideXcsvOwner: RscExileXM8Slide
         class ModeLoadouts: RscExileXM8ButtonMenu
         {
             idc = 71882;
-            text = "LOADOUTS";
+            text = "KIT";
             x = (5 - 3) * (0.025);
             y = (5 - 2) * (0.04);
             w = 8 * (0.025);
@@ -8985,22 +8985,36 @@ class XM8SlideXcsvOwner: RscExileXM8Slide
         class ModeEconomy: ModeLoadouts
         {
             idc = 71883;
-            text = "ECONOMY";
-            y = (6.4 - 2) * (0.04);
+            text = "MONEY";
+            y = (6.2 - 2) * (0.04);
             onButtonClick = "['economy'] call XCSV_fnc_ownerSelectMode";
         };
         class ModeWorld: ModeLoadouts
         {
             idc = 71884;
             text = "WORLD";
-            y = (7.8 - 2) * (0.04);
+            y = (7.4 - 2) * (0.04);
             onButtonClick = "['world'] call XCSV_fnc_ownerSelectMode";
+        };
+        class ModeTeleport: ModeLoadouts
+        {
+            idc = 71885;
+            text = "TRAVEL";
+            y = (8.6 - 2) * (0.04);
+            onButtonClick = "['teleport'] call XCSV_fnc_ownerSelectMode";
+        };
+        class ModeAssist: ModeLoadouts
+        {
+            idc = 71886;
+            text = "ASSIST";
+            y = (9.8 - 2) * (0.04);
+            onButtonClick = "['assist'] call XCSV_fnc_ownerSelectMode";
         };
         class ModeServer: ModeLoadouts
         {
-            idc = 71885;
+            idc = 71887;
             text = "DIRECTOR";
-            y = (9.2 - 2) * (0.04);
+            y = (11 - 2) * (0.04);
             onButtonClick = "['server'] call XCSV_fnc_ownerSelectMode";
         };
 
@@ -9083,11 +9097,11 @@ class XM8SlideXcsvOwner: RscExileXM8Slide
         {
             idc = 71903;
             x = (5 - 3) * (0.025);
-            y = (12 - 2) * (0.04);
+            y = (12.5 - 2) * (0.04);
             w = 8 * (0.025);
             h = 2 * (0.04);
             colorBackground[] = {0, 0, 0, 0.18};
-            text = "<t size='0.72' color='#7E8896'>UID locked. Server authorized.</t>";
+            text = "<t size='0.72' color='#7E8896'>Owner only. Server authorized.</t>";
         };
     };
 };
