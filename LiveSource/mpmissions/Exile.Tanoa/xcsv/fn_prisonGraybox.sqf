@@ -15,7 +15,7 @@
 */
 
 if (!isServer) exitWith {};
-if (isNil "XCSV_PRISON_GRAYBOX_TEST") then { XCSV_PRISON_GRAYBOX_TEST = true; };
+if (isNil "XCSV_PRISON_GRAYBOX_TEST") then { XCSV_PRISON_GRAYBOX_TEST = false; };
 if (!XCSV_PRISON_GRAYBOX_TEST) exitWith {
     diag_log "[PRISON-GRAYBOX-001] disabled (XCSV_PRISON_GRAYBOX_TEST false)";
 };

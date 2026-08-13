@@ -1,9 +1,9 @@
 /*
     xcsv_chatter\scenes\fn_courierScenes.sqf
 
-    Server-side authored scene slice: poptab courier vans that did not make it.
-    Each scene is bounded and restart-local: wreck prop, dead couriers with
-    carried poptabs, and one locked safe with a larger payout. No DB rows are
+    Server-side authored scene slice: poptab courier vans under armed guard.
+    Each scene is bounded and restart-local: wreck prop, live guards around
+    the lockbox, and one locked safe with a larger payout. No DB rows are
     created and no client receives object-creation authority.
 */
 
@@ -23,17 +23,16 @@ private _anchors = [
     ["Georgetown old supply route", [5600.00, 9800.00, 0], 310]
 ];
 
-private _bodyTypes = [
-    "I_C_Soldier_Bandit_1_F",
-    "I_C_Soldier_Bandit_2_F",
-    "I_C_Soldier_Bandit_3_F",
-    "I_C_Soldier_Bandit_4_F",
-    "I_C_Soldier_Bandit_5_F"
+private _guardTypes = [
+    "O_G_Soldier_F",
+    "O_G_Soldier_lite_F",
+    "O_G_Soldier_AR_F"
 ];
 
-private _bodyAnimations = [
-    "AinjPpneMstpSnonWnonDnon",
-    "AinjPpneMstpSnonWrflDnon"
+private _guardLoadouts = [
+    ["U_O_V_Soldier_Viper_F",     "V_PlateCarrierGL_tna_F",  "H_HelmetO_ViperSP_ghex_F", "arifle_ARX_ghex_F",     "30Rnd_65x39_caseless_green", "optic_Hamr_khk_F", "muzzle_snds_65_TI_ghex_F"],
+    ["U_O_V_Soldier_Viper_hex_F", "V_PlateCarrierSpec_blk",  "H_HelmetO_ViperSP_hex_F",  "arifle_SPAR_03_blk_F",  "20Rnd_762x51_Mag",           "optic_DMS",        "muzzle_snds_B"],
+    ["U_O_T_Soldier_F",           "V_PlateCarrierGL_blk",    "H_HelmetLeaderO_ghex_F",   "arifle_MX_SW_Black_F",  "100Rnd_65x39_caseless_mag",  "optic_Hamr",       "muzzle_snds_H_MG_blk_F"]
 ];
 
 private _fnc_tag = {
@@ -95,37 +94,60 @@ _selected resize (_maxScenes min (count _selected));
     _safe setVariable ["ExileMoney", 8500 + floor (random 9500), true];
     [_safe, _sceneId] call _fnc_tag;
 
+    private _guardGroup = createGroup [east, true];
+    _guardGroup setCombatMode "RED";
+    _guardGroup setBehaviour "AWARE";
+    _guardGroup enableAttack true;
+
     for "_i" from 0 to 2 do {
         private _offset = [
-            [-2.0, -1.0, 0],
-            [1.6, 1.4, 0],
-            [-0.8, 3.0, 0]
+            [-5.0, -1.5, 0],
+            [4.5, 2.0, 0],
+            [-1.0, 6.0, 0]
         ] select _i;
-        private _bodyPos = _wreck modelToWorld _offset;
-        private _group = createGroup independent;
-        private _unit = _group createUnit [selectRandom _bodyTypes, _bodyPos, [], 0, "CAN_COLLIDE"];
+        private _guardPos = _wreck modelToWorld _offset;
+        private _unit = _guardGroup createUnit [selectRandom _guardTypes, _guardPos, [], 0, "CAN_COLLIDE"];
+        private _kit = _guardLoadouts select (_i mod (count _guardLoadouts));
         _unit setDir (_dir + 70 + random 180);
-        _unit setPosATL [_bodyPos select 0, _bodyPos select 1, 0];
-        _unit setUnitPos "DOWN";
+        _unit setPosATL [_guardPos select 0, _guardPos select 1, 0];
         removeAllWeapons _unit;
-        removeBackpackGlobal _unit;
-        removeHeadgear _unit;
+        removeUniform _unit;
         removeVest _unit;
+        removeHeadgear _unit;
+        removeBackpackGlobal _unit;
         removeAllAssignedItems _unit;
-        _unit disableAI "MOVE";
-        _unit switchMove (selectRandom _bodyAnimations);
-        _unit disableAI "ANIM";
-        _unit setVariable ["ExileMoney", 450 + floor (random 1600), true];
-        _unit setVariable ["ExileName", "Courier", true];
+        _unit forceAddUniform (_kit select 0);
+        _unit addVest (_kit select 1);
+        _unit addHeadgear (_kit select 2);
+        _unit addMagazines [_kit select 4, 6];
+        _unit addWeapon (_kit select 3);
+        _unit addPrimaryWeaponItem (_kit select 5);
+        _unit addPrimaryWeaponItem (_kit select 6);
+        _unit linkItem "ItemMap";
+        _unit linkItem "ItemCompass";
+        _unit linkItem "ItemGPS";
+        _unit linkItem "NVGoggles_OPFOR";
+        _unit setSkill ["aimingAccuracy", 0.28];
+        _unit setSkill ["aimingShake", 0.35];
+        _unit setSkill ["spotDistance", 0.55];
+        _unit setSkill ["courage", 0.75];
+        _unit setUnitPos "MIDDLE";
+        _unit doWatch _safe;
+        _unit setVariable ["ExileMoney", 3500 + floor (random 4500), true];
+        _unit setVariable ["ExileName", "Courier Guard", true];
         [_unit, _sceneId] call _fnc_tag;
-        _unit setDamage 1;
     };
+
+    private _guardWaypoint = _guardGroup addWaypoint [_safePos, 18];
+    _guardWaypoint setWaypointType "SAD";
+    _guardWaypoint setWaypointBehaviour "AWARE";
+    _guardWaypoint setWaypointCombatMode "RED";
 
     private _smoke = createVehicle ["test_EmptyObjectForSmoke", _wreck modelToWorld [-1.2, -1.8, 0.1], [], 0, "CAN_COLLIDE"];
     [_smoke, _sceneId] call _fnc_tag;
 
     format [
-        "SALVAGE NET: A poptab courier van went dark near %1. Runners are down. Bring a grinder if you find the lockbox.",
+        "SALVAGE NET: A poptab courier van went dark near %1. Guards are holding the wreck and safe. Bring a grinder and backup.",
         _label
     ] remoteExecCall ["systemChat", -2];
 
@@ -145,7 +167,7 @@ _selected resize (_maxScenes min (count _selected));
     _markers pushBack _iconMarker;
 
     diag_log format [
-        "[XCSV_SCENE] courier scene %1 spawned near %2 at %3 with %4 objects, safe poptabs %5.",
+        "[XCSV_SCENE] guarded courier scene %1 spawned near %2 at %3 with %4 objects, safe poptabs %5.",
         _sceneId,
         _label,
         _pos,

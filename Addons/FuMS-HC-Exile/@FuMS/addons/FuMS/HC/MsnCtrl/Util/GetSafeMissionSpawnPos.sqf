@@ -74,7 +74,7 @@ while {_attempts > 0 and !_goodPos} do
             _folksHome = false;
 			
 			_maximumTerritoryRadius = getNumber (missionConfigFile >> "CfgTerritories" >> "minimumDistanceToOtherTerritories");
-			_nearTerritory = [_pos, _maximumTerritoryRadius] call ExileClient_util_world_isTerritoryInRange;
+			_nearTerritory = (count (nearestObjects [_pos, ["Exile_Construction_Flag_Static"], _maximumTerritoryRadius])) > 0;
 			
             
             if (_nearTerritory ) then // find a plot pole, check for players at home or base raiding.

@@ -110,7 +110,7 @@ if (_inWater and _inLandVehicle) then {_inLandVehicle=false; _inWaterVehicle=tru
 //Is player in a territory
 _maximumTerritoryRadius = getNumber (missionConfigFile >> "CfgTerritories" >> "minimumDistanceToOtherTerritories");
 //diag_log format ["<FuMS> PlayerWatchControlLoop max Territory Radius:%1", _maximumTerritoryRadius];      
-_nearTerritory = [getPos _player, _maximumTerritoryRadius] call ExileClient_util_world_isTerritoryInRange;
+_nearTerritory = (count (nearestObjects [getPos _player, ["Exile_Construction_Flag_Static"], _maximumTerritoryRadius])) > 0;
 //diag_log format ["<FuMS> PlayerWatchControlLoop Near a Territory = %1", _nearTerritory];      
 
 //Is player in his own territory!
@@ -264,8 +264,3 @@ if !(toupper _missionFileName == "NONE") then
     };
 };
 _player setVariable ["FuMS_PlayerWatch", false];
-
-
-
-    
-    

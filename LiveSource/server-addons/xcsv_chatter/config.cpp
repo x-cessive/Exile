@@ -99,7 +99,7 @@ class CfgFunctions
         };
 
         // Server-authored world scenes. First slice: poptab courier vans with
-        // dead runners and a locked safe that uses Exile's existing grinder
+        // live guards and a locked safe that uses Exile's existing grinder
         // action. Bounded count, tagged objects, no database persistence.
         class Scenes
         {

@@ -151,7 +151,7 @@ diag_log format [
 /* ------------------------------------------------------------------------
    Courier wreck scenes
 
-   A small server-authored content slice: wrecked poptab vans with dead runners
+   A small server-authored content slice: guarded poptab transport wrecks
    and one locked safe. It is intentionally scheduled once after boot, not a
    private loop. The scene code owns its object budget and tags every object it
    creates so later cleanup/diagnostics can distinguish it from ordinary Exile

@@ -18,8 +18,9 @@
     Design:
       * admin-gated by UID, same shape as fn_census and sovran_zeus
       * no objects created; only the player (and their vehicle) is moved
-      * map-click arming is time-boxed, so a stray click a minute later does
-        not fling you across the island
+      * SHIFT-click on the map is ALWAYS live for a whitelisted admin from
+        session start; there is no arming step and no XM8 button to press
+        first (changed 2026-08-12 at the operator's request)
       * everything is local; nothing is broadcast to other clients
 */
 
@@ -29,8 +30,12 @@ XCSV_TP_ADMINS = [
     "76561198108041726"     // Mr. Sage
 ];
 
-// How long the map stays armed after choosing "teleport to map click".
-XCSV_TP_ArmSeconds = 45;
+// The persistent map-click handler is re-asserted on this interval. Nothing in
+// SQF can read the current onMapSingleClick handler back, so if another script
+// (an Exile dialog, a third-party addon) installs its own and clears it, ours
+// would be gone for good. Re-asserting costs one assignment per interval and
+// makes the feature self-healing.
+XCSV_TP_ReassertSeconds = 30;
 
 // Named jump targets for testing the dialogue addons. These are verified
 // mission marker/trader coordinates, not rough town centers.
@@ -40,7 +45,8 @@ XCSV_TP_Places = [
     ["Trader - North",       [7991.1, 12411.6, 0]],
     ["Aircraft - North",     [11579.8, 13156.0, 0]],
     ["Aircraft - Central",   [7199.99, 6961.1, 0]],
-    ["Boat Trader - NE",     [11074.7, 13391.8, 0]]
+    ["Boat Trader - NE",     [11074.7, 13391.8, 0]],
+    ["Prison - Graybox",     [7140, 11800, 0]]
 ];
 
 XCSV_fnc_tpTo = {
@@ -57,32 +63,32 @@ XCSV_fnc_tpTo = {
         _what, round (_dest select 0), round (_dest select 1)];
 };
 
-XCSV_fnc_tpArmMapClick = {
-    if (missionNamespace getVariable ["XCSV_TP_Armed", false]) exitWith {
-        systemChat "XCSV TP: map already armed.";
-    };
-    missionNamespace setVariable ["XCSV_TP_Armed", true];
-    systemChat format
-        ["XCSV TP: open the map and SHIFT-CLICK a destination (%1s).", XCSV_TP_ArmSeconds];
+/*
+    Install the persistent SHIFT-click handler.
 
-    // onMapSingleClick gives us shift state without fighting Exile's own map
-    // handlers. Cleared on use or on timeout so it cannot linger.
+    onMapSingleClick gives us the shift state without fighting Exile's own map
+    handlers, and it is deliberately NOT cleared after use: a whitelisted admin
+    can shift-click the map at any time for the whole session.
+
+    The handler only acts while SHIFT is held. With shift up the `if` yields
+    nil, which the engine reads as false, so normal map behaviour (Exile's own
+    marker placement) is untouched.
+*/
+XCSV_fnc_tpInstallMapClick = {
     onMapSingleClick "
         if (_shift) then {
             [_pos, 'map click'] call XCSV_fnc_tpTo;
-            missionNamespace setVariable ['XCSV_TP_Armed', false];
-            onMapSingleClick '';
+            true
         };
     ";
+    missionNamespace setVariable ["XCSV_TP_Armed", true];
+};
 
-    [] spawn {
-        uiSleep XCSV_TP_ArmSeconds;
-        if (missionNamespace getVariable ["XCSV_TP_Armed", false]) then {
-            missionNamespace setVariable ["XCSV_TP_Armed", false];
-            onMapSingleClick "";
-            systemChat "XCSV TP: map disarmed.";
-        };
-    };
+// Kept under the old name: config.cpp's XM8 button and any older call site
+// still reach it, but there is nothing left to arm.
+XCSV_fnc_tpArmMapClick = {
+    call XCSV_fnc_tpInstallMapClick;
+    systemChat "XCSV TP: SHIFT-click the map any time - always on, no arming needed.";
 };
 
 // Entry point called by the XM8 button.
@@ -136,5 +142,29 @@ XCSV_fnc_tpMenu = {
     uiSleep 30;
     waitUntil { uiSleep 2; alive player };
     if !((getPlayerUID player) in XCSV_TP_ADMINS) exitWith {};
-    diag_log "[XCSV_TP] admin teleport available (XM8 app + scroll menu).";
+    diag_log "[XCSV_TP] admin teleport available (map SHIFT-click + XM8 app + scroll menu).";
+
+    // Always-on map teleport. The XM8 app is now a convenience for the named
+    // places and player list, not a prerequisite for shift-click.
+    call XCSV_fnc_tpInstallMapClick;
+    systemChat "XCSV TP: SHIFT-click the map to teleport (always on).";
+
+    // Not gated on `alive player`: dying must not end the loop, or the handler
+    // would be lost for the rest of the session after the first respawn.
+    [] spawn {
+        while { true } do {
+            uiSleep XCSV_TP_ReassertSeconds;
+            call XCSV_fnc_tpInstallMapClick;
+        };
+    };
+
+    // Prison - Graybox, always on the scroll wheel for the admin (no XM8
+    // needed). Uses the same server-side xcsvTeleportRequest path.
+    player addAction [
+        "<t color='#FF7D3D'>XCSV TP: Prison - Graybox</t>",
+        {
+            _this select 3 call XCSV_fnc_tpTo;
+        },
+        [[7140, 11800, 0], "Prison - Graybox"], 3.0, false, true, "", "true", 12
+    ];
 };
