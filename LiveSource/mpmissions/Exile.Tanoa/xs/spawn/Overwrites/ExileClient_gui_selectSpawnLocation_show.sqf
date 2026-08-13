@@ -63,14 +63,23 @@ _spawnButton2 ctrlEnable false;
 _tipText = _display displayCtrl 1204;
 _listBox = _display displayCtrl 1500;
 lbClear _listBox;
+private _spawnRows = [];
 {
 	if (getMarkerType _x == "ExileSpawnZone") then
 	{
-		_listItemIndex = _listBox lbAdd (markerText _x);
-		_listBox lbSetData [_listItemIndex, _x];
+		_spawnRows pushBack [markerText _x, _x];
 	};
 }
 forEach allMapMarkers;
+
+_spawnRows sort true;
+{
+	_x params ["_label", "_marker"];
+	_listItemIndex = _listBox lbAdd (format ["[BAMBI] %1", _label]);
+	_listBox lbSetData [_listItemIndex, _marker];
+	_listBox lbSetColor [_listItemIndex, [0.25, 0.78, 0.42, 1]];
+}
+forEach _spawnRows;
 
 defaultLBsize = lbSize _listBox;
 _playerUID = getPlayerUID player;

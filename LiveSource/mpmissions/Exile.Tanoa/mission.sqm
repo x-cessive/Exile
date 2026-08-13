@@ -8,11 +8,11 @@ class EditorData
 	toggles = 1;
 	class ItemIDProvider
 	{
-		nextID = 116;
+		nextID = 167;
 	};
 	class MarkerIDProvider
 	{
-		nextID = 15;
+		nextID = 23;
 	};
 	class Camera
 	{
@@ -72,7 +72,7 @@ class Mission
 	};
 	class Entities
 	{
-		items = 59;
+		items = 67;
 
 		class Item0
 		{
@@ -2210,6 +2210,118 @@ class Mission
 	    //  server monitor stayed at [HC:false].
 	    class Item58
 	    {
+	        dataType = "Marker";
+	        position[] = {2650, 0, 4475};
+	        name = "XCSVSpawnTuvanaka";
+	        text = "Bambi - Tuvanaka";
+	        markerType = "ELLIPSE";
+	        type = "ExileSpawnZone";
+	        colorName = "ColorGUER";
+	        alpha = 0.12;
+	        fillName = "Border";
+	        a = 420;
+	        b = 420;
+	        drawBorder = 1;
+	        id = 158;
+	        atlOffset = 0;
+	    };
+	    class Item59
+	    {
+	        dataType = "Marker";
+	        position[] = {2650, 0, 4475};
+	        name = "XCSVSpawnTuvanakaIcon";
+	        text = "Bambi";
+	        type = "ExileSpawnZoneIcon";
+	        colorName = "ColorGUER";
+	        id = 159;
+	        atlOffset = 0;
+	    };
+	    class Item60
+	    {
+	        dataType = "Marker";
+	        position[] = {4785, 0, 3640};
+	        name = "XCSVSpawnLaRochelle";
+	        text = "Bambi - La Rochelle";
+	        markerType = "ELLIPSE";
+	        type = "ExileSpawnZone";
+	        colorName = "ColorGUER";
+	        alpha = 0.12;
+	        fillName = "Border";
+	        a = 420;
+	        b = 420;
+	        drawBorder = 1;
+	        id = 160;
+	        atlOffset = 0;
+	    };
+	    class Item61
+	    {
+	        dataType = "Marker";
+	        position[] = {4785, 0, 3640};
+	        name = "XCSVSpawnLaRochelleIcon";
+	        text = "Bambi";
+	        type = "ExileSpawnZoneIcon";
+	        colorName = "ColorGUER";
+	        id = 161;
+	        atlOffset = 0;
+	    };
+	    class Item62
+	    {
+	        dataType = "Marker";
+	        position[] = {12375, 0, 3335};
+	        name = "XCSVSpawnLijnhaven";
+	        text = "Bambi - Lijnhaven";
+	        markerType = "ELLIPSE";
+	        type = "ExileSpawnZone";
+	        colorName = "ColorGUER";
+	        alpha = 0.12;
+	        fillName = "Border";
+	        a = 420;
+	        b = 420;
+	        drawBorder = 1;
+	        id = 162;
+	        atlOffset = 0;
+	    };
+	    class Item63
+	    {
+	        dataType = "Marker";
+	        position[] = {12375, 0, 3335};
+	        name = "XCSVSpawnLijnhavenIcon";
+	        text = "Bambi";
+	        type = "ExileSpawnZoneIcon";
+	        colorName = "ColorGUER";
+	        id = 163;
+	        atlOffset = 0;
+	    };
+	    class Item64
+	    {
+	        dataType = "Marker";
+	        position[] = {10180, 0, 13320};
+	        name = "XCSVSpawnSavu";
+	        text = "Bambi - Savu";
+	        markerType = "ELLIPSE";
+	        type = "ExileSpawnZone";
+	        colorName = "ColorGUER";
+	        alpha = 0.12;
+	        fillName = "Border";
+	        a = 420;
+	        b = 420;
+	        drawBorder = 1;
+	        id = 164;
+	        atlOffset = 0;
+	    };
+	    class Item65
+	    {
+	        dataType = "Marker";
+	        position[] = {10180, 0, 13320};
+	        name = "XCSVSpawnSavuIcon";
+	        text = "Bambi";
+	        type = "ExileSpawnZoneIcon";
+	        colorName = "ColorGUER";
+	        id = 165;
+	        atlOffset = 0;
+	    };
+	    class Item66
+	    {
 	        dataType = "Logic";
 	        class PositionInfo
 	        {
@@ -2218,7 +2330,7 @@ class Mission
 	        name = "HC";
 	        isPlayable = 1;
 	        forceHeadlessClient = 1;
-	        id = 158;
+	        id = 166;
 	        type = "HeadlessClient_F";
 	    };
 	};

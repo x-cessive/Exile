@@ -28,10 +28,14 @@ _display = uiNamespace getVariable ["xstremeGroundorHaloDialog",displayNull];
 _lB = _display displayCtrl 1500;
 _curSel = lbCurSel _lB;
 _data = _lB lbData _curSel;
-_num = parseNumber _data;
-_flag = playerFlags select _num;
 _baseName = lbText [1500, _curSel];
 spawnRegistry pushBack [_baseName, time];
+
+if(_curSel >= defaultLBsize) then
+{
+	_num = parseNumber _data;
+	_flag = playerFlags select _num;
+};
 
 ExileClientSpawnLocationSelectionDone = true;
 uiSleep 0.1;
