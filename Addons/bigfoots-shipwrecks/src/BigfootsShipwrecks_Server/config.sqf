@@ -3,7 +3,7 @@
  * file 'APL-SA LICENSE.txt', which is part of this source code package.
  */
 
-BS_debug_logCrateFill = true; // True to log items spawned in crates to server .RPT, usually right after [Display #24]
+BS_debug_logCrateFill = false; // True to log items spawned in crates to server .RPT, usually right after [Display #24]
 
 BS_player_showCrateClaimMessage = true; // True to show toast and chat notification with coordinates to all players when any players are close to crate
 BS_player_showCrateClaimMessageRadius = 20; // Players must be this close (in meters) to trigger serverwide chat/toast notification
@@ -11,7 +11,7 @@ BS_player_showCrateClaimMessageRadius = 20; // Players must be this close (in me
 BS_class_crate = "Exile_Container_SupplyBox"; // Class of loot crate.
 BS_class_wreckage = "Land_UWreck_FishingBoat_F"; // Class of shipwreck.
 
-BS_count_shipwrecks = 7; // Total wrecks
+BS_count_shipwrecks = 3; // Total wrecks. XCSV: reduced from 7 to keep the map readable.
 
 BS_locations_crateWreckOffset = 10; // Distance from wreck to spawn crate.
 // XCSV 2026-08-03: this was still the stock ALTIS config on a TANOA server.
