@@ -165,6 +165,8 @@ class RscTitles
 {
 	// StatusBar
 	#include "custom\StatusBar\statusBar.hpp"
+	// XCSV map-edge atlas panels
+	#include "xcsv\ui\mapAtlas.hpp"
 	// PilotHUD
 	#include "custom\PilotHUD\dialog.hpp"
 	// Vanilla Vehicle HUD

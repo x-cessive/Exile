@@ -82,6 +82,8 @@ class CfgNetworkMessages
 	// parameter is bound (STRONG), never interpolated into SQL.
 	class xcsvInspectRequest { module = "system_xcsv"; parameters[] = {"STRING"}; };
 	class xcsvInspectResponse { module = "system_xcsv"; parameters[] = {"ARRAY","ARRAY"}; };
+	class xcsvOwnerRequest { module = "system_xcsv"; parameters[] = {"STRING"}; };
+	class xcsvOwnerResponse { module = "system_xcsv"; parameters[] = {"STRING","ARRAY"}; };
 
 	class depositItemRequest { module="system_safex"; parameters[]={"STRING"}; };
 	class depositItemResponse { module="system_safex"; parameters[]={"SCALAR","ARRAY"}; };
@@ -6899,6 +6901,59 @@ class CfgTraders
 			"Community10"
 		};
 	};
+
+	class Exile_Trader_XCSVPortable
+	{
+		name = "XCSV OWNER MARKET";
+		showWeaponFilter = 1;
+		categories[] =
+		{
+			"PointerAttachments",
+			"BipodAttachments",
+			"MuzzleAttachments",
+			"OpticAttachments",
+			"Ammunition",
+			"Pistols",
+			"Shotguns",
+			"SubMachineGuns",
+			"LightMachineGuns",
+			"AssaultRifles",
+			"SniperRifles",
+			"Flares",
+			"Smokes",
+			"UAVs",
+			"StaticMGs",
+			"Explosives",
+			"Navigation",
+			"Headgear",
+			"Glasses",
+			"Uniforms",
+			"Vests",
+			"Backpacks",
+			"FirstAid",
+			"Food",
+			"Drinks",
+			"NonVeganFood",
+			"Hardware",
+			"Tools",
+			"Cars",
+			"Trucks",
+			"Choppers",
+			"Planes",
+			"Boats",
+			"Diving",
+			"Community",
+			"Community2",
+			"Community3",
+			"Community4",
+			"Community5",
+			"Community6",
+			"Community7",
+			"Community8",
+			"Community9",
+			"Community10"
+		};
+	};
 };
 class CfgTrading 
 {
@@ -7912,6 +7967,13 @@ class CfgXM8
 		appID = "App22";
 		title = "Drone Control";
 	};
+
+	class xcsvOwner
+	{
+		controlID = 71880;
+		appID = "App23";
+		title = "Owner Tools";
+	};
 };
 /*
 	XCSV grid button. Every XM8_AppNN_Button inherits this instead of
@@ -8221,6 +8283,16 @@ class XM8_App22_Button: RscXcsvXM8AppButtonGrid
     text = "Drones";
     onButtonClick = "call XCSV_fnc_droneShow";
     resource = "XM8SlideXcsvDrone";
+};
+
+// Owner Tools, XM8 App23. The client button is not the authority; every command
+// is re-checked in xcsv_chatter\network\fn_ownerRequest.sqf.
+class XM8_App23_Button: RscXcsvXM8AppButtonGrid
+{
+    textureNoShortcut = "\exile_assets\texture\ui\xm8_app_settings_ca.paa";
+    text = "Owner";
+    onButtonClick = "call XCSV_fnc_ownerShow";
+    resource = "XM8SlideXcsvOwner";
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -8879,6 +8951,200 @@ class XM8SlideXcsvDrone: RscExileXM8Slide
                     h = 14 * (0.04);
                 };
             };
+        };
+    };
+};
+
+class XM8SlideXcsvOwner: RscExileXM8Slide
+{
+    idc = 71880;
+
+    class Controls
+    {
+        class GoBackButton: RscExileXM8ButtonMenu
+        {
+            idc = 71939;
+            text = "GO BACK";
+            x = (30 - 3) * (0.025);
+            y = (19 - 2) * (0.04);
+            w = 6 * (0.025);
+            h = 1 * (0.04);
+            onButtonClick = "['extraApps', 1] call ExileClient_gui_xm8_slide";
+        };
+
+        class OwnerBody: RscExileXM8StructuredText
+        {
+            idc = 71881;
+            x = (5 - 3) * (0.025);
+            y = (4 - 2) * (0.04);
+            w = 30 * (0.025);
+            h = 3.6 * (0.04);
+            colorBackground[] = {0, 0, 0, 0.22};
+        };
+
+        class LoadoutBasic: RscExileXM8ButtonMenu
+        {
+            idc = 71882;
+            text = "BASIC KIT";
+            x = (5 - 3) * (0.025);
+            y = (8 - 2) * (0.04);
+            w = 7 * (0.025);
+            h = 1 * (0.04);
+            onButtonClick = "['loadoutBasic'] call XCSV_fnc_ownerSend";
+        };
+        class LoadoutMedium: LoadoutBasic
+        {
+            idc = 71883;
+            text = "MED KIT";
+            x = (13 - 3) * (0.025);
+            onButtonClick = "['loadoutMedium'] call XCSV_fnc_ownerSend";
+        };
+        class LoadoutHigh: LoadoutBasic
+        {
+            idc = 71884;
+            text = "HIGH KIT";
+            x = (21 - 3) * (0.025);
+            onButtonClick = "['loadoutHigh'] call XCSV_fnc_ownerSend";
+        };
+        class LoadoutGod: LoadoutBasic
+        {
+            idc = 71885;
+            text = "GOD KIT";
+            x = (29 - 3) * (0.025);
+            onButtonClick = "['loadoutGod'] call XCSV_fnc_ownerSend";
+        };
+
+        class Tabs10k: LoadoutBasic
+        {
+            idc = 71886;
+            text = "+10K TABS";
+            y = (9.5 - 2) * (0.04);
+            onButtonClick = "['tabs10k'] call XCSV_fnc_ownerSend";
+        };
+        class Tabs100k: Tabs10k
+        {
+            idc = 71887;
+            text = "+100K TABS";
+            x = (13 - 3) * (0.025);
+            onButtonClick = "['tabs100k'] call XCSV_fnc_ownerSend";
+        };
+        class Respect10k: Tabs10k
+        {
+            idc = 71888;
+            text = "+10K RESPECT";
+            x = (21 - 3) * (0.025);
+            onButtonClick = "['respect10k'] call XCSV_fnc_ownerSend";
+        };
+        class Respect100k: Tabs10k
+        {
+            idc = 71889;
+            text = "+100K RESPECT";
+            x = (29 - 3) * (0.025);
+            onButtonClick = "['respect100k'] call XCSV_fnc_ownerSend";
+        };
+
+        class GodOn: LoadoutBasic
+        {
+            idc = 71890;
+            text = "GOD ON";
+            y = (11 - 2) * (0.04);
+            onButtonClick = "['godOn'] call XCSV_fnc_ownerSend";
+        };
+        class GodOff: GodOn
+        {
+            idc = 71891;
+            text = "GOD OFF";
+            x = (13 - 3) * (0.025);
+            onButtonClick = "['godOff'] call XCSV_fnc_ownerSend";
+        };
+        class TraderSpawn: GodOn
+        {
+            idc = 71892;
+            text = "SPAWN TRADER";
+            x = (21 - 3) * (0.025);
+            onButtonClick = "['traderSpawn'] call XCSV_fnc_ownerSend";
+        };
+        class TraderDespawn: GodOn
+        {
+            idc = 71893;
+            text = "DESPAWN TRADER";
+            x = (29 - 3) * (0.025);
+            onButtonClick = "['traderDespawn'] call XCSV_fnc_ownerSend";
+        };
+
+        class VehicleSpawn: LoadoutBasic
+        {
+            idc = 71894;
+            text = "SPAWN HUNTER";
+            y = (12.5 - 2) * (0.04);
+            onButtonClick = "['vehicleSpawn'] call XCSV_fnc_ownerSend";
+        };
+        class VehicleRepair: VehicleSpawn
+        {
+            idc = 71895;
+            text = "REPAIR NEAREST";
+            x = (13 - 3) * (0.025);
+            onButtonClick = "['vehicleRepair'] call XCSV_fnc_ownerSend";
+        };
+        class MissionCourier: VehicleSpawn
+        {
+            idc = 71896;
+            text = "RUN COURIER";
+            x = (21 - 3) * (0.025);
+            onButtonClick = "['missionCourier'] call XCSV_fnc_ownerSend";
+        };
+        class CleanupWand: VehicleSpawn
+        {
+            idc = 71897;
+            text = "CLEANUP WAND";
+            x = (29 - 3) * (0.025);
+            onButtonClick = "['cleanupNearest'] call XCSV_fnc_ownerSend";
+        };
+
+        class WeatherClear: LoadoutBasic
+        {
+            idc = 71898;
+            text = "CLEAR WEATHER";
+            y = (14 - 2) * (0.04);
+            onButtonClick = "['weatherClear'] call XCSV_fnc_ownerSend";
+        };
+        class WeatherStorm: WeatherClear
+        {
+            idc = 71899;
+            text = "STORM";
+            x = (13 - 3) * (0.025);
+            onButtonClick = "['weatherStorm'] call XCSV_fnc_ownerSend";
+        };
+        class TimeNoon: WeatherClear
+        {
+            idc = 71900;
+            text = "NOON";
+            x = (21 - 3) * (0.025);
+            onButtonClick = "['timeNoon'] call XCSV_fnc_ownerSend";
+        };
+        class TimeNight: WeatherClear
+        {
+            idc = 71901;
+            text = "NIGHT";
+            x = (29 - 3) * (0.025);
+            onButtonClick = "['timeNight'] call XCSV_fnc_ownerSend";
+        };
+
+        class ShoppingBank: LoadoutBasic
+        {
+            idc = 71902;
+            text = "SHOPPING BANKROLL";
+            x = (9 - 3) * (0.025);
+            y = (15.5 - 2) * (0.04);
+            w = 11 * (0.025);
+            onButtonClick = "['shoppingBankroll'] call XCSV_fnc_ownerSend";
+        };
+        class ClearAdminObjects: ShoppingBank
+        {
+            idc = 71903;
+            text = "CLEAR ADMIN OBJECTS";
+            x = (22 - 3) * (0.025);
+            onButtonClick = "['clearAdminObjects'] call XCSV_fnc_ownerSend";
         };
     };
 };

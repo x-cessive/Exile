@@ -146,6 +146,7 @@ class policyBuyRequest {};
             class debugBridge {};
             class teleportRequest {};
             class inspectorRequest {};
+            class ownerRequest {};
         };
     };
 };

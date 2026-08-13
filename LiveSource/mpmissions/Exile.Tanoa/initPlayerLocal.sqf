@@ -306,6 +306,7 @@ call compile preprocessFileLineNumbers "xcsv\fn_shared.sqf";
 
 [] execVM "xcsv\fn_traderVoice.sqf";
 [] execVM "xcsv\fn_welcome.sqf";
+[] execVM "xcsv\fn_mapAtlas.sqf";
 // Admin-only: self-gates on UID and exits immediately for everyone else.
 // Uses local markers, so nothing is broadcast and no other player sees them.
 [] execVM "xcsv\fn_census.sqf";
@@ -355,3 +356,7 @@ call compile preprocessFileLineNumbers "xcsv\fn_shared.sqf";
 // client app reports terminal/drone status and opens/connects via native UAV
 // commands. No custom flight UI, object creation, database writes or polling.
 [] execVM "xcsv\fn_droneControl.sqf";
+
+// Owner Tools, XM8 App23. Owner-only convenience app; every action is
+// re-authorized server-side by UID before it mutates anything.
+[] execVM "xcsv\fn_ownerTools.sqf";

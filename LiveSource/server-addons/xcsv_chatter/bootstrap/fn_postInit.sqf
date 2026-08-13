@@ -192,6 +192,7 @@ call xcsv_chatter_fnc_policyDeath;
 ExileServer_system_xcsv_network_xcsvPolicyBuyRequest = xcsv_chatter_fnc_policyBuyRequest;
 ExileServer_system_xcsv_network_xcsvTeleportRequest = xcsv_chatter_fnc_teleportRequest;
 ExileServer_system_xcsv_network_xcsvInspectRequest = xcsv_chatter_fnc_inspectorRequest;
+ExileServer_system_xcsv_network_xcsvOwnerRequest = xcsv_chatter_fnc_ownerRequest;
 
 [
     30,
