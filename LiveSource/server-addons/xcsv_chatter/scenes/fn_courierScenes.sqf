@@ -12,6 +12,8 @@ if (missionNamespace getVariable ["XCSV_SCENE_CouriersSpawned", false]) exitWith
 missionNamespace setVariable ["XCSV_SCENE_CouriersSpawned", true];
 
 private _maxScenes = 2;
+private _safezoneExclusionRadius = 1000;
+private _restrictedMarkerTypes = ["ExileTraderZone", "ExileTraderZoneIcon"];
 private _objects = [];
 private _markers = [];
 
@@ -59,17 +61,47 @@ private _fnc_roadPose = {
     [_pos, _dir]
 };
 
-private _selected = +_anchors;
-_selected = _selected call BIS_fnc_arrayShuffle;
+private _fnc_isRestrictedPosition = {
+    params ["_pos"];
+
+    private _blocked = false;
+    {
+        if ((getMarkerType _x) in _restrictedMarkerTypes) then {
+            if ((_pos distance2D (getMarkerPos _x)) < _safezoneExclusionRadius) exitWith {
+                _blocked = true;
+            };
+        };
+    } forEach allMapMarkers;
+    _blocked
+};
+
+private _candidates = [];
+{
+    private _pose = [_x] call _fnc_roadPose;
+    private _pos = _pose select 0;
+    if ([_pos] call _fnc_isRestrictedPosition) then {
+        diag_log format [
+            "[XCSV_SCENE] courier anchor %1 rejected at %2: within %3m of trader/safezone marker.",
+            _x select 0,
+            _pos,
+            _safezoneExclusionRadius
+        ];
+    } else {
+        _candidates pushBack [_x, _pose];
+    };
+} forEach ((_anchors call BIS_fnc_arrayShuffle));
+
+private _selected = +_candidates;
 _selected resize (_maxScenes min (count _selected));
 
 {
     private _sceneNumber = _forEachIndex + 1;
     private _sceneId = format ["courier-%1-%2", diag_tickTime, _sceneNumber];
-    private _pose = [_x] call _fnc_roadPose;
+    private _anchor = _x select 0;
+    private _pose = _x select 1;
     private _pos = _pose select 0;
     private _dir = _pose select 1;
-    private _label = _x select 0;
+    private _label = _anchor select 0;
 
     private _wreck = createVehicle ["Land_Wreck_Van_F", _pos, [], 0, "CAN_COLLIDE"];
     _wreck setDir _dir;
@@ -153,17 +185,17 @@ _selected resize (_maxScenes min (count _selected));
 
     private _areaMarker = createMarker [format ["XCSV_SCENE_%1_area", _sceneId], _pos];
     _areaMarker setMarkerShape "ELLIPSE";
-    _areaMarker setMarkerSize [180, 180];
+    _areaMarker setMarkerSize [120, 120];
     _areaMarker setMarkerColor "ColorOrange";
     _areaMarker setMarkerBrush "Border";
-    _areaMarker setMarkerAlpha 0.65;
+    _areaMarker setMarkerAlpha 0.28;
     _markers pushBack _areaMarker;
 
     private _iconMarker = createMarker [format ["XCSV_SCENE_%1_icon", _sceneId], _pos];
     _iconMarker setMarkerShape "ICON";
-    _iconMarker setMarkerType "hd_destroy";
+    _iconMarker setMarkerType "mil_box";
     _iconMarker setMarkerColor "ColorOrange";
-    _iconMarker setMarkerText "SALVAGE: Courier Wreck";
+    _iconMarker setMarkerText "Cash Van";
     _markers pushBack _iconMarker;
 
     diag_log format [
