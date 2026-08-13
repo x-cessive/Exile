@@ -75,7 +75,7 @@ forEach allMapMarkers;
 _spawnRows sort true;
 {
 	_x params ["_label", "_marker"];
-	_listItemIndex = _listBox lbAdd (format ["[BAMBI] %1", _label]);
+	_listItemIndex = _listBox lbAdd _label;
 	_listBox lbSetData [_listItemIndex, _marker];
 	_listBox lbSetColor [_listItemIndex, [0.25, 0.78, 0.42, 1]];
 }

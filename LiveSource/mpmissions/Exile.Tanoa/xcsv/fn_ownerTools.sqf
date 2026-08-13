@@ -136,7 +136,7 @@ XCSV_fnc_ownerApplyLoadoutLocal = {
         };
     } forEach _items;
 
-    { player linkItem _x; } forEach ["ItemMap", "ItemCompass", "ItemGPS", "ItemRadio", "NVGoggles_OPFOR"];
+    { player linkItem _x; } forEach ["Exile_Item_XM8", "ItemMap", "ItemCompass", "ItemGPS", "ItemRadio", "NVGoggles_OPFOR"];
     reload player;
     systemChat format ["XCSV Owner: %1 kit equipped locally.", _tier];
 };

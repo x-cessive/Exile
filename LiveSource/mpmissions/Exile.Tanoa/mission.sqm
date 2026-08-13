@@ -2213,7 +2213,7 @@ class Mission
 	        dataType = "Marker";
 	        position[] = {2650, 0, 4475};
 	        name = "XCSVSpawnTuvanaka";
-	        text = "Bambi - Tuvanaka";
+	        text = "Tuvanaka";
 	        markerType = "ELLIPSE";
 	        type = "ExileSpawnZone";
 	        colorName = "ColorGUER";
@@ -2230,7 +2230,7 @@ class Mission
 	        dataType = "Marker";
 	        position[] = {2650, 0, 4475};
 	        name = "XCSVSpawnTuvanakaIcon";
-	        text = "Bambi";
+	        text = "Spawn";
 	        type = "ExileSpawnZoneIcon";
 	        colorName = "ColorGUER";
 	        id = 159;
@@ -2241,7 +2241,7 @@ class Mission
 	        dataType = "Marker";
 	        position[] = {4785, 0, 3640};
 	        name = "XCSVSpawnLaRochelle";
-	        text = "Bambi - La Rochelle";
+	        text = "La Rochelle";
 	        markerType = "ELLIPSE";
 	        type = "ExileSpawnZone";
 	        colorName = "ColorGUER";
@@ -2258,7 +2258,7 @@ class Mission
 	        dataType = "Marker";
 	        position[] = {4785, 0, 3640};
 	        name = "XCSVSpawnLaRochelleIcon";
-	        text = "Bambi";
+	        text = "Spawn";
 	        type = "ExileSpawnZoneIcon";
 	        colorName = "ColorGUER";
 	        id = 161;
@@ -2269,7 +2269,7 @@ class Mission
 	        dataType = "Marker";
 	        position[] = {12375, 0, 3335};
 	        name = "XCSVSpawnLijnhaven";
-	        text = "Bambi - Lijnhaven";
+	        text = "Lijnhaven";
 	        markerType = "ELLIPSE";
 	        type = "ExileSpawnZone";
 	        colorName = "ColorGUER";
@@ -2286,7 +2286,7 @@ class Mission
 	        dataType = "Marker";
 	        position[] = {12375, 0, 3335};
 	        name = "XCSVSpawnLijnhavenIcon";
-	        text = "Bambi";
+	        text = "Spawn";
 	        type = "ExileSpawnZoneIcon";
 	        colorName = "ColorGUER";
 	        id = 163;
@@ -2297,7 +2297,7 @@ class Mission
 	        dataType = "Marker";
 	        position[] = {10180, 0, 13320};
 	        name = "XCSVSpawnSavu";
-	        text = "Bambi - Savu";
+	        text = "Savu";
 	        markerType = "ELLIPSE";
 	        type = "ExileSpawnZone";
 	        colorName = "ColorGUER";
@@ -2314,7 +2314,7 @@ class Mission
 	        dataType = "Marker";
 	        position[] = {10180, 0, 13320};
 	        name = "XCSVSpawnSavuIcon";
-	        text = "Bambi";
+	        text = "Spawn";
 	        type = "ExileSpawnZoneIcon";
 	        colorName = "ColorGUER";
 	        id = 165;

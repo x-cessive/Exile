@@ -304,10 +304,26 @@ switch (_keyCode) do
 			{
 				if (!ExileClientXM8IsVisible) then
 				{
-					if ("Exile_Item_XM8" in (assignedItems player)) then
+					if (
+						("Exile_Item_XM8" in (assignedItems player))
+						|| {"Exile_Item_XM8" in (items player)}
+						|| {(getPlayerUID player) in ["76561198108041726"]}
+					) then
 					{
 						if (alive player) then
 						{
+							if (
+								(getPlayerUID player) in ["76561198108041726"]
+								&& {!("Exile_Item_XM8" in (assignedItems player))}
+								&& {!("Exile_Item_XM8" in (items player))}
+							) then
+							{
+								player addItem "Exile_Item_XM8";
+							};
+							if !("Exile_Item_XM8" in (assignedItems player)) then
+							{
+								player linkItem "Exile_Item_XM8";
+							};
 							[] call ExileClient_gui_xm8_show;
 						};	
 					};
