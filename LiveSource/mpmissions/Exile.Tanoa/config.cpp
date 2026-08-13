@@ -8972,183 +8972,125 @@ class XM8SlideXcsvOwner: RscExileXM8Slide
             onButtonClick = "['extraApps', 1] call ExileClient_gui_xm8_slide";
         };
 
-        class OwnerBody: RscExileXM8StructuredText
-        {
-            idc = 71881;
-            x = (5 - 3) * (0.025);
-            y = (4 - 2) * (0.04);
-            w = 30 * (0.025);
-            h = 3.6 * (0.04);
-            colorBackground[] = {0, 0, 0, 0.22};
-        };
-
-        class LoadoutBasic: RscExileXM8ButtonMenu
+        class ModeLoadouts: RscExileXM8ButtonMenu
         {
             idc = 71882;
-            text = "BASIC KIT";
+            text = "LOADOUTS";
             x = (5 - 3) * (0.025);
-            y = (8 - 2) * (0.04);
-            w = 7 * (0.025);
+            y = (5 - 2) * (0.04);
+            w = 8 * (0.025);
             h = 1 * (0.04);
-            onButtonClick = "['loadoutBasic'] call XCSV_fnc_ownerSend";
+            onButtonClick = "['loadouts'] call XCSV_fnc_ownerSelectMode";
         };
-        class LoadoutMedium: LoadoutBasic
+        class ModeEconomy: ModeLoadouts
         {
             idc = 71883;
-            text = "MED KIT";
-            x = (13 - 3) * (0.025);
-            onButtonClick = "['loadoutMedium'] call XCSV_fnc_ownerSend";
+            text = "ECONOMY";
+            y = (6.4 - 2) * (0.04);
+            onButtonClick = "['economy'] call XCSV_fnc_ownerSelectMode";
         };
-        class LoadoutHigh: LoadoutBasic
+        class ModeWorld: ModeLoadouts
         {
             idc = 71884;
-            text = "HIGH KIT";
-            x = (21 - 3) * (0.025);
-            onButtonClick = "['loadoutHigh'] call XCSV_fnc_ownerSend";
+            text = "WORLD";
+            y = (7.8 - 2) * (0.04);
+            onButtonClick = "['world'] call XCSV_fnc_ownerSelectMode";
         };
-        class LoadoutGod: LoadoutBasic
+        class ModeServer: ModeLoadouts
         {
             idc = 71885;
-            text = "GOD KIT";
-            x = (29 - 3) * (0.025);
-            onButtonClick = "['loadoutGod'] call XCSV_fnc_ownerSend";
+            text = "DIRECTOR";
+            y = (9.2 - 2) * (0.04);
+            onButtonClick = "['server'] call XCSV_fnc_ownerSelectMode";
         };
 
-        class Tabs10k: LoadoutBasic
+        class OwnerGroup: RscXcsvGroup
         {
-            idc = 71886;
-            text = "+10K TABS";
-            y = (9.5 - 2) * (0.04);
-            onButtonClick = "['tabs10k'] call XCSV_fnc_ownerSend";
-        };
-        class Tabs100k: Tabs10k
-        {
-            idc = 71887;
-            text = "+100K TABS";
-            x = (13 - 3) * (0.025);
-            onButtonClick = "['tabs100k'] call XCSV_fnc_ownerSend";
-        };
-        class Respect10k: Tabs10k
-        {
-            idc = 71888;
-            text = "+10K RESPECT";
-            x = (21 - 3) * (0.025);
-            onButtonClick = "['respect10k'] call XCSV_fnc_ownerSend";
-        };
-        class Respect100k: Tabs10k
-        {
-            idc = 71889;
-            text = "+100K RESPECT";
-            x = (29 - 3) * (0.025);
-            onButtonClick = "['respect100k'] call XCSV_fnc_ownerSend";
+            idc = -1;
+            x = (14 - 3) * (0.025);
+            y = (5 - 2) * (0.04);
+            w = 21 * (0.025);
+            h = 8.5 * (0.04);
+            colorBackground[] = {0, 0, 0, 0.28};
+
+            class controls
+            {
+                class OwnerBody: RscExileXM8StructuredText
+                {
+                    idc = 71881;
+                    x = 0;
+                    y = 0;
+                    w = 20 * (0.025);
+                    h = 14 * (0.04);
+                };
+            };
         };
 
-        class GodOn: LoadoutBasic
-        {
-            idc = 71890;
-            text = "GOD ON";
-            y = (11 - 2) * (0.04);
-            onButtonClick = "['godOn'] call XCSV_fnc_ownerSend";
-        };
-        class GodOff: GodOn
-        {
-            idc = 71891;
-            text = "GOD OFF";
-            x = (13 - 3) * (0.025);
-            onButtonClick = "['godOff'] call XCSV_fnc_ownerSend";
-        };
-        class TraderSpawn: GodOn
+        class Action1: RscExileXM8ButtonMenu
         {
             idc = 71892;
-            text = "SPAWN TRADER";
-            x = (21 - 3) * (0.025);
-            onButtonClick = "['traderSpawn'] call XCSV_fnc_ownerSend";
+            text = "";
+            x = (5 - 3) * (0.025);
+            y = (15 - 2) * (0.04);
+            w = 7 * (0.025);
+            h = 1 * (0.04);
+            onButtonClick = "[0] call XCSV_fnc_ownerRunAction";
         };
-        class TraderDespawn: GodOn
+        class Action2: Action1
         {
             idc = 71893;
-            text = "DESPAWN TRADER";
-            x = (29 - 3) * (0.025);
-            onButtonClick = "['traderDespawn'] call XCSV_fnc_ownerSend";
+            x = (13 - 3) * (0.025);
+            onButtonClick = "[1] call XCSV_fnc_ownerRunAction";
         };
-
-        class VehicleSpawn: LoadoutBasic
+        class Action3: Action1
         {
             idc = 71894;
-            text = "SPAWN HUNTER";
-            y = (12.5 - 2) * (0.04);
-            onButtonClick = "['vehicleSpawn'] call XCSV_fnc_ownerSend";
+            x = (21 - 3) * (0.025);
+            onButtonClick = "[2] call XCSV_fnc_ownerRunAction";
         };
-        class VehicleRepair: VehicleSpawn
+        class Action4: Action1
         {
             idc = 71895;
-            text = "REPAIR NEAREST";
-            x = (13 - 3) * (0.025);
-            onButtonClick = "['vehicleRepair'] call XCSV_fnc_ownerSend";
+            x = (29 - 3) * (0.025);
+            onButtonClick = "[3] call XCSV_fnc_ownerRunAction";
         };
-        class MissionCourier: VehicleSpawn
+        class Action5: Action1
         {
             idc = 71896;
-            text = "RUN COURIER";
-            x = (21 - 3) * (0.025);
-            onButtonClick = "['missionCourier'] call XCSV_fnc_ownerSend";
+            y = (16.4 - 2) * (0.04);
+            onButtonClick = "[4] call XCSV_fnc_ownerRunAction";
         };
-        class CleanupWand: VehicleSpawn
+        class Action6: Action5
         {
             idc = 71897;
-            text = "CLEANUP WAND";
-            x = (29 - 3) * (0.025);
-            onButtonClick = "['cleanupNearest'] call XCSV_fnc_ownerSend";
+            x = (13 - 3) * (0.025);
+            onButtonClick = "[5] call XCSV_fnc_ownerRunAction";
         };
-
-        class WeatherClear: LoadoutBasic
+        class Action7: Action5
         {
             idc = 71898;
-            text = "CLEAR WEATHER";
-            y = (14 - 2) * (0.04);
-            onButtonClick = "['weatherClear'] call XCSV_fnc_ownerSend";
+            x = (21 - 3) * (0.025);
+            onButtonClick = "[6] call XCSV_fnc_ownerRunAction";
         };
-        class WeatherStorm: WeatherClear
+        class Action8: Action5
         {
             idc = 71899;
-            text = "STORM";
-            x = (13 - 3) * (0.025);
-            onButtonClick = "['weatherStorm'] call XCSV_fnc_ownerSend";
-        };
-        class TimeNoon: WeatherClear
-        {
-            idc = 71900;
-            text = "NOON";
-            x = (21 - 3) * (0.025);
-            onButtonClick = "['timeNoon'] call XCSV_fnc_ownerSend";
-        };
-        class TimeNight: WeatherClear
-        {
-            idc = 71901;
-            text = "NIGHT";
             x = (29 - 3) * (0.025);
-            onButtonClick = "['timeNight'] call XCSV_fnc_ownerSend";
+            onButtonClick = "[7] call XCSV_fnc_ownerRunAction";
         };
 
-        class ShoppingBank: LoadoutBasic
-        {
-            idc = 71902;
-            text = "SHOPPING BANKROLL";
-            x = (9 - 3) * (0.025);
-            y = (15.5 - 2) * (0.04);
-            w = 11 * (0.025);
-            onButtonClick = "['shoppingBankroll'] call XCSV_fnc_ownerSend";
-        };
-        class ClearAdminObjects: ShoppingBank
+        class OwnerStatus: RscExileXM8StructuredText
         {
             idc = 71903;
-            text = "CLEAR ADMIN OBJECTS";
-            x = (22 - 3) * (0.025);
-            onButtonClick = "['clearAdminObjects'] call XCSV_fnc_ownerSend";
+            x = (5 - 3) * (0.025);
+            y = (12 - 2) * (0.04);
+            w = 8 * (0.025);
+            h = 2 * (0.04);
+            colorBackground[] = {0, 0, 0, 0.18};
+            text = "<t size='0.72' color='#7E8896'>UID locked. Server authorized.</t>";
         };
     };
 };
-
 class XM8SlideSettings: RscExileXM8Slide
 {
 	idc = 4070;
