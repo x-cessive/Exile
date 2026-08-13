@@ -73,6 +73,113 @@ XCSV_fnc_ownerStopSpectate = {
     systemChat "XCSV Owner: spectate off.";
 };
 
+XCSV_OWNER_LoadoutKits = createHashMapFromArray [
+    ["loadoutBasic", [
+        "U_I_CombatUniform", "V_PlateCarrier1_rgr", "B_AssaultPack_rgr", "H_HelmetB", "",
+        "arifle_MX_F", "30Rnd_65x39_caseless_mag", ["optic_Holosight", "acc_pointer_IR"], 8,
+        ["Exile_Item_XM8", "Exile_Item_InstaDoc", "Exile_Item_Bandage", "Exile_Item_Bandage", "Exile_Item_EnergyDrink", "Exile_Item_PlasticBottleFreshWater"]
+    ]],
+    ["loadoutMedium", [
+        "U_B_CTRG_1", "V_PlateCarrier2_rgr", "B_Kitbag_rgr", "H_HelmetSpecB", "G_Balaclava_blk",
+        "arifle_MXM_Black_F", "30Rnd_65x39_caseless_mag", ["optic_Hamr", "muzzle_snds_H", "acc_pointer_IR"], 12,
+        ["Exile_Item_XM8", "Exile_Item_InstaDoc", "Exile_Item_InstaDoc", "Exile_Item_Bandage", "Exile_Item_Bandage", "Exile_Item_Vishpirin", "Exile_Item_EnergyDrink", "Exile_Item_PlasticBottleFreshWater", "Exile_Item_Matches"]
+    ]],
+    ["loadoutHigh", [
+        "U_O_V_Soldier_Viper_hex_F", "V_PlateCarrierSpec_blk", "B_Carryall_ghex_F", "H_HelmetO_ViperSP_hex_F", "G_Balaclava_TI_blk_F",
+        "arifle_SPAR_03_blk_F", "20Rnd_762x51_Mag", ["optic_DMS", "muzzle_snds_B", "acc_pointer_IR"], 14,
+        ["Exile_Item_XM8", "Exile_Item_Defibrillator", "Exile_Item_InstaDoc", "Exile_Item_InstaDoc", "Exile_Item_Vishpirin", "Exile_Item_Vishpirin", "Exile_Item_CanOpener", "Exile_Item_CookingPot", "Exile_Item_Grinder", "Exile_Item_Laptop"]
+    ]],
+    ["loadoutGod", [
+        "U_O_V_Soldier_Viper_F", "V_PlateCarrierGL_tna_F", "B_Carryall_oli", "H_HelmetO_ViperSP_ghex_F", "G_Balaclava_TI_G_tna_F",
+        "srifle_DMR_02_camo_F", "10Rnd_338_Mag", ["optic_AMS_khk", "muzzle_snds_338_green", "bipod_01_F_khk"], 16,
+        ["Exile_Item_XM8", "Exile_Item_Defibrillator", "Exile_Item_Defibrillator", "Exile_Item_InstaDoc", "Exile_Item_InstaDoc", "Exile_Item_Vishpirin", "Exile_Item_Vishpirin", "Exile_Item_Grinder", "Exile_Item_Laptop", "Exile_Item_ThermalScannerPro"]
+    ]]
+];
+
+XCSV_fnc_ownerApplyLoadoutLocal = {
+    params ["_tier"];
+
+    private _kit = XCSV_OWNER_LoadoutKits getOrDefault [_tier, []];
+    if (_kit isEqualTo []) exitWith { systemChat format ["XCSV Owner: unknown loadout %1.", _tier]; };
+
+    _kit params ["_uniform", "_vest", "_backpack", "_headgear", "_goggles", "_weapon", "_mag", "_attachments", "_magCount", "_items"];
+
+    removeAllWeapons player;
+    removeAllItems player;
+    removeAllAssignedItems player;
+    removeUniform player;
+    removeVest player;
+    removeBackpackGlobal player;
+    removeHeadgear player;
+    removeGoggles player;
+
+    player forceAddUniform _uniform;
+    player addVest _vest;
+    player addBackpackGlobal _backpack;
+    player addHeadgear _headgear;
+    if !(_goggles isEqualTo "") then { player addGoggles _goggles; };
+
+    player addMagazines [_mag, _magCount];
+    player addWeapon _weapon;
+    { player addPrimaryWeaponItem _x; } forEach _attachments;
+
+    if (_tier isEqualTo "loadoutGod") then {
+        player addMagazines ["Titan_AA", 2];
+        player addWeapon "launch_B_Titan_F";
+    };
+
+    {
+        if (player canAdd _x) then {
+            player addItem _x;
+        } else {
+            player addItemToBackpack _x;
+        };
+    } forEach _items;
+
+    { player linkItem _x; } forEach ["ItemMap", "ItemCompass", "ItemGPS", "ItemRadio", "NVGoggles_OPFOR"];
+    reload player;
+    systemChat format ["XCSV Owner: %1 kit equipped locally.", _tier];
+};
+
+XCSV_fnc_ownerSetGodLocal = {
+    params ["_enabled"];
+
+    if (_enabled) then {
+        player setVariable ["XCSV_OWNER_GodMode", true, true];
+        player allowDamage false;
+        player setDamage 0;
+
+        private _oldEh = missionNamespace getVariable ["XCSV_OWNER_GodModeEH", -1];
+        if (_oldEh >= 0) then { player removeEventHandler ["HandleDamage", _oldEh]; };
+
+        private _eh = player addEventHandler ["HandleDamage", {
+            params ["_unit", "", "_damage"];
+            if (_unit getVariable ["XCSV_OWNER_GodMode", false]) exitWith { 0 };
+            _damage
+        }];
+        missionNamespace setVariable ["XCSV_OWNER_GodModeEH", _eh];
+
+        if (isNil "XCSV_OWNER_GodModeLoop") then {
+            XCSV_OWNER_GodModeLoop = [] spawn {
+                while { player getVariable ["XCSV_OWNER_GodMode", false] } do {
+                    player allowDamage false;
+                    player setDamage 0;
+                    uiSleep 1;
+                };
+                XCSV_OWNER_GodModeLoop = nil;
+            };
+        };
+        systemChat "XCSV Owner: god mode enforced locally.";
+    } else {
+        player setVariable ["XCSV_OWNER_GodMode", false, true];
+        private _oldEh = missionNamespace getVariable ["XCSV_OWNER_GodModeEH", -1];
+        if (_oldEh >= 0) then { player removeEventHandler ["HandleDamage", _oldEh]; };
+        missionNamespace setVariable ["XCSV_OWNER_GodModeEH", -1];
+        player allowDamage true;
+        systemChat "XCSV Owner: god mode disabled locally.";
+    };
+};
+
 XCSV_fnc_ownerLocal = {
     params ["_command"];
 
@@ -120,7 +227,7 @@ XCSV_OWNER_ModeActions = createHashMapFromArray [
     ["server", [
         "Director",
         "<t size='1.05' color='#E8B339'>Server Director</t><br/><t size='0.78' color='#7E8896'>Mission, health, cleanup, test-crate, and cinematic world controls. Cleanup only deletes owner-spawned objects or tagged XCSV scene objects.</t>",
-        [["HEALTH", "healthSnapshot"], ["RUN COURIER", "missionCourier"], ["TEST CRATE", "crateTest"], ["LOOT CRATE", "crateLoot"], ["CLEAN 10M", "cleanupRadius10"], ["CLEAN 25M", "cleanupRadius25"], ["CLEAN 50M", "cleanupRadius50"], ["SUNSET", "timeSunset"]]
+        [["HEALTH", "healthSnapshot"], ["RUN COURIER", "missionCourier"], ["TEST CRATE", "crateTest"], ["LOOT CRATE", "crateLoot"], ["CLEAN 10M", "cleanupRadius10"], ["MORNING", "timeMorning"], ["MIDDAY", "timeNoon"], ["SUNSET", "timeSunset"]]
     ]]
 ];
 
@@ -237,6 +344,16 @@ ExileClient_system_xcsv_network_xcsvOwnerResponse = {
             if !(isNull _body) then { _body ctrlSetStructuredText parseText _html; };
         };
         systemChat "XCSV Owner: health snapshot updated.";
+    };
+
+    if (_command isEqualTo "applyLoadout") exitWith {
+        _payload params ["_tier"];
+        [_tier] call XCSV_fnc_ownerApplyLoadoutLocal;
+    };
+
+    if (_command isEqualTo "godMode") exitWith {
+        _payload params ["_enabled"];
+        [_enabled] call XCSV_fnc_ownerSetGodLocal;
     };
 };
 

@@ -204,19 +204,23 @@ try {
     switch (_command) do {
         case "loadoutBasic": {
             [_playerObject, _command] call _fnc_applyLoadout;
-            ["Owner loadout", format ["Applied %1.", _command]] call _fnc_toast;
+            ["applyLoadout", [_command]] call _fnc_ownerClient;
+            ["Owner loadout", format ["Applied %1 with local weapon/ammo sync.", _command]] call _fnc_toast;
         };
         case "loadoutMedium": {
             [_playerObject, _command] call _fnc_applyLoadout;
-            ["Owner loadout", format ["Applied %1.", _command]] call _fnc_toast;
+            ["applyLoadout", [_command]] call _fnc_ownerClient;
+            ["Owner loadout", format ["Applied %1 with local weapon/ammo sync.", _command]] call _fnc_toast;
         };
         case "loadoutHigh": {
             [_playerObject, _command] call _fnc_applyLoadout;
-            ["Owner loadout", format ["Applied %1.", _command]] call _fnc_toast;
+            ["applyLoadout", [_command]] call _fnc_ownerClient;
+            ["Owner loadout", format ["Applied %1 with local weapon/ammo sync.", _command]] call _fnc_toast;
         };
         case "loadoutGod": {
             [_playerObject, _command] call _fnc_applyLoadout;
-            ["Owner loadout", format ["Applied %1.", _command]] call _fnc_toast;
+            ["applyLoadout", [_command]] call _fnc_ownerClient;
+            ["Owner loadout", format ["Applied %1 with local weapon/ammo sync.", _command]] call _fnc_toast;
         };
 
         case "tabs10k": {
@@ -244,11 +248,13 @@ try {
         case "godOn": {
             _playerObject allowDamage false;
             _playerObject setVariable ["XCSV_OWNER_GodMode", true, true];
+            ["godMode", [true]] call _fnc_ownerClient;
             ["Owner god mode", "God mode enabled."] call _fnc_toast;
         };
         case "godOff": {
             _playerObject allowDamage true;
             _playerObject setVariable ["XCSV_OWNER_GodMode", false, true];
+            ["godMode", [false]] call _fnc_ownerClient;
             ["Owner god mode", "God mode disabled."] call _fnc_toast;
         };
 
@@ -435,6 +441,14 @@ try {
         case "timeNight": {
             skipTime ((22 - daytime + 24) mod 24);
             ["Owner director", "Time shifted to night."] call _fnc_toast;
+        };
+        case "timeMorning": {
+            60 setOvercast 0.18;
+            60 setRain 0;
+            60 setFog 0.03;
+            skipTime ((6 - daytime + 24) mod 24);
+            forceWeatherChange;
+            ["Owner director", "Time shifted to morning preset."] call _fnc_toast;
         };
         case "timeSunset": {
             60 setOvercast 0.35;
