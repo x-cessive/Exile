@@ -306,7 +306,6 @@ call compile preprocessFileLineNumbers "xcsv\fn_shared.sqf";
 
 [] execVM "xcsv\fn_traderVoice.sqf";
 [] execVM "xcsv\fn_welcome.sqf";
-[] execVM "xcsv\fn_mapAtlas.sqf";
 // Admin-only: self-gates on UID and exits immediately for everyone else.
 // Uses local markers, so nothing is broadcast and no other player sees them.
 [] execVM "xcsv\fn_census.sqf";
