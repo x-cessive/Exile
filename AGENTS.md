@@ -44,3 +44,38 @@ with `D:\XCSV\tools\ai-desktop-capture.ps1 -Layout -Shot`. Use
 `-GuardTab <tab>` to navigate by name. If a shot needs more width, use
 `-WideGuardForShot`; the tool may temporarily enlarge GUARD but must restore the
 right-pinned operator layout before it exits.
+
+## Documentation synchronization (mandatory)
+
+Portfolio rule `DOCUMENTATION_SYNCHRONIZATION_CONTRACT` v`1.0.0`, owned by
+`x-cessive/SOVRAN_PROJECT_BOUNDARIES` ->
+`governance/DOCUMENTATION_SYNCHRONIZATION_CONTRACT.md`.
+
+Documentation is part of the deliverable. Every substantive completion carries
+exactly one disposition:
+
+```text
+DOC_IMPACT: UPDATED | NONE | DEFERRED_OUT_OF_SCOPE | BLOCKED
+```
+
+- Material documentation drift **in this repository** caused by your authorized
+  change is corrected in the same completion transaction. Making the affected
+  document truthful after an authorized change is follow-through, not a new
+  authorization.
+- `DOC_IMPACT: NONE` is invalid without a reason.
+- `DOC_IMPACT: DEFERRED_OUT_OF_SCOPE` requires owning repository, affected surface,
+  reason, and a durable follow-up reference. Never use it for something you were
+  authorized to fix.
+- Drift you caused in **another** repository is recorded and routed through
+  `SOVRAN_PROJECT_BOUNDARIES` -> `registry/documentation-debt.json`. This rule
+  creates an obligation to record; it grants no cross-repository write authority.
+
+Assess by consequence, not diff size. A one-line change that alters operator
+behavior is material; a large refactor that changes nothing observable is not.
+Scope note: this repository is a third-party catalogue with first-party packaging
+tooling. The obligation applies to the first-party tooling and to catalogue
+documentation, not to upstream third-party content, whose provenance and licensing
+posture must be preserved rather than rewritten.
+
+Existing rules in this file remain in force. This section is additive.
+
