@@ -4,7 +4,7 @@
 [CmdletBinding(SupportsShouldProcess = $true)]
 param(
     [string]$ServerDir = 'E:\arma3server',
-    [string]$OutDir = 'D:\CAGE\xcsv-db-backups',
+    [string]$OutDir = 'J:\CAGE\xcsv-db-backups',
     [string]$DumpExe = 'C:\Program Files\MariaDB 10.11\bin\mysqldump.exe',
     [int]$Keep = 14
 )

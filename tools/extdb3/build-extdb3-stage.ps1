@@ -1,7 +1,7 @@
 param(
     [string]$ServerDir = 'E:\arma3server',
     [string]$PboTool = 'E:\ExileRepo\tools\pbo\pbo.ps1',
-    [string]$OutRoot = 'D:\CAGE\extdb3-stage'
+    [string]$OutRoot = 'J:\CAGE\extdb3-stage'
 )
 
 $ErrorActionPreference = 'Stop'

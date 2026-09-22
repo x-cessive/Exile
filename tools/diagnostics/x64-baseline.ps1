@@ -4,7 +4,7 @@
 [CmdletBinding()]
 param(
     [string]$ServerDir = 'E:\arma3server',
-    [string]$OutDir = 'D:\CAGE\xcsv-baselines'
+    [string]$OutDir = 'J:\CAGE\xcsv-baselines'
 )
 
 $ErrorActionPreference = 'Stop'
